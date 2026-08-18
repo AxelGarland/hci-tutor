@@ -193,22 +193,19 @@ Progress is per-browser and per-course, so it does not follow a reader between d
 
 Worth stating plainly, since this repo is public.
 
-**The framework** — everything in `src/scaffold/`, the session engine, the scheduler, the design
-system — is the project's own work.
+**The framework** — everything in `src/scaffold/`: the session engine, the scheduler, the design
+system, the demos and figures — was built for this project.
 
-**The course content** in `src/courses/hci/` is derived from a Human–Computer Interaction syllabus
-written by someone else. The chapters here are a restructuring of that material into readable
-sections, flashcards and quiz items; the underlying scholarship, the citations and the epistemic
-labelling convention (established / current consensus / emerging / contested) are the source's.
-Every claim was checked back against it.
+**The HCI course** was built here too, from a source syllabus document, restructured into modules,
+chapters, reading, flashcards and quiz items. The scholarship it teaches belongs to the field, as it
+would in any textbook: Fitts, Norman, Suchman, Hutchins, Cleveland & McGill and the rest are cited
+throughout, along with the source's epistemic labelling convention (established / current consensus
+/ emerging / contested).
 
-**Chapter prose was written with AI assistance** from that syllabus, then audited. The expansion
-rule was to unpack what the source asserts rather than to introduce new facts, which is why some
-chapters run shorter than others — where the syllabus is thin, the chapter stays thin instead of
-being padded.
+**Chapter prose was written with AI assistance** and audited against the source. The rule was to
+unpack what the source asserts rather than to introduce new claims, which is why chapters vary in
+length — where the source is thin, the chapter stays thin instead of being padded.
 
 **Status: 14 of 43 chapters are expanded to full reading depth.** The remaining 29 are summaries,
 and their quiz items currently outrun what their reading teaches. That gap is known and being
 closed; it is not a claim that the course is finished.
-
-The interactive demos, the figures and the design-citation notes are original.
