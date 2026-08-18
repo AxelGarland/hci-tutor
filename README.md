@@ -188,3 +188,27 @@ push-to-deploy.
 Vercel serve from the root and need no change.
 
 Progress is per-browser and per-course, so it does not follow a reader between devices.
+
+## Provenance
+
+Worth stating plainly, since this repo is public.
+
+**The framework** — everything in `src/scaffold/`, the session engine, the scheduler, the design
+system — is the project's own work.
+
+**The course content** in `src/courses/hci/` is derived from a Human–Computer Interaction syllabus
+written by someone else. The chapters here are a restructuring of that material into readable
+sections, flashcards and quiz items; the underlying scholarship, the citations and the epistemic
+labelling convention (established / current consensus / emerging / contested) are the source's.
+Every claim was checked back against it.
+
+**Chapter prose was written with AI assistance** from that syllabus, then audited. The expansion
+rule was to unpack what the source asserts rather than to introduce new facts, which is why some
+chapters run shorter than others — where the syllabus is thin, the chapter stays thin instead of
+being padded.
+
+**Status: 14 of 43 chapters are expanded to full reading depth.** The remaining 29 are summaries,
+and their quiz items currently outrun what their reading teaches. That gap is known and being
+closed; it is not a claim that the course is finished.
+
+The interactive demos, the figures and the design-citation notes are original.
