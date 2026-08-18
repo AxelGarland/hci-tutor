@@ -1,0 +1,1144 @@
+{
+  "id": "p01",
+  "title": "I — Foundations: The Human in the Loop",
+  "color": "blue",
+  "lessons": [
+    {
+      "id": "ch01",
+      "number": 1,
+      "title": "A History of HCI: From Batch Processing to Agents",
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Trace the five interface generations",
+            "Explain why HCI emerged as a discipline",
+            "Identify how each paradigm shift redistributed effort between human and machine"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The history of HCI is the history of moving the translation burden — from humans learning machine language, toward machines learning human intent. That single sentence is worth holding onto, because it turns a list of dates into an argument. Read the five generations as five answers to one question: who does the work of turning an intention into an operation the machine can perform?"
+        },
+        {
+          "type": "p",
+          "text": "The answer starts as \"entirely the human\" and moves, unevenly and with reversals, toward \"increasingly the machine\". Each generation did not simply add capability; it moved a portion of that translation work across the boundary. Notice as you read that the work never disappears — it relocates, and the relocation creates new problems that the next generation exists to solve."
+        },
+        {
+          "type": "h",
+          "text": "1. Batch (1940s–60s)"
+        },
+        {
+          "type": "p",
+          "text": "Punch cards, and no interaction in any meaningful sense of the word. You prepared a job, submitted it, and waited: turnaround was measured in hours. There was no loop, only a cycle of submission and result."
+        },
+        {
+          "type": "p",
+          "text": "The entire translation burden sat with the human. You had to express the intention completely and correctly in advance, in the machine's terms, because there was no opportunity to observe an intermediate state and adjust. A misplaced character meant a wasted day. This is the extreme case worth keeping in mind: everything later in the book about feedback, about visibility of system status, about incremental reversible operations, is a response to what it is like when none of those exist."
+        },
+        {
+          "type": "h",
+          "text": "2. Command line and time-sharing (1960s–70s)"
+        },
+        {
+          "type": "p",
+          "text": "Time-sharing put a person and a machine into the same loop for the first time. The machine's attention was divided between many users, but from any one user's seat the response came back while the intention was still live in their head — and that changes the nature of the activity from submission to conversation."
+        },
+        {
+          "type": "p",
+          "text": "Licklider's \"Man-Computer Symbiosis\" (1960) framed the aspiration that still organises the field: humans set goals, formulate hypotheses and decide what matters; computers do the routinisable work that has to happen in between. The book treats it as arguably the founding document of both HCI and human-AI interaction, and that double parentage is not a rhetorical flourish. The division of labour Licklider proposed is exactly what an agent product proposes today, which is why the paper reappears in the chapter on intelligent interfaces."
+        },
+        {
+          "type": "p",
+          "text": "Two demonstrations showed what the aspiration could look like in practice. Sutherland's Sketchpad (1963) demonstrated graphical, constraint-based interaction: you drew, and the system maintained the relationships you had specified, so that moving one element propagated correctly through the rest. The user expressed intent in the domain — this line stays perpendicular to that one — rather than in the machine's terms."
+        },
+        {
+          "type": "p",
+          "text": "Engelbart's 1968 demonstration at SRI, later known as the Mother of All Demos, showed the mouse, hypertext, video conferencing and collaborative editing in a single sitting. It is worth watching in full rather than reading about, because the striking thing is not any individual invention but how completely assembled the vision already was, decades before the components shipped commercially."
+        },
+        {
+          "type": "h",
+          "text": "3. GUI and WIMP (1970s–90s)"
+        },
+        {
+          "type": "p",
+          "text": "Xerox PARC turned the demonstrations into systems — the Alto and the Star — alongside Alan Kay's Dynabook vision of a personal, dynamic medium rather than a shared computational resource. The Macintosh brought the result to a mass audience in 1984, and with it the assumption that a person who had never programmed could still operate a computer."
+        },
+        {
+          "type": "p",
+          "text": "The shift here is that the machine started carrying part of the representation burden. Files became visible objects with locations; operations became things you did to those objects rather than sentences you composed about them. The user still had to learn the metaphor, but the metaphor was drawn from a world they already inhabited."
+        },
+        {
+          "type": "p",
+          "text": "The academic field crystallised in the same window. The first ACM CHI conference ran in 1983, giving the work a venue and a community, and Card, Moran & Newell's The Psychology of Human-Computer Interaction (1983) gave the field its first engineering-grade cognitive model — a way to predict performance rather than only describe it after the fact. That model is the subject of chapter 3, and it is the moment HCI acquired the ambition to be an engineering discipline rather than a craft."
+        },
+        {
+          "type": "h",
+          "text": "4. Ubiquitous and mobile (1990s–2010s)"
+        },
+        {
+          "type": "p",
+          "text": "Mark Weiser's \"The Computer for the 21st Century\" (1991) proposed something close to the opposite of a machine you sit in front of: computing recedes into the environment and stops demanding attention as its price of admission. The measure of success becomes how little of the user's awareness the technology consumes, which is a genuinely different objective from making the interface good to look at."
+        },
+        {
+          "type": "p",
+          "text": "Multi-touch, arriving on the iPhone in 2007, made direct manipulation literal. The pointer had always been an intermediary — a device on the desk standing in for a finger on the screen — and removing it collapsed the articulatory distance that chapter 8 defines. You now touched the object itself."
+        },
+        {
+          "type": "h",
+          "text": "5. Intelligent and agentic (2010s–now)"
+        },
+        {
+          "type": "p",
+          "text": "Voice assistants, then LLM chat in 2022, then tool-using agents from 2024 onward. The Licklider vision returns, but with a difference that changes the design problem: the machine is now an active initiative-taker rather than a fast subordinate waiting to be told."
+        },
+        {
+          "type": "p",
+          "text": "That difference is the whole subject of the last three parts of this book. When the machine only responded, the design questions were about expression and feedback. When it acts on its own reading of your intent, the questions become about specification, supervision and trust — and none of those are solved by making the response faster or the interface prettier."
+        },
+        {
+          "type": "callout",
+          "text": "The central open question of this era: how do humans specify, supervise, and trust delegated work? Parts VIII to X are an extended attempt at an answer, and they are the reason the earlier parts are load-bearing rather than background."
+        },
+        {
+          "type": "h",
+          "text": "Why it matters"
+        },
+        {
+          "type": "p",
+          "text": "Every \"new\" AI interface debate — direct manipulation versus delegation, agents versus tools, how much autonomy to grant — was rehearsed in the 1990s, most sharply in the Shneiderman–Maes debate published in Interactions in 1997. One side argued for comprehensible, predictable, user-initiated control; the other for agents that reduce work by acting on your behalf. Neither position was refuted, which is why the argument recurs."
+        },
+        {
+          "type": "p",
+          "text": "Knowing this history does two things. It inoculates you against hype, because you can recognise a rediscovery when you see one. And it saves you from re-deriving positions that were already argued to a standstill by people with more time to think about them than a product deadline allows."
+        },
+        {
+          "type": "papers",
+          "items": [
+            "Licklider, Man-Computer Symbiosis (1960, IRE Trans. Human Factors in Electronics)",
+            "Sutherland, Sketchpad (1963, MIT PhD thesis)",
+            "Engelbart & English (1968, FJCC)",
+            "Weiser, The Computer for the 21st Century (1991, Scientific American)",
+            "Grudin, The Computer Reaches Out (CHI 1990)",
+            "Hornbæk & Oulasvirta, What Is Interaction? (CHI 2017, DOI 10.1145/3025453.3025765)",
+            "Shneiderman & Maes, Direct Manipulation vs. Interface Agents (1997, Interactions)"
+          ]
+        },
+        {
+          "type": "exercise",
+          "text": "Take one interaction you performed today with an LLM. Map which parts follow the command-line paradigm, which follow direct manipulation, and which follow delegation. Where does the translation burden currently sit?"
+        }
+      ],
+      "cards": [
+        {
+          "id": "ch01c1",
+          "front": "The one-sentence thesis of HCI history",
+          "back": "It is the history of moving the translation burden — from humans learning machine language toward machines learning human intent."
+        },
+        {
+          "id": "ch01c2",
+          "front": "Licklider, 1960 — why does it matter?",
+          "back": "\"Man-Computer Symbiosis\" framed humans setting goals and computers doing routinisable work. Arguably the founding document of both HCI and human-AI interaction."
+        },
+        {
+          "id": "ch01c3",
+          "front": "Engelbart's 1968 demo showed what?",
+          "back": "The mouse, hypertext, video conferencing and collaborative editing — in a single sitting, decades before each shipped commercially."
+        },
+        {
+          "id": "ch01c4",
+          "front": "The Shneiderman–Maes debate (1997)",
+          "back": "Direct manipulation versus interface agents — control and predictability against autonomous assistance. The framing debate for today's agent products."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ch01q1",
+          "question": "What unifies the five interface generations into a single narrative?",
+          "options": [
+            "The progressive shift of the translation burden from human to machine",
+            "The steady increase in screen resolution",
+            "The replacement of text by graphics",
+            "The falling cost of computation"
+          ],
+          "answer": 0,
+          "why": "Each generation moves more of the work of translating between human intent and machine operation onto the machine. Falling cost enabled the shift but is not what the generations are about."
+        },
+        {
+          "id": "ch01q2",
+          "question": "Why does the book insist you know the pre-2020 history before designing AI products?",
+          "options": [
+            "Because old interfaces were better designed",
+            "Because current agent debates rehearse arguments already had in 1987 and 1997",
+            "Because CHI requires historical citations",
+            "Because LLMs were invented in the 1960s"
+          ],
+          "answer": 1,
+          "why": "Suchman (1987) and the Shneiderman–Maes debate (1997) already staked out the positions in today's agent arguments. History inoculates against hype and rediscovery."
+        }
+      ]
+    },
+    {
+      "id": "ch02",
+      "number": 2,
+      "title": "Perception and Attention",
+      "demos": [
+        "search"
+      ],
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Apply visual perception constraints to display design",
+            "Explain preattentive processing",
+            "Model attention as a scarce, structured resource"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The eye is not a camera and attention is not a spotlight you control at will. Both assumptions are natural and both are wrong, and most perceptual failures in interfaces come from designing as though they were true. Interfaces succeed when they exploit what perception does for free, and fail when they demand what it cannot supply. This chapter is a short inventory of which is which."
+        },
+        {
+          "type": "h",
+          "text": "What perception does for free"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Preattentive processing: a small set of features — colour, orientation, size, motion — is detected in under 250 ms without serial search (Treisman & Gelade, Feature Integration Theory, 1980; surveyed by Healey & Enns, 2012). Detection happens across the whole visual field at once, before attention has been directed anywhere in particular."
+        },
+        {
+          "type": "p",
+          "text": "That last clause is the part with design consequences. Preattentive detection is not fast searching; it is not searching at all. The feature is registered in parallel across the scene, which is why the time to find a preattentive target is roughly independent of how many other things are on the screen. Add fifty more grey icons and the single red one is found just as quickly."
+        },
+        {
+          "type": "p",
+          "text": "The mechanism is uniqueness, and uniqueness is a budget rather than a technique. One red badge among grey icons pops out. Five red badges do not — not because red has become less visible, but because the property the visual system was keying on has stopped being distinctive. The moment a second item shares the feature, the search reverts to the slow serial kind, and the emphasis you thought you were buying has been spent on nothing."
+        },
+        {
+          "type": "p",
+          "text": "So the practical rule is a quota. Decide which single datum in a view most deserves to be found without looking, give it the preattentive singleton, and give every other emphasis a different channel — position, grouping, type weight, an explicit label. A design with four things shouting has no things shouting."
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Visual search: conjunction searches — find the red circle among red squares and blue circles — are serial and slow, because no single feature isolates the target. Single-feature searches are parallel, and their time stays roughly flat as the number of distractors grows."
+        },
+        {
+          "type": "p",
+          "text": "Conjunctions are worth recognising because interfaces produce them accidentally. The moment a status is encoded as \"colour plus shape\" — red circle means one thing, red square another, blue circle a third — the user can no longer find any of them without inspecting items one at a time. Whether that matters depends on the task, but you should at least know you have made the search serial rather than discovering it from a support ticket."
+        },
+        {
+          "type": "h",
+          "text": "What perception does not do"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Change blindness and inattentional blindness: large changes go unnoticed without a transient cue (Rensink, O'Regan & Clark 1997; Simons & Chabris, \"Gorillas in Our Midst\", 1999). The change does not have to be subtle to be missed; it has to be unaccompanied."
+        },
+        {
+          "type": "p",
+          "text": "This is deeply counterintuitive, which is exactly why it keeps catching designers out. The intuition is that a big enough change will be seen — a whole panel replaced, a number doubling, a status flipping. The finding is that visual attention does not maintain a detailed running model of the scene, so a change made during a blink, a saccade, an animation, or simply while the eyes are elsewhere leaves no trace to compare against. Simons and Chabris made the point at its most extreme: observers counting basketball passes fail to see a person in a gorilla suit walk through the middle of the scene."
+        },
+        {
+          "type": "p",
+          "text": "The design implication is blunt: never update critical state silently. If something important changes while the user might be looking elsewhere, the interface has to supply the transient that perception needs — a brief motion, a flash, an appearance — or else place the change where the eyes already are, which is usually at the locus of the action the user just took."
+        },
+        {
+          "type": "h",
+          "text": "Colour, and what it cannot carry alone"
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Colour: around 8% of men have some colour vision deficiency, so critical information must be encoded redundantly — colour plus shape, position or label. Perceptually uniform colour spaces such as CIELAB and OKLCH matter for data visualisation, where equal steps in the encoding should look like equal steps in the data."
+        },
+        {
+          "type": "p",
+          "text": "Redundant coding is a cheap discipline and it is routinely skipped, usually because red and green feel so obvious to the person choosing them. The test is simple: convert the interface to greyscale and ask whether anything important has become unreadable. If the only difference between success and failure is hue, roughly one man in twelve is reading an interface with the meaning removed."
+        },
+        {
+          "type": "p",
+          "text": "The perceptual-uniformity point is a different problem with the same root. In naïve colour spaces, a step from one value to the next does not correspond to a consistent perceived difference, so a sequential scale can compress part of its range and exaggerate another. The data appears to have structure that exists only in the colour ramp."
+        },
+        {
+          "type": "h",
+          "text": "Attention as a resource with costs"
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Attention economics: notification research (Mark, Iqbal, Horvitz, from CHI 2008 onward) shows interruption carries a substantial resumption lag, and task switching carries measurable performance and stress costs on top of the time lost."
+        },
+        {
+          "type": "p",
+          "text": "The important reframing here is that the cost of an interruption is not the duration of the interruption. It is the cost of rebuilding the state you were holding when it arrived — which is why a five-second notification can cost minutes, and why the same notification is nearly free at a task boundary and expensive in the middle of something. An interface that interrupts without any model of what the user is doing is spending a resource it cannot see."
+        },
+        {
+          "type": "h",
+          "text": "Application today"
+        },
+        {
+          "type": "p",
+          "text": "LLM streaming output exploits motion-based attention capture. Nothing about the total latency improves when tokens arrive progressively, but the movement holds the eye and supplies continuous evidence that work is happening — which is why streaming feels responsive and a same-duration batch response feels broken."
+        },
+        {
+          "type": "p",
+          "text": "Agent status indicators are a change-blindness problem, and a severe one. The state changes precisely when the user has turned away, because turning away is the point of delegating. An indicator that quietly switches from planning to executing satisfies the letter of visibility while failing the perceptual condition that would let anyone notice it."
+        },
+        {
+          "type": "p",
+          "text": "And confidence colour coding in AI interfaces routinely violates the redundancy rule, encoding the single thing the user most needs to judge in the one channel some users cannot see. If a confidence signal matters enough to display, it matters enough to say in words."
+        },
+        {
+          "type": "claim",
+          "level": "emerging",
+          "text": "Research frontier: gaze-adaptive interfaces, and attention-aware agent interruption — when should an agent interrupt you with a question rather than proceed on an assumption? That question continues Horvitz's attention-cost models directly, and it is where this chapter meets the mixed-initiative material later in the book."
+        },
+        {
+          "type": "h",
+          "text": "Guidelines"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Encode alerts on at least two channels",
+            "Reserve motion for genuinely urgent events",
+            "Keep the pop-out budget to one preattentive singleton per view",
+            "Put state changes where the eyes already are"
+          ]
+        },
+        {
+          "type": "papers",
+          "items": [
+            "Treisman & Gelade, Feature Integration Theory (1980, Cognitive Psychology)",
+            "Healey & Enns, attention and visual memory in visualization (2012, IEEE TVCG)",
+            "Rensink, O'Regan & Clark (1997)",
+            "Simons & Chabris, Gorillas in Our Midst (1999, Perception)",
+            "Iqbal & Horvitz, Disruption and Recovery of Computing Tasks (CHI 2007)",
+            "Ware, Information Visualization (4th ed., 2020)"
+          ]
+        },
+        {
+          "type": "exercise",
+          "text": "Screenshot a dashboard you use. Count the preattentive singletons. Redesign so that the single most important datum is the only pop-out."
+        }
+      ],
+      "cards": [
+        {
+          "id": "ch02c1",
+          "front": "Preattentive processing",
+          "back": "Detection of a small feature set — colour, orientation, size, motion — in under 250 ms, in parallel, without serial search."
+        },
+        {
+          "id": "ch02c2",
+          "front": "Why does a conjunction search feel slow?",
+          "back": "No single preattentive feature isolates the target, so search becomes serial: time grows with the number of distractors."
+        },
+        {
+          "id": "ch02c3",
+          "front": "The pop-out budget",
+          "back": "One preattentive singleton per view. Add a second and neither pops out — the mechanism only distinguishes a unique feature."
+        },
+        {
+          "id": "ch02c4",
+          "front": "Change blindness — the design rule it implies",
+          "back": "Never update critical state silently. A change without a transient cue is very often simply not seen."
+        },
+        {
+          "id": "ch02c5",
+          "front": "The redundancy rule for colour",
+          "back": "Around 8% of men have a colour vision deficiency, so critical information must be encoded on at least two channels — colour plus shape, position or label."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ch02q1",
+          "question": "A dashboard marks eight metrics in red to show they need attention. What has gone wrong perceptually?",
+          "options": [
+            "Red is culturally ambiguous",
+            "The pop-out budget is blown — with eight red items none of them pops out",
+            "Red fails the contrast ratio requirement",
+            "Nothing; redundant colour coding is correct"
+          ],
+          "answer": 1,
+          "why": "Preattentive pop-out works on uniqueness. Eight red items turn the search from parallel to serial, so the mechanism you were relying on stops operating."
+        },
+        {
+          "id": "ch02q2",
+          "question": "An agent silently changes its status from \"planning\" to \"executing\" while the user reads another pane. Which finding predicts they will miss it?",
+          "options": [
+            "Hick-Hyman law",
+            "Change blindness",
+            "The steering law",
+            "Algorithm aversion"
+          ],
+          "answer": 1,
+          "why": "Large changes go unnoticed without a transient cue, particularly outside the current locus of attention. This is precisely the agent status-indicator problem."
+        },
+        {
+          "id": "ch02q3",
+          "question": "Why does streaming LLM output feel more responsive than an equally slow batch response?",
+          "options": [
+            "It reduces total latency",
+            "Motion captures attention and gives continuous feedback that the system is working",
+            "It lowers cognitive load",
+            "It improves answer quality"
+          ],
+          "answer": 1,
+          "why": "Total latency is unchanged. Streaming exploits motion-based attention capture and supplies the continuous feedback that the classic latency thresholds demand."
+        }
+      ]
+    },
+    {
+      "id": "ch03",
+      "number": 3,
+      "title": "Memory, Mental Models, and the Model Human Processor",
+      "demos": [
+        "span"
+      ],
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Distinguish working, long-term and prospective memory in interface terms",
+            "Define mental models operationally",
+            "Use GOMS and KLM to estimate expert task time"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This chapter is where HCI acquired the ambition to be an engineering discipline. Its claim is that human performance at an interface is not merely describable after the fact but predictable in advance, because the constraints are regular enough to model. That ambition rests on a small number of facts about memory, and those facts turn out to generate most of the interface heuristics people repeat without knowing where they came from."
+        },
+        {
+          "type": "h",
+          "text": "The capacity that everything else follows from"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Working memory holds roughly 3–4 chunks under realistic conditions (Cowan 2001). Miller's famous 7±2 is the folk version, and it overstates what people can hold while also doing something else."
+        },
+        {
+          "type": "p",
+          "text": "The correction matters more than it looks. Seven items sounds like enough for a form, a menu, a set of options to compare. Three or four does not. Under the realistic figure, asking a user to carry a value from one screen to the next, or to compare an option here against one they saw two steps ago, is asking them to use most of the capacity they have for anything at all."
+        },
+        {
+          "type": "p",
+          "text": "Almost every memory-related heuristic is downstream of this single number. \"Recognition over recall\" is not a stylistic preference: recall requires holding candidate answers in a store with a capacity of three or four, while recognition puts the candidates on the display and asks only for identification. Externalising state is the general move, and visible selections, persistent drafts, breadcrumbs and summaries of what you have already chosen are all instances of it."
+        },
+        {
+          "type": "p",
+          "text": "A chunk is also not a character. The limit applies to meaningful units, which is why grouping changes what fits — the same digits split into threes occupy fewer chunks than the same digits in a row, with nothing else altered. This is the one lever the designer has against the capacity limit: you cannot raise the number of chunks, but you can make each chunk carry more."
+        },
+        {
+          "type": "h",
+          "text": "Predicting performance before building"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "The Model Human Processor and GOMS (Card, Moran & Newell 1983) modelled the user as perceptual, cognitive and motor processors with measurable cycle times. This made predictive evaluation possible: you could estimate performance before a system existed."
+        },
+        {
+          "type": "p",
+          "text": "GOMS decomposes a task into goals, operators, methods and selection rules — what the user is trying to achieve, the elementary actions available, the procedures that combine them, and how a person chooses between procedures when more than one would work. Give the operators durations and the model produces a time."
+        },
+        {
+          "type": "p",
+          "text": "The Keystroke-Level Model (Card, Moran & Newell, 1980) is the stripped-down version, and it still yields useful expert-time estimates for routine tasks: count the keystrokes, pointing movements, homing between devices and mental preparations, attach standard durations, and add them up. It is crude and it works, which is the combination that makes a method survive."
+        },
+        {
+          "type": "p",
+          "text": "The variants earned the approach its reputation. CPM-GOMS famously predicted that a new Bell telephone-operator workstation would be slower than the one it replaced — before it shipped (Gray, John & Atwood, 1993). The workstation looked better by every ordinary measure; the model found that its improvements landed on steps that were not on the critical path, while a small penalty landed on a step that was."
+        },
+        {
+          "type": "p",
+          "text": "Note carefully what the model covers and what it does not. GOMS describes skilled, error-free performance on a task the user already knows how to do. It says nothing about whether a novice can discover the feature, whether anyone enjoys using it, or which errors are common and how costly they are. That is not a defect — it is the scope that makes prediction possible — but it is exactly why predictive modelling never replaced empirical testing, and why the two chapters on evaluation later in this book still exist."
+        },
+        {
+          "type": "h",
+          "text": "Mental models"
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Mental models: users run simplified, often wrong, runnable simulations of the system (Johnson-Laird 1983; Norman, \"Some Observations on Mental Models\", 1983). The model does not need to be accurate to be used — it needs to be runnable, so the user can predict what will happen next."
+        },
+        {
+          "type": "p",
+          "text": "That criterion — runnable rather than correct — explains a great deal of otherwise puzzling user behaviour. People do not abandon a wrong theory because it is wrong; they abandon it when it stops generating predictions, or when a prediction fails so visibly that the theory cannot absorb it. Until then, a wrong model that mostly works is more useful to them than no model at all."
+        },
+        {
+          "type": "p",
+          "text": "The designer does not build the user's model directly and cannot. What the designer controls is the system image — everything the system presents, through its interface, its behaviour, its documentation and its errors — from which the user induces a model. When the induced model is wrong, the system image is usually the thing to fix, not the user."
+        },
+        {
+          "type": "p",
+          "text": "Kempton's thermostat study (1986) is the clean demonstration. Some people hold a \"valve\" theory: the thermostat controls how much heat flows, so setting it higher heats the room faster. Others hold a \"feedback\" theory: it is a target the system works toward at a fixed rate. Both theories are held confidently, both predict the person's actual thermostat behaviour, and only one is right. The device's system image does not distinguish between them, so both survive indefinitely."
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Prospective memory — remembering to do something later — is fragile. Interfaces should hold the intention rather than expecting the user to: reminders, saved drafts and resumable flows all move the intention out of the head and into the system."
+        },
+        {
+          "type": "p",
+          "text": "Prospective memory is worth naming separately because it fails differently from the others. It is not that the user cannot retrieve the information; it is that nothing prompted retrieval at the moment it mattered. An interface that lets a half-finished task disappear silently is relying on a kind of memory that reliably fails, when it could simply have kept the draft."
+        },
+        {
+          "type": "h",
+          "text": "Why it matters for AI"
+        },
+        {
+          "type": "p",
+          "text": "Mental models of LLMs are the single most-studied construct in current human-AI research. Users import folk models — database, person, search engine — and each one mispredicts a different class of failure: the search-engine model makes generated citations look retrieved, the person model over-attributes understanding and consistency, the database model expects storage and recall rather than generation."
+        },
+        {
+          "type": "p",
+          "text": "The methodology for studying that comes straight from this chapter, which is why chapter 33 leans on it so heavily. The question there is exactly the question Kempton asked about thermostats, transplanted: what runnable theory are people holding, what does it predict, and what is the system image doing to encourage it?"
+        },
+        {
+          "type": "papers",
+          "items": [
+            "Card, Moran & Newell, The Psychology of Human-Computer Interaction (1983)",
+            "Card, Moran & Newell, The Keystroke-Level Model (1980, CACM)",
+            "Cowan, The Magical Number 4 (2001, Behavioral and Brain Sciences)",
+            "Johnson-Laird, Mental Models (1983)",
+            "Norman, Some Observations on Mental Models (1983, in Gentner & Stevens)",
+            "Gray, John & Atwood, Project Ernestine (1993, Human-Computer Interaction)"
+          ]
+        },
+        {
+          "type": "exercise",
+          "text": "Run a keystroke-level model on \"attach a file and send\" in two email clients. Compare predicted times to a five-user stopwatch test."
+        }
+      ],
+      "cards": [
+        {
+          "id": "ch03c1",
+          "front": "Working memory capacity, realistically",
+          "back": "About 3–4 chunks (Cowan 2001). The familiar 7±2 is the folk version and overstates it."
+        },
+        {
+          "id": "ch03c2",
+          "front": "Why \"recognition over recall\"?",
+          "back": "It is a direct consequence of the 3–4 chunk limit. Recognition offloads state to the display; recall demands the user hold it."
+        },
+        {
+          "id": "ch03c3",
+          "front": "System image",
+          "back": "Everything the system presents — interface, documentation, behaviour — from which the user induces a mental model. The designer controls the image, not the model."
+        },
+        {
+          "id": "ch03c4",
+          "front": "GOMS / KLM — what is it for?",
+          "back": "Predicting expert task time for routine tasks from goals, operators, methods and selection rules, before building or testing."
+        },
+        {
+          "id": "ch03c5",
+          "front": "Prospective memory in interface terms",
+          "back": "Remembering to do something later. It is fragile, so the interface should hold the intention: drafts, reminders, resumable flows."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ch03q1",
+          "question": "A user believes an LLM \"looks things up\" like a search engine. What does this folk model most directly mispredict?",
+          "options": [
+            "Response latency",
+            "That citations it produces will correspond to real sources",
+            "The cost per query",
+            "The length of the context window"
+          ],
+          "answer": 1,
+          "why": "The search-engine model implies retrieval from an index, so a generated citation is assumed to be a found one. This is the classic failure the mental-models literature predicts."
+        },
+        {
+          "id": "ch03q2",
+          "question": "What can GOMS/KLM tell you that a usability test cannot?",
+          "options": [
+            "Whether novices will discover the feature",
+            "Expert task time for a routine task, computed before anything is built",
+            "How satisfied users feel",
+            "Which errors are most common"
+          ],
+          "answer": 1,
+          "why": "GOMS is a predictive engineering model of skilled, error-free performance. It says nothing about discovery, satisfaction, or error — which is exactly why you still run tests."
+        },
+        {
+          "id": "ch03q3",
+          "question": "Which design move follows most directly from the 3–4 chunk working memory limit?",
+          "options": [
+            "Use larger touch targets",
+            "Show a progress bar past 10 seconds",
+            "Externalise state in the display rather than requiring users to hold it",
+            "Reduce the number of menu options"
+          ],
+          "answer": 2,
+          "why": "The capacity limit is about what the user can hold in mind, so the fix is to put state on the screen. Target size is Fitts, progress is feedback, option count is Hick."
+        }
+      ]
+    },
+    {
+      "id": "ch04",
+      "number": 4,
+      "title": "Motor Control: Fitts' Law, Steering, and Input",
+      "demos": [
+        "fitts",
+        "hicks"
+      ],
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Apply Fitts' law quantitatively",
+            "Explain the Hick-Hyman law and its limits",
+            "Evaluate input devices by throughput"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Motor control is the part of HCI with the cleanest quantitative laws, which makes it both the easiest chapter to apply and the easiest to misapply. Each law here describes a specific process under specific conditions, and each is routinely stretched past those conditions to justify a design decision it does not actually support."
+        },
+        {
+          "type": "h",
+          "text": "Fitts' law"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Fitts' law (Fitts 1954): the time to move a pointer to a target depends on the ratio of the distance travelled to the width of the target — not on either quantity by itself."
+        },
+        {
+          "type": "formula",
+          "text": "MT = a + b · log₂(2D / W)"
+        },
+        {
+          "type": "plate",
+          "figure": "fitts",
+          "number": "4.1",
+          "caption": "The two quantities in the index of difficulty. D is measured from the starting point to the target's centre; W is the target's width along the axis of motion. Because the law depends on the ratio, doubling both leaves movement time essentially unchanged."
+        },
+        {
+          "type": "p",
+          "text": "The Shannon formulation, log₂(D/W + 1), is now the standard form. The quantity inside the logarithm is the index of difficulty: a single number expressing how hard an aimed movement is, which lets you compare two layouts before building either one."
+        },
+        {
+          "type": "p",
+          "text": "Two properties of that expression do most of the design work. It depends on a ratio, so doubling both the distance and the target width leaves movement time essentially unchanged — the target has become as much easier as the journey became harder. And it is logarithmic, so returns diminish: halving the distance to an already-close target buys very little, while enlarging a small target buys a great deal, because W sits in the denominator inside the log."
+        },
+        {
+          "type": "p",
+          "text": "MacKenzie (1992) standardised the law's use in HCI, and ISO 9241-411 defines throughput measurement so that different input devices can be compared on a single figure combining speed and accuracy. Throughput matters because speed alone is not a device property you can trade against nothing — any device can be operated faster at the cost of more misses, and a measure that ignores the misses can be gamed by simply hurrying."
+        },
+        {
+          "type": "h",
+          "text": "Consequences you can design from"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Screen edges and corners are infinitely deep targets. The cursor is clamped by the boundary, so W is effectively unbounded and the index of difficulty collapses. This is why the macOS menu bar sits flush against the top of the screen, and why corners are the four fastest positions on any display.",
+            "Pie menus beat linear menus. Every item sits at the same distance from the starting point, and each occupies a wider effective target than a thin horizontal row would.",
+            "Touch targets need a minimum size of roughly 7–10 mm, because a finger cannot be aimed as precisely as a cursor and the contact patch is large relative to small controls."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "The edge case is worth dwelling on, because it is the clearest instance of a law changing a layout rather than confirming one. Nothing about a menu bar's contents suggests it should be pressed against the screen edge; only the observation that the boundary makes the target effectively infinite explains why that position is worth defending against every other design pressure."
+        },
+        {
+          "type": "h",
+          "text": "Hick-Hyman, and its limits"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Hick-Hyman law: choice reaction time grows with log₂(N) for N equally probable alternatives. It describes the decision, not the visual search — applying it to scanning an unfamiliar menu is the common misapplication."
+        },
+        {
+          "type": "p",
+          "text": "The logarithmic form has the same character as Fitts: each doubling of the option count costs about the same increment. Going from two options to four costs roughly what going from eight to sixteen costs, which is why splitting a flat set of sixteen into four groups of four is a genuine structural improvement rather than a cosmetic one — it replaces one decision among many with two decisions among few."
+        },
+        {
+          "type": "p",
+          "text": "The limits are where the law gets abused. It assumes alternatives that are equally probable, already known, and evaluated as a set. It therefore says little about a menu an expert uses daily, where the item's position is retrieved from memory rather than deliberated; little about a searchable list, where the user does not consider the alternatives at all; and little about an unfamiliar interface, where the slow part is finding out what the options are rather than choosing among them. \"Fewer options because Hick's law\" is a claim that needs those conditions checked before it means anything."
+        },
+        {
+          "type": "h",
+          "text": "Steering, and touch"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Steering law (Accot & Zhai, CHI 1997): the time to traverse a constrained path is proportional to the path's length divided by its width. This governs cascading menus and sliders, where the cost is staying inside a corridor rather than acquiring a final target."
+        },
+        {
+          "type": "p",
+          "text": "Steering explains a frustration that Fitts alone cannot. A cascading submenu can have perfectly large final targets and still feel awkward, because the expensive part is the diagonal traversal along a narrow strip without slipping out of it. The familiar fixes — a tolerance triangle that keeps the submenu open while the pointer moves toward it, a brief delay before closing — are all attempts to widen the corridor rather than move the target."
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Touch: the \"fat finger\" problem is really two problems — occlusion, because the finger covers the target it is acquiring, and landing ambiguity, because the contact area is large and its intended centre is uncertain. FFitts (Bi, Li & Zhai, CHI 2013) extends Fitts to finger input by modelling that ambiguity explicitly."
+        },
+        {
+          "type": "p",
+          "text": "The distinction matters when you are diagnosing a touch interface. Occlusion is a visibility problem and is fixed by moving feedback out from under the finger — callouts above the point of contact, or confirmation elsewhere on the screen. Landing ambiguity is a precision problem and is fixed by size and spacing. Treating one with the other's remedy produces a control that is either large and still hard to confirm, or well-labelled and still hard to hit."
+        },
+        {
+          "type": "h",
+          "text": "Application today"
+        },
+        {
+          "type": "p",
+          "text": "Button placement in mobile AI apps is a Fitts problem with a reachability constraint layered on top: the fastest position for a thumb is not the fastest position for a cursor, and the thumb's reachable arc excludes much of a large screen entirely."
+        },
+        {
+          "type": "p",
+          "text": "Voice bypasses motor limits altogether, and pays for it at the other end. There is no aimed movement to model — but there is also no persistent representation to point at, so repair means re-uttering rather than selecting and correcting. That trade is the subject of the voice material later in the book, and it is the reason voice interfaces feel effortless until the first misrecognition."
+        },
+        {
+          "type": "p",
+          "text": "Target sizing for AR hand tracking remains an open Fitts-style modelling problem: the pointing is unsupported, the feedback is spatial rather than tactile, and neither the classical law nor its touch extension was derived under those conditions."
+        },
+        {
+          "type": "papers",
+          "items": [
+            "Fitts (1954, J. Experimental Psychology, DOI 10.1037/h0055392)",
+            "MacKenzie, Fitts' Law as a Research and Design Tool in HCI (1992, Human-Computer Interaction)",
+            "Accot & Zhai, Beyond Fitts' Law (CHI 1997)",
+            "Bi, Li & Zhai, FFitts law (CHI 2013)",
+            "Zhai, Kong & Ren, speed-accuracy tradeoffs (2004, IJHCS)",
+            "ISO 9241-411"
+          ]
+        },
+        {
+          "type": "exercise",
+          "text": "Measure D and W for your five most-used mobile app targets. Compute relative Fitts difficulty and propose a re-layout."
+        }
+      ],
+      "cards": [
+        {
+          "id": "ch04c1",
+          "front": "Fitts' law — the formula",
+          "back": "MT = a + b · log₂(2D / W). Movement time depends on the ratio of distance to target width, logarithmically."
+        },
+        {
+          "id": "ch04c2",
+          "front": "Why are screen corners the fastest targets?",
+          "back": "The cursor is clamped by the screen boundary, so the corner has effectively infinite width. Difficulty collapses."
+        },
+        {
+          "id": "ch04c3",
+          "front": "The standard misapplication of Hick-Hyman",
+          "back": "Using it to justify shorter unfamiliar menus. It models decision time among equiprobable known alternatives, not visual search."
+        },
+        {
+          "id": "ch04c4",
+          "front": "Steering law",
+          "back": "Time to traverse a constrained path is proportional to path length divided by path width — the model for nested menus and sliders."
+        },
+        {
+          "id": "ch04c5",
+          "front": "Throughput (ISO 9241-411)",
+          "back": "A single standardised measure combining speed and accuracy, letting different input devices be compared directly."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ch04q1",
+          "question": "A button is twice as far away but also twice as wide. What happens to predicted movement time?",
+          "options": [
+            "Roughly unchanged",
+            "Roughly doubles",
+            "Roughly halves",
+            "Becomes unpredictable"
+          ],
+          "answer": 0,
+          "why": "D/W is unchanged, so the index of difficulty is unchanged. Fitts' law depends on the ratio, not on either quantity alone."
+        },
+        {
+          "id": "ch04q2",
+          "question": "Why do cascading submenus feel awkward even when the targets are large?",
+          "options": [
+            "Hick-Hyman: too many options",
+            "The steering law: the pointer must traverse a long, narrow corridor without leaving it",
+            "Fitts' law: the targets are too far away",
+            "Change blindness"
+          ],
+          "answer": 1,
+          "why": "The cost is in the constrained traversal, not the final acquisition. Steering time scales with path length over path width, which is why diagonal-tolerant submenus were invented."
+        },
+        {
+          "id": "ch04q3",
+          "question": "Voice input removes Fitts-law cost. What does the book say it pays instead?",
+          "options": [
+            "Higher cognitive load during production",
+            "Error-correction cost, because there is no persistent representation to point at",
+            "Reduced throughput as measured by ISO 9241-411",
+            "Loss of accessibility"
+          ],
+          "answer": 1,
+          "why": "Voice's Achilles heel is repair: with nothing on screen to select, correcting a misrecognition means re-uttering rather than pointing."
+        }
+      ]
+    },
+    {
+      "id": "ch05",
+      "number": 5,
+      "title": "Human Error, Decision Making, and Cognition in the Wild",
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Classify errors as slips or mistakes",
+            "Explain the Swiss-cheese model of latent failure",
+            "Situate cognition beyond the individual head"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This is the chapter where HCI stops treating the user as an isolated information processor. It has two halves that are usually taught apart: a taxonomy of how actions go wrong, and a set of arguments that the unit of analysis was never the individual in the first place. Both halves matter for AI interfaces, and the second is the one designers most often lack the vocabulary for."
+        },
+        {
+          "type": "h",
+          "text": "Two kinds of error, two kinds of fix"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Slips versus mistakes (Norman 1981; Reason 1990). A slip is the right intention executed wrongly — capture errors, where a familiar sequence takes over from the intended one, and mode errors, where the action was correct for a state the system was not in. A mistake is the wrong intention, formed from a wrong model of the situation."
+        },
+        {
+          "type": "p",
+          "text": "The distinction earns its keep because the remedies are different and non-interchangeable. Slips are addressed by constraints that make the wrong action impossible, by making the current mode visible so the intention forms against the true state, and by confirmations scaled to how reversible the action is. Mistakes are addressed by a better system image and clearer feedback, because what failed was the user's understanding, not their execution."
+        },
+        {
+          "type": "p",
+          "text": "Apply the wrong remedy and you get the familiar failure of interfaces that confirm everything: a confirmation dialog placed in front of a mistake simply asks the user to confirm the wrong thing, which they will, because their model says it is right. Meanwhile the confirmations have trained dismissal, so the one guarding a genuine slip gets clicked through too."
+        },
+        {
+          "type": "p",
+          "text": "Capture errors deserve a note of their own. They occur when a well-learned sequence diverges from a less-practised one late in the action — you intend the unusual path and find yourself on the habitual one. That is not carelessness; it is the normal operation of automaticity, which is the same mechanism that makes expertise possible. Designing it away means keeping the two paths distinguishable early rather than blaming the divergence."
+        },
+        {
+          "type": "h",
+          "text": "Errors are organisational"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "The Swiss-cheese model of latent failure (Reason 1990): accidents are organisational rather than simply \"human error\". Latent weaknesses sit in several layers of a system, each with holes, and an incident occurs when the holes momentarily line up."
+        },
+        {
+          "type": "p",
+          "text": "The model's contribution is where it directs attention. An investigation that stops at the operator finds a person who made a wrong move and concludes that the person was the cause. The Swiss-cheese view asks instead why that move was available, why nothing downstream caught it, and why the conditions that made it likely had persisted — and those questions produce fixes that survive the departure of the individual involved."
+        },
+        {
+          "type": "p",
+          "text": "This is foundational for safety-critical interfaces, and it is now the right frame for evaluating AI-in-the-loop incidents. When an operator approves a wrong recommendation, the useful question is not why they approved it but which layers were already thin: the interface that made the recommendation hard to evaluate, the workload that made scrutiny unaffordable, the metric that rewarded throughput, the process that treated approval as a formality."
+        },
+        {
+          "type": "claim",
+          "level": "contested",
+          "text": "Dual-process theory (Kahneman 2011): fast, associative System 1 against slow, deliberative System 2. It is used in this book for choice architecture and for cognitive forcing against automation bias, but the two-systems framing is contested in psychology. Treat it as a useful engineering approximation, not a settled mechanism."
+        },
+        {
+          "type": "p",
+          "text": "The epistemic label is doing real work here. The framing is genuinely useful for design — it gives you a vocabulary for interventions that force deliberation where the fast path would otherwise decide — and it is also the sort of tidy dichotomy that becomes a folk theory in the hands of practitioners. Use it to generate designs; do not use it as evidence that a design must work."
+        },
+        {
+          "type": "h",
+          "text": "Cognition outside the head"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Distributed cognition (Hutchins, Cognition in the Wild, 1995; Hollan, Hutchins & Kirsh, TOCHI 2000): cognitive processes span people, artefacts and representations rather than sitting inside one skull. A cockpit remembers its speeds — the knowledge lives in the instruments, the settings and the crew's coordination, not in any single head."
+        },
+        {
+          "type": "p",
+          "text": "The analytical payoff is a change of unit. Instead of asking what the operator knows, you study how information flows through the whole system, which makes visible the work that individual-level accounts silently drop: the checklist that holds a step so nobody has to, the shared display that keeps two people aligned without conversation, the physical arrangement that makes an error obvious the moment it is made."
+        },
+        {
+          "type": "p",
+          "text": "That reframing changes what counts as a design improvement. Adding a memory aid is not a concession to weak operators; it is moving a piece of the cognitive work into the environment, which is what the system was already doing everywhere else."
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Situated action (Suchman, Plans and Situated Actions, 1987): plans are resources for action, not programs that execute. People improvise against a changing situation and use the plan as one input among several."
+        },
+        {
+          "type": "p",
+          "text": "Suchman's critique of an \"intelligent\" Xerox copier help system is the founding text of critical human-AI interaction, forty years early. The system inferred which plan the user was following and offered assistance accordingly; when the user's actual behaviour diverged — as improvised behaviour does — the system's inference was wrong and its help became actively misleading, with no way for either party to discover the mismatch."
+        },
+        {
+          "type": "p",
+          "text": "That is the same failure agents make now, which is why the text keeps returning. A system that acts on an inferred intention has committed to a model of what you are doing, and the more confidently it acts, the more expensive the divergence becomes."
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Activity theory (Leont'ev; in HCI, Bødker 1989; Kaptelinin & Nardi, Acting with Technology, 2006): analyse at the level of motivated activity, then actions, then operations. Tools do not merely serve an activity — they mediate and transform it."
+        },
+        {
+          "type": "p",
+          "text": "The three levels are a useful corrective to task analysis that starts and stops at the level of clicks. An operation is automatic and tool-shaped; an action is conscious and goal-directed; an activity is motivated and answers why any of it is happening. Optimising operations while misunderstanding the activity produces interfaces that are efficient at the wrong thing."
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Ecological psychology (Gibson, The Ecological Approach to Visual Perception, 1979): perception is of affordances — action possibilities — directly, rather than by inference from sensory data. This is the source of the next chapter's most abused concept."
+        },
+        {
+          "type": "callout",
+          "text": "Every \"the user clicked Approve on the wrong AI suggestion\" incident is a mode error crossed with automation bias, sitting inside an organisation that had already made scrutiny unaffordable. Suchman and Hutchins supply the analytical vocabulary that a purely cognitivist account lacks."
+        },
+        {
+          "type": "papers",
+          "items": [
+            "Norman, Categorization of Action Slips (1981, Psychological Review)",
+            "Reason, Human Error (1990)",
+            "Kahneman, Thinking, Fast and Slow (2011)",
+            "Hutchins, Cognition in the Wild (1995)",
+            "Hollan, Hutchins & Kirsh (2000, TOCHI, DOI 10.1145/353485.353487)",
+            "Suchman, Plans and Situated Actions (1987; 2nd ed. 2007)",
+            "Kaptelinin & Nardi, Acting with Technology (2006)",
+            "Gibson, The Ecological Approach to Visual Perception (1979)"
+          ]
+        },
+        {
+          "type": "exercise",
+          "text": "Find one mode error in a product you use — reply-all, sending to the wrong chat. Diagnose it with Norman's action cycle, propose a constraint-based and a feedback-based fix, and state the cost of each."
+        }
+      ],
+      "cards": [
+        {
+          "id": "ch05c1",
+          "front": "Slip versus mistake",
+          "back": "A slip is the right intention executed wrongly. A mistake is the wrong intention, formed from a wrong model. Different causes, different fixes."
+        },
+        {
+          "id": "ch05c2",
+          "front": "How do the fixes differ for slips and mistakes?",
+          "back": "Slips: constraints, mode visibility, confirmations scaled to reversibility. Mistakes: a better system image and clearer feedback."
+        },
+        {
+          "id": "ch05c3",
+          "front": "Swiss-cheese model",
+          "back": "Accidents happen when latent organisational failures across multiple layers momentarily line up. Blaming the operator misses the design."
+        },
+        {
+          "id": "ch05c4",
+          "front": "Distributed cognition — the analytical move",
+          "back": "Study the flow of information across people, artefacts and representations rather than what is inside one head. The cockpit remembers its speeds."
+        },
+        {
+          "id": "ch05c5",
+          "front": "Situated action, in one line",
+          "back": "Plans are resources for action, not programs that execute. Behaviour is improvised against a changing situation."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ch05q1",
+          "question": "A user sends a message to the wrong chat because the app switched context. Classify and fix.",
+          "options": [
+            "A mistake — fix with better documentation",
+            "A slip, specifically a mode error — fix with mode visibility and a constraint",
+            "A latent failure — fix with organisational policy",
+            "Algorithm aversion — fix with explanations"
+          ],
+          "answer": 1,
+          "why": "The intention was right; the execution landed in the wrong mode. Mode errors are slips, and the countermeasures are visibility of the current mode plus constraints on destructive actions."
+        },
+        {
+          "id": "ch05q2",
+          "question": "Why does the book call Suchman's 1987 copier critique the founding text of critical human-AI interaction?",
+          "options": [
+            "It proved expert systems could not work",
+            "It showed a system reasoning from plans cannot track improvised, situated human action",
+            "It introduced the think-aloud protocol",
+            "It defined levels of automation"
+          ],
+          "answer": 1,
+          "why": "Her argument is that plans are resources rather than programs, so an intelligent help system inferring a plan will systematically misread what the user is actually doing — the same failure agents make now."
+        },
+        {
+          "id": "ch05q3",
+          "question": "How does the book position dual-process theory?",
+          "options": [
+            "As established mechanism, safe to build on",
+            "As a useful engineering approximation whose underlying mechanism is contested",
+            "As fully refuted",
+            "As applicable only to visual perception"
+          ],
+          "answer": 1,
+          "why": "It is labelled explicitly: useful for choice architecture and cognitive forcing, but the two-systems account is not settled psychology."
+        }
+      ]
+    },
+    {
+      "id": "ch06",
+      "number": 6,
+      "title": "Frameworks: The Action Cycle and the Gulfs",
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Use Norman's seven-stage action cycle as a diagnostic instrument",
+            "Locate any interaction failure in the Gulf of Execution or the Gulf of Evaluation"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This is the shortest chapter in the book and the one you will use most. It supplies a single diagnostic that applies to every interface in it: when something goes wrong, which of two gaps opened? Almost everything that follows is a device for narrowing one or the other, so learning the frame first makes the rest of the book legible as a set of answers rather than a list of topics."
+        },
+        {
+          "type": "h",
+          "text": "The action cycle"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Norman's action cycle runs goal → intention → action specification → execution → perception → interpretation → evaluation. The first four stages carry you from wanting something to doing it; the last three carry you from what happened back to whether you got what you wanted."
+        },
+        {
+          "type": "p",
+          "text": "Reading the stages slowly is worth the minute it takes. A goal is a state of the world you want. An intention is a commitment to a particular way of getting there. An action specification is the concrete sequence of operations that intention implies given this system. Execution is performing them. Then perception picks up what the system did, interpretation makes sense of it, and evaluation compares that sense against the original goal."
+        },
+        {
+          "type": "p",
+          "text": "Each of those seven transitions can fail independently, which is the point of enumerating them. A user can have a clear goal and no idea what intention the system supports. They can have the right intention and be unable to work out the operations. They can execute correctly and perceive nothing. They can perceive a change and misread what it means."
+        },
+        {
+          "type": "p",
+          "text": "Two gaps sit across that cycle. The Gulf of Execution is the distance between what the user intends and the actions the system makes available — how hard it is to work out what to do. The Gulf of Evaluation is the distance between the system's actual state and the user's ability to perceive and interpret it — how hard it is to work out what happened."
+        },
+        {
+          "type": "plate",
+          "figure": "actionCycle",
+          "number": "6.1",
+          "caption": "Norman's seven stages. Execution runs down the left from the goal to the world; evaluation runs back up the right. The two gulfs bracket the sides they span, which is why they fail for different reasons and take different remedies."
+        },
+        {
+          "type": "h",
+          "text": "Why this is the book's master tool"
+        },
+        {
+          "type": "p",
+          "text": "Almost every concept that follows is a device for narrowing one gulf or the other. Affordances, signifiers and mappings bridge execution: they tell you what can be done and how to do it. Feedback, visibility and system status bridge evaluation: they tell you what the system did and what state it is now in. Constraints work on execution by removing wrong actions; error messages work on evaluation by explaining what happened."
+        },
+        {
+          "type": "p",
+          "text": "When a design fails, the first useful question is therefore which of the two gaps opened, because the two have different remedies and confusing them wastes the fix. Adding clearer feedback to an execution failure gives the user better information about an action they still cannot formulate. Adding a more discoverable control to an evaluation failure gives them an easier way to do something whose result they still cannot read."
+        },
+        {
+          "type": "p",
+          "text": "The frame also survives being applied to things that are not screens. A door with a flat plate on the push side has a narrow execution gulf; a door with a handle on the push side has a wide one, because the signifier specifies the wrong action. A kettle that whistles has a narrow evaluation gulf. None of that requires software, which is a sign the model is describing something general about action rather than about interfaces."
+        },
+        {
+          "type": "h",
+          "text": "How LLM interfaces invert the classic profile"
+        },
+        {
+          "type": "callout",
+          "text": "Natural language makes the Gulf of Execution feel narrow — you can type anything — while actually widening it, because you do not know what to say to get what you want. Prompt engineering is a gulf-of-execution phenomenon. Meanwhile the Gulf of Evaluation explodes: fluent output conceals wrongness, so the user has no perceptual cue distinguishing a correct answer from a confident wrong one."
+        },
+        {
+          "type": "p",
+          "text": "That inversion is worth stating carefully, because the first half is counterintuitive. A command line has an obviously narrow set of accepted inputs, and the user knows they must learn it. A blank text box accepts every input, which feels like the opposite of a constraint — and yet the user still has to produce the particular phrasing that produces the result they want, with no signifier telling them what that is. Unlimited expressiveness is not the same as an easy path from intention to effective action."
+        },
+        {
+          "type": "p",
+          "text": "The second half is worse. In a conventional interface, an incorrect result usually looks incorrect: the wrong file opens, the layout breaks, the number is obviously off. Fluency removes that. A generated paragraph that is entirely wrong looks exactly like one that is entirely right, which means the user's perception and interpretation stages have nothing to work with. This is why so much of the later material is about manufacturing evaluability — citations, diffs, contrastive answers, confidence expressed as behaviour — rather than about improving output."
+        },
+        {
+          "type": "p",
+          "text": "This framing was articulated for generative AI around 2023–24 by several groups: Subramonyam and colleagues on leaky abstractions in prompt-based design, and Terry and colleagues on interactive alignment. It organises Parts IX and X of this book, and it is the reason those parts are not simply a list of AI features."
+        },
+        {
+          "type": "papers",
+          "items": [
+            "Norman, The Design of Everyday Things (1988; revised 2013)",
+            "Subramonyam et al., on leaky abstractions in prompt-based design (CHI 2024)",
+            "Terry et al., interactive alignment (2023)"
+          ]
+        },
+        {
+          "type": "exercise",
+          "text": "Pick a failed LLM interaction from your own history. Locate the failure: execution gulf (couldn't express intent), evaluation gulf (couldn't tell the output was wrong), or model mismatch (wrong theory of the system). Redesign one interface element to narrow that gulf."
+        }
+      ],
+      "cards": [
+        {
+          "id": "ch06c1",
+          "front": "Gulf of Execution",
+          "back": "The gap between what the user intends and the actions the system makes available. Bridged by affordances, signifiers and mappings."
+        },
+        {
+          "id": "ch06c2",
+          "front": "Gulf of Evaluation",
+          "back": "The gap between the system's actual state and the user's ability to perceive and interpret it. Bridged by feedback, visibility and system status."
+        },
+        {
+          "id": "ch06c3",
+          "front": "The seven stages of action",
+          "back": "Goal, intention, action specification, execution, perception, interpretation, evaluation."
+        },
+        {
+          "id": "ch06c4",
+          "front": "How do LLM interfaces invert the classic gulf profile?",
+          "back": "Natural language makes execution feel narrow while widening it (you don't know what to say), and fluency makes evaluation enormous (you can't tell it's wrong)."
+        },
+        {
+          "id": "ch06c5",
+          "front": "Prompt engineering, framed theoretically",
+          "back": "A gulf-of-execution phenomenon: user labour spent bridging the gap between intent and the actions the system will actually take."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ch06q1",
+          "question": "A user reads a confidently written, wholly incorrect summary and ships it. Which gulf failed?",
+          "options": [
+            "Execution",
+            "Evaluation",
+            "Neither — this is a model mismatch",
+            "Both equally"
+          ],
+          "answer": 1,
+          "why": "The user got the system to do something; what they could not do was perceive and interpret that the output was wrong. Fluency is an evaluation-gulf hazard."
+        },
+        {
+          "id": "ch06q2",
+          "question": "Which pair of devices bridges the Gulf of Execution?",
+          "options": [
+            "Feedback and system status",
+            "Signifiers and mapping",
+            "Citations and confidence displays",
+            "Undo and rollback"
+          ],
+          "answer": 1,
+          "why": "Signifiers communicate what actions are possible and mapping makes control-to-effect relations obvious. Feedback, status, citations and undo all serve evaluation instead."
+        },
+        {
+          "id": "ch06q3",
+          "question": "Why does the book claim a blank chat box widens the Gulf of Execution despite accepting any input?",
+          "options": [
+            "Because typing is slow",
+            "Because unlimited expressiveness with no indication of what works leaves the user unable to specify effective actions",
+            "Because natural language is ambiguous to parse",
+            "Because it lacks keyboard shortcuts"
+          ],
+          "answer": 1,
+          "why": "The gulf is about the distance between intent and effective action specification. Accepting anything is not the same as telling the user what will work."
+        }
+      ]
+    }
+  ]
+}

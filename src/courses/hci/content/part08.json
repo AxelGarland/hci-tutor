@@ -1,0 +1,306 @@
+{
+  "id": "p08",
+  "title": "VIII — Human–AI Interaction",
+  "color": "yellow",
+  "lessons": [
+    {
+      "id": "ch27",
+      "number": 27,
+      "title": "History of Intelligent Interfaces",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Trace the lineage from symbiosis to tool-using agents",
+          "Name the recurring failure mode across sixty years"
+        ]},
+        { "type": "h", "text": "The lineage" },
+        { "type": "list", "items": [
+          "Licklider's symbiosis (1960)",
+          "ELIZA (Weizenbaum 1966) — and Weizenbaum's own alarm at users' attachment, in Computer Power and Human Reason (1976): the first anthropomorphism warning",
+          "Expert systems and their explanation facilities — MYCIN's \"why?\" is XAI's ancestor",
+          "Programming by demonstration (Cypher, Watch What I Do, 1993)",
+          "Adaptive interfaces and the Clippy postmortem — intrusiveness plus poor modelling of interruption cost, under-implementing the Lumière research behind it",
+          "Recommender systems (GroupLens, Resnick et al., CSCW 1994)",
+          "Siri and Alexa (2011–14), deep-learning perception, LLM chat (2022), tool-using agents (2024–26)"
+        ]},
+        { "type": "claim", "level": "established", "text": "The recurring failure mode across sixty years: systems that take initiative without modelling the cost of being wrong about user intent." },
+        { "type": "callout", "text": "Weizenbaum's alarm was not that ELIZA was clever. By his own account in Computer Power and Human Reason, his secretary — who had watched him build it — asked him to leave the room so she could talk to it privately. The attachment formed anyway, to a program written to show there was nothing there." },
+        { "type": "papers", "items": [
+          "Licklider (1960); Weizenbaum (1966, CACM)",
+          "Maes, Agents that Reduce Work and Information Overload (CACM 1994)",
+          "Shneiderman & Maes (1997, Interactions)"
+        ]}
+      ],
+      "cards": [
+        { "id": "ch27c1", "front": "The sixty-year recurring failure mode", "back": "Systems that take initiative without modelling the cost of being wrong about the user's intent." },
+        { "id": "ch27c2", "front": "Why did Clippy fail?", "back": "Intrusiveness plus poor modelling of interruption cost — it under-implemented the Lumière research on when assistance is actually worth offering." },
+        { "id": "ch27c3", "front": "What is XAI's ancestor?", "back": "The explanation facilities of expert systems — MYCIN's ability to answer \"why are you asking me this?\"" },
+        { "id": "ch27c4", "front": "Weizenbaum's warning", "back": "That people formed real attachments to ELIZA despite knowing what it was — the first documented anthropomorphism alarm, from the system's own author." }
+      ],
+      "quiz": [
+        { "id": "ch27q1",
+          "question": "What single flaw does the book identify across Clippy, early adaptive interfaces and current agents?",
+          "options": [
+            "Insufficient model accuracy",
+            "Taking initiative without modelling the cost of being wrong about intent",
+            "Poor visual design",
+            "Lack of personalisation"
+          ],
+          "answer": 1,
+          "why": "Accuracy is not the issue; the expected cost of an unwanted intervention is. This is exactly what Horvitz's mixed-initiative principles formalise." },
+        { "id": "ch27q2",
+          "question": "Weizenbaum's concern about ELIZA was primarily that:",
+          "options": [
+            "The program could pass for human indefinitely",
+            "People attached to it even knowing it was trivial",
+            "Its pattern matching was too crude to be useful",
+            "It would replace therapists"
+          ],
+          "answer": 1,
+          "why": "The attachment persisted despite full knowledge of the mechanism — which is why the Media Equation later formalised social response as automatic." }
+      ]
+    },
+    {
+      "id": "ch28",
+      "number": 28,
+      "title": "Mixed-Initiative Interaction and Human Oversight",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Apply Horvitz's expected-utility test to \"ask or act?\"",
+          "Place a product on the levels-of-automation scale",
+          "Recognise oversight theatre"
+        ]},
+        { "type": "claim", "level": "established", "text": "Horvitz's principles of mixed-initiative UI (CHI 1999): act when the expected utility of acting exceeds that of not acting, given uncertainty about the user's goals and the cost of interruption; provide efficient invocation and dismissal; maintain a dialogue over uncertain intentions. This is a decision-theoretic specification for every \"should the agent just do it or ask?\" question — still the best one available." },
+        { "type": "claim", "level": "consensus", "text": "Levels of automation (Sheridan & Verplank 1978; Parasuraman, Sheridan & Wickens 2000): a ten-level scale from manual to full autonomy, applied separately to each information-processing stage — acquisition, analysis, decision, action. Modern agent products are levels-of-automation sliders whether their designers know it or not." },
+        { "type": "claim", "level": "consensus", "text": "Shneiderman's HCAI framework (2020, 2022): high human control and high automation are compatible axes rather than a single tradeoff. Aim for the reliable, safe and trustworthy quadrant instead of sliding along a line." },
+        { "type": "claim", "level": "emerging", "text": "Contemporary oversight design: approval gates scaled to reversibility, plan-then-execute disclosure, sandboxing and dry runs, audit trails. The empirical thread at CHI and CSCW is unflattering — humans rubber-stamp agent plans under time pressure." },
+        { "type": "callout", "text": "Approval UI without genuine evaluability is oversight theatre. If the reviewer cannot actually tell whether the plan is right, the approval step transfers liability rather than adding safety." },
+        { "type": "papers", "items": [
+          "Horvitz, Principles of Mixed-Initiative User Interfaces (CHI 1999, DOI 10.1145/302979.303030)",
+          "Parasuraman, Sheridan & Wickens (2000, IEEE SMC)",
+          "Shneiderman, Human-Centered AI (2022)"
+        ]},
+        { "type": "exercise", "text": "Specify, in Horvitz's expected-utility terms, the interruption policy for a coding agent that is 80% confident it should refactor an adjacent file the user did not mention." }
+      ],
+      "cards": [
+        { "id": "ch28c1", "front": "Horvitz's core decision rule", "back": "Act when the expected utility of acting exceeds that of not acting, accounting for uncertainty about the user's goal and the cost of interrupting them." },
+        { "id": "ch28c2", "front": "Levels of automation — the subtlety", "back": "Automation level applies per stage — information acquisition, analysis, decision selection, action implementation — not to the system as a whole." },
+        { "id": "ch28c3", "front": "Shneiderman's HCAI claim", "back": "Human control and automation are two independent axes, not endpoints of one slider. High-high is achievable and is the target quadrant." },
+        { "id": "ch28c4", "front": "Oversight theatre", "back": "An approval step the reviewer cannot meaningfully evaluate. It looks like control and functions as liability transfer." },
+        { "id": "ch28c5", "front": "What should approval gates scale with?", "back": "Reversibility and stakes. Cheap-to-undo actions should proceed; costly or irreversible ones should stop and ask." }
+      ],
+      "quiz": [
+        { "id": "ch28q1",
+          "question": "Under Horvitz's principles, when should a confident agent still ask?",
+          "options": [
+            "Whenever confidence is below 95%",
+            "When the cost of being wrong is high relative to the cost of interrupting",
+            "Whenever the action modifies files",
+            "Never — confidence is the only relevant variable"
+          ],
+          "answer": 1,
+          "why": "The rule is expected utility, not a confidence threshold. High confidence in a catastrophic, irreversible action can still fail the test." },
+        { "id": "ch28q2",
+          "question": "A product shows a 12-step agent plan and an Approve button. Users approve in two seconds. What is the diagnosis?",
+          "options": [
+            "Appropriate reliance",
+            "Oversight theatre — approval without evaluability",
+            "Automation surprise",
+            "Algorithm aversion"
+          ],
+          "answer": 1,
+          "why": "The gate exists but the reviewer cannot actually assess the plan in the time and form given. It performs oversight without providing it." },
+        { "id": "ch28q3",
+          "question": "What does Shneiderman's HCAI framework reject?",
+          "options": [
+            "That automation can ever be safe",
+            "That human control and automation trade off against each other along one dimension",
+            "That levels of automation exist",
+            "That explanations help"
+          ],
+          "answer": 1,
+          "why": "He reframes them as two axes, which makes the high-control-and-high-automation quadrant a design target rather than a contradiction." }
+      ]
+    },
+    {
+      "id": "ch29",
+      "number": 29,
+      "title": "Trust, Reliance, Automation Bias, and Explanation",
+      "demos": ["reliance"],
+      "reading": [
+        { "type": "objectives", "items": [
+          "Define calibrated trust and appropriate reliance",
+          "Explain why explanations can make things worse",
+          "Choose the right metric for a human-AI system"
+        ]},
+        { "type": "claim", "level": "established", "text": "Trust in automation (Lee & See 2004) is the field's anchor paper. The goal is not maximal trust but calibrated trust, where reliance tracks actual reliability. The three failure modes are misuse (overreliance), disuse (underreliance) and abuse (designers exploiting trust)." },
+        { "type": "claim", "level": "established", "text": "Automation bias and complacency (Parasuraman & Manzey 2010): people favour automated cues and monitor less as reliability rises. It is worst when reliability is high but imperfect — exactly the LLM regime." },
+        { "type": "claim", "level": "consensus", "text": "Algorithm aversion (Dietvorst et al. 2015): people abandon algorithms after seeing them err, even when the algorithm outperforms humans — mitigated by giving users slight control. The opposite pole is algorithm appreciation (Logg et al. 2019). Net: reliance is context- and control-dependent, not a personality trait." },
+        { "type": "claim", "level": "emerging", "text": "Overreliance countermeasures: cognitive forcing functions (Buçinca, Malaya & Gajos, CSCW 2021) reduce overreliance — and users dislike them. That is an incentive-design problem, not a solved one." },
+        { "type": "h", "text": "Explanation, and its sobering results" },
+        { "type": "claim", "level": "consensus", "text": "XAI meets HCI: technical methods (LIME, SHAP, the attention-is-not-explanation debates) versus human outcomes. Explanations often increase unwarranted trust — a placebo effect of explanation (Eiband et al. 2019). Bansal et al. (CHI 2021) found explanations increased acceptance of wrong recommendations." },
+        { "type": "p", "text": "Miller (2019): explanations are contrastive, selective and social — people want to know why this rather than that, not a full causal accounting. Liao, Gruen & Miller's XAI Question Bank (CHI 2020) turns explanation into a user-needs design problem." },
+        { "type": "claim", "level": "consensus", "text": "Human-AI team performance: complementary performance — team better than the best member alone — is rare, and requires an accurate mental model of when the AI errs, not knowledge of its global accuracy." },
+        { "type": "claim", "level": "emerging", "text": "Uncertainty communication: verbalised confidence in LLMs is miscalibrated; quantile dotplots and frequency framings outperform percentages. Selective friction — friction only when stakes times uncertainty is high — is the active design direction." },
+        { "type": "h", "text": "Design guidelines, each tied to evidence" },
+        { "type": "list", "items": [
+          "Set expectations before first use (Kocielnik et al. 2019)",
+          "Show when and why it errs, not merely that it can (Bansal et al. 2021)",
+          "Scale friction to stakes and reversibility (Buçinca; Horvitz)",
+          "Prefer contrastive, on-demand explanations (Miller; Liao)",
+          "Measure reliance appropriateness — accept-when-right minus accept-when-wrong — never raw acceptance rate"
+        ]},
+        { "type": "papers", "items": [
+          "Lee & See, Trust in Automation (2004, Human Factors)",
+          "Parasuraman & Manzey (2010, Human Factors)",
+          "Buçinca, Malaya & Gajos, To Trust or to Think (CSCW 2021)",
+          "Bansal et al., Does the Whole Exceed its Parts? (CHI 2021)",
+          "Miller, Explanation in AI (2019, Artificial Intelligence)"
+        ]},
+        { "type": "exercise", "text": "Design the reliance dashboard for an AI radiology assistant. What does the hospital see about calibration that the radiologist does not, and vice versa?" }
+      ],
+      "cards": [
+        { "id": "ch29c1", "front": "Calibrated trust", "back": "Trust that tracks actual reliability, so reliance rises where the system is reliable and falls where it is not. The goal is calibration, not maximum trust." },
+        { "id": "ch29c2", "front": "Misuse, disuse, abuse", "back": "Misuse is overreliance; disuse is underreliance on a system that would help; abuse is designers exploiting user trust." },
+        { "id": "ch29c3", "front": "When is automation bias worst?", "back": "When reliability is high but imperfect. High reliability suppresses monitoring precisely where the remaining errors still matter." },
+        { "id": "ch29c4", "front": "The placebo effect of explanation", "back": "Explanations increase trust and acceptance whether or not they are informative — including acceptance of wrong recommendations." },
+        { "id": "ch29c5", "front": "What does complementary performance require?", "back": "An accurate mental model of when the AI errs. Knowing its overall accuracy is not enough to beat the better member alone." },
+        { "id": "ch29c6", "front": "The right reliance metric", "back": "Accept-when-right minus accept-when-wrong. Raw acceptance rate rewards a system users trust indiscriminately." },
+        { "id": "ch29c7", "front": "Cognitive forcing function", "back": "An interface intervention that compels deliberate engagement before accepting AI output. It reduces overreliance, and users dislike it." },
+        { "id": "ch29c8", "front": "Miller's three properties of explanation", "back": "Contrastive (why this rather than that), selective (a few relevant causes, not all), and social (tailored to the recipient)." }
+      ],
+      "quiz": [
+        { "id": "ch29q1",
+          "question": "A product reports that 82% of AI suggestions are accepted. Why is this the wrong headline metric?",
+          "options": [
+            "It should be measured per session",
+            "It cannot distinguish accepting correct suggestions from accepting wrong ones",
+            "82% is below the industry benchmark",
+            "Acceptance is confounded with latency"
+          ],
+          "answer": 1,
+          "why": "Appropriate reliance is accept-when-right minus accept-when-wrong. A system users accept indiscriminately scores highly on raw acceptance and is dangerous." },
+        { "id": "ch29q2",
+          "question": "Adding explanations to an AI recommender raised user agreement with wrong recommendations. What is this?",
+          "options": [
+            "Algorithm aversion",
+            "The placebo effect of explanation — explanation increases trust regardless of informativeness",
+            "Automation surprise",
+            "A construct validity threat"
+          ],
+          "answer": 1,
+          "why": "The mere presence of an explanation signals competence. Bansal et al. and Eiband et al. both documented explanations increasing acceptance without improving discrimination." },
+        { "id": "ch29q3",
+          "question": "Which condition produces the worst automation bias?",
+          "options": [
+            "Low reliability, clearly communicated",
+            "High but imperfect reliability",
+            "Perfect reliability",
+            "Highly variable reliability"
+          ],
+          "answer": 1,
+          "why": "Low reliability keeps people checking and perfection makes checking pointless. High-but-imperfect suppresses monitoring while leaving errors that matter — the LLM regime." },
+        { "id": "ch29q4",
+          "question": "Cognitive forcing functions reduce overreliance but face what obstacle?",
+          "options": [
+            "They require model access",
+            "Users dislike them, creating an incentive conflict with engagement metrics",
+            "They only work for experts",
+            "They violate WCAG"
+          ],
+          "answer": 1,
+          "why": "Buçinca et al. found the intervention works and is unpopular. That makes deployment an incentive-design problem rather than a solved interface problem." }
+      ]
+    },
+    {
+      "id": "ch30",
+      "number": 30,
+      "title": "Personalization, Adaptive Interfaces, Recommenders",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Distinguish adaptive from adaptable interfaces",
+          "State the cost adaptivity imposes",
+          "Apply contextual integrity to LLM memory"
+        ]},
+        { "type": "claim", "level": "established", "text": "Adaptive (system-driven) versus adaptable (user-driven) change. The classic cost is that adaptive interfaces break spatial memory and predictability — Findlater & McGrenere's split-menu studies showed adaptivity helps only when accuracy is high and layout stability is preserved." },
+        { "type": "claim", "level": "established", "text": "Recommender systems as HCI: GroupLens (Resnick et al. 1994); explanations for recommendations (Herlocker et al. 2000); serendipity and diversity as goals competing with accuracy." },
+        { "type": "claim", "level": "contested", "text": "Filter bubbles were theorised by Pariser (2011) but have proved empirically weaker than feared in several large studies, and results are platform-dependent. Engagement-optimisation critiques rest on firmer ground." },
+        { "type": "claim", "level": "emerging", "text": "LLM-era personalisation: persistent memory raises consent and legibility questions — what does it remember, can I see and edit it, does it leak across contexts? Memory UIs offering view, edit and delete are becoming a standard pattern, and contextual integrity (Nissenbaum) is the right privacy lens." },
+        { "type": "callout", "text": "Contextual integrity says privacy is not secrecy but appropriate flow: information shared in one context appearing in another is a violation even if nothing was \"leaked\" in the security sense." }
+      ],
+      "cards": [
+        { "id": "ch30c1", "front": "Adaptive versus adaptable", "back": "Adaptive: the system changes itself. Adaptable: the user changes it. Adaptable preserves predictability; adaptive risks breaking spatial memory." },
+        { "id": "ch30c2", "front": "When does adaptivity actually pay?", "back": "Only when prediction accuracy is high and layout stability is preserved — otherwise the cost to spatial memory outweighs the saved effort." },
+        { "id": "ch30c3", "front": "Contextual integrity", "back": "Nissenbaum's framing: privacy is appropriate information flow relative to context norms, not secrecy. Cross-context leakage is a violation even without a breach." },
+        { "id": "ch30c4", "front": "The memory transparency pattern", "back": "Let users view, edit and delete what the system has remembered about them. Legibility and control are the design response to persistent memory." }
+      ],
+      "quiz": [
+        { "id": "ch30q1",
+          "question": "A menu reorders itself to put your frequent items first, and users get slower. Why?",
+          "options": [
+            "Hick-Hyman: more options",
+            "Reordering destroys spatial memory, which was doing more work than the shortened travel saved",
+            "Fitts: targets got smaller",
+            "Change blindness"
+          ],
+          "answer": 1,
+          "why": "Users locate familiar items by remembered position. Adaptive reordering invalidates that memory on every visit, which is why split menus keep the stable section intact." },
+        { "id": "ch30q2",
+          "question": "An assistant mentions a user's medical detail from a months-old chat during a work task. Which framework names the violation?",
+          "options": [
+            "Data minimisation",
+            "Contextual integrity — appropriate flow relative to context norms",
+            "Algorithm aversion",
+            "The socio-technical gap"
+          ],
+          "answer": 1,
+          "why": "Nothing was disclosed to an outsider, so a secrecy model sees no problem. Contextual integrity captures why moving information across contexts is itself the harm." }
+      ]
+    },
+    {
+      "id": "ch31",
+      "number": 31,
+      "title": "AI-Assisted Creativity and Decision Making",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Apply creativity-support-tool criteria",
+          "Understand ownership and homogenisation effects",
+          "Explain why human + AI can underperform AI alone"
+        ]},
+        { "type": "claim", "level": "established", "text": "Creativity support tools: Shneiderman's criteria (2007) and Resnick et al.'s principles (2005) — low floor, high ceiling, wide walls." },
+        { "type": "claim", "level": "consensus", "text": "Co-creation empirics: the CoAuthor dataset (Lee, Liang & Yang, CHI 2022) captured writer-LLM interaction traces; Gero et al.'s Sparks explored science writing; image-generation studies find prompt iteration is itself the creative act." },
+        { "type": "claim", "level": "emerging", "text": "Ownership and homogenisation: perceived ownership drops as AI contribution grows. Doshi & Hauser (Science Advances, 2024) found individual creativity rises while collective diversity falls — many users drawing on one model converge." },
+        { "type": "callout", "text": "That finding has direct consequences for a working designer: the tool that makes your individual output better may be making the field's output more alike." },
+        { "type": "claim", "level": "emerging", "text": "High-stakes AI-assisted decisions: Cai et al. (CSCW 2019) on pathologists' onboarding needs for an imperfect classifier; Green & Chen (CSCW 2019) on risk assessments, where human plus AI performed worse than AI alone because reliance was miscalibrated. The policy implication is to evaluate the sociotechnical system, not the model." },
+        { "type": "exercise", "text": "Run the same illustration brief three times: unaided, with image-model assistance, and with an LLM acting as art director only. Journal ownership feeling, diversity of outcomes and time; compare with a peer." }
+      ],
+      "cards": [
+        { "id": "ch31c1", "front": "Low floor, high ceiling, wide walls", "back": "Easy to start, capable of sophisticated work, and supportive of many different kinds of outcome." },
+        { "id": "ch31c2", "front": "The homogenisation finding", "back": "Individual creative output improves with AI assistance while collective diversity declines, because many creators draw from the same model." },
+        { "id": "ch31c3", "front": "Why can human + AI be worse than AI alone?", "back": "Because miscalibrated reliance lets the human override correct outputs and accept incorrect ones — documented by Green & Chen in risk assessment." },
+        { "id": "ch31c4", "front": "What happens to perceived ownership as AI contribution rises?", "back": "It drops — which matters for authorship, motivation and whether people are willing to stand behind the work." }
+      ],
+      "quiz": [
+        { "id": "ch31q1",
+          "question": "What is the policy implication of \"human + AI performed worse than AI alone\"?",
+          "options": [
+            "Remove the human from the loop",
+            "Evaluate the sociotechnical system rather than the model, because adding a human is not automatically a safeguard",
+            "Improve model accuracy first",
+            "Add more explanations"
+          ],
+          "answer": 1,
+          "why": "The finding refutes the assumption that human oversight can only help. Whether it helps is an empirical property of the combined system." },
+        { "id": "ch31q2",
+          "question": "Doshi & Hauser found which pattern in AI-assisted creative work?",
+          "options": [
+            "Both individual and collective creativity rose",
+            "Individual creativity rose while collective diversity fell",
+            "Both fell",
+            "No measurable effect"
+          ],
+          "answer": 1,
+          "why": "Each writer produced better work, and the works resembled each other more — a gain at the individual level that is a loss at the population level." }
+      ]
+    }
+  ]
+}

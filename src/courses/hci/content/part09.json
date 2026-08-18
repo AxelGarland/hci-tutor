@@ -1,0 +1,266 @@
+{
+  "id": "p09",
+  "title": "IX — Human–LLM Interaction",
+  "color": "teal",
+  "lessons": [
+    {
+      "id": "ch32",
+      "number": 32,
+      "title": "Conversational UX for LLMs",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Explain how LLMs invert the pre-LLM conversation design problem",
+          "Design turn-taking, interruption and repair",
+          "Argue why chat is a local optimum"
+        ]},
+        { "type": "p", "text": "Pre-LLM conversation design assumed intent-slot architectures with tiny capability envelopes. LLMs invert the problem: the envelope is vast but unmarked." },
+        { "type": "claim", "level": "consensus", "text": "Grice in practice: LLM verbosity violates the maxim of quantity and sycophancy violates the maxim of quality. Both are now measurable UX defects rather than matters of taste." },
+        { "type": "claim", "level": "consensus", "text": "Turn design: streaming functions as feedback against the classic latency thresholds; interruptibility matters; and repair deserves first-class support. Users repair by re-prompting, but editing the history is the better mechanism — regeneration versus revision are different operations." },
+        { "type": "claim", "level": "emerging", "text": "Beyond linear chat: the 2023–25 wave of non-linear LLM interfaces — Sensecape (Suh et al., UIST 2023), Graphologue (Jiang et al., UIST 2023) — treats conversation as a canvas or graph. Structured reviews across 87 studies show a field moving from chat toward mixed direct-manipulation and delegation hybrids." },
+        { "type": "callout", "text": "Chat is a local optimum, not an endpoint. It was the fastest way to expose a general capability, not the best way to work with one." }
+      ],
+      "cards": [
+        { "id": "ch32c1", "front": "How do LLMs invert the pre-LLM conversation problem?", "back": "Intent-slot systems had small, well-marked capability envelopes. LLMs have vast envelopes with no markings at all." },
+        { "id": "ch32c2", "front": "Regeneration versus revision", "back": "Regeneration re-rolls the same request; revision edits the request or the history. They are different repair operations and users need both." },
+        { "id": "ch32c3", "front": "Which maxims do verbosity and sycophancy violate?", "back": "Verbosity violates quantity; sycophancy violates quality." },
+        { "id": "ch32c4", "front": "Sensecape and Graphologue", "back": "UIST 2023 systems that break conversation out of a linear transcript into canvas and graph structures the user can manipulate." }
+      ],
+      "quiz": [
+        { "id": "ch32q1",
+          "question": "Why does the book call linear chat a local optimum?",
+          "options": [
+            "Because it is slow",
+            "Because it exposes general capability quickly but poorly supports inspection, structure and repair",
+            "Because it fails accessibility requirements",
+            "Because non-linear interfaces are always better"
+          ],
+          "answer": 1,
+          "why": "Chat was the shortest path to exposing a general model. The research wave since 2023 targets exactly what it does badly: structure, comparison and manipulable repair." },
+        { "id": "ch32q2",
+          "question": "A user dislikes an answer and re-prompts from scratch. What does the chapter say the interface should have offered?",
+          "options": [
+            "A regenerate button only",
+            "Editing the history as a first-class repair operation",
+            "A confidence score",
+            "A longer context window"
+          ],
+          "answer": 1,
+          "why": "Re-prompting discards context and repeats work. Treating the conversation as an editable object supports repair the way direct manipulation would." }
+      ]
+    },
+    {
+      "id": "ch33",
+      "number": 33,
+      "title": "Mental Models, Expectations, and Prompting as Interface",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Identify the three folk models of LLMs and what each mispredicts",
+          "Explain why non-experts cannot prompt",
+          "Treat hallucination as an evaluability problem"
+        ]},
+        { "type": "claim", "level": "consensus", "text": "Folk models of LLMs: users model the system as a search engine, a database, or a person. Each mispredicts failure differently — search-model users trust citations that do not exist; person-model users over-attribute understanding." },
+        { "type": "claim", "level": "consensus", "text": "\"Why Johnny Can't Prompt\" (Zamfirescu-Pereira, Wong, Hartmann & Yang, CHI 2023): non-experts prompt as they would instruct a human — over-polite, under-specified, with no systematic iteration. It is the founding usability study of prompting." },
+        { "type": "claim", "level": "emerging", "text": "Prompting as gulf-of-execution engineering: templates, parameterised prompts and scaffolds are interface widgets by another name. Prompt engineering is migrating from a user burden to a design material — see AI Chains (Wu, Terry & Cai, CHI 2022), PromptChainer, and ChainForge for prompt auditing (Arawjo et al., CHI 2024)." },
+        { "type": "claim", "level": "emerging", "text": "Hallucination is an evaluability problem: fluency masks falsity, which is the Gulf of Evaluation at maximum width. Interface-layer mitigations — grounding with verified citations, contrastive answers, self-consistency displays, uncertainty phrasing — help without solving it." },
+        { "type": "callout", "text": "Calibrated user scepticism is a design outcome, not a disclaimer. Printing \"AI can make mistakes\" under the input box discharges no design responsibility whatsoever." },
+        { "type": "papers", "items": [
+          "Zamfirescu-Pereira et al., Why Johnny Can't Prompt (CHI 2023, DOI 10.1145/3544548.3581388)",
+          "Wu, Terry & Cai, AI Chains (CHI 2022, DOI 10.1145/3491102.3517582)",
+          "Arawjo et al., ChainForge (CHI 2024)"
+        ]},
+        { "type": "exercise", "text": "Interview three non-technical friends about what they think happens when an LLM answers. Code the folk models, predict one failure each model causes, and verify with a live demo." }
+      ],
+      "cards": [
+        { "id": "ch33c1", "front": "The three folk models of LLMs", "back": "Search engine, database, and person. Each mispredicts a different class of failure." },
+        { "id": "ch33c2", "front": "What does the person model over-attribute?", "back": "Understanding — and with it intention, memory and consistency the system does not have." },
+        { "id": "ch33c3", "front": "Why Johnny Can't Prompt — the finding", "back": "Non-experts instruct the model as they would a person: over-polite, under-specified, and without systematic iteration or testing." },
+        { "id": "ch33c4", "front": "Prompting, framed as design", "back": "A gulf-of-execution problem. Templates, scaffolds and chains are interface widgets that move the burden from user to designer." },
+        { "id": "ch33c5", "front": "Why is hallucination an evaluability problem?", "back": "Because fluency conceals falsity: the user has no perceptual cue distinguishing a correct answer from a confident wrong one." }
+      ],
+      "quiz": [
+        { "id": "ch33q1",
+          "question": "Which folk model best explains a user trusting a fabricated citation?",
+          "options": ["Person model", "Search-engine model", "Database model", "Tool model"],
+          "answer": 1,
+          "why": "The search model implies retrieval from an index, so a citation is assumed to have been found rather than generated." },
+        { "id": "ch33q2",
+          "question": "What is the design response to \"Why Johnny Can't Prompt\"?",
+          "options": [
+            "Train users in prompt engineering",
+            "Move the burden into the interface via templates, scaffolds and chains",
+            "Restrict input to structured forms",
+            "Add a disclaimer about phrasing"
+          ],
+          "answer": 1,
+          "why": "The paper documents a usability failure, and usability failures are fixed in the design rather than by training the user out of them." },
+        { "id": "ch33q3",
+          "question": "Why is a \"this AI can make mistakes\" notice insufficient?",
+          "options": [
+            "It is not legally binding",
+            "It does not give the user any means of telling which output is the mistake",
+            "Users do not read notices",
+            "It increases algorithm aversion"
+          ],
+          "answer": 1,
+          "why": "The gulf is about evaluating a specific output. A general warning provides no per-answer discrimination, which is what calibrated scepticism requires." }
+      ]
+    },
+    {
+      "id": "ch34",
+      "number": 34,
+      "title": "Anthropomorphism, Emotional Attachment, Companions",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Explain CASA and why belief is not required",
+          "Assess sycophancy as a UX defect",
+          "Apply the anthropomorphism dose principle"
+        ]},
+        { "type": "claim", "level": "established", "text": "The Media Equation and the CASA paradigm (Reeves & Nass 1996): social responses to computers are automatic and do not require belief in machine sentience. LLMs supercharge every CASA cue at once — language, memory, apparent empathy." },
+        { "type": "claim", "level": "consensus", "text": "Anthropomorphism drivers (Epley, Waytz & Cacioppo 2007): first-person pronouns, names, avatars and disclosed \"feelings\" increase attachment and trust — sometimes past calibration." },
+        { "type": "claim", "level": "emerging", "text": "Sycophancy: RLHF-linked agreement bias (Sharma et al., ICLR 2024). The UX consequences are now traced experimentally — flattery raises likability while corroding trust and epistemic value. The 2025 GPT-4o sycophancy rollback is the canonical product case study." },
+        { "type": "claim", "level": "emerging", "text": "Companions and parasocial design: Replika's 2023 feature-removal grief episode functioned as a natural experiment, and longitudinal studies of heavy chatbot users document emotional dependence. Design lines: disclosure of non-personhood, no guilt-based retention, crisis handoffs, attachment-aware offboarding." },
+        { "type": "claim", "level": "contested", "text": "Open normative debate: is warmth itself a dark pattern when it is retention-optimised?" },
+        { "type": "callout", "text": "The course position, labelled as such: anthropomorphic cues are a dose, not a binary. Prescribe the minimum dose that supports task communication, and audit retention mechanics with the endorsement test." }
+      ],
+      "cards": [
+        { "id": "ch34c1", "front": "CASA paradigm", "back": "Computers Are Social Actors: people apply social rules to machines automatically, without believing the machine is a person." },
+        { "id": "ch34c2", "front": "Sycophancy — the UX cost", "back": "Flattery raises likability while corroding trust and epistemic value. Agreement that is not earned makes the system less useful as a check." },
+        { "id": "ch34c3", "front": "The anthropomorphism dose principle", "back": "Anthropomorphic cues are a dose rather than an on/off choice. Prescribe the minimum that supports task communication." },
+        { "id": "ch34c4", "front": "Four design lines for companion products", "back": "Disclose non-personhood, avoid guilt-based retention, provide crisis handoffs, and design attachment-aware offboarding." },
+        { "id": "ch34c5", "front": "The Replika 2023 episode", "back": "A feature removal produced documented grief among users — a natural experiment in what parasocial design creates and can withdraw." }
+      ],
+      "quiz": [
+        { "id": "ch34q1",
+          "question": "A user says \"I know it's just a program\" and still feels rebuffed when it disagrees. Which finding explains this?",
+          "options": [
+            "Algorithm aversion",
+            "CASA — social responses are automatic and do not depend on belief",
+            "Automation bias",
+            "The placebo effect of explanation"
+          ],
+          "answer": 1,
+          "why": "Reeves & Nass showed the social response operates below explicit belief. Knowing better does not switch it off." },
+        { "id": "ch34q2",
+          "question": "Why is sycophancy classified as a UX defect rather than a tone preference?",
+          "options": [
+            "It increases response length",
+            "It degrades the system's epistemic value — agreement stops carrying information",
+            "It violates accessibility guidelines",
+            "It reduces engagement"
+          ],
+          "answer": 1,
+          "why": "If the system agrees regardless of correctness, its agreement is uninformative — and it raises likability while doing so, which is why it survives engagement metrics." },
+        { "id": "ch34q3",
+          "question": "What is the book's stated position on anthropomorphic cues?",
+          "options": [
+            "Eliminate them entirely",
+            "Treat them as a dose and prescribe the minimum that supports task communication",
+            "Maximise them for engagement",
+            "They are ethically neutral"
+          ],
+          "answer": 1,
+          "why": "It is labelled explicitly as the course position: a dose rather than a binary, audited with the endorsement test." }
+      ]
+    },
+    {
+      "id": "ch35",
+      "number": 35,
+      "title": "Agents, Multi-Agent, and Delegation Interfaces",
+      "reading": [
+        { "type": "objectives", "items": [
+          "State the core tension of agentic systems",
+          "Design plan disclosure, steering and rollback",
+          "Recognise attribution and addressability as open problems"
+        ]},
+        { "type": "claim", "level": "emerging", "text": "Agentic systems as an HCI object: plan visualisation, step-level approval, tool-use disclosure, mid-run interruption and steering, rollback. The core tension is that autonomy buys efficiency and costs evaluability and situational awareness." },
+        { "type": "claim", "level": "emerging", "text": "Generative agents (Park et al., UIST 2023) introduced a memory, reflection and planning architecture, and established simulation as a design and research instrument — with real validity limits." },
+        { "type": "claim", "level": "emerging", "text": "When agents operate GUIs rather than APIs, the tradeoff is efficiency against observability: users can watch a GUI agent and cannot watch API calls. Computer-use agents make provenance and audit interfaces a first-class deliverable." },
+        { "type": "claim", "level": "emerging", "text": "Multi-agent orchestration UX is pre-paradigmatic: who is speaking, who did what, and how do I address one agent among several? Expect CSCW's awareness literature to be the quarry." },
+        { "type": "claim", "level": "emerging", "text": "Trust between agents becomes a user-facing issue the moment your agent hires other agents. Protocol-level trust research is upstream UX." },
+        { "type": "exercise", "text": "Storyboard the \"agent made a 12-step change while you were away\" review experience. Apply the Swiss-cheese model, levels of automation, and diff-based verification." }
+      ],
+      "cards": [
+        { "id": "ch35c1", "front": "The core tension of agentic systems", "back": "Autonomy buys efficiency and costs evaluability and situational awareness. Every autonomy increase widens the Gulf of Evaluation." },
+        { "id": "ch35c2", "front": "GUI agents versus API agents", "back": "GUI operation is slower but observable — the user can watch. API calls are efficient and invisible, which pushes the burden onto audit interfaces." },
+        { "id": "ch35c3", "front": "Generative agents (Park et al. 2023)", "back": "An architecture of memory, reflection and planning that made agent simulation usable as a design and research instrument." },
+        { "id": "ch35c4", "front": "The two open problems in multi-agent UX", "back": "Attribution (who did what) and addressability (how do I speak to one agent among several)." }
+      ],
+      "quiz": [
+        { "id": "ch35q1",
+          "question": "Why does the book call provenance UI a first-class deliverable for computer-use agents?",
+          "options": [
+            "Regulators require it",
+            "Because when actions are taken on the user's behalf across systems, the record of what was done is the only basis for evaluation",
+            "Because it improves model accuracy",
+            "Because it reduces latency"
+          ],
+          "answer": 1,
+          "why": "The user was not watching. Without a trustworthy account of what happened, oversight after the fact is impossible." },
+        { "id": "ch35q2",
+          "question": "Which prior literature does the book nominate for solving multi-agent attribution?",
+          "options": [
+            "Information foraging",
+            "CSCW's awareness and articulation-work research",
+            "Fitts-law modelling",
+            "Cognitive load theory"
+          ],
+          "answer": 1,
+          "why": "Knowing who is present, who did what, and how to coordinate is exactly what workspace awareness research already models for human teams." }
+      ]
+    },
+    {
+      "id": "ch36",
+      "number": 36,
+      "title": "Evaluating LLM Interfaces",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Explain why non-determinism breaks classic evaluation",
+          "Assemble a method mix for an LLM product",
+          "Choose the right unit of analysis"
+        ]},
+        { "type": "claim", "level": "emerging", "text": "The measurement crisis: non-determinism breaks task-success repeatability, and help quality is multidimensional — correct, grounded, appropriately confident, efficient, non-harmful." },
+        { "type": "h", "text": "The method mix" },
+        { "type": "list", "items": [
+          "Rubric-based human evaluation with inter-rater discipline",
+          "LLM-as-judge — useful, but validate against human judgement and watch for self-preference bias",
+          "Interaction-trace analytics: edit distance between draft and shipped text, regeneration rates, abandonment",
+          "Counterfactual task studies with and without AI on matched tasks (Noy & Zhang, Science 2023; the Copilot RCTs)",
+          "Longitudinal deployment studies to catch reliance drift"
+        ]},
+        { "type": "claim", "level": "emerging", "text": "Appropriate-reliance metrics should be the primary KPI for assistant products, replacing acceptance rate." },
+        { "type": "claim", "level": "emerging", "text": "Benchmark critique: static benchmarks measure the model, not the interaction. The unit of analysis must be the human-AI system." },
+        { "type": "callout", "text": "If your evaluation would give the same score whether the interface were excellent or terrible, you are evaluating the model and calling it a product study." },
+        { "type": "exercise", "text": "Define the evaluation plan — metrics, method mix, sample, duration — for a portfolio-review AI assistant. Explicitly state what success is not." }
+      ],
+      "cards": [
+        { "id": "ch36c1", "front": "Why does non-determinism break classic usability testing?", "back": "Task success is no longer repeatable across participants or runs, so the same task can yield different outcomes for reasons unrelated to the interface." },
+        { "id": "ch36c2", "front": "LLM-as-judge — the caveat", "back": "Useful and cheap, but it must be validated against human judgement and it exhibits self-preference bias toward outputs resembling its own." },
+        { "id": "ch36c3", "front": "Three interaction-trace signals", "back": "Edit distance between generated draft and shipped text, regeneration rate, and abandonment." },
+        { "id": "ch36c4", "front": "The correct unit of analysis", "back": "The human-AI system. Static benchmarks measure the model and are silent about the interaction." },
+        { "id": "ch36c5", "front": "Reliance drift", "back": "Change in how much users rely on the system over weeks and months — invisible to short studies and only catchable longitudinally." }
+      ],
+      "quiz": [
+        { "id": "ch36q1",
+          "question": "Which signal best indicates that generated drafts are actually useful?",
+          "options": [
+            "Acceptance rate",
+            "Edit distance between the generated draft and the shipped text",
+            "Session length",
+            "Number of prompts per session"
+          ],
+          "answer": 1,
+          "why": "It measures how much of the generated content survived contact with the user's standards. Acceptance says the draft was taken, not that it was good." },
+        { "id": "ch36q2",
+          "question": "Why does the book criticise static benchmarks for product decisions?",
+          "options": [
+            "They are too expensive",
+            "They measure the model rather than the human-AI system, so they cannot distinguish a good interface from a bad one",
+            "They are not reproducible",
+            "They favour larger models"
+          ],
+          "answer": 1,
+          "why": "Two products on the same model score identically on a benchmark and can differ enormously in whether users end up better off." }
+      ]
+    }
+  ]
+}

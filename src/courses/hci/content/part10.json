@@ -1,0 +1,229 @@
+{
+  "id": "p10",
+  "title": "X — AI Product Design (AI-Native HCI)",
+  "color": "ink",
+  "lessons": [
+    {
+      "id": "ch37",
+      "number": 37,
+      "title": "Why Designing With AI Is Different",
+      "reading": [
+        { "type": "objectives", "items": [
+          "State the two root causes of AI design difficulty",
+          "Explain why Wizard-of-Oz misleads for LLMs",
+          "Adopt the probabilistic-product mindset"
+        ]},
+        { "type": "claim", "level": "consensus", "text": "The design-material problem (Yang, Steinfeld, Rosé & Zimmerman, CHI 2020): human-AI interaction is uniquely difficult to design for two root reasons — capability uncertainty and output open-endedness. You cannot fully sketch what you cannot predict, so prototyping must include the real model." },
+        { "type": "callout", "text": "Wizard-of-Oz systematically misleads for LLMs: a human confederate produces sensible, consistent, competent responses — precisely the behaviours the real system will fail to deliver, and precisely the ones your design must handle." },
+        { "type": "claim", "level": "emerging", "text": "Leaky abstractions (Subramonyam et al., CHI 2024): prompt-based development leaks model internals into UX decisions, the design/engineering handoff dissolves, and designers must play with the material — actual model behaviour — directly." },
+        { "type": "claim", "level": "emerging", "text": "The probabilistic-product mindset: define an acceptable-failure envelope per feature, and design the 5% failure path with the same care as the 95% path. Error UX is the product." }
+      ],
+      "cards": [
+        { "id": "ch37c1", "front": "The two root causes of AI design difficulty", "back": "Capability uncertainty — you don't know what it can do — and output open-endedness — you can't enumerate what it will produce (Yang et al. 2020)." },
+        { "id": "ch37c2", "front": "Why does Wizard-of-Oz mislead for LLMs?", "back": "The human confederate is competent and consistent, so the prototype tests an experience the real system will not deliver, and skips the failure modes that matter." },
+        { "id": "ch37c3", "front": "Leaky abstractions in prompt-based design", "back": "Model internals leak into UX decisions, so the clean design/engineering handoff dissolves and designers must work with model behaviour directly." },
+        { "id": "ch37c4", "front": "Acceptable-failure envelope", "back": "A per-feature specification of what kinds and rates of failure are tolerable — which then determines how much oversight and recovery the design must supply." }
+      ],
+      "quiz": [
+        { "id": "ch37q1",
+          "question": "A team prototypes an AI feature with a human pretending to be the model. What will they systematically miss?",
+          "options": [
+            "Latency perception",
+            "The failure modes — confident wrongness, inconsistency, misread intent — that define the real experience",
+            "Visual hierarchy problems",
+            "Accessibility barriers"
+          ],
+          "answer": 1,
+          "why": "A competent human confederate produces the behaviour the model won't. The 5% path is where the design work lives, and Wizard-of-Oz hides it." },
+        { "id": "ch37q2",
+          "question": "What does \"error UX is the product\" mean in practice?",
+          "options": [
+            "Ship fewer features",
+            "The failure path deserves the same design investment as the success path, because it is a routine rather than exceptional state",
+            "Add more error messages",
+            "Log everything"
+          ],
+          "answer": 1,
+          "why": "In a probabilistic product, failure is a normal operating state at a known rate. Designing only the happy path leaves most of the experience undesigned." }
+      ]
+    },
+    {
+      "id": "ch38",
+      "number": 38,
+      "title": "Patterns for AI-First Products",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Apply a working pattern language for AI products",
+          "Name and avoid the anti-patterns"
+        ]},
+        { "type": "h", "text": "The pattern language" },
+        { "type": "list", "items": [
+          "Draft-then-refine — AI proposes, human disposes; preserves authorship and evaluability",
+          "Inline generation with diff — reduces verification cost",
+          "Suggestion chips and capability scent — restores information scent to a blank box",
+          "Progressive autonomy — earn wider approval envelopes through demonstrated reliability; a levels-of-automation slider made legible",
+          "Plan preview, step approval, rollback — agent oversight",
+          "Grounded answers with inspectable citations — evaluability",
+          "Confidence-scaled friction — act silently when cheap to reverse, confirm when not",
+          "Memory transparency panel — view, edit, delete",
+          "Expectation-setting onboarding — show what it is bad at early",
+          "Repair-friendly history — edit any turn, branch, compare"
+        ]},
+        { "type": "h", "text": "Anti-patterns" },
+        { "type": "list", "items": [
+          "Fake typing theatre",
+          "Unlabelled AI content",
+          "Sycophantic tone defaults",
+          "Approval fatigue from over-confirmation",
+          "\"AI sparkle\" buttons with no scent of function"
+        ]},
+        { "type": "callout", "text": "Almost every pattern here is a gulf-bridging device. Chips and scaffolds narrow execution; diffs, citations and plan previews narrow evaluation. The pattern language is Chapter 6 applied." },
+        { "type": "p", "text": "Industry references worth studying as compiled research: Microsoft HAX Toolkit, Google PAIR Guidebook, Apple HIG's machine-learning sections, IBM Carbon for AI." }
+      ],
+      "cards": [
+        { "id": "ch38c1", "front": "Draft-then-refine", "back": "The AI proposes and the human disposes. It preserves authorship and keeps the artefact inspectable and editable." },
+        { "id": "ch38c2", "front": "Progressive autonomy", "back": "Widen the agent's approval envelope as it demonstrates reliability — a levels-of-automation slider made legible to the user." },
+        { "id": "ch38c3", "front": "Confidence-scaled friction", "back": "Act silently when the action is cheap to reverse; confirm when it is not. Horvitz's expected-utility rule, operationalised." },
+        { "id": "ch38c4", "front": "Why is approval fatigue an anti-pattern?", "back": "Undifferentiated confirmation trains dismissal, so the confirmation that matters gets clicked through with the rest — the cry-wolf effect." },
+        { "id": "ch38c5", "front": "The \"AI sparkle\" anti-pattern", "back": "A button marked as AI-powered that gives no indication of what it will do — an icon standing in for a signifier." },
+        { "id": "ch38c6", "front": "Repair-friendly history", "back": "Treat the conversation as a manipulable object: edit any turn, branch from it, and compare results." }
+      ],
+      "quiz": [
+        { "id": "ch38q1",
+          "question": "Which pattern most directly attacks verification cost?",
+          "options": [
+            "Suggestion chips",
+            "Inline generation with a diff",
+            "Memory transparency panel",
+            "Progressive autonomy"
+          ],
+          "answer": 1,
+          "why": "A diff shows exactly what changed, so checking scales with the size of the change rather than the size of the document." },
+        { "id": "ch38q2",
+          "question": "A product confirms every agent action, including trivially reversible ones. Which anti-pattern is this?",
+          "options": [
+            "Fake typing theatre",
+            "Approval fatigue from over-confirmation",
+            "Unlabelled AI content",
+            "AI sparkle"
+          ],
+          "answer": 1,
+          "why": "Confirming everything makes confirmation meaningless. Friction has to be proportionate to stakes and reversibility or it stops carrying signal." },
+        { "id": "ch38q3",
+          "question": "Suggestion chips solve which problem, in the book's terms?",
+          "options": [
+            "Verification cost",
+            "Absent information scent in an interface that signals no capabilities",
+            "Automation bias",
+            "Mode confusion"
+          ],
+          "answer": 1,
+          "why": "A blank input emits no cue about what will pay off. Chips restore scent and simultaneously act as signifiers for invisible affordances." }
+      ]
+    },
+    {
+      "id": "ch39",
+      "number": 39,
+      "title": "Error Recovery, Confidence, Onboarding",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Design the four stages of AI error recovery",
+          "Communicate confidence without raw percentages",
+          "Onboard by guided doing"
+        ]},
+        { "type": "claim", "level": "emerging", "text": "AI error recovery has four stages: detect (make errors detectable through contrast and grounding), attribute (explain why it failed in the user's terms), repair (a one-step correction that also teaches the system), and contain (blast-radius limits — sandboxes, drafts, undo)." },
+        { "type": "callout", "text": "Undo is the single highest-leverage trust feature in agentic products. It converts a decision about whether to trust into a decision that can be revisited." },
+        { "type": "claim", "level": "emerging", "text": "Confidence visualisation: avoid raw percentages, which are both miscalibrated and misread. Prefer behaviour-linked confidence — \"I checked three sources\", \"I could not verify X\" — selective abstention, and uncertainty-adaptive phrasing. Where numbers are needed, use the uncertainty-visualisation toolkit." },
+        { "type": "claim", "level": "emerging", "text": "Onboarding to AI: teach the envelope by guided doing — first-run tasks that hit both a strength and a graceful failure. Expectation calibration beats capability advertising (Kocielnik et al. 2019), and advanced prompting should arrive by progressive disclosure." },
+        { "type": "p", "text": "The counterintuitive move: deliberately show a new user something the system is bad at, early, while the stakes are zero. Users who learn the failure boundary from a safe demonstration calibrate faster than users who discover it in production." }
+      ],
+      "cards": [
+        { "id": "ch39c1", "front": "The four stages of AI error recovery", "back": "Detect, attribute, repair, contain." },
+        { "id": "ch39c2", "front": "The highest-leverage trust feature in agentic products", "back": "Undo. It turns an irreversible bet on trust into a revisable decision." },
+        { "id": "ch39c3", "front": "Behaviour-linked confidence", "back": "Expressing certainty through what the system did — sources checked, claims it could not verify — rather than a numeric score users misread." },
+        { "id": "ch39c4", "front": "Why show a new user a failure on purpose?", "back": "Expectation calibration beats capability advertising. A safe early failure teaches the envelope faster than discovering it in production." },
+        { "id": "ch39c5", "front": "Blast radius", "back": "The maximum damage an erroneous action can do. Sandboxes, drafts and staged execution shrink it before trust is established." }
+      ],
+      "quiz": [
+        { "id": "ch39q1",
+          "question": "Why avoid displaying \"87% confident\" on an LLM answer?",
+          "options": [
+            "It takes too much space",
+            "Verbalised LLM confidence is miscalibrated, and users misread percentages as precision",
+            "It requires model access",
+            "It reduces engagement"
+          ],
+          "answer": 1,
+          "why": "The number is both wrong and read as authoritative. Behaviour-linked statements say something checkable instead." },
+        { "id": "ch39q2",
+          "question": "An onboarding flow demonstrates only impressive successes. What does the evidence predict?",
+          "options": [
+            "Faster adoption with no downside",
+            "Poorly calibrated expectations, so the first real failure lands harder and reliance is miscalibrated in both directions",
+            "Increased algorithm aversion immediately",
+            "No measurable effect"
+          ],
+          "answer": 1,
+          "why": "Kocielnik et al. found expectation setting shifts acceptance. Advertising only strengths sets a boundary the system cannot hold." },
+        { "id": "ch39q3",
+          "question": "Which recovery stage does a sandbox serve?",
+          "options": ["Detect", "Attribute", "Repair", "Contain"],
+          "answer": 3,
+          "why": "A sandbox limits the blast radius. It does nothing to make the error visible, explain it, or fix it." }
+      ]
+    },
+    {
+      "id": "ch40",
+      "number": 40,
+      "title": "Capstone — Design an AI-Native Product End-to-End",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Integrate the whole book into one designed artefact",
+          "Defend every decision with a citation"
+        ]},
+        { "type": "p", "text": "This is the course exam. Seven deliverables, each drawing on a named part of the book." },
+        { "type": "list", "items": [
+          "Problem framing with contextual inquiry — minimum five sessions (Ch. 14)",
+          "Model-behaviour exploration notebook — the material study (Ch. 37)",
+          "Pattern-mapped concept with an explicit gulf analysis (Ch. 38, Ch. 6)",
+          "Oversight and failure-envelope specification (Ch. 28, 35, 39)",
+          "Reliance-aware evaluation plan, piloted with eight users (Ch. 29, 36)",
+          "Ethics audit — dark-pattern scan, anthropomorphism dose, memory consent (Ch. 21, 30, 34)",
+          "Public critique presentation defending every decision with a citation from the book"
+        ]},
+        { "type": "h", "text": "The cross-cutting checklists" },
+        { "type": "p", "text": "Universal design review: where are the two gulfs widest? One preattentive singleton at most? Recognition over recall throughout? Every action reversible or confirmed in proportion to its cost? State changes visible where the eyes already are? Keyboard and screen-reader pass completed? Scent audit on every navigation label?" },
+        { "type": "p", "text": "AI feature review: is expectation-setting present before first use? Is the failure envelope specified and designed? Is a reliance metric defined — not acceptance rate? Is friction scaled to stakes times reversibility? Is there undo for every agent action? Is memory legible and editable? Is the anthropomorphism dose justified? Has sycophancy been audited? Does it pass the endorsement test?" },
+        { "type": "callout", "text": "Recommended study order for a designer targeting AI-era employment: 6 → 7 → 12 → 29 → 33 → 38 → 39 → 14 → 36 → capstone." }
+      ],
+      "cards": [
+        { "id": "ch40c1", "front": "The seven capstone deliverables", "back": "Contextual-inquiry framing, model-behaviour notebook, pattern-mapped concept with gulf analysis, oversight and failure-envelope spec, reliance-aware evaluation, ethics audit, defended public critique." },
+        { "id": "ch40c2", "front": "The universal design review, in one line", "back": "Find where the two gulfs are widest, then check pop-out budget, recall load, reversibility, state visibility, accessibility and scent." },
+        { "id": "ch40c3", "front": "The nine questions of the AI feature review", "back": "Expectations set? Failure envelope designed? Reliance metric defined? Friction scaled to stakes × reversibility? Undo everywhere? Memory legible? Anthropomorphism dose justified? Sycophancy audited? Endorsement test passed?" },
+        { "id": "ch40c4", "front": "The recommended fast path through the book", "back": "6 → 7 → 12 → 29 → 33 → 38 → 39 → 14 → 36 → capstone." }
+      ],
+      "quiz": [
+        { "id": "ch40q1",
+          "question": "Which capstone deliverable would be impossible to fake without having done the fieldwork?",
+          "options": [
+            "The pattern-mapped concept",
+            "The contextual-inquiry problem framing",
+            "The ethics audit",
+            "The gulf analysis"
+          ],
+          "answer": 1,
+          "why": "Five sessions of observed real work produce breakdowns you cannot invent from a desk — which is why the book sets a session minimum." },
+        { "id": "ch40q2",
+          "question": "The AI feature review asks for a reliance metric \"not acceptance rate.\" Why?",
+          "options": [
+            "Acceptance is hard to instrument",
+            "Because acceptance cannot separate trusting correct output from trusting wrong output",
+            "Because acceptance is a business metric",
+            "Because it varies too much between users"
+          ],
+          "answer": 1,
+          "why": "Appropriate reliance requires discrimination — accept-when-right minus accept-when-wrong. Raw acceptance rewards indiscriminate trust." }
+      ]
+    }
+  ]
+}

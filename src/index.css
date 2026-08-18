@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+/* Touch-pointer variant, used sparingly where a finger needs more than a cursor. */
+@custom-variant coarse (@media (pointer: coarse));
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   One direction. Monochrome, oversized grotesk display, a soft grey ground and
+   almost no chrome: hairlines instead of boxes, fills instead of borders for
+   anything primary, and no colour carrying meaning anywhere.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@theme {
+  --color-ink: #0a0a0a;
+  --color-paper: #f6f5f2;
+
+  /* Greyscale ramp. The old semantic names are kept so component classes do not
+     all have to change, but every one of them now resolves to a grey — colour
+     is not carrying meaning anywhere in this design. */
+  --color-teal: #0a0a0a;   /* primary fill */
+  --color-blue: #1c1c1a;   /* secondary fill */
+  --color-red: #4a4845;    /* negative fill — distinguished by label, not hue */
+  --color-yellow: #e2dfd8; /* quiet highlight */
+
+  --color-muted: #5f5e5c;  /* ~5.2:1 at the darkest point of the ground */
+  --color-rule: #cdcac3;   /* decorative hairline */
+  --color-edge: #0a0a0a;   /* interactive boundary — ink, not grey */
+
+  /* The one accent. It is a GROUND for black marks only: ink on it measures
+     13.6:1, white on it measures 1.45:1 and is never permitted. It also never
+     carries a state on its own — anything green is either decoration or sits
+     beside a label that already says the same thing. */
+  --color-accent: #c9de8e;
+
+  /* The home screen is a single flat colour — no gradient, no value-shifted
+     blocks. Everything on it is a mark on one plane. */
+  --color-home: #fbfbfa;
+
+  --font-sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+/* The ground is a plane, not a page with cards on it. */
+body {
+  background: linear-gradient(168deg, #e9e7e2 0%, #f4f3f0 38%, #fdfdfc 100%);
+  background-attachment: fixed;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Boxes become hairlines. Nothing is lifted off the plane. */
+.slab,
+.slab-flat {
+  border: 1px solid var(--color-edge);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.display {
+  font-size: clamp(3.75rem, 15vw, 11rem);
+  line-height: 0.84;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+}
+
+/* A pale block behind a small control, used outside the home screen where the
+   ground is a gradient and a flat tint still reads. */
+.pale {
+  background: #f2f1ed;
+}
+
+/* Small functional type, the way the nav on a portfolio site is set. */
+.micro {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.reveal {
+  animation: reveal 160ms linear both;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+/* WCAG 2.2 target size (2.5.8). Applied to controls whose visible box is
+   smaller than the minimum, without changing their drawn size. */
+.tap {
+  position: relative;
+}
+
+.tap::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  transform: translate(-50%, -50%);
+}
+
+/* A native range thumb is about 16px tall, under the 24px target minimum. Growing
+   the element's box grows the pointer target without thickening the drawn track. */
+input[type="range"] {
+  height: 28px;
+  accent-color: var(--color-ink);
+}
+
+/* 24px is the WCAG floor, not a comfortable finger. Raise it only where the
+   pointer is actually coarse, so the desktop drawing is untouched. */
+@media (pointer: coarse) {
+  .tap::after {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* `.raw` opts out: demo shapes are sized by the experiment, and the Fitts
+     targets must stay small or the demonstration has nothing to demonstrate.
+     `.chip` opts out because a citation marker sits inside a line of prose. */
+  button:not(.raw):not(.chip),
+  a[href],
+  select,
+  summary {
+    min-height: 44px;
+  }
+
+  input[type="range"] {
+    height: 44px;
+  }
+}
+
+/* A plate is a drawing with labels in it, so it cannot shrink indefinitely —
+   below its natural width the text stops being readable. It scrolls inside its
+   own container instead, which keeps the page itself from scrolling sideways. */
+.plate-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+ /* Only below the sidebar breakpoint. On desktop the plate fits its column and
+   must keep fitting it — widening it there would be a desktop regression. */
+@media (max-width: 767px) {
+  .plate-scroll > svg {
+    min-width: 560px;
+  }
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+/* Vestibular safety is a health accommodation, not a preference (Ch. 16). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

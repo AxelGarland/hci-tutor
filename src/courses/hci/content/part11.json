@@ -1,0 +1,221 @@
+{
+  "id": "p11",
+  "title": "Appendices — People and Sources",
+  "color": "red",
+  "lessons": [
+    {
+      "id": "apxA1",
+      "number": "A1",
+      "title": "The People: Founders and Cognitive Engineering",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Attribute the field's core ideas to the people who introduced them",
+          "Know which name to cite for which claim"
+        ]},
+        { "type": "list", "items": [
+          "Card, Moran & Newell — Model Human Processor, GOMS and KLM, information foraging (with Pirolli). They made HCI predictive.",
+          "Ben Shneiderman — direct manipulation, the Eight Golden Rules, the visualisation mantra, Human-Centered AI. The field's most durable through-line from 1983 to 2026.",
+          "Donald Norman — the action cycle, the gulfs, affordances and signifiers, the error taxonomy. DOET is the discipline's shared vocabulary.",
+          "Jakob Nielsen — discount usability, heuristic evaluation, the five-user argument.",
+          "Bill Buxton — input devices, two-handed interaction, sketching in the design process.",
+          "Jef Raskin — Macintosh project origins; The Humane Interface (2000): modes are evil, habituation is destiny.",
+          "Alan Cooper — personas and goal-directed design.",
+          "Brenda Laurel — Computers as Theatre (1991): interaction as dramatic action, foundational for conversational and agent framing.",
+          "Terry Winograd — SHRDLU, then the turn: Understanding Computers and Cognition (with Flores, 1986), language as action.",
+          "Lucy Suchman — situated action; the standing critique of plan-based AI interaction.",
+          "Clayton Lewis — think-aloud method, cognitive walkthrough, cognitive accessibility.",
+          "Preece, Rogers & Sharp, and Alan Dix — authors of the two standard textbooks."
+        ]},
+        { "type": "h", "text": "Human factors and cognition" },
+        { "type": "list", "items": [
+          "Lisanne Bainbridge — the ironies of automation",
+          "Nadine Sarter & David Woods — mode confusion and automation surprise",
+          "James Reason — error taxonomy and the Swiss-cheese model",
+          "Mica Endsley — situational awareness",
+          "Ed Hutchins — distributed cognition",
+          "Christopher Wickens — attention and workload models"
+        ]},
+        { "type": "h", "text": "CSCW and social computing" },
+        { "type": "list", "items": [
+          "Jonathan Grudin — the eight challenges, work/benefit disparity",
+          "Mark Ackerman — the socio-technical gap",
+          "Saul Greenberg & Carl Gutwin — workspace awareness",
+          "Judith and Gary Olson — distance matters",
+          "Robert Kraut — evidence-based community design",
+          "danah boyd, Amy Bruckman, Cliff Lampe — online social life and governance"
+        ]}
+      ],
+      "cards": [
+        { "id": "apxA1c1", "front": "Card, Moran & Newell", "back": "Model Human Processor, GOMS and KLM — they made HCI predictive rather than purely descriptive." },
+        { "id": "apxA1c2", "front": "Ben Shneiderman", "back": "Direct manipulation, the Eight Golden Rules, the visualisation mantra, and Human-Centered AI." },
+        { "id": "apxA1c3", "front": "Donald Norman", "back": "The action cycle, the two gulfs, affordances and signifiers, and the slip/mistake error taxonomy." },
+        { "id": "apxA1c4", "front": "Jakob Nielsen", "back": "Discount usability, heuristic evaluation, and the five-user argument." },
+        { "id": "apxA1c5", "front": "Jef Raskin", "back": "The Humane Interface (2000) — modes are evil, habituation is destiny." },
+        { "id": "apxA1c6", "front": "Lucy Suchman", "back": "Situated action — plans are resources, not programs — and the founding critique of plan-based AI interaction." },
+        { "id": "apxA1c7", "front": "Lisanne Bainbridge", "back": "The ironies of automation (1983): automating routine work destroys the skills needed for the exceptions." },
+        { "id": "apxA1c8", "front": "Sarter & Woods", "back": "Mode confusion and automation surprise in aviation — \"How in the world did we ever get into that mode?\"" },
+        { "id": "apxA1c9", "front": "Ed Hutchins", "back": "Distributed cognition — Cognition in the Wild (1995). Cognitive processes span people, artefacts and representations." },
+        { "id": "apxA1c10", "front": "Jonathan Grudin", "back": "The eight challenges of groupware, including the work/benefit disparity that explains most collaboration-tool failure." },
+        { "id": "apxA1c11", "front": "Mark Ackerman", "back": "The socio-technical gap — the divide between what must be supported socially and what can be supported technically." },
+        { "id": "apxA1c12", "front": "Brenda Laurel", "back": "Computers as Theatre (1991) — interaction as dramatic action, a foundation for conversational and agent framing." },
+        { "id": "apxA1c13", "front": "Mica Endsley", "back": "Situational awareness — perception of elements, comprehension of meaning, projection of future state." }
+      ],
+      "quiz": [
+        { "id": "apxA1q1",
+          "question": "Whose work would you cite for \"plans are resources for action, not programs\"?",
+          "options": ["Hutchins", "Suchman", "Norman", "Bainbridge"],
+          "answer": 1,
+          "why": "Suchman's Plans and Situated Actions (1987), the founding critique of plan-based intelligent interfaces." },
+        { "id": "apxA1q2",
+          "question": "Who made HCI a predictive engineering discipline rather than a descriptive one?",
+          "options": ["Nielsen", "Card, Moran & Newell", "Shneiderman", "Gibson"],
+          "answer": 1,
+          "why": "The Model Human Processor and GOMS let you compute expected task time before building anything." },
+        { "id": "apxA1q3",
+          "question": "Which pair explains why automating routine work makes exceptional cases harder to handle?",
+          "options": ["Reason and Norman", "Bainbridge, with Sarter & Woods on mode confusion", "Grudin and Ackerman", "Cowan and Miller"],
+          "answer": 1,
+          "why": "Bainbridge's ironies of automation, with Sarter & Woods documenting the mode-confusion failures that follow." }
+      ]
+    },
+    {
+      "id": "apxA2",
+      "number": "A2",
+      "title": "The People: Contemporary Human–AI Interaction",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Attribute the current human-AI research agenda to its authors"
+        ]},
+        { "type": "list", "items": [
+          "Eric Horvitz — mixed-initiative interaction, attention and interruption cost models",
+          "Saleema Amershi — the 18 Guidelines for Human-AI Interaction, interactive machine learning",
+          "Krzysztof Gajos — cognitive forcing functions, adaptive interfaces",
+          "Zana Buçinca — overreliance and cognitive forcing",
+          "Gagan Bansal & Dan Weld — human-AI teams and complementary performance",
+          "Q. Vera Liao — the XAI question bank, transparency in the LLM age",
+          "Jenn Wortman Vaughan — interpretability and transparency",
+          "Cynthia Rudin — the interpretable-models-first position, in open debate with post-hoc XAI",
+          "Elena Glassman — variation theory, AI-resilient interfaces",
+          "Michael Terry & Carrie Cai — AI chains, prompt tooling, clinician onboarding",
+          "Meredith Ringel Morris — accessibility and AI, AGI interaction research",
+          "Qian Yang — AI as a design material",
+          "Hariharan Subramonyam — leaky abstractions in prompt-based design",
+          "Ben Green — algorithm-in-the-loop governance",
+          "Ken Holstein — human-AI complementarity in the wild",
+          "Mor Naaman — AI-mediated communication",
+          "Mina Lee — writing with LLMs, CoAuthor, the design space of writing assistants",
+          "J.D. Zamfirescu-Pereira & Björn Hartmann — prompting usability",
+          "Park et al. — generative agents",
+          "Pattie Maes — the agents lineage and cognitive augmentation"
+        ]}
+      ],
+      "cards": [
+        { "id": "apxA2c1", "front": "Eric Horvitz", "back": "Mixed-initiative interaction and attention-cost modelling — the decision-theoretic answer to \"should the agent act or ask?\"" },
+        { "id": "apxA2c2", "front": "Saleema Amershi", "back": "The 18 Guidelines for Human-AI Interaction (CHI 2019) and interactive machine learning." },
+        { "id": "apxA2c3", "front": "Buçinca & Gajos", "back": "Cognitive forcing functions — interventions that reduce overreliance and that users dislike." },
+        { "id": "apxA2c4", "front": "Bansal & Weld", "back": "Human-AI team performance and complementarity — team beating the best member is rare and needs a model of when the AI errs." },
+        { "id": "apxA2c5", "front": "Q. Vera Liao", "back": "The XAI question bank — reframing explanation as a user-needs design problem — and LLM-era transparency." },
+        { "id": "apxA2c6", "front": "Cynthia Rudin", "back": "The interpretable-models-first position: use models that are inherently understandable rather than explaining opaque ones after the fact." },
+        { "id": "apxA2c7", "front": "Qian Yang", "back": "AI as a design material, and why human-AI interaction is uniquely difficult to design (CHI 2020)." },
+        { "id": "apxA2c8", "front": "Hariharan Subramonyam", "back": "Leaky abstractions — prompt-based development leaks model internals into UX decisions." },
+        { "id": "apxA2c9", "front": "Zamfirescu-Pereira & Hartmann", "back": "\"Why Johnny Can't Prompt\" (CHI 2023), the founding usability study of prompting." },
+        { "id": "apxA2c10", "front": "Mina Lee", "back": "CoAuthor and the design space of intelligent writing assistants." }
+      ],
+      "quiz": [
+        { "id": "apxA2q1",
+          "question": "Whose framework would you use to decide whether an agent should interrupt the user?",
+          "options": ["Amershi's guidelines", "Horvitz's mixed-initiative principles", "Liao's question bank", "Rudin's interpretability position"],
+          "answer": 1,
+          "why": "Horvitz gives the expected-utility rule weighing the value of acting against the cost of interrupting under uncertain intent." },
+        { "id": "apxA2q2",
+          "question": "Who argues against post-hoc explanation in favour of models that are interpretable by construction?",
+          "options": ["Cynthia Rudin", "Tim Miller", "Jenn Wortman Vaughan", "Ben Green"],
+          "answer": 0,
+          "why": "Rudin's position — and the book flags it as an open debate with the post-hoc XAI camp rather than a settled question." }
+      ]
+    },
+    {
+      "id": "apxB",
+      "number": "B",
+      "title": "Ranked Reading Lists",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Know what to read first and why",
+          "Recognise the emerging human-LLM canon"
+        ]},
+        { "type": "h", "text": "Essential books, ranked" },
+        { "type": "list", "items": [
+          "Norman, The Design of Everyday Things (rev. 2013) — the shared vocabulary",
+          "Sharp, Preece & Rogers, Interaction Design (6th ed. 2023) — the standard course text",
+          "Shneiderman, Human-Centered AI (2022) — bridges classic HCI to the AI era",
+          "Card, Moran & Newell (1983) — read selectively; the field's scientific charter",
+          "Hutchins, Cognition in the Wild (1995)",
+          "Suchman, Human-Machine Reconfigurations (2007)",
+          "Kohavi, Tang & Xu, Trustworthy Online Controlled Experiments (2020)",
+          "Sauro & Lewis, Quantifying the User Experience (2nd ed. 2016)",
+          "Reason, Human Error (1990)",
+          "Kraut & Resnick, Building Successful Online Communities (2012)"
+        ]},
+        { "type": "h", "text": "The top human-AI interaction papers, by course importance" },
+        { "type": "list", "items": [
+          "Amershi et al., Guidelines for Human-AI Interaction (CHI 2019)",
+          "Horvitz, Principles of Mixed-Initiative User Interfaces (CHI 1999)",
+          "Lee & See, Trust in Automation (Human Factors 2004)",
+          "Yang et al., Why Human-AI Interaction Is Uniquely Difficult to Design (CHI 2020)",
+          "Bansal et al., Does the Whole Exceed Its Parts? (CHI 2021)",
+          "Buçinca et al., To Trust or to Think (CSCW 2021)",
+          "Miller, Explanation in AI (AIJ 2019)",
+          "Cai et al., 'Hello AI' (CSCW 2019)",
+          "Kocielnik et al., Will You Accept an Imperfect AI? (CHI 2019)",
+          "Parasuraman, Sheridan & Wickens, Types and Levels of Automation (2000)"
+        ]},
+        { "type": "h", "text": "The emerging human-LLM canon" },
+        { "type": "list", "items": [
+          "Zamfirescu-Pereira et al., Why Johnny Can't Prompt (CHI 2023)",
+          "Wu, Terry & Cai, AI Chains (CHI 2022)",
+          "Park et al., Generative Agents (UIST 2023)",
+          "Lee, Liang & Yang, CoAuthor (CHI 2022)",
+          "Weisz et al., Design Principles for Generative AI Applications (CHI 2024)",
+          "Sharma et al., Towards Understanding Sycophancy (ICLR 2024)",
+          "Liao & Vaughan, AI Transparency in the Age of LLMs (HDSR 2023)",
+          "Suh et al., Sensecape and Jiang et al., Graphologue (UIST 2023)",
+          "Arawjo et al., ChainForge (CHI 2024)",
+          "Noy & Zhang, productivity RCT (Science 2023)"
+        ]},
+        { "type": "callout", "text": "Recommended order for a designer targeting AI-era employment: chapters 6 → 7 → 12 → 29 → 33 → 38 → 39 → 14 → 36 → capstone." },
+        { "type": "h", "text": "Courses and open resources" },
+        { "type": "list", "items": [
+          "Stanford CS147 and CS347; CMU's human-AI interaction course",
+          "The Engelbart 1968 demo, in full, on the Internet Archive — watch it",
+          "Google PAIR Guidebook and Microsoft HAX Toolkit — free, applied, evidence-linked",
+          "ACM CHI and UIST paper videos on YouTube; the CHI Best Papers list is a curated syllabus in itself"
+        ]}
+      ],
+      "cards": [
+        { "id": "apxBc1", "front": "The single book to read first", "back": "Norman, The Design of Everyday Things (rev. 2013) — it supplies the vocabulary everything else assumes." },
+        { "id": "apxBc2", "front": "The book that bridges classic HCI to the AI era", "back": "Shneiderman, Human-Centered AI (2022)." },
+        { "id": "apxBc3", "front": "The top-ranked human-AI interaction paper", "back": "Amershi et al., Guidelines for Human-AI Interaction (CHI 2019) — the field's heuristic checklist." },
+        { "id": "apxBc4", "front": "Which book for online experiments?", "back": "Kohavi, Tang & Xu, Trustworthy Online Controlled Experiments (2020)." },
+        { "id": "apxBc5", "front": "Which book for usability statistics?", "back": "Sauro & Lewis, Quantifying the User Experience (2nd ed. 2016)." },
+        { "id": "apxBc6", "front": "The recommended fast path for a designer", "back": "Chapters 6, 7, 12, 29, 33, 38, 39, 14, 36, then the capstone." }
+      ],
+      "quiz": [
+        { "id": "apxBq1",
+          "question": "Which two industry resources does the book recommend as free, applied and evidence-linked?",
+          "options": [
+            "Material Design and Apple HIG",
+            "Google PAIR Guidebook and Microsoft HAX Toolkit",
+            "NN/g and Smashing Magazine",
+            "IBM Carbon and Polaris"
+          ],
+          "answer": 1,
+          "why": "PAIR and HAX are the two singled out as evidence-linked operationalisations of the human-AI research literature." },
+        { "id": "apxBq2",
+          "question": "Which chapter does the recommended designer's fast path start with?",
+          "options": ["Chapter 1", "Chapter 6 — the action cycle and the gulfs", "Chapter 29 — trust and reliance", "Chapter 38 — patterns"],
+          "answer": 1,
+          "why": "The gulfs are the master diagnostic tool; everything after is a gulf-bridging device, so the path starts there." }
+      ]
+    }
+  ]
+}

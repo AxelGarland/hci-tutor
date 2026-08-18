@@ -1,0 +1,86 @@
+{
+  "id": "p06",
+  "title": "VI — Collaboration and Social Computing",
+  "color": "blue",
+  "lessons": [
+    {
+      "id": "ch22",
+      "number": 22,
+      "title": "CSCW Foundations",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Explain why groupware fails using Grudin's work/benefit disparity",
+          "Define the socio-technical gap",
+          "Apply awareness and articulation work to human-agent teams"
+        ]},
+        { "type": "claim", "level": "established", "text": "Grudin's eight challenges (CACM 1994): the work/benefit disparity — those who do the extra work are often not those who benefit — still explains most collaboration-tool failures." },
+        { "type": "claim", "level": "established", "text": "The socio-technical gap (Ackerman 2000): the divide between what we must support socially and what we can support technically. Ackerman's point is that this gap is the field's defining intellectual problem, not a temporary engineering shortfall." },
+        { "type": "claim", "level": "established", "text": "Awareness and articulation work: workspace awareness (Gutwin & Greenberg 2002) and coordination mechanisms (Schmidt & Bannon 1992). Operational transforms and then CRDTs are the technical substrate of Google-Docs-style co-editing." },
+        { "type": "claim", "level": "consensus", "text": "Johansen's time/space matrix (1988) — same/different time crossed with same/different place — was stress-tested by hybrid work from 2020 onward." },
+        { "type": "claim", "level": "emerging", "text": "The AI teammate question: when an agent joins a shared document or channel, whose awareness is it disturbing, and who does its articulation work? CSCW is actively rebuilding these concepts for human-agent teams." },
+        { "type": "callout", "text": "Grudin's disparity predicts a specific AI failure: the person who must review an agent's output is frequently not the person whose time the agent saved." }
+      ],
+      "cards": [
+        { "id": "ch22c1", "front": "The work/benefit disparity", "back": "Groupware fails when the people who must do the extra work are not the people who reap the benefit (Grudin 1994)." },
+        { "id": "ch22c2", "front": "The socio-technical gap", "back": "The divide between what we need to support socially and what we are able to support technically — Ackerman's framing of CSCW's central intellectual challenge." },
+        { "id": "ch22c3", "front": "Articulation work", "back": "The invisible labour of coordinating, aligning and meshing individual contributions so that cooperative work holds together." },
+        { "id": "ch22c4", "front": "Workspace awareness", "back": "Up-to-the-moment knowledge of others' interaction with the shared workspace — who is present, where they are, what they are doing." }
+      ],
+      "quiz": [
+        { "id": "ch22q1",
+          "question": "An AI meeting-notes tool saves the organiser time but forces every attendee to check the summary for errors. Which classic finding does this instantiate?",
+          "options": [
+            "The socio-technical gap",
+            "Grudin's work/benefit disparity",
+            "Automation bias",
+            "The evaluator effect"
+          ],
+          "answer": 1,
+          "why": "Benefit concentrates on one person while the added work distributes to everyone else. Grudin identified this as the standard reason groupware goes unadopted." },
+        { "id": "ch22q2",
+          "question": "Why does CSCW's awareness literature matter for multi-agent interfaces?",
+          "options": [
+            "It provides scheduling algorithms",
+            "It already models who is present, who did what, and how participants stay oriented in shared work",
+            "It defines levels of automation",
+            "It specifies CRDT semantics"
+          ],
+          "answer": 1,
+          "why": "Attribution and addressability in multi-agent systems are awareness problems. The book flags CSCW as the quarry to mine for them." }
+      ]
+    },
+    {
+      "id": "ch23",
+      "number": 23,
+      "title": "Social Computing and Online Communities",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Apply evidence-based community design claims",
+          "Understand moderation as designed labour",
+          "Assess how LLMs disturb community dynamics"
+        ]},
+        { "type": "claim", "level": "established", "text": "Social network sites were defined for research purposes by boyd & Ellison (2007). Kraut & Resnick's Building Successful Online Communities (2012) states community design as evidence-linked design claims — a format worth imitating in your own work." },
+        { "type": "claim", "level": "consensus", "text": "Moderation: Grimmelmann's taxonomy (2015); the volunteer moderator labour studied by Matias; and governance studies of Reddit and Wikipedia." },
+        { "type": "claim", "level": "consensus", "text": "Reputation, karma and incentive design, with Sybil attacks and brigading as the standing adversarial dynamics." },
+        { "type": "claim", "level": "emerging", "text": "LLMs in communities: floods of generated content, bot disclosure norms, AI moderation that is both promising and error-prone, and synthetic social spaces such as generative-agent societies (Park et al., UIST 2023)." }
+      ],
+      "cards": [
+        { "id": "ch23c1", "front": "What is the format of Kraut & Resnick's contribution?", "back": "Evidence-linked design claims — each recommendation stated with the research that supports it and the conditions under which it holds." },
+        { "id": "ch23c2", "front": "Grimmelmann's moderation taxonomy", "back": "A structured account of moderation techniques — exclusion, pricing, organising, norm-setting — and the community values each serves." },
+        { "id": "ch23c3", "front": "Sybil attack", "back": "One actor creating many identities to manufacture apparent consensus or overwhelm reputation systems." }
+      ],
+      "quiz": [
+        { "id": "ch23q1",
+          "question": "What is the design risk of AI moderation, per this chapter?",
+          "options": [
+            "It is too slow for large communities",
+            "It is promising and error-prone at the same time",
+            "It cannot be automated at all",
+            "It violates WCAG"
+          ],
+          "answer": 1,
+          "why": "The chapter labels AI moderation as both promising and error-prone. Automating a judgement at scale also automates its mistakes." }
+      ]
+    }
+  ]
+}

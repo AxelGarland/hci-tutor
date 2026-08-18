@@ -1,0 +1,200 @@
+{
+  "id": "p04",
+  "title": "IV — Information, Visual Design, Accessibility",
+  "color": "teal",
+  "lessons": [
+    {
+      "id": "ch15",
+      "number": 15,
+      "title": "Information Architecture",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Apply organisation schemes, labelling and navigation systems",
+          "Choose between card sorting, tree testing and first-click testing",
+          "See where IA hides inside retrieval-augmented systems"
+        ]},
+        { "type": "claim", "level": "established", "text": "Core IA (Rosenfeld, Morville & Arango 2015): organisation schemes (exact versus ambiguous), labelling, navigation (global, local, contextual) and search. Bates' berry-picking model (1989) describes real search behaviour better than classic IR; Teevan et al. (CHI 2004) contrast orienteering with teleporting." },
+        { "type": "claim", "level": "established", "text": "Methods: open and closed card sorting with cluster analysis of the similarity matrix; tree testing for findability isolated from visual design; first-click testing — getting the first click right roughly doubles task success." },
+        { "type": "claim", "level": "consensus", "text": "Ontology and taxonomy: controlled vocabularies and faceted classification, from Ranganathan's legacy through to faceted search (Hearst 2009)." },
+        { "type": "claim", "level": "emerging", "text": "IA in the LLM era: conversational retrieval collapses navigation into query reformulation, and RAG systems reintroduce IA invisibly — chunking is a taxonomy decision users never see. \"Citations as navigation\" is the emerging pattern." },
+        { "type": "exercise", "text": "Card-sort your own portfolio's project set with eight participants. Compare the resulting clusters to your current site sections." }
+      ],
+      "cards": [
+        { "id": "ch15c1", "front": "Orienteering versus teleporting", "back": "Orienteering: navigating in small steps from a known starting point. Teleporting: jumping directly to the target via search. Users orienteer more than designers expect." },
+        { "id": "ch15c2", "front": "Berry-picking model (Bates 1989)", "back": "Real search is an evolving series of partial finds where the query changes as you learn, not a single matched retrieval against a fixed need." },
+        { "id": "ch15c3", "front": "Tree testing — what does it isolate?", "back": "Findability of the structure itself, stripped of visual design, by asking users where they would look in a bare hierarchy." },
+        { "id": "ch15c4", "front": "First-click testing — the headline finding", "back": "Users who get the first click right succeed at roughly double the rate of those who do not." },
+        { "id": "ch15c5", "front": "Where does IA hide in a RAG system?", "back": "In chunking and retrieval structure — a taxonomy decision made by engineers that users never see but always feel." }
+      ],
+      "quiz": [
+        { "id": "ch15q1",
+          "question": "You want to know whether your category structure works, independent of visual design. Which method?",
+          "options": ["Open card sort", "Tree testing", "First-click testing", "Heuristic evaluation"],
+          "answer": 1,
+          "why": "Tree testing presents the bare hierarchy with no layout or styling, isolating structure. Card sorting generates structure rather than validating it." },
+        { "id": "ch15q2",
+          "question": "In what sense does a RAG pipeline make an IA decision?",
+          "options": [
+            "It chooses navigation labels",
+            "Chunking and retrieval boundaries are an invisible taxonomy that determines what can be found",
+            "It applies a controlled vocabulary to user queries",
+            "It does not — retrieval is purely statistical"
+          ],
+          "answer": 1,
+          "why": "How documents are split and indexed decides what is retrievable together. That is a classification decision with no user-facing surface." }
+      ]
+    },
+    {
+      "id": "ch16",
+      "number": 16,
+      "title": "Visual Design: Gestalt, Typography, Hierarchy, Motion",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Use Gestalt grouping deliberately rather than decoratively",
+          "Engineer scan order through visual hierarchy",
+          "Treat design systems as encoded HCI research"
+        ]},
+        { "type": "claim", "level": "established", "text": "Gestalt principles: proximity, similarity, continuity, closure, common region, common fate. Proximity and common region do most of the work in interface layout — grouping by whitespace beats boxes and rules, because it adds less extraneous load." },
+        { "type": "claim", "level": "established", "text": "Typography: hierarchy comes from size, weight and spacing; line length around 45–75 characters; on-screen legibility is driven by contrast and x-height." },
+        { "type": "claim", "level": "consensus", "text": "Visual hierarchy is engineered scan order, built from size, contrast, position and whitespace. F- and Z-pattern findings are eyetracking descriptions of particular layouts, not laws to design toward." },
+        { "type": "claim", "level": "consensus", "text": "Motion: functional animation supports object constancy and perceived causality; 200–500 ms is typical; always respect prefers-reduced-motion, because vestibular disorders make gratuitous motion genuinely harmful." },
+        { "type": "claim", "level": "consensus", "text": "Design systems — Material, Apple HIG, Fluent, Carbon, Polaris — encode tokens, components and patterns for consistency at organisational scale. Study them as compiled HCI research rather than as style guides." },
+        { "type": "callout", "text": "Whitespace is the cheapest grouping mechanism you have, and the only one that costs the viewer nothing to decode." },
+        { "type": "exercise", "text": "Take one of your project pages and produce three variants manipulating only whitespace and type scale. Test scan order with a five-second test on six peers." }
+      ],
+      "cards": [
+        { "id": "ch16c1", "front": "Which Gestalt principles carry most of the load in UI layout?", "back": "Proximity and common region. Grouping by whitespace beats drawing boxes and rules, because it adds less extraneous load." },
+        { "id": "ch16c2", "front": "Comfortable line length", "back": "Roughly 45–75 characters. Longer lines cost the reader accurate return sweeps." },
+        { "id": "ch16c3", "front": "What is visual hierarchy, operationally?", "back": "Engineered scan order, produced by size, contrast, position and whitespace." },
+        { "id": "ch16c4", "front": "Status of the F-pattern", "back": "An eyetracking description of how people scanned particular text-heavy layouts — not a law, and not a template to design toward." },
+        { "id": "ch16c5", "front": "What does functional animation buy?", "back": "Object constancy and perceived causality — the viewer can see where a thing went and what caused it. Typical durations run 200–500 ms." }
+      ],
+      "quiz": [
+        { "id": "ch16q1",
+          "question": "Two related fields need to read as a group. Which is the better first move?",
+          "options": [
+            "Draw a bordered box around them",
+            "Reduce the space between them and increase the space around them",
+            "Give them the same background tint",
+            "Add a heading above them"
+          ],
+          "answer": 1,
+          "why": "Proximity groups without adding marks. Boxes, tints and headings all work, but each adds visual elements the reader must process." },
+        { "id": "ch16q2",
+          "question": "Why must interfaces honour prefers-reduced-motion?",
+          "options": [
+            "It improves rendering performance",
+            "Motion can trigger genuine vestibular symptoms, so it is an accessibility requirement rather than a preference",
+            "It is required by WCAG level AAA only",
+            "Because animation slows task completion"
+          ],
+          "answer": 1,
+          "why": "For users with vestibular disorders, parallax and large transitions can cause nausea and dizziness. The setting is a health accommodation." }
+      ]
+    },
+    {
+      "id": "ch17",
+      "number": 17,
+      "title": "Accessibility and Inclusive Design",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Apply the WCAG baseline correctly",
+          "Distinguish inclusive, universal and ability-based design",
+          "See AI as both assistive technology and new barrier"
+        ]},
+        { "type": "claim", "level": "established", "text": "The legal and technical baseline: WCAG 2.2 (2023) with the POUR principles — Perceivable, Operable, Understandable, Robust — at levels A, AA and AAA. EN 301 549 in the EU, ADA and Section 508 in the US, IS 5568 in Israel. WCAG 3.0 remains in draft." },
+        { "type": "claim", "level": "established", "text": "Assistive technology: screen readers driven by semantic HTML and ARIA — the first rule of ARIA is do not use ARIA when native semantics exist — plus switch access, magnification, captions and voice control." },
+        { "type": "claim", "level": "consensus", "text": "Beyond compliance: inclusive design and Microsoft's persona spectrum of permanent, temporary and situational disability; universal design (Mace); and ability-based design (Wobbrock et al. 2011), which adapts systems to abilities rather than users to systems." },
+        { "type": "claim", "level": "consensus", "text": "Cognitive accessibility — plain language, consistent navigation, error tolerance — is chronically under-implemented relative to sensory accessibility." },
+        { "type": "claim", "level": "emerging", "text": "AI cuts both ways: as assistive technology (scene description, live captioning, voice control for motor impairments) and as a new barrier (unlabelled generated UI, hallucinated image descriptions). Both are live at ASSETS and CHI." },
+        { "type": "h", "text": "Checklist" },
+        { "type": "list", "items": [
+          "Contrast at least 4.5:1 for body text",
+          "Full keyboard operability with a visible focus indicator",
+          "Targets at least 24 × 24 CSS pixels (WCAG 2.2)",
+          "Never encode by colour alone",
+          "Captions plus transcripts",
+          "Test with an actual screen reader, not only an automated auditor"
+        ]},
+        { "type": "exercise", "text": "Navigate your portfolio site using only a keyboard, then with VoiceOver or NVDA. Log every trap and fix the worst three." }
+      ],
+      "cards": [
+        { "id": "ch17c1", "front": "POUR", "back": "Perceivable, Operable, Understandable, Robust — the four WCAG principles." },
+        { "id": "ch17c2", "front": "The first rule of ARIA", "back": "Do not use ARIA when native HTML semantics already provide the role and behaviour. Native elements come with keyboard and screen-reader support already correct." },
+        { "id": "ch17c3", "front": "The persona spectrum", "back": "Disability as permanent, temporary or situational — one arm, a broken arm, holding a baby. It widens who a given accommodation serves." },
+        { "id": "ch17c4", "front": "Ability-based design", "back": "Wobbrock et al. (2011): adapt the system to the abilities the user has, rather than requiring the user to adapt to the system." },
+        { "id": "ch17c5", "front": "Two WCAG 2.2 numbers worth memorising", "back": "Body text contrast at least 4.5:1; target size at least 24 × 24 CSS pixels." },
+        { "id": "ch17c6", "front": "How is AI a new accessibility barrier?", "back": "Generated UI arrives unlabelled and unstructured, and hallucinated image descriptions are confidently wrong in a channel the user cannot cross-check." }
+      ],
+      "quiz": [
+        { "id": "ch17q1",
+          "question": "A component needs a button role. What is the correct approach?",
+          "options": [
+            "A div with role=\"button\" and a keydown handler",
+            "A native button element",
+            "A span with aria-label and tabindex",
+            "Either, as long as ARIA is present"
+          ],
+          "answer": 1,
+          "why": "The first rule of ARIA: prefer native semantics. A real button brings focus, keyboard activation and screen-reader role for free, with nothing to reimplement or get wrong." },
+        { "id": "ch17q2",
+          "question": "An automated auditor reports zero accessibility errors. What can you conclude?",
+          "options": [
+            "The product is accessible",
+            "Only that a subset of machine-checkable rules passed; keyboard and screen-reader testing is still required",
+            "The product meets AA but not AAA",
+            "The auditor is misconfigured"
+          ],
+          "answer": 1,
+          "why": "Automated tools catch a minority of real barriers. Focus order, label quality and screen-reader coherence need manual testing with the actual assistive technology." },
+        { "id": "ch17q3",
+          "question": "Which accessibility area does the book call chronically under-implemented?",
+          "options": ["Colour contrast", "Cognitive accessibility", "Captioning", "Keyboard access"],
+          "answer": 1,
+          "why": "Plain language, consistent navigation and error tolerance receive far less attention than sensory accommodations, despite affecting a large population." }
+      ]
+    },
+    {
+      "id": "ch18",
+      "number": 18,
+      "title": "Data Visualization for Interfaces",
+      "demos": ["encoding"],
+      "reading": [
+        { "type": "objectives", "items": [
+          "Rank visual encodings by decoding accuracy",
+          "Apply the visual information-seeking mantra",
+          "Connect uncertainty visualisation to AI confidence display"
+        ]},
+        { "type": "claim", "level": "established", "text": "Graphical perception: Cleveland & McGill (1984) ranked encodings by decoding accuracy — position beats length, which beats angle, which beats area, which beats colour. This is the empirical basis for \"bar beats pie\"." },
+        { "type": "claim", "level": "established", "text": "Tufte's principles — data-ink ratio, chartjunk — are useful heuristics, some of them contested. Bertin's Semiology of Graphics (1967) is the more systematic foundation." },
+        { "type": "claim", "level": "consensus", "text": "Interaction: Shneiderman's mantra (1996) — overview first, zoom and filter, then details on demand." },
+        { "type": "claim", "level": "emerging", "text": "Uncertainty visualisation (Hullman, Kay and colleagues): hypothetical outcome plots and quantile dotplots communicate uncertainty better than error bars or bare percentages. This feeds directly into AI confidence display." },
+        { "type": "callout", "text": "If a number will be read as certain when it is not, the visualisation has failed no matter how accurate the number is." }
+      ],
+      "cards": [
+        { "id": "ch18c1", "front": "Cleveland & McGill's ranking", "back": "Position, then length, then angle, then area, then colour — ordered by how accurately people decode quantity from each." },
+        { "id": "ch18c2", "front": "Why does a bar chart beat a pie chart?", "back": "Bars encode by position and length, which people decode accurately. Pies encode by angle and area, which they decode poorly." },
+        { "id": "ch18c3", "front": "The visual information-seeking mantra", "back": "Overview first, zoom and filter, details on demand (Shneiderman 1996)." },
+        { "id": "ch18c4", "front": "Quantile dotplots and hypothetical outcome plots", "back": "Frequency-framed uncertainty displays that let people reason about a distribution without decoding an abstract interval." },
+        { "id": "ch18c5", "front": "How should Tufte's principles be treated?", "back": "As useful heuristics, partly contested empirically — not as laws. Bertin is the more systematic foundation." }
+      ],
+      "quiz": [
+        { "id": "ch18q1",
+          "question": "You must show five proportions that readers will compare precisely. Best encoding?",
+          "options": ["Pie chart", "Bar chart with a common baseline", "Treemap", "Colour-saturation heatmap"],
+          "answer": 1,
+          "why": "Position along a common scale plus length are the two most accurately decoded channels. Area and colour sit near the bottom of the ranking." },
+        { "id": "ch18q2",
+          "question": "Why do quantile dotplots outperform a \"73% confident\" label?",
+          "options": [
+            "They are more precise",
+            "They frame uncertainty as countable outcomes rather than an abstract number people systematically misread",
+            "They take less space",
+            "They avoid colour encoding"
+          ],
+          "answer": 1,
+          "why": "Frequency framings map onto how people reason about chance. A bare percentage is read as a property of the answer rather than as a distribution." }
+      ]
+    }
+  ]
+}

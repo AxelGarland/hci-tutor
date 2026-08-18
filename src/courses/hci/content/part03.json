@@ -1,0 +1,668 @@
+{
+  "id": "p03",
+  "title": "III — Usability Engineering and UX Research",
+  "color": "yellow",
+  "lessons": [
+    {
+      "id": "ch11",
+      "number": 11,
+      "title": "Usability: Definitions, Standards, Metrics",
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "State the ISO definition of usability and why context of use is part of it",
+            "Choose an appropriate standardised instrument",
+            "Distinguish usability from UX"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This chapter is about saying precisely what you mean when you claim something is usable, and being able to defend the claim with a number that survives scrutiny. Both halves matter: the definitions constrain what you are allowed to conclude, and the instruments determine whether anyone should believe you."
+        },
+        {
+          "type": "h",
+          "text": "The definition, and the clause people drop"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "ISO 9241-11 (2018): usability is effectiveness, efficiency and satisfaction, in a specified context of use. ISO 9241-210 defines the human-centred design process that surrounds it."
+        },
+        {
+          "type": "p",
+          "text": "Take the three components first. Effectiveness is whether users can complete the task at all, and with what accuracy. Efficiency is the resources it costs them — time, effort, errors along the way. Satisfaction is how the experience was judged. All three, not one; a system can be highly efficient for the few people who master it and ineffective for everyone else."
+        },
+        {
+          "type": "p",
+          "text": "The final clause is the one routinely dropped, and it is not decoration. \"In a specified context of use\" means usability is a property of a relation — this system, these users, this task, this environment — not a property of an artefact. The same interface can be excellent for trained dispatchers under time pressure and unusable for an occasional visitor, and neither result contradicts the other."
+        },
+        {
+          "type": "p",
+          "text": "The practical consequence is that an unqualified claim is not merely imprecise, it is unfalsifiable. \"Our product is usable\" cannot be tested. \"First-time users can complete signup in under two minutes on a phone\" can, and it names the context that makes the number mean something."
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Nielsen's five quality components (Usability Engineering, 1993): learnability, efficiency, memorability, errors, satisfaction."
+        },
+        {
+          "type": "p",
+          "text": "Nielsen's set overlaps the ISO one but pulls apart things ISO folds together. Learnability and memorability are separated, which matters for tools used intermittently — a system you can learn quickly and cannot remember three weeks later fails a real population. Errors is separated from efficiency, because error frequency and error cost behave differently from raw speed."
+        },
+        {
+          "type": "h",
+          "text": "Instruments"
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Standard instruments: SUS (Brooke 1996 — ten items, scored 0–100, population mean around 68); UMUX-Lite as a shorter alternative; NASA-TLX for workload. NPS is a business metric, not a usability one — know the difference. The Single Usability Metric (SUM) combines completion, time, errors and satisfaction into one figure."
+        },
+        {
+          "type": "p",
+          "text": "SUS is worth knowing precisely because it is used carelessly. It is ten items, it produces a number from 0 to 100, and that number is not a percentage — a score of 68 does not mean 68% of anything. The population mean across tested systems sits around 68, which makes 68 average rather than a near-miss, and the scale is non-linear enough that the difference between 70 and 80 is larger than the difference between 50 and 60."
+        },
+        {
+          "type": "p",
+          "text": "NPS deserves the explicit warning the syllabus gives it. Likelihood to recommend is driven by price, brand, support and circumstance as much as by the interface, so it can move for reasons your design had nothing to do with — in either direction. It is a legitimate business measure and an illegitimate substitute for a usability one."
+        },
+        {
+          "type": "callout",
+          "text": "A SUS score without a confidence interval is a number pretending to be evidence. Report the interval — Sauro & Lewis (2016) give the methods."
+        },
+        {
+          "type": "p",
+          "text": "That caution generalises. Small usability samples produce wide intervals, and a difference of a few points between two systems tested with ten users each is very often indistinguishable from noise. Reporting the interval is not statistical decoration; it is the difference between a finding and a coincidence."
+        },
+        {
+          "type": "h",
+          "text": "UX beyond usability"
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "UX beyond usability: hedonic and pragmatic quality (Hassenzahl 2004); temporal UX, which distinguishes the experience before, during and after use; and instruments such as meCUE and AttrakDiff."
+        },
+        {
+          "type": "p",
+          "text": "Hassenzahl's split is the useful one. Pragmatic quality is about achieving the task — essentially what usability measures. Hedonic quality is about stimulation, identification and evocation: whether the product is interesting, whether it says something the user wants said about themselves, whether it carries meaning. A product can be flawless pragmatically and inert hedonically, which is a real and common failure that usability metrics cannot see."
+        },
+        {
+          "type": "p",
+          "text": "Temporal UX makes a related correction. Experience is not a single measurement at the moment of use — anticipation before, the episode itself, and the reconstructed memory afterwards can all differ, and the memory is what drives whether someone returns."
+        },
+        {
+          "type": "papers",
+          "items": [
+            "ISO 9241-11 (2018); ISO 9241-210",
+            "Nielsen, Usability Engineering (1993)",
+            "Brooke, SUS: A quick and dirty usability scale (1996)",
+            "Hassenzahl, hedonic and pragmatic quality (2004)",
+            "Sauro & Lewis, Quantifying the User Experience (2nd ed. 2016)"
+          ]
+        },
+        {
+          "type": "exercise",
+          "text": "Run SUS on two competing products with ten users each, and compute confidence intervals on the difference."
+        }
+      ],
+      "cards": [
+        {
+          "id": "ch11c1",
+          "front": "ISO 9241-11 definition of usability",
+          "back": "Effectiveness, efficiency and satisfaction, in a specified context of use. The context clause is part of the definition."
+        },
+        {
+          "id": "ch11c2",
+          "front": "SUS — what should you remember about the scale?",
+          "back": "Ten items, scored 0–100, and it is not a percentage. The population mean is roughly 68, so 68 is average rather than a poor score."
+        },
+        {
+          "id": "ch11c3",
+          "front": "Nielsen's five quality components",
+          "back": "Learnability, efficiency, memorability, errors, satisfaction."
+        },
+        {
+          "id": "ch11c4",
+          "front": "Why is NPS not a usability metric?",
+          "back": "It measures likelihood to recommend — a business/loyalty construct driven by price, brand and support as much as by the interface."
+        },
+        {
+          "id": "ch11c5",
+          "front": "Pragmatic versus hedonic quality",
+          "back": "Pragmatic quality is task achievement; hedonic quality is stimulation, identification and evocation. UX includes both (Hassenzahl 2004)."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ch11q1",
+          "question": "A product scores 68 on SUS. What is the correct reading?",
+          "options": [
+            "68% of users found it usable",
+            "Roughly average against the population of tested systems",
+            "A failing grade",
+            "Above the industry benchmark of 50"
+          ],
+          "answer": 1,
+          "why": "SUS is not a percentage. The population mean sits near 68, so this is squarely average."
+        },
+        {
+          "id": "ch11q2",
+          "question": "Why does ISO 9241-11 include \"specified context of use\"?",
+          "options": [
+            "To satisfy documentation requirements",
+            "Because usability is a property of a system-user-task-environment relation, not of an artefact alone",
+            "To restrict the standard to workplace software",
+            "To allow vendors to select favourable contexts"
+          ],
+          "answer": 1,
+          "why": "The same interface can be highly usable for one user group and task and unusable for another. Without a specified context the claim is meaningless."
+        }
+      ]
+    },
+    {
+      "id": "ch12",
+      "number": 12,
+      "title": "Inspection Methods: Heuristics, Walkthroughs, Golden Rules",
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Run a heuristic evaluation and know its evidence base and limits",
+            "Run a cognitive walkthrough",
+            "Apply AI-specific heuristic sets alongside the classics"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Inspection methods let experts find problems without users, which makes them fast and cheap and permanently tempting. They work — with a known error profile that you should understand before relying on them, because the failure mode is not \"finds nothing\" but \"finds a confident subset and misses the rest\"."
+        },
+        {
+          "type": "h",
+          "text": "Heuristic evaluation"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Heuristic evaluation (Nielsen & Molich, CHI 1990; refined 1994): three to five evaluators find roughly 75% of problems. The ten heuristics are visibility of system status; match between system and the real world; user control and freedom; consistency and standards; error prevention; recognition rather than recall; flexibility and efficiency of use; aesthetic and minimalist design; help users recognise, diagnose and recover from errors; and help and documentation."
+        },
+        {
+          "type": "p",
+          "text": "The method is simple: each evaluator inspects the interface independently against the list, records violations with severity, and only afterwards are the findings pooled. Independence before pooling is the part people skip, and it is the part that makes the numbers work."
+        },
+        {
+          "type": "callout",
+          "text": "Know the limit as well as the method: the evaluator effect (Hertzum & Jacobsen 2001) means different experts inspecting the same interface find substantially different problem sets. This is why you use several, and why one expert's report is not an audit."
+        },
+        {
+          "type": "p",
+          "text": "That finding is what justifies the three-to-five recommendation. It is not that one expert is careless; it is that overlap between competent evaluators is genuinely low, so coverage from a single reviewer is partial by construction. A single-expert review presented as a complete assessment is making a claim the method does not support."
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Shneiderman's Eight Golden Rules (Designing the User Interface, 1987–2016): strive for consistency; cater to universal usability; offer informative feedback; design dialogs to yield closure; prevent errors; permit easy reversal of actions; support internal locus of control; reduce short-term memory load."
+        },
+        {
+          "type": "p",
+          "text": "Two of those are worth pulling out because they name things the Nielsen list leaves implicit. Dialog closure — every sequence should have a recognisable beginning, middle and end, so the user knows when they are done rather than guessing. And internal locus of control — the user should feel they initiate actions and the system responds, rather than the reverse, which is exactly the property agentic interfaces put under pressure."
+        },
+        {
+          "type": "h",
+          "text": "Cognitive walkthrough"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Cognitive walkthrough (Lewis, Polson, Wharton & Rieman, CHI 1990): step through a task simulating a first-time user's action selection. It is the method of choice for learnability of walk-up-and-use interfaces."
+        },
+        {
+          "type": "p",
+          "text": "At each step the evaluator asks a fixed set of questions: will the user be trying to achieve this effect, will they notice the correct action is available, will they associate that action with the effect they want, and if they perform it will they see that progress has been made. Those four map directly onto the action cycle from chapter 6 — the first two are execution, the last is evaluation."
+        },
+        {
+          "type": "p",
+          "text": "That mapping is why the method is diagnostic rather than merely evaluative. A failure at question two is a signifier problem; at question three, a mapping or labelling problem; at question four, a feedback problem. The walkthrough tells you which."
+        },
+        {
+          "type": "h",
+          "text": "AI-specific heuristics"
+        },
+        {
+          "type": "claim",
+          "level": "emerging",
+          "text": "AI-specific heuristic sets: Amershi et al.'s 18 Guidelines for Human-AI Interaction (CHI 2019) function as the field's checklist for AI features, operationalised by the Microsoft HAX Toolkit. For generative AI specifically, Weisz et al., Design Principles for Generative AI Applications (CHI 2024)."
+        },
+        {
+          "type": "p",
+          "text": "Amershi's set is organised by phase — initially, during interaction, when wrong, and over time — and those last two categories are exactly what the classic heuristics have no vocabulary for. Nielsen's ten assume a deterministic system: they can tell you the status should be visible, but not what to do when the system is confidently incorrect, or when its behaviour changes next month because the model was updated."
+        },
+        {
+          "type": "p",
+          "text": "Run both sets and the division of labour becomes obvious. The classics catch the interface problems an AI feature has in common with everything else; the AI set catches the ones that arise from probabilistic behaviour and change over time. Neither subsumes the other, which is why the exercise is to run them separately and compare what each missed."
+        },
+        {
+          "type": "papers",
+          "items": [
+            "Nielsen & Molich, Heuristic evaluation of user interfaces (CHI 1990)",
+            "Nielsen, refined heuristics (1994)",
+            "Lewis, Polson, Wharton & Rieman (CHI 1990)",
+            "Hertzum & Jacobsen, The evaluator effect (2001)",
+            "Shneiderman, Designing the User Interface",
+            "Amershi et al., Guidelines for Human-AI Interaction (CHI 2019, DOI 10.1145/3290605.3300233)",
+            "Weisz et al., Design Principles for Generative AI Applications (CHI 2024)"
+          ]
+        },
+        {
+          "type": "exercise",
+          "text": "Heuristic-evaluate one AI feature twice — once with Nielsen's ten, once with Amershi's eighteen. Which problems does each set miss?"
+        }
+      ],
+      "cards": [
+        {
+          "id": "ch12c1",
+          "front": "How many evaluators for heuristic evaluation, and why?",
+          "back": "Three to five. One evaluator finds only a fraction of problems; the evaluator effect means different experts surface different issues."
+        },
+        {
+          "id": "ch12c2",
+          "front": "The evaluator effect",
+          "back": "Different experts inspecting the same interface report substantially different problem sets — so a single expert review is not an audit (Hertzum & Jacobsen 2001)."
+        },
+        {
+          "id": "ch12c3",
+          "front": "Cognitive walkthrough — what does it test?",
+          "back": "Learnability. It simulates a first-time user's action selection step by step, asking at each step whether they would know what to do and see that it worked."
+        },
+        {
+          "id": "ch12c4",
+          "front": "Amershi et al. (CHI 2019)",
+          "back": "18 Guidelines for Human-AI Interaction, spanning initially, during interaction, when wrong, and over time. The field's heuristic checklist for AI features."
+        },
+        {
+          "id": "ch12c5",
+          "front": "Shneiderman's rule about locus of control",
+          "back": "Support internal locus of control — users should feel they initiate actions rather than respond to the system."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ch12q1",
+          "question": "Which method would you choose to assess whether a first-time user can complete a walk-up kiosk task?",
+          "options": [
+            "Heuristic evaluation",
+            "Cognitive walkthrough",
+            "A/B test",
+            "SUS survey"
+          ],
+          "answer": 1,
+          "why": "Cognitive walkthrough is purpose-built for initial learnability, simulating action selection with no prior training."
+        },
+        {
+          "id": "ch12q2",
+          "question": "What does Nielsen's ten-heuristic set systematically miss in an AI feature?",
+          "options": [
+            "Visibility of system status",
+            "Behaviour when the system is wrong, and change over time as the model updates",
+            "Error prevention",
+            "Consistency"
+          ],
+          "answer": 1,
+          "why": "The classic heuristics assume deterministic behaviour. Amershi's set adds the categories the classics have no vocabulary for: being wrong, and changing over time."
+        },
+        {
+          "id": "ch12q3",
+          "question": "Why does the book warn against treating a single expert review as an audit?",
+          "options": [
+            "Experts are biased toward their own designs",
+            "The evaluator effect — different experts find substantially different problems",
+            "Heuristics have no empirical support",
+            "Inspection cannot find severe problems"
+          ],
+          "answer": 1,
+          "why": "Overlap between evaluators is low, so coverage from one reviewer is partial by construction. That is the reason for the three-to-five recommendation."
+        }
+      ]
+    },
+    {
+      "id": "ch13",
+      "number": 13,
+      "title": "Empirical Evaluation: User Testing and Experiments",
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Run think-aloud testing and state what the five-user claim does and does not mean",
+            "Design a valid controlled experiment",
+            "Report statistics the way modern HCI expects"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Inspection finds problems cheaply and partially. This chapter is about the methods that find them empirically, and about the specific ways those methods get misquoted — because two of the most-cited numbers in HCI practice are routinely used to justify things they do not support."
+        },
+        {
+          "type": "h",
+          "text": "Think-aloud, and the five-user claim"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Think-aloud usability testing rests on Ericsson & Simon's verbal-protocol foundations (1984): people can report the contents of working memory as they work, provided you ask them to verbalise rather than to explain."
+        },
+        {
+          "type": "p",
+          "text": "That distinction is the practical core of running one well. \"Tell me what you are thinking\" produces usable data; \"why did you do that?\" produces rationalisation, because the user starts constructing an explanation rather than reporting a state. The moderator's job is mostly to stay quiet and prompt neutrally when the participant falls silent."
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "The famous \"five users\" figure (Nielsen & Landauer 1993) is a Poisson model and is widely misquoted: it is five per iteration, not five per product, and it does not hold for low-frequency problems or for comparative questions (Faulkner 2003; Sauro)."
+        },
+        {
+          "type": "p",
+          "text": "The model says that with a per-user problem-detection probability around 0.31, five users surface roughly 85% of the problems that exist — which sounds decisive until you notice what it assumes. It assumes you are counting problems rather than measuring anything, that the problems are roughly equally detectable, and that you will fix what you found and test again."
+        },
+        {
+          "type": "p",
+          "text": "So the failure mode is not testing five users; it is testing five users once and stopping. The argument was always for cheap, repeated rounds — the diminishing return within a round is what makes a sixth user less valuable than a first user in the next round, after the obvious problems have been removed and the subtler ones are no longer masked."
+        },
+        {
+          "type": "p",
+          "text": "Faulkner (2003) showed the variance directly: different random samples of five users from a larger pool found substantially different proportions of the known problems. The average is reassuring; any individual round may not be. And for anything that is not problem-counting — comparing two designs, estimating a completion rate, detecting a rare but costly failure — five is simply the wrong tool."
+        },
+        {
+          "type": "h",
+          "text": "Experiment design"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Experiment design: within- versus between-subjects; counterbalancing with Latin squares; careful operationalisation; validity threats that are internal, external and construct; and power analysis before running, never after."
+        },
+        {
+          "type": "p",
+          "text": "The within-versus-between choice is the first real decision. Within-subjects gives every participant every condition, which controls for individual differences and needs fewer people — at the cost of learning and carryover, since having done the task once changes doing it again. Counterbalancing with a Latin square distributes those order effects rather than eliminating them. Between-subjects avoids carryover entirely and pays for it in statistical power and in the noise that individual variation introduces."
+        },
+        {
+          "type": "p",
+          "text": "The three validity threats are worth keeping separate. Internal validity asks whether the effect you measured was caused by the thing you manipulated. External validity asks whether it generalises beyond your lab, task and sample. Construct validity asks whether your measure captures the thing you named — whether \"time on task\" really is efficiency when a slower user may simply be reading more carefully."
+        },
+        {
+          "type": "p",
+          "text": "Power analysis belongs before data collection because that is the only time it can change a decision. Computed afterwards, observed power is a deterministic function of the p-value you already have, so it adds no information — it merely restates the result in a more flattering vocabulary."
+        },
+        {
+          "type": "h",
+          "text": "Statistics as the field now expects them"
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Statistics for HCI: report effect sizes with confidence intervals rather than bare p-values; mixed-effects models for repeated measures; non-parametric methods for Likert data. The replication conversation reached CHI, bringing transparency and preregistration norms with it."
+        },
+        {
+          "type": "p",
+          "text": "The shift away from bare significance is the important one. A p-value tells you how surprising the data would be under a null hypothesis; it does not tell you how large the effect is, and with a large enough sample a trivial difference becomes significant. An effect size with an interval answers the question a designer actually has: how much better, and how confident should I be about that range?"
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "A/B testing at scale (Kohavi, Tang & Xu, Trustworthy Online Controlled Experiments, 2020): Twyman's law, novelty effects, designing an overall evaluation criterion, and why p-hacked dashboards lie."
+        },
+        {
+          "type": "p",
+          "text": "Twyman's law — any figure that looks interesting or unusual is probably wrong — is the discipline that separates online experimentation from wishful thinking. A spectacular result is more likely to be an instrumentation error, a sample-ratio mismatch, or a logging bug than a genuine discovery, and the first response to one should be a check rather than a celebration."
+        },
+        {
+          "type": "p",
+          "text": "Novelty effects are the other standing trap: a change can lift metrics simply by being different, and the lift decays as the novelty does. Short experiments systematically overstate. And the overall evaluation criterion matters because a dashboard with fifty metrics will always show something significant by chance — deciding in advance which number the experiment is about is what stops the analysis becoming a search."
+        },
+        {
+          "type": "callout",
+          "text": "Non-determinism breaks classic task-success designs for LLM systems, so do not assume these methods transfer unchanged. Chapter 36 handles that case specifically."
+        },
+        {
+          "type": "papers",
+          "items": [
+            "Ericsson & Simon, Protocol Analysis (1984)",
+            "Nielsen & Landauer (1993)",
+            "Faulkner (2003, Behavior Research Methods)",
+            "Kohavi, Tang & Xu, Trustworthy Online Controlled Experiments (2020)",
+            "Robertson & Kaptein, Modern Statistical Methods for HCI (2016)"
+          ]
+        },
+        {
+          "type": "exercise",
+          "text": "Design — do not run — a between-subjects experiment testing whether displaying model confidence changes overreliance on wrong AI answers. Specify the dependent variable, the power analysis, and the confound you most fear."
+        }
+      ],
+      "cards": [
+        {
+          "id": "ch13c1",
+          "front": "What does \"five users\" actually claim?",
+          "back": "That five users per iteration surface most high-frequency problems, under a Poisson model. It is not five per product, and it fails for rare problems and comparative measurement."
+        },
+        {
+          "id": "ch13c2",
+          "front": "Within- versus between-subjects",
+          "back": "Within-subjects gives more power and controls individual differences but risks learning and carryover, requiring counterbalancing. Between-subjects avoids carryover at the cost of power."
+        },
+        {
+          "id": "ch13c3",
+          "front": "Twyman's law",
+          "back": "Any figure that looks interesting or unusual is probably wrong. In A/B testing, spectacular results deserve suspicion before celebration."
+        },
+        {
+          "id": "ch13c4",
+          "front": "What should be reported instead of a bare p-value?",
+          "back": "Effect sizes with confidence intervals, with the analysis and sample size planned in advance."
+        },
+        {
+          "id": "ch13c5",
+          "front": "Novelty effect",
+          "back": "A short-run behaviour change caused by a change being new rather than better. It decays, so short experiments overstate the win."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ch13q1",
+          "question": "A team runs five users once, finds four problems, fixes them and ships. What did they misunderstand?",
+          "options": [
+            "Think-aloud requires ten users minimum",
+            "The five-user figure is per iteration, and assumes you keep iterating and retesting",
+            "Poisson models do not apply to usability",
+            "Nothing — this is correct practice"
+          ],
+          "answer": 1,
+          "why": "The model describes diminishing returns within one round. Testing once and stopping abandons the iteration the argument depends on."
+        },
+        {
+          "id": "ch13q2",
+          "question": "Why is power analysis after the fact criticised?",
+          "options": [
+            "It is computationally expensive",
+            "Observed power is a deterministic function of the p-value and adds no information about the design",
+            "It requires preregistration",
+            "It only applies to between-subjects designs"
+          ],
+          "answer": 1,
+          "why": "Post-hoc power is redundant with the p-value already obtained. Power analysis is a planning tool: it belongs before data collection."
+        },
+        {
+          "id": "ch13q3",
+          "question": "You measure a 12% lift in the first week of an A/B test. What should you suspect first?",
+          "options": [
+            "Sample ratio mismatch only",
+            "A novelty effect",
+            "Insufficient power",
+            "Construct invalidity"
+          ],
+          "answer": 1,
+          "why": "Early lifts frequently decay as the change stops being new. Kohavi's guidance is to run long enough for novelty to wash out before believing the number."
+        }
+      ]
+    },
+    {
+      "id": "ch14",
+      "number": 14,
+      "title": "Qualitative and Field Methods",
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Run a contextual inquiry with the master–apprentice stance",
+            "Interview about behaviour rather than preference",
+            "Choose and defend a qualitative analysis approach"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Experiments tell you whether a difference exists. Field methods tell you what the problem actually is, which is usually the harder and more valuable question — and they are the methods most often done badly, because they look like conversation and are not."
+        },
+        {
+          "type": "h",
+          "text": "Contextual inquiry"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Contextual inquiry (Beyer & Holtzblatt, Contextual Design, 1998): take a master–apprentice stance in the real context of the work, then build work models and affinity diagrams from what you saw."
+        },
+        {
+          "type": "p",
+          "text": "The master–apprentice framing is the method's whole discipline. The participant is the expert in their own work; you are the apprentice, watching them do it and asking about what you see as it happens. That inverts the usual interview dynamic, in which the researcher sets the agenda and the participant tries to give useful answers."
+        },
+        {
+          "type": "p",
+          "text": "Two conditions make it work and are routinely dropped. It has to happen in the real context, because the workarounds, interruptions and physical artefacts that constitute the actual work are invisible anywhere else. And it has to be about work that is actually happening, not a demonstration — a demonstrated task is a performance of the ideal path."
+        },
+        {
+          "type": "p",
+          "text": "The output is not a transcript. Work models capture the flow of information, the sequence of activity, the artefacts and the cultural pressures; affinity diagramming clusters observations bottom-up until the structure of the problem appears rather than being imposed."
+        },
+        {
+          "type": "h",
+          "text": "Interviews"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Semi-structured interviews: use a funnel structure and laddering, and hold the discipline of asking about past concrete behaviour rather than hypothetical preference. \"Would you use…\" answers are worthless — a robust finding from survey methodology."
+        },
+        {
+          "type": "p",
+          "text": "A funnel opens broad and narrows: start with the general territory, let the participant establish what matters to them, then probe specifics. Laddering pushes from a stated preference toward the reason beneath it — why does that matter, and what does that get you — until you reach something stable enough to design against."
+        },
+        {
+          "type": "p",
+          "text": "The behavioural discipline is the part with teeth. People are poor at predicting their own future behaviour and good at reporting what they actually did, so \"walk me through the last time you needed this\" produces data and \"would you pay for this?\" produces noise dressed as encouragement. Every product that shipped on enthusiastic hypothetical answers learned this at greater expense."
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Ethnography in HCI descends from Suchman's PARC lineage. Dourish, \"Implications for Design\" (CHI 2006): ethnography's value is analytic reframing, not a list of bullet-point requirements."
+        },
+        {
+          "type": "p",
+          "text": "Dourish's argument is a warning aimed at the field's habit of asking fieldwork to end in a requirements list. The contribution of good ethnographic work is usually that it changes what you thought the problem was — and a summary that extracts three design implications discards precisely the conceptual reframing that made the study worth doing."
+        },
+        {
+          "type": "h",
+          "text": "Longitudinal and analytic methods"
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Diary studies and experience sampling capture longitudinal, in-situ experience, now usually instrumented through phones — which gets you closer to the moment than a retrospective interview can."
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Analysis: thematic analysis (Braun & Clarke 2006, plus their 2019 reflexive correction); grounded theory, knowing the Glaser/Strauss versus Charmaz constructivist split; and inter-rater reliability norms — McDonald, Schoenebeck & Forte (CSCW 2019) on when IRR is and is not appropriate."
+        },
+        {
+          "type": "p",
+          "text": "The IRR point is the one that saves projects from performing rigour they do not have. Where coding is essentially classification into agreed categories, agreement between coders is meaningful. Where the analysis is interpretive — which is what reflexive thematic analysis is — the researcher's reading is a resource rather than noise to be averaged away, and reporting a kappa implies a kind of objectivity the method never claimed."
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Surveys: question wording effects, satisficing, and scale design (Krosnick). Prefer validated instruments over ad-hoc items. Mixed methods: qualitative to discover, quantitative to measure, is the default product-research pipeline."
+        },
+        {
+          "type": "p",
+          "text": "Satisficing is the survey equivalent of the paradox of the active user: respondents give the least effortful answer that seems acceptable, which produces straight-lining down a column of scales and agreement with whatever the question presupposes. Well-designed instruments exist precisely because getting this right is harder than it looks, and writing your own items usually reinvents a known bias."
+        },
+        {
+          "type": "papers",
+          "items": [
+            "Beyer & Holtzblatt, Contextual Design (1998)",
+            "Dourish, Implications for Design (CHI 2006)",
+            "Braun & Clarke (2006); reflexive TA correction (2019)",
+            "McDonald, Schoenebeck & Forte (CSCW 2019)",
+            "Krosnick, on survey satisficing and scale design"
+          ]
+        },
+        {
+          "type": "exercise",
+          "text": "Conduct two thirty-minute contextual inquiries of someone using an AI assistant for real work. Build an affinity diagram and report the three breakdowns you would never have found in a lab."
+        }
+      ],
+      "cards": [
+        {
+          "id": "ch14c1",
+          "front": "The master–apprentice stance",
+          "back": "The participant is the master of their own work; you are the apprentice. You observe real work in its real context and ask about what you see happening."
+        },
+        {
+          "id": "ch14c2",
+          "front": "Why not ask \"would you use this?\"",
+          "back": "Hypothetical preference predicts behaviour poorly. Ask about specific past behaviour instead — what they did, when, and what happened."
+        },
+        {
+          "id": "ch14c3",
+          "front": "Dourish, Implications for Design (2006)",
+          "back": "The argument that ethnography's contribution is analytic reframing of the problem, not a requirements list extracted for designers."
+        },
+        {
+          "id": "ch14c4",
+          "front": "When is inter-rater reliability inappropriate?",
+          "back": "When the analysis is interpretive rather than classificatory — reflexive thematic analysis treats the researcher's interpretation as a resource, not noise to be averaged away."
+        },
+        {
+          "id": "ch14c5",
+          "front": "The default mixed-methods pipeline",
+          "back": "Qualitative first to discover what matters, quantitative second to measure how much and how often."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ch14q1",
+          "question": "Which interview question is methodologically sound?",
+          "options": [
+            "Would you pay for an AI assistant that drafts your emails?",
+            "Walk me through the last email you had trouble writing — what did you actually do?",
+            "How useful do you think AI will be for writing?",
+            "Do you prefer chat or buttons?"
+          ],
+          "answer": 1,
+          "why": "It asks for specific past behaviour, which is reportable. The others solicit hypothetical preference or forecast, both poor predictors of action."
+        },
+        {
+          "id": "ch14q2",
+          "question": "What does Dourish argue ethnography should deliver?",
+          "options": [
+            "A prioritised requirements list",
+            "An analytic reframing of what the problem is",
+            "Statistical generalisation to the user population",
+            "Personas"
+          ],
+          "answer": 1,
+          "why": "His critique targets the extraction of \"implications for design\" bullets, which discards exactly the conceptual contribution that makes fieldwork worth doing."
+        }
+      ]
+    }
+  ]
+}

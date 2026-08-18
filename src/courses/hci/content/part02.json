@@ -1,0 +1,667 @@
+{
+  "id": "p02",
+  "title": "II — Interaction Design",
+  "color": "red",
+  "lessons": [
+    {
+      "id": "ch07",
+      "number": 7,
+      "title": "Affordances, Signifiers, Constraints, Mapping, Feedback",
+      "demos": [
+        "feedback"
+      ],
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Use Norman's vocabulary precisely — most practitioners do not",
+            "Trace the Gibson → Norman → Gaver → Hartson lineage",
+            "Apply the concepts as a design checklist"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This chapter supplies the vocabulary practitioners use most and misuse most. The words are worth getting right, not out of pedantry, but because each names a different thing that can be missing, and a diagnosis that says \"bad affordances\" when it means \"no signifier\" points at the wrong fix."
+        },
+        {
+          "type": "h",
+          "text": "Affordance and signifier"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Affordance (Gibson 1979): a relation between an agent's capabilities and an environment's properties — a real action possibility, whether or not anyone perceives it. A handle affords pulling for a creature with hands, and the affordance exists in the dark, unperceived."
+        },
+        {
+          "type": "p",
+          "text": "Gibson's term came out of ecological psychology, where the claim is that perception is of action possibilities directly rather than of raw sensory data that must then be interpreted. You do not see a coloured shape and infer that it is sittable; you see something sit-on-able. The affordance is in the relation between the creature and the world, which is why the same object affords different things to a child and an adult."
+        },
+        {
+          "type": "p",
+          "text": "Norman's revision (2013) supplies the term the design field actually needed: what communicates the affordance is a signifier. The affordance is what is possible; the signifier is the perceptible signal that tells you so. Keeping the two apart is the entire point of the vocabulary."
+        },
+        {
+          "type": "callout",
+          "text": "Precision matters here. \"Flat design has poor affordances\" actually means poor signifiers — the click affordance is completely intact, and nothing signals it."
+        },
+        {
+          "type": "p",
+          "text": "Gaver (CHI 1991) separated the cases that are worth naming individually. A perceptible affordance exists and is signalled — the ordinary, working case. A hidden affordance exists and is not signalled, which is the gesture problem and the AI-capability problem. A false affordance is signalled but does not exist: the button that looks pressable and does nothing, the underlined text that is not a link. Each fails differently, and each is fixed differently."
+        },
+        {
+          "type": "p",
+          "text": "Hartson (2003) split the concept along another axis into cognitive, physical, sensory and functional affordances. That division is useful when you need to say precisely which part of an interaction is failing: whether the user cannot perceive the control, cannot physically operate it, cannot understand what it will do, or can do all three and the control does not accomplish the goal."
+        },
+        {
+          "type": "h",
+          "text": "Constraints"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Constraints — physical, semantic, cultural and logical — are the cheapest error prevention available, because they remove the possibility rather than warning against it."
+        },
+        {
+          "type": "p",
+          "text": "The four kinds are worth distinguishing because they have different reliability. A physical constraint makes the wrong action impossible: a plug that only fits one way. A semantic constraint follows from the meaning of the situation: the rider faces forward. A cultural constraint follows from convention, and is therefore only as reliable as the convention is shared. A logical constraint follows from the arrangement itself — if there is one piece left and one hole, they go together."
+        },
+        {
+          "type": "p",
+          "text": "Forcing functions are the stronger version, and they come in three kinds. An interlock forces operations into a sequence, so a step cannot happen before its prerequisite — the microwave that will not run with the door open. A lock-in keeps an operation going, preventing premature exit — the prompt that stops you quitting with unsaved work. A lockout prevents entry into a dangerous state at all — the guard rail in front of the live panel."
+        },
+        {
+          "type": "p",
+          "text": "Note the cost. Every forcing function inserts friction into a path someone will take routinely, so the technique is only worth it where the error it prevents is expensive or irreversible. Applied everywhere, forcing functions become the confirmation dialogs nobody reads, and the protection they were supposed to provide is gone."
+        },
+        {
+          "type": "h",
+          "text": "Mapping"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Mapping: the correspondence between a control and its effect. Natural mappings exploit spatial analogy and cultural convention, which is why stove-burner knobs are the eternal example."
+        },
+        {
+          "type": "p",
+          "text": "The stove case is perfect because the two designs are equally buildable and wildly unequal in use. Four burners in a rectangle with four knobs in a row require an arbitrary pairing that must be learned and re-learned; four knobs arranged in the same rectangle as the burners require nothing at all. No amount of labelling makes the first arrangement as good as the second, which is the general lesson: a good mapping removes the need for the label rather than improving it."
+        },
+        {
+          "type": "h",
+          "text": "Feedback"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Feedback: every action needs a timely, informative and proportionate response. The classic latency thresholds (Card et al. 1991; Nielsen 1993) — about 0.1 s feels instantaneous, about 1 s keeps the flow of thought, about 10 s is the limit of attention — are the empirical basis for streaming tokens, skeleton screens and progress indication."
+        },
+        {
+          "type": "p",
+          "text": "Those three numbers come from human perception rather than from hardware, which is why they have not moved. Under about a tenth of a second, the response feels like a direct consequence of the action and the interface feels physical. Up to about a second, the delay is noticed but the user's train of thought survives it. By ten seconds, attention has gone elsewhere, and the interface needs a progress indicator with an estimate if it wants the user back."
+        },
+        {
+          "type": "p",
+          "text": "Proportionate is doing real work in that definition. Feedback too loud for its action becomes noise, and noise trains dismissal — which is how an interface ends up with a user who ignores the one message that mattered. Feedback too quiet for a consequential action leaves the user unsure whether anything happened, which produces the duplicate submissions that are the classic symptom."
+        },
+        {
+          "type": "h",
+          "text": "AI translation"
+        },
+        {
+          "type": "claim",
+          "level": "emerging",
+          "text": "What is the signifier for \"this text field accepts an instruction to a model with tool access\"? Current chat interfaces signify almost nothing about capability boundaries — a signifier crisis, in which the affordances are vast and real and nothing communicates them. Suggested-prompt chips, capability menus and tool-use disclosures are today's attempted signifiers for invisible affordances."
+        },
+        {
+          "type": "p",
+          "text": "Read that against Gaver's taxonomy and the diagnosis sharpens. A chat box is a field of hidden affordances: an enormous set of real action possibilities with almost no perceptible signal about any of them. Worse, it produces false affordances too — the interface appears to afford anything expressible in language, and some of what you can express it cannot do. The user has no way to tell which is which until after they have tried."
+        },
+        {
+          "type": "papers",
+          "items": [
+            "Gibson, The Ecological Approach to Visual Perception (1979)",
+            "Norman, The Design of Everyday Things (1988/2013)",
+            "Gaver, Technology Affordances (CHI 1991)",
+            "Hartson, Cognitive, physical, sensory and functional affordances (2003, Behaviour & IT)",
+            "Card et al. (1991); Nielsen, Usability Engineering (1993)"
+          ]
+        },
+        {
+          "type": "exercise",
+          "text": "Audit an AI chat product: list ten affordances — things the system can actually do — and rate each 0–2 on signification. Redesign the two worst."
+        }
+      ],
+      "cards": [
+        {
+          "id": "ch07c1",
+          "front": "Affordance versus signifier",
+          "back": "An affordance is a real action possibility, given the agent's capabilities. A signifier is what communicates that the possibility exists. Flat design harms signifiers, not affordances."
+        },
+        {
+          "id": "ch07c2",
+          "front": "Gaver's three kinds of affordance",
+          "back": "Perceptible (exists and is signalled), hidden (exists, not signalled), false (signalled but does not exist)."
+        },
+        {
+          "id": "ch07c3",
+          "front": "The three forcing functions",
+          "back": "Interlocks (force a sequence), lock-ins (keep an operation going), lockouts (prevent entry into a dangerous state)."
+        },
+        {
+          "id": "ch07c4",
+          "front": "The three latency thresholds",
+          "back": "0.1 s feels instantaneous; 1 s preserves flow of thought; 10 s is the limit of attention and requires a progress indicator."
+        },
+        {
+          "id": "ch07c5",
+          "front": "The signifier crisis in AI chat",
+          "back": "A blank text field signals nothing about capability boundaries or tool access. Suggestion chips, capability menus and tool disclosures are attempts to signify invisible affordances."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ch07q1",
+          "question": "A designer says a flat button \"has no affordance.\" What is the precise correction?",
+          "options": [
+            "The affordance exists; it is the signifier that is missing",
+            "The signifier exists; the affordance is missing",
+            "Both are missing",
+            "Affordance is the wrong term entirely for software"
+          ],
+          "answer": 0,
+          "why": "The element is still clickable — the action possibility is real. What flat styling removes is the perceptual cue that communicates it."
+        },
+        {
+          "id": "ch07q2",
+          "question": "An action takes 4 seconds. What do the latency thresholds recommend?",
+          "options": [
+            "Nothing — it is under 10 seconds",
+            "Immediate acknowledgement plus an indeterminate progress indicator",
+            "A precise time estimate and a cancel button only",
+            "Block the interface until it completes"
+          ],
+          "answer": 1,
+          "why": "Past one second flow is broken, so the press must be acknowledged at once. A precise estimate becomes necessary as you approach the ten-second attention limit."
+        },
+        {
+          "id": "ch07q3",
+          "question": "Which is a lockout?",
+          "options": [
+            "A microwave that will not run with the door open",
+            "A \"hold to confirm\" delete button",
+            "A guard rail preventing access to a live electrical panel",
+            "A wizard forcing steps in order"
+          ],
+          "answer": 2,
+          "why": "A lockout prevents entry into a dangerous state. The microwave and the ordered wizard are both interlocks — they force operations into a sequence — while hold-to-confirm is deliberate friction rather than any of the three."
+        }
+      ]
+    },
+    {
+      "id": "ch08",
+      "number": 8,
+      "title": "Direct Manipulation and Interaction Paradigms",
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "State the three defining properties of direct manipulation",
+            "Position any product on the command → manipulation → delegation spectrum",
+            "Explain the modern hybrid synthesis"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Direct manipulation is the paradigm most people mean when they say an interface is intuitive, and it has a precise definition rather than a vibe. Knowing the definition matters now more than it did a decade ago, because the current generation of AI products is quietly abandoning parts of it, and it helps to know which parts."
+        },
+        {
+          "type": "h",
+          "text": "The three properties"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Direct manipulation (Shneiderman, \"Direct Manipulation: A Step Beyond Programming Languages\", 1983) has three defining properties: continuous representation of the objects of interest, physical actions in place of syntax, and rapid incremental reversible operations whose effect on the object is immediately visible."
+        },
+        {
+          "type": "p",
+          "text": "Take them one at a time. Continuous representation means the thing you are working on is on the screen the whole time, not described, not remembered — you act on the object rather than on a name for it. Physical actions in place of syntax means dragging, dropping and selecting rather than composing a correct sentence about what should happen. And rapid incremental reversible operations with visible effects means each step is small, its result is immediately apparent, and undoing it is cheap enough that exploration is safe."
+        },
+        {
+          "type": "p",
+          "text": "The third property is what makes the first two pay off. Immediate visible feedback plus cheap reversal converts using an interface from planning into trying — the user does not have to be right in advance, because being wrong costs one undo. That is why direct manipulation feels learnable in a way that a command language does not, even when the command language is more powerful."
+        },
+        {
+          "type": "h",
+          "text": "Why directness works"
+        },
+        {
+          "type": "p",
+          "text": "Hutchins, Hollan & Norman (\"Direct Manipulation Interfaces\", 1985) supplied the theory underneath Shneiderman's description, and it is more useful than the description alone because it explains failures as well as successes. Directness is not one property but two distances plus a felt quality."
+        },
+        {
+          "type": "p",
+          "text": "Semantic distance is the gap between what you mean and the concepts the interface offers. If you want to make a paragraph feel more formal and the interface offers only fonts and sizes, the semantic distance is large — you must translate your intention into the system's vocabulary yourself. Articulatory distance is the gap between that meaning and the physical form of the action: even with the right concept available, typing a command name is more distant than dragging the thing itself."
+        },
+        {
+          "type": "p",
+          "text": "Close both and you get the third element, which they call the feeling of engagement with the object world rather than with an intermediary. That phrase is not decoration. It names the experiential difference between operating a machine that acts on your document and working on the document."
+        },
+        {
+          "type": "h",
+          "text": "The paradigm spectrum"
+        },
+        {
+          "type": "p",
+          "text": "Command, then direct manipulation, then delegation to agents. Each step moves work across the human-machine boundary, and each buys something at a price. Commands are expressive and precise and require you to know the language. Direct manipulation is discoverable and safe and requires the object to be representable and the operations to be enumerable. Delegation is powerful and requires you to specify an intention well enough that another party can act on it, then verify what they did."
+        },
+        {
+          "type": "p",
+          "text": "The Shneiderman–Maes debate of 1997, published in Interactions, staked out the poles. One side argued for comprehensible, predictable, user-initiated control — you should know what the system will do and be the one who starts it. The other argued for agents that reduce work and information overload by acting on your behalf. Neither position was refuted, which is exactly why the argument recurs every time the underlying capability improves, and why it is the framing debate for 2026's agent products almost unchanged."
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "The modern synthesis is hybrid rather than a winner: direct manipulation for inspection and correction, delegation for generation. An agent drafts; you edit in place. Horvitz's mixed-initiative principles are the bridge between the two, and chapter 28 develops them."
+        },
+        {
+          "type": "p",
+          "text": "Read that split as a division by phase rather than a compromise. Generation is where delegation pays, because producing a first version is the expensive part and the user does not need to control how it is produced. Verification is where the user needs a manipulable representation, because judging and repairing both require the object to be present rather than described."
+        },
+        {
+          "type": "p",
+          "text": "A pure chat interface supplies the first and withholds the second: it generates well and leaves you with a description of a result rather than the result itself. That is the structural reason hybrid interfaces put the artefact back on screen — not aesthetics, but the fact that you cannot correct what you cannot manipulate."
+        },
+        {
+          "type": "h",
+          "text": "Related paradigms"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Instrumental interaction (Beaudouin-Lafon, CHI 2000) — model the interface as instruments acting on domain objects, which generalises direct manipulation rather than replacing it",
+            "Tangible interaction — legibility of state bought at the cost of flexibility, since a physical control cannot be reconfigured",
+            "Reality-based interaction (Jacob et al., CHI 2008) — the trade-off between the naïve physics people already know and the artificial power an interface can offer beyond it"
+          ]
+        },
+        {
+          "type": "papers",
+          "items": [
+            "Shneiderman, Direct Manipulation: A Step Beyond Programming Languages (1983, IEEE Computer)",
+            "Hutchins, Hollan & Norman, Direct Manipulation Interfaces (1985, Human-Computer Interaction)",
+            "Shneiderman & Maes, Direct Manipulation vs. Interface Agents (1997, Interactions)",
+            "Beaudouin-Lafon, Instrumental Interaction (CHI 2000)",
+            "Jacob et al., Reality-Based Interaction (CHI 2008)"
+          ]
+        },
+        {
+          "type": "exercise",
+          "text": "Take a task you currently do via chat with an LLM — editing a paragraph's tone, say. Sketch a direct-manipulation alternative with sliders, brushes or in-place handles. What did you gain in evaluability, and lose in expressiveness?"
+        }
+      ],
+      "cards": [
+        {
+          "id": "ch08c1",
+          "front": "Direct manipulation — the three properties",
+          "back": "Continuous representation of the objects of interest; physical actions rather than syntax; rapid, incremental, reversible operations with immediately visible effects."
+        },
+        {
+          "id": "ch08c2",
+          "front": "Semantic versus articulatory distance",
+          "back": "Semantic distance is the gap between what you mean and what the interface's concepts express. Articulatory distance is the gap between that meaning and the physical form of the action."
+        },
+        {
+          "id": "ch08c3",
+          "front": "The hybrid synthesis",
+          "back": "Delegation for generation, direct manipulation for inspection and correction — the agent drafts, you edit in place."
+        },
+        {
+          "id": "ch08c4",
+          "front": "The trade at the heart of the Shneiderman–Maes debate",
+          "back": "Autonomous assistance buys efficiency; direct control buys predictability, comprehensibility and a sense of responsibility."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ch08q1",
+          "question": "Which property does a chat interface most clearly lack relative to direct manipulation?",
+          "options": [
+            "Reversibility of operations",
+            "Continuous representation of the object being worked on",
+            "Physical rather than syntactic action",
+            "Immediately visible effects"
+          ],
+          "answer": 1,
+          "why": "In chat the object of interest is described, not displayed and continuously manipulable. That absence is why hybrid interfaces put the artefact back on screen."
+        },
+        {
+          "id": "ch08q2",
+          "question": "What does the modern synthesis propose instead of choosing between manipulation and delegation?",
+          "options": [
+            "Full autonomy with post-hoc audit",
+            "Delegation for generation, direct manipulation for inspection and correction",
+            "Direct manipulation only, for predictability",
+            "Alternating control on a fixed schedule"
+          ],
+          "answer": 1,
+          "why": "Generation is where delegation pays; verification is where the user needs a manipulable representation. Splitting them by phase resolves the 1997 either/or."
+        }
+      ]
+    },
+    {
+      "id": "ch09",
+      "number": 9,
+      "title": "Discoverability, Learnability, Information Scent, Progressive Disclosure",
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Apply information foraging theory to navigation labels",
+            "Distinguish initial from extended learnability",
+            "Use progressive disclosure to stage complexity"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This chapter is about the period before a user knows how to use your system — which, for most products, is most of the time. Its central claim is that people navigate unfamiliar information environments the way animals forage, and that the design consequences follow from taking that analogy literally rather than loosely."
+        },
+        {
+          "type": "h",
+          "text": "Information scent"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Information foraging theory (Pirolli & Card, 1999, Psychological Review): users follow information scent — proximal cues that predict distal value — the way a forager reads patch cues. Poor link labels starve the scent trail."
+        },
+        {
+          "type": "p",
+          "text": "The analogy is doing real work. A forager cannot see the food in the next patch; it reads cues available here that correlate with value there, and decides whether the journey is worth it. A user cannot see the content behind a link; they read the label, the surrounding text and the position, and decide whether clicking is worth it."
+        },
+        {
+          "type": "p",
+          "text": "That reframes a navigation label as a bet rather than a name. \"Resources\" is a poor label not because it is inelegant but because it predicts almost nothing about what lies behind it, so the user cannot estimate the value of following it. \"Download the 2026 price list\" is a strong label because the prediction it makes is specific enough to act on. This is the basis of SNIF-ACT models and of the everyday heuristic that a button should smell like its destination."
+        },
+        {
+          "type": "p",
+          "text": "Foraging theory also predicts the behaviour when scent runs out: the user leaves the patch. Not because they gave up on the goal, but because the expected return from continuing to search here fell below the expected return from searching elsewhere. Interfaces lose users to weak labels long before they lose them to missing features."
+        },
+        {
+          "type": "h",
+          "text": "Two kinds of learnability"
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Learnability decomposes into initial learnability — can a first-time user succeed at all — and extended learnability, the path from novice competence to expert efficiency. Grossman, Fitzmaurice & Attar (CHI 2009) give the standard taxonomy."
+        },
+        {
+          "type": "p",
+          "text": "The two are separable and often traded against each other without anyone noticing. An interface can be trivially learnable and have no ceiling, so competent users stay slow forever. Another can be impenetrable on day one and superb by month three. Neither is wrong in the abstract; what is wrong is optimising one while believing you are measuring both."
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "The paradox of the active user (Carroll & Rosson, 1987) sits inside this: users will not read the manual. They satisfice and start doing, so design for learning by doing."
+        },
+        {
+          "type": "p",
+          "text": "It is a genuine paradox because the behaviour is locally rational and globally costly. Reading the documentation would save the user more time than it takes, and they decline anyway, because the immediate goal is the task and the documentation is a detour away from it. Every product team eventually discovers this and most respond by writing better documentation, which does not work."
+        },
+        {
+          "type": "p",
+          "text": "What works is moving the learning into the doing: training wheels that simplify the early environment and are removed as competence grows, scaffolding that fades, defaults that teach by being sensible, and interfaces where the safe exploratory action is also the informative one."
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Progressive disclosure: show the 20% used 80% of the time, and stage the rest — defaults, then options, then expert modes. Complexity is sequenced rather than removed, so the first encounter is survivable and the ceiling stays high."
+        },
+        {
+          "type": "p",
+          "text": "The discipline here is deciding what goes in the first tier, and it is harder than it sounds because every stakeholder believes their feature belongs there. The honest test is frequency of use rather than importance in principle: a rarely-used critical feature belongs behind a clear door, not on the front surface where it competes with everything the user does daily."
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Flow (Csikszentmihalyi 1990) requires challenge and skill in balance, clear goals, and immediate feedback. Games operationalise this best; productivity tools mostly violate it through interruption."
+        },
+        {
+          "type": "p",
+          "text": "Those three conditions map onto material elsewhere in this book — clear goals is the execution gulf, immediate feedback is the evaluation gulf, and challenge–skill balance is what progressive disclosure manages over time. The reason games achieve flow more reliably is that they control all three deliberately, while a productivity tool typically controls none of them and is interrupted by notifications besides."
+        },
+        {
+          "type": "h",
+          "text": "AI translation"
+        },
+        {
+          "type": "claim",
+          "level": "emerging",
+          "text": "LLM products have a catastrophic scent problem: a blank text box emits no scent at all. Nothing on it predicts what will pay off, so users plateau on shallow, familiar usage patterns. Suggestion chips, example galleries and \"what can you do?\" affordances are attempts at scent restoration, and onboarding-to-capability is a top-three unsolved problem in AI product design."
+        },
+        {
+          "type": "p",
+          "text": "The plateau is the part worth dwelling on. Users are not failing to explore because they are incurious; they are behaving exactly as foraging theory predicts. With no cue distinguishing a high-value prompt from a low-value one, the rational strategy is to repeat the pattern that worked before, and that strategy is stable — it never surfaces the capability that would have been worth ten times more."
+        },
+        {
+          "type": "papers",
+          "items": [
+            "Pirolli & Card, Information Foraging (1999, Psychological Review)",
+            "Grossman, Fitzmaurice & Attar, A survey of software learnability (CHI 2009)",
+            "Carroll & Rosson, Paradox of the active user (1987)",
+            "Csikszentmihalyi, Flow (1990)"
+          ]
+        },
+        {
+          "type": "exercise",
+          "text": "Take the top-level navigation of a product you use. For each label, write down what you predict is behind it before clicking, then check. Every mismatch is a scent failure you can fix with wording alone."
+        }
+      ],
+      "cards": [
+        {
+          "id": "ch09c1",
+          "front": "Information scent",
+          "back": "Proximal cues — labels, snippets, icons — that let a user predict the distal value of following a path. Weak labels starve the trail."
+        },
+        {
+          "id": "ch09c2",
+          "front": "Paradox of the active user",
+          "back": "Users refuse to spend time learning even when it would save them more time later. They satisfice and start doing, so design for learning by doing."
+        },
+        {
+          "id": "ch09c3",
+          "front": "Initial versus extended learnability",
+          "back": "Initial: can a first-time user succeed at all? Extended: is there a path from novice competence to expert efficiency?"
+        },
+        {
+          "id": "ch09c4",
+          "front": "Why is a blank chat box a foraging problem?",
+          "back": "It emits no scent whatsoever — nothing predicts what will pay off — so users plateau on shallow, familiar patterns."
+        },
+        {
+          "id": "ch09c5",
+          "front": "Progressive disclosure",
+          "back": "Show what is used most, stage the rest: defaults, then options, then expert modes."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ch09q1",
+          "question": "Suggestion chips in an AI product are best understood as which mechanism?",
+          "options": [
+            "Progressive disclosure of expert features",
+            "Restoration of information scent for an interface that emits none",
+            "A forcing function against overreliance",
+            "Choice architecture exploiting the default effect"
+          ],
+          "answer": 1,
+          "why": "The blank box gives no cue about what will pay off. Chips supply proximal cues that predict distal value — scent, in foraging terms."
+        },
+        {
+          "id": "ch09q2",
+          "question": "A team writes an excellent onboarding manual and finds nobody reads it. Which finding predicted this?",
+          "options": [
+            "Hick-Hyman law",
+            "The paradox of the active user",
+            "The evaluator effect",
+            "Algorithm aversion"
+          ],
+          "answer": 1,
+          "why": "Users skip instruction in favour of immediate action even when reading would be rational. The response is to move learning into the doing."
+        }
+      ]
+    },
+    {
+      "id": "ch10",
+      "number": 10,
+      "title": "Cognitive Load in Interface Design",
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Separate intrinsic, extraneous and germane load",
+            "Choose an appropriate workload measure",
+            "Recognise verification cost as a load category in AI tools"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Cognitive load theory gives you a way to say something more precise than \"this is confusing\". Its value is the three-way split, because the three kinds have different causes, different remedies, and — importantly — different desirability. One of them you should be trying to protect rather than reduce."
+        },
+        {
+          "type": "h",
+          "text": "Three kinds of load"
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Cognitive load theory (Sweller 1988, Cognitive Science) separates three kinds. Intrinsic load is the inherent difficulty of the material. Extraneous load is imposed by how the material is presented — the designer's enemy, and the only one design controls outright. Germane load is the effort that actually builds schemas, and is worth protecting rather than minimising."
+        },
+        {
+          "type": "p",
+          "text": "Intrinsic load is a property of the task and its element interactivity. Learning fifty independent vocabulary items is low in intrinsic load even though it is long; understanding a system where every part constrains every other is high, because the parts cannot be held separately. You can sometimes sequence intrinsic load, but you cannot design it away without changing what is being learned."
+        },
+        {
+          "type": "p",
+          "text": "Extraneous load is the interface's contribution, and it is pure waste. Inconsistent placement that forces re-searching, a legend three inches from the chart it explains, an instruction phrased so that the reader must hold two clauses at once — none of that difficulty belongs to the task. This is where design effort has the highest return, because every unit removed is a unit freed with no loss."
+        },
+        {
+          "type": "p",
+          "text": "Germane load is the surprise for most people meeting the theory. It is the effort of actually constructing understanding, and reducing it is counterproductive: an interface so smooth that nothing is thought about produces someone who can operate it and has learned nothing. The desirable-difficulty argument in learning research is the same claim from the other direction."
+        },
+        {
+          "type": "h",
+          "text": "Measuring it"
+        },
+        {
+          "type": "p",
+          "text": "NASA-TLX (Hart & Staveland 1988) is the standard subjective instrument, and it is multidimensional by design: mental demand, physical demand, temporal demand, performance, effort and frustration. The dimensions matter because two interfaces can produce the same overall score for opposite reasons, and averaging them away discards the diagnosis."
+        },
+        {
+          "type": "p",
+          "text": "Objective proxies include dual-task performance — give the user a secondary task and see how much capacity is left — and pupillometry, which tracks a physiological correlate of effort. Both are more expensive and less interpretable than asking, which is why TLX remains common."
+        },
+        {
+          "type": "p",
+          "text": "Mayer's multimedia-learning corollaries supply two effects worth knowing by name. The split-attention effect: when related material is separated in space or time, the learner spends capacity holding one part while finding the other. The redundancy effect: the same content presented in two channels at once can cost more than it gives, because reconciling the two is itself work."
+        },
+        {
+          "type": "h",
+          "text": "Design levers"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Chunking, so the unit the user holds is meaningful rather than arbitrary",
+            "Externalising state onto the display rather than into memory",
+            "Consistent placement, which recruits spatial memory at no cost to the user",
+            "Eliminating incidental choices that carry no information",
+            "Recognition over recall throughout"
+          ]
+        },
+        {
+          "type": "h",
+          "text": "The new load category"
+        },
+        {
+          "type": "claim",
+          "level": "emerging",
+          "text": "Verification of AI output is a new load category. Reading and checking generated content can exceed the cost of doing the task unaided, and the effect is sharpest for code (Vaithilingam, Zhang & Glassman, CHI EA 2022). Designing to make verification cheap — diffs, citations, previews, contrastive views — is a core AI-native pattern."
+        },
+        {
+          "type": "p",
+          "text": "Verification cost is worth treating as its own category because it does not sit cleanly in the existing three. It is not intrinsic to the user's task — they did not set out to review someone else's work. It is not purely extraneous either, since some checking is genuinely required. And it is rarely germane, because reading a plausible answer builds far less understanding than producing one would have."
+        },
+        {
+          "type": "callout",
+          "text": "The question to ask of any AI feature is not whether it reduced work, but whether it moved work from production to verification — and whether that trade came out ahead."
+        },
+        {
+          "type": "p",
+          "text": "That question also explains why the fixes are what they are. A diff makes verification proportional to the size of the change rather than the size of the artefact. A citation makes a claim checkable in one step instead of requiring independent research. A preview lets the result be judged rather than imagined. Each is an attempt to keep the trade favourable rather than to make the generation better."
+        },
+        {
+          "type": "papers",
+          "items": [
+            "Sweller, Cognitive load during problem solving (1988, Cognitive Science)",
+            "Hart & Staveland, NASA-TLX (1988)",
+            "Mayer, multimedia learning — split-attention and redundancy effects",
+            "Vaithilingam, Zhang & Glassman, on Copilot (CHI EA 2022)"
+          ]
+        },
+        {
+          "type": "exercise",
+          "text": "Instrument one of your own workflows with NASA-TLX before and after adding an AI assistant. Did total workload drop, or did it shift from production to verification?"
+        }
+      ],
+      "cards": [
+        {
+          "id": "ch10c1",
+          "front": "The three kinds of cognitive load",
+          "back": "Intrinsic (inherent task difficulty), extraneous (imposed by presentation — the designer's target), germane (effort that builds schemas)."
+        },
+        {
+          "id": "ch10c2",
+          "front": "NASA-TLX",
+          "back": "A multidimensional subjective workload instrument (Hart & Staveland 1988) covering mental, physical and temporal demand, performance, effort and frustration."
+        },
+        {
+          "id": "ch10c3",
+          "front": "Verification cost",
+          "back": "The load of reading and checking AI-generated output. It can exceed the cost of doing the task unaided, especially for code."
+        },
+        {
+          "id": "ch10c4",
+          "front": "Which load should a designer attack first?",
+          "back": "Extraneous load — it is the portion imposed purely by presentation, and therefore the portion design controls outright."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ch10q1",
+          "question": "An AI coding assistant halves typing time but developers report no productivity gain. What is the most likely explanation from this chapter?",
+          "options": [
+            "Intrinsic load rose",
+            "Work shifted from production to verification rather than disappearing",
+            "Germane load was eliminated",
+            "The tool violated the paradox of the active user"
+          ],
+          "answer": 1,
+          "why": "Generation gets cheap while checking gets expensive. Total workload can be flat or worse unless the interface makes verification cheap — diffs, previews, citations."
+        },
+        {
+          "id": "ch10q2",
+          "question": "Which of these reduces extraneous rather than intrinsic load?",
+          "options": [
+            "Simplifying the underlying task",
+            "Keeping controls in consistent positions across screens",
+            "Teaching the user domain concepts",
+            "Reducing the number of steps the task genuinely requires"
+          ],
+          "answer": 1,
+          "why": "Consistent placement recruits spatial memory and costs the user nothing conceptually. The other options change the task itself, which is intrinsic load."
+        }
+      ]
+    }
+  ]
+}

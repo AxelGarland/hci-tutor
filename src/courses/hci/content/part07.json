@@ -1,0 +1,113 @@
+{
+  "id": "p07",
+  "title": "VII — Mobile, Wearable, and Emerging Interfaces",
+  "color": "red",
+  "lessons": [
+    {
+      "id": "ch24",
+      "number": 24,
+      "title": "Mobile and Touch Interaction",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Explain why gestures are inherently undiscoverable",
+          "Design for interruption-driven usage sessions"
+        ]},
+        { "type": "claim", "level": "established", "text": "Gesture discoverability is inherently poor because gestures have no signifiers — nothing on screen indicates the command exists. Hence gesture tutorials and edge hints, which are patches on a structural problem." },
+        { "type": "claim", "level": "consensus", "text": "One-handed use and reachability shape layout; mobile sessions are interruption-driven and often under a minute for many app classes. Mobile-first constraints work as a design discipline precisely because they force prioritisation." },
+        { "type": "callout", "text": "Norman & Nielsen's \"Gestural Interfaces: A Step Backward in Usability\" (2010) was prophetic about invisible commands — the same critique now applies to invisible AI capabilities." },
+        { "type": "exercise", "text": "List every gesture one app you use supports. How many did you discover by accident, and how many have you never used?" }
+      ],
+      "cards": [
+        { "id": "ch24c1", "front": "Why are gestures hard to discover?", "back": "They have no signifiers — nothing in the display indicates the command exists, so the affordance is entirely hidden." },
+        { "id": "ch24c2", "front": "Norman & Nielsen's 2010 warning", "back": "Gestural interfaces regressed on usability by abandoning visibility, consistency and discoverability in favour of invisible commands." },
+        { "id": "ch24c3", "front": "What characterises mobile usage sessions?", "back": "They are short and interruption-driven — often under a minute — so tasks must be resumable and state must survive being dropped." }
+      ],
+      "quiz": [
+        { "id": "ch24q1",
+          "question": "How does the gesture discoverability problem map onto AI chat interfaces?",
+          "options": [
+            "It does not — chat is fully visible",
+            "Both hide capabilities behind invisible commands the user must already know exist",
+            "Both rely on Fitts-law targets",
+            "Both suffer from change blindness"
+          ],
+          "answer": 1,
+          "why": "A swipe you don't know about and a prompt pattern you don't know about fail the same way: the capability is real and entirely unsignalled." }
+      ]
+    },
+    {
+      "id": "ch25",
+      "number": 25,
+      "title": "Wearables, Watches, Ambient Computing",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Budget interaction cost on glanceable devices",
+          "Apply calm technology against notification maximalism"
+        ]},
+        { "type": "claim", "level": "consensus", "text": "Glanceability means sub-two-second interactions. Interaction cost budgets on the wrist are tiny, haptics becomes a primary channel, and social acceptability of body-worn interaction is a real constraint." },
+        { "type": "claim", "level": "consensus", "text": "Calm technology (Weiser & Brown 1996): information moves between the centre and the periphery of attention. The lens is now applied against notification-maximalist AI assistants." },
+        { "type": "claim", "level": "emerging", "text": "The 2024 AI pins and pendants are cautionary case studies: voice-first with no screen violated evaluability — the Gulf of Evaluation with no representation to inspect. Analyse them, do not mock them." }
+      ],
+      "cards": [
+        { "id": "ch25c1", "front": "Glanceability", "back": "The device must deliver its information in a sub-two-second look, because that is the whole interaction budget on the wrist." },
+        { "id": "ch25c2", "front": "Calm technology", "back": "Weiser & Brown's principle that information should move smoothly between the periphery and the centre of attention, rather than demanding the centre constantly." },
+        { "id": "ch25c3", "front": "Why did screenless AI devices struggle?", "back": "With no persistent representation, the user cannot inspect what the system understood or did — the Gulf of Evaluation with nothing to bridge it." }
+      ],
+      "quiz": [
+        { "id": "ch25q1",
+          "question": "What is the core design diagnosis of screenless voice-first AI devices?",
+          "options": [
+            "Latency was too high",
+            "Removing the display removed the means of evaluating what the system did",
+            "Voice recognition accuracy was insufficient",
+            "They violated calm technology"
+          ],
+          "answer": 1,
+          "why": "Without a persistent representation there is nothing to inspect, correct or point at. That is the Gulf of Evaluation taken to its limit." }
+      ]
+    },
+    {
+      "id": "ch26",
+      "number": 26,
+      "title": "Voice, AR/VR/XR, Tangible, Robots",
+      "reading": [
+        { "type": "objectives", "items": [
+          "Apply conversational maxims to voice design",
+          "Name the unsolved problems in XR interaction",
+          "Connect the Media Equation to AI anthropomorphism"
+        ]},
+        { "type": "claim", "level": "established", "text": "Grice's cooperative maxims — quantity, quality, relation, manner — are the theoretical basis of conversation design." },
+        { "type": "claim", "level": "consensus", "text": "Luger & Sellen's \"Like Having a Really Bad PA\" (CHI 2016) documented the expectation gulf in assistants; Porcheron et al. (CHI 2018) showed voice interfaces are used socially, embedded in household talk rather than as private dialogues." },
+        { "type": "callout", "text": "Error correction is voice's Achilles heel: with no persistent representation to point at, repair means re-uttering." },
+        { "type": "claim", "level": "consensus", "text": "XR: presence and immersion as constructs (Slater); locomotion and cybersickness from vection mismatch; Fitts-style models for 3D selection; text input in VR remains unsolved for speed. Passthrough AR reframes spatial computing as windowed 2D in 3D — a paradigm compromise worth critiquing. Guiard's kinematic chain (1987) is the theory for bimanual interaction." },
+        { "type": "claim", "level": "established", "text": "Tangible bits (Ishii & Ullmer, CHI 1997): the strength of tangible interfaces is legibility of state; the cost is inflexibility." },
+        { "type": "claim", "level": "established", "text": "The Media Equation (Reeves & Nass 1996): people apply social rules to machines automatically, without believing the machine is a person. This is the empirical bridge to AI anthropomorphism." },
+        { "type": "exercise", "text": "Choose one XR app. Identify where it imports WIMP conventions unnecessarily and where it genuinely exploits spatiality." }
+      ],
+      "cards": [
+        { "id": "ch26c1", "front": "Grice's four maxims", "back": "Quantity (say enough, not too much), quality (be truthful), relation (be relevant), manner (be clear)." },
+        { "id": "ch26c2", "front": "Voice's Achilles heel", "back": "Error correction. With no persistent representation to point at, repair requires re-uttering rather than selecting and editing." },
+        { "id": "ch26c3", "front": "The Media Equation", "back": "People apply social rules and expectations to computers automatically — no belief in machine sentience is required (Reeves & Nass 1996)." },
+        { "id": "ch26c4", "front": "Tangible interaction's trade", "back": "Physical state is highly legible; physical form is inflexible. What you gain in visibility you lose in reconfigurability." },
+        { "id": "ch26c5", "front": "Cybersickness — the usual cause", "back": "Vection mismatch: the visual system reports motion the vestibular system does not confirm." }
+      ],
+      "quiz": [
+        { "id": "ch26q1",
+          "question": "Which Gricean maxim does a verbose LLM most clearly violate?",
+          "options": ["Quality", "Quantity", "Relation", "Manner"],
+          "answer": 1,
+          "why": "Quantity requires saying as much as needed and no more. Padding and restating violate it directly; sycophancy is the quality violation." },
+        { "id": "ch26q2",
+          "question": "Why does the Media Equation matter for LLM design?",
+          "options": [
+            "It proves users believe LLMs are conscious",
+            "It shows social responses to machines are automatic, so anthropomorphic cues have effects whatever users believe",
+            "It provides a model of turn-taking",
+            "It explains cybersickness"
+          ],
+          "answer": 1,
+          "why": "The finding is that the social response does not require belief. Adding warmth, names and pronouns changes behaviour even in users who know exactly what they are talking to." }
+      ]
+    }
+  ]
+}
