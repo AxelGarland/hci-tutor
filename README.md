@@ -17,7 +17,6 @@ src/
     course.js        the active course and its derived catalog
     session.js       session planning and phase budgets
     components/      every screen
-    DesignContext.js the context a Cite marker uses to open a chapter
   courses/
     index.js         the registry
     hci/             reference implementation — 43 chapters, 314 items, 7 demos
@@ -43,17 +42,37 @@ recollection — see the item-writing section of [AUTHORING.md](AUTHORING.md).
 
 ## The visual direction
 
-One direction, monochrome. Greyscale throughout, a soft grey ground rather than a flat page, an
-oversized grotesk display, and hairlines instead of boxes. **No colour carries meaning anywhere:**
-right and wrong are fill versus outline plus a word, emphasis is weight and rule, and the decorative
-module swatches are gone.
+**Bold chrome, calm reading.** Three primaries doing structural work. The chrome around the material
+is loud — a full cobalt entrance, a yellow primary action, display type at poster scale. The material
+itself is quiet: Literata at reading size on warm paper, with almost no boxes. A study sitting is an
+hour, and nobody reads 1,200 words on a vibrating page.
 
-That move was only available because the colour-only encodings had already been removed — the quiz
-names its verdicts in text, so taking the hue away cost nothing. A design leaning on red and green
-could not have done it without breaking for the 8% of men with a colour vision deficiency.
+| Token | Hex | Job | Measured |
+| --- | --- | --- | --- |
+| `--color-cobalt` | `#2036c9` | the workhorse: fields, active states, headings, figures | paper on it 8.27:1 |
+| `--color-accent` | `#ffc61a` | a ground for **black marks only** | ink 12.0:1 · white 1.57:1, never used |
+| `--color-signal` | `#d92d20` | the blind-spot rail and the contested badge | white on it 4.83:1 |
+| `--color-verdant` | `#0a6e4a` | mastery only, always beside the number | white on it 6.28:1 |
+| `--color-ink` | `#111111` | reading type, rules, control edges | 18.1:1 on paper |
+| `--color-paper` | `#fbfaf7` | the ground — flat, warm, one plane | — |
+
+**Type is two families split by job.** Archivo (variable, with a width axis) does the wordmark,
+chapter numerals, every uppercase label and all data. Literata — built for extended screen reading —
+does chapter prose and nothing else. That split is what makes the direction a typographic rule
+rather than a slogan.
+
+**Colour reinforces, it never carries alone.** Every claim badge spells out its level, every verdict
+is named in words, and the mastery meter states its percentage beside the bar. The two grading
+buttons are red and blue rather than red and green, because that pair survives the common colour
+vision deficiency.
+
+This replaced an earlier greyscale direction. That one was argued from accessibility, and the
+argument was wrong: WCAG forbids colour as the *only* channel carrying meaning, never colour itself.
+Once the quiz named its verdicts in text the hue was free to stay, and removing it cost the design
+more than it bought.
 
 Tokens live in `src/index.css`. The old semantic names (`--color-teal`, `--color-red`) are kept so
-component classes did not all have to change, but every one now resolves to a grey.
+several hundred component classes did not have to churn; each now resolves into the palette above.
 
 ## Run it
 
@@ -125,11 +144,18 @@ than a comfortable number.
 
 ## Design citation layer
 
-Interface elements carry a small chapter marker. Clicking it explains why that element is built the
-way it is and links to the chapter that justifies it — the calm timer to 25, the confidence wager
-to 29, the separated scores to 36, the deliberately absent streak counter to 21. The notes live in
-`courses/hci/designNotes.js`; each one has to be an honest citation, and where the research sits outside the
-book the note says so rather than borrowing authority the chapter doesn't give.
+The app teaches interface design, so it can justify its own decisions out of its own syllabus. The
+notes live in `courses/hci/designNotes.js` — each one gives a `title`, the `lesson` it cites, and the
+note itself. Each has to be an honest citation, and where the research sits outside the book the note
+says so rather than borrowing authority the chapter doesn't give.
+
+They are collected on one screen, reached from **Why it is built this way** at the foot of the
+sidebar. They used to be small numbered markers sitting beside almost every control, which put a
+number in the margin of every view and made the app read as a thesis annotating itself. An interface
+that explains itself in the margin is harder to use than one that keeps its reasoning in a colophon.
+
+The screen is optional infrastructure: a course package with no `designNotes` export gets no sidebar
+entry and the screen is never reached.
 
 **There is no streak counter, no daily goal, and no loss-framed language.** That is a design
 position, not an oversight: it is Chapter 21's endorsement test applied to this app.
@@ -140,15 +166,23 @@ Checked programmatically across every view — lesson, session setup, warm-up, s
 summary, results, exam plan:
 
 - **Contrast** — every text node meets WCAG 2.2 AA (4.5:1, or 3:1 for large text) against its
-  composited background. Secondary text is the `--color-muted` token (~6:1), never the body colour
-  faded with opacity, which measured about 3.7:1 at the sizes it was used.
-- **Target size** — every control meets 24×24 CSS px. Controls drawn smaller than that (the chapter
-  citation markers) carry an invisible hit area via the `.tap` utility.
-- **No colour-only encoding** — nothing signals with hue at all; verdicts are named in text and
-  distinguished by fill versus outline.
+  composited background, checked across the lesson, demo, card, quiz, session, review, results and
+  exam views at desktop and phone width. Secondary text is the `--color-muted` token (7.34:1), never
+  the body colour faded with opacity, which measured about 3.7:1 at the sizes it was used.
+- **Target size** — every control meets 24×24 CSS px, and 44×44 on a coarse pointer. Anything drawn
+  smaller carries an invisible hit area via the `.tap` utility.
+- **No colour-only encoding** — every state is named in text; hue is reinforcement. Claim badges
+  spell out their level, the mastery meter prints its percentage, and the grading pair is red/blue
+  rather than red/green.
 - **Motion** — `prefers-reduced-motion` is honoured globally.
 - **Keyboard** — every interactive element is a native control; focus is visible at 3px.
 - **Measure** — reading columns run ~69 characters, inside the 45–75 the typography chapter asks for.
+- **Narrow screens** — checked at 320, 375 and 700px CSS pixels: no horizontal page scroll anywhere,
+  every control at least 44px on a coarse pointer, and typing surfaces set at 16px so iOS Safari does
+  not zoom the layout out from under you mid-answer. Encyclopedia plates cannot shrink below their
+  labels, so they scroll inside their own frame and say that they do. The session clock pins to the
+  top of the column below the sidebar breakpoint — a chapter is a dozen screens on a phone, and an
+  inline clock there is a clock you never see.
 
 ### The one deliberate exception
 
@@ -183,11 +217,15 @@ npm run build
 `dist/` is a static folder with no backend. Drop it on Netlify, or connect the repo to Vercel for
 push-to-deploy.
 
-**For GitHub Pages**, the site is served from a subpath, so Vite needs to know about it — add
-`base: '/<repo-name>/'` to `vite.config.js` before building, or the CSS and JS will 404. Netlify and
-Vercel serve from the root and need no change.
+**GitHub Pages is already wired up**: `.github/workflows/pages.yml` builds on every push to `main`
+and publishes `dist`. Pages serves from a subpath, which is why `vite.config.js` sets `base: './'` —
+relative asset paths work both there and at a domain root, so Netlify and Vercel need no change.
 
-Progress is per-browser and per-course, so it does not follow a reader between devices.
+Progress is per-browser and per-course, so it does not follow a reader between devices — and Safari
+evicts site data after about a week of not opening a site. **Back up** in the sidebar writes the
+schedule to a dated JSON file and **Restore** reads one back. A restore describes the file before it
+applies it (items, mastered, chapters read, and anything in it that no longer matches the course),
+because it replaces months of work and a silent bad import is worse than no import.
 
 ## Provenance
 
@@ -206,6 +244,8 @@ throughout, along with the source's epistemic labelling convention (established 
 unpack what the source asserts rather than to introduce new claims, which is why chapters vary in
 length — where the source is thin, the chapter stays thin instead of being padded.
 
-**Status: 14 of 43 chapters are expanded to full reading depth.** The remaining 29 are summaries,
-and their quiz items currently outrun what their reading teaches. That gap is known and being
-closed; it is not a claim that the course is finished.
+**Status: all 43 chapters are expanded to full reading depth** — about 32,000 words, averaging 746
+per chapter. Length varies because the source does: where the syllabus is thin the chapter stays
+thin rather than being padded, so a capstone brief runs to 381 words while Chapter 2 runs to 1,266.
+Item coverage against the reading is around 93%, measured by a keyword heuristic that can tell you a
+term appears and cannot tell you the reading actually teaches it.

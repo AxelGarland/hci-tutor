@@ -75,7 +75,7 @@ export default function RelianceGame() {
 
   return (
     <div className="space-y-4">
-      <div className="slab-flat flex flex-wrap gap-2 bg-white p-3">
+      <div className="slab-flat flex flex-wrap gap-2 bg-paper p-3">
         {Object.entries(MODES).map(([key, m]) => (
           <button
             key={key}
@@ -90,8 +90,8 @@ export default function RelianceGame() {
         ))}
       </div>
 
-      <div className="slab flex flex-col items-center gap-4 bg-white p-6">
-        <p className="text-xs font-bold uppercase tracking-widest opacity-60">
+      <div className="slab flex flex-col items-center gap-4 bg-paper p-6">
+        <p className="microst opacity-60">
           The assistant is right about {Math.round(AI_ACCURACY * 100)}% of the time
         </p>
         <p className="font-mono text-3xl tabular-nums">
@@ -106,7 +106,7 @@ export default function RelianceGame() {
             }}
             className="flex w-full max-w-xs flex-col items-center gap-2"
           >
-            <label className="text-xs font-bold uppercase tracking-wide">Your answer first</label>
+            <label className="micro">Your answer first</label>
             <input
               autoFocus
               value={own}
@@ -114,7 +114,7 @@ export default function RelianceGame() {
               inputMode="numeric"
               className="slab-flat w-full bg-paper px-3 py-2 text-center font-mono text-xl tabular-nums"
             />
-            <button className="slab-flat bg-blue px-6 py-2 text-xs font-bold uppercase tracking-wide text-white">
+            <button className="slab-flat bg-blue px-6 py-2 micro text-white">
               Commit
             </button>
           </form>
@@ -136,13 +136,13 @@ export default function RelianceGame() {
               <div className="flex gap-3">
                 <button
                   onClick={() => decide(false)}
-                  className="slab-flat bg-paper px-5 py-2.5 text-xs font-bold uppercase tracking-wide"
+                  className="slab-flat bg-paper px-5 py-2.5 micro"
                 >
                   Reject
                 </button>
                 <button
                   onClick={() => decide(true)}
-                  className="slab-flat bg-teal px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white"
+                  className="slab-flat bg-teal px-5 py-2.5 micro text-white"
                 >
                   Accept
                 </button>
@@ -157,7 +157,7 @@ export default function RelianceGame() {
                 </p>
                 <button
                   onClick={next}
-                  className="slab-flat bg-yellow px-6 py-2 text-xs font-bold uppercase tracking-wide"
+                  className="slab-flat bg-yellow px-6 py-2 micro"
                 >
                   Next
                 </button>
@@ -167,15 +167,15 @@ export default function RelianceGame() {
         )}
       </div>
 
-      <div className="slab-flat overflow-x-auto bg-white p-3">
-        <div className="mb-3 text-xs font-bold uppercase tracking-wide">Your reliance profile</div>
+      <div className="slab-flat overflow-x-auto bg-paper p-3">
+        <div className="mb-3 micro">Your reliance profile</div>
         <table className="w-full text-left text-sm">
           <thead>
             <tr className="border-b-2 border-ink">
-              <th className="py-1.5 pr-3 text-xs font-bold uppercase tracking-wide">Mode</th>
-              <th className="py-1.5 pr-3 text-xs font-bold uppercase tracking-wide">Accept when right</th>
-              <th className="py-1.5 pr-3 text-xs font-bold uppercase tracking-wide">Accept when wrong</th>
-              <th className="py-1.5 text-xs font-bold uppercase tracking-wide">Appropriate reliance</th>
+              <th className="py-1.5 pr-3 micro">Mode</th>
+              <th className="py-1.5 pr-3 micro">Accept when right</th>
+              <th className="py-1.5 pr-3 micro">Accept when wrong</th>
+              <th className="py-1.5 micro">Appropriate reliance</th>
             </tr>
           </thead>
           <tbody>
@@ -205,7 +205,7 @@ export default function RelianceGame() {
         {(tally.assist.rightSeen > 0 || tally.forcing.rightSeen > 0) && (
           <button
             onClick={() => setTally(emptyTally())}
-            className="mt-2 text-xs font-bold uppercase tracking-wide underline"
+            className="mt-2 micro underline"
           >
             Clear
           </button>

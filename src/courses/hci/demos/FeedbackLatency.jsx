@@ -38,8 +38,8 @@ export default function FeedbackLatency() {
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap gap-3">
-        <div className="slab-flat bg-white p-3">
-          <div className="mb-2 text-xs font-bold uppercase tracking-wide">Server delay</div>
+        <div className="slab-flat bg-paper p-3">
+          <div className="mb-2 micro">Server delay</div>
           <div className="flex gap-2">
             {DELAYS.map((d) => (
               <button
@@ -58,8 +58,8 @@ export default function FeedbackLatency() {
           </p>
         </div>
 
-        <div className="slab-flat bg-white p-3">
-          <div className="mb-2 text-xs font-bold uppercase tracking-wide">Feedback</div>
+        <div className="slab-flat bg-paper p-3">
+          <div className="mb-2 micro">Feedback</div>
           <button
             onClick={() => { reset(); setFeedback((f) => !f) }}
             className={`slab-flat px-3 py-1.5 text-xs font-bold ${
@@ -74,7 +74,7 @@ export default function FeedbackLatency() {
         </div>
       </div>
 
-      <div className="slab-flat flex flex-col items-center gap-3 bg-white p-6">
+      <div className="slab-flat flex flex-col items-center gap-3 bg-paper p-6">
         <button
           onClick={submit}
           className={`slab px-8 py-4 text-base font-bold uppercase tracking-wide ${
@@ -91,7 +91,7 @@ export default function FeedbackLatency() {
             </span>
           )}
         </p>
-        <button onClick={reset} className="text-xs font-bold uppercase tracking-wide underline">
+        <button onClick={reset} className="micro underline">
           Reset
         </button>
       </div>

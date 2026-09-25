@@ -20,22 +20,26 @@ export default function LessonView({ lesson, onGrade }) {
 
   return (
     <div className="space-y-6">
+      {/* The number is set as a figure rather than as part of the sentence: it
+          is the one thing on the page you navigate by. */}
       <header>
-        <p className="text-xs font-bold uppercase tracking-widest opacity-60">
-          {lesson.moduleTitle}
-        </p>
-        <h2 className="mt-1 text-3xl font-bold tracking-tight">
-          <span className="muted">{lesson.number}.</span> {lesson.title}
-        </h2>
+        <p className="micro text-cobalt">{lesson.moduleTitle}</p>
+        <div className="mt-2.5 flex items-start gap-4">
+          <span className="numeral shrink-0 text-5xl text-cobalt sm:text-6xl">{lesson.number}</span>
+          <h2 className="text-balance text-2xl font-extrabold leading-[1.02] tracking-[-0.03em] sm:text-4xl">
+            {lesson.title}
+          </h2>
+        </div>
       </header>
 
-      <nav className="flex flex-wrap gap-2 border-b-2 border-ink pb-3">
+      <nav className="flex flex-wrap gap-2 border-b-2 border-ink pb-3.5">
         {tabs.map((t) => (
           <button
             key={t.key}
             onClick={() => setTab(t.key)}
-            className={`slab-flat px-3.5 py-1.5 text-xs font-bold uppercase tracking-wide ${
-              tab === t.key ? 'bg-ink text-paper' : 'bg-white'
+            aria-current={tab === t.key ? 'true' : undefined}
+            className={`slab-flat px-3.5 py-2 text-[10px] font-extrabold uppercase tracking-[0.12em] ${
+              tab === t.key ? 'border-cobalt bg-cobalt text-paper' : 'bg-transparent'
             }`}
           >
             {t.label}
@@ -47,7 +51,7 @@ export default function LessonView({ lesson, onGrade }) {
 
       {activeDemo && (
         <div className="space-y-3">
-          <h3 className="text-sm font-bold uppercase tracking-wide">{activeDemo.title}</h3>
+          <h3 className="micro">{activeDemo.title}</h3>
           <activeDemo.Component />
         </div>
       )}

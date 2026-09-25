@@ -1,5 +1,4 @@
 import { useId, useState } from 'react'
-import Cite from './Cite'
 import ChaptersMenu from './ChaptersMenu'
 import { course, lessons, lessonMastery, courseList, courseStats } from '../store'
 
@@ -19,35 +18,43 @@ export default function Home({ progress, courseId, onCourse, onSelect, onSession
     })
 
   return (
-    <div className="min-h-full" style={{ background: 'var(--color-home)' }}>
-      {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="relative flex min-h-[100svh] flex-col overflow-hidden">
-        <div className="relative flex justify-end p-5 md:p-8">
+    <div className="min-h-full bg-paper">
+      {/* ── Hero ─────────────────────────────────────────────────────────────
+          A poster, not a page with a logo on it. One field of cobalt, the
+          wordmark at poster scale, and the single yellow object on the screen
+          is the thing you are meant to press. Colour marks where the product
+          ends and the course begins: everything below this fold is paper. */}
+      <section className="on-cobalt relative flex min-h-[100svh] flex-col overflow-hidden bg-cobalt text-paper">
+        <div className="relative flex items-center justify-between gap-4 p-5 md:p-8">
+          <span className="micro">Scaffold</span>
           <ChaptersMenu onSelect={onSelect} />
         </div>
 
-        <div className="relative mt-auto px-5 pb-[14vh] md:px-10">
+        <div className="relative mt-auto px-5 pb-[12vh] md:px-10">
           <h1 className="display">
             Scaffold
-            <span style={{ color: 'var(--color-accent)' }}>*</span>
+            <span className="text-accent">*</span>
           </h1>
 
-          <div className="mt-6 inline-block">
-            <button onClick={onSession} className="micro px-1 py-4 underline underline-offset-4">
-              Start a session
-            </button>
-          </div>
+          {/* Ink on yellow measures 12.0:1. White on yellow measures 1.57:1 and
+              appears nowhere in this design. */}
+          <button
+            onClick={onSession}
+            className="micro mt-8 bg-accent px-6 py-4 text-ink"
+          >
+            Start a session
+          </button>
         </div>
       </section>
 
       {/* ── Below the fold ───────────────────────────────────────────────── */}
-      <div className="mx-auto max-w-5xl px-5 pb-24 md:px-10">
-        <section className="border-t border-rule pt-8">
-          <p className="max-w-[52ch] text-base leading-relaxed">
+      <div className="mx-auto max-w-5xl px-5 pb-24 pt-14 md:px-10">
+        <section>
+          <p className="reading max-w-[52ch] text-lg">
             A structure for teaching a course: chapters you read, demos you run on yourself, and a
             schedule that brings each idea back before you forget it.
           </p>
-          <p className="mt-3 max-w-[52ch] text-sm leading-relaxed muted">
+          <p className="reading mt-4 max-w-[52ch] text-[15px] muted">
             A study sitting is an hour and covers one chapter properly. A review sitting is ten
             minutes of recall on whatever is due — short and frequent is what retention wants,
             which is the opposite of what comprehension wants.
@@ -58,26 +65,27 @@ export default function Home({ progress, courseId, onCourse, onSelect, onSession
           const s = courseStats(c)
           const isActive = c.id === courseId
           return (
-            <section key={c.id} className="mt-16 border-t border-rule pt-8">
-              <h2 className="micro muted">
-                Course
-                <Cite id="coursePackages" />
-              </h2>
+            <section key={c.id} className="mt-16 border-t-2 border-ink pt-6">
+              <h2 className="micro muted">Course</h2>
 
-              <div className="mt-4 flex flex-wrap items-end justify-between gap-x-10 gap-y-3">
+              <div className="mt-4 flex flex-wrap items-end justify-between gap-x-10 gap-y-4">
                 <div>
                   <button
                     onClick={() => (isActive ? setOpen(true) : onCourse(c.id))}
                     className="text-left"
                   >
-                    <span className="block text-3xl font-bold leading-none tracking-tight md:text-4xl">
+                    <span className="block text-3xl font-black leading-[0.95] tracking-[-0.03em] md:text-5xl">
                       {c.title}
                     </span>
                   </button>
-                  <p className="mt-3 max-w-[52ch] text-sm leading-relaxed muted">{c.blurb}</p>
+                  <p className="reading mt-4 max-w-[48ch] text-[15px] muted">{c.blurb}</p>
                 </div>
-                <p className="micro muted tabular-nums">
-                  {s.chapters} ch · {s.items} items · {s.demos} demos
+                {/* The figures are the one place a number is the message, so they
+                    take the accent colour rather than the body grey. */}
+                <p className="micro num flex flex-wrap gap-x-4 gap-y-1 muted">
+                  <span><span className="text-cobalt">{s.chapters}</span> ch</span>
+                  <span><span className="text-cobalt">{s.items}</span> items</span>
+                  <span><span className="text-cobalt">{s.demos}</span> demos</span>
                 </p>
               </div>
             </section>
@@ -110,11 +118,6 @@ export default function Home({ progress, courseId, onCourse, onSelect, onSession
             <span className="micro">Start a 60-minute session</span>
           </button>
         </div>
-
-        <p className="mt-3 text-[11px] leading-relaxed muted">
-          Chapter rows carry item counts and mastery, so the label predicts what is behind it.
-          <Cite id="homeEntry" />
-        </p>
 
         {/* Chapter index --------------------------------------------------- */}
         {open && (
@@ -149,7 +152,7 @@ export default function Home({ progress, courseId, onCourse, onSelect, onSession
                               className="w-full py-2 text-left hover:bg-black/5"
                             >
                               <span className="block text-[15px] font-bold leading-snug">
-                                <span className="muted">{l.number}.</span> {l.title}
+                                <span className="num text-cobalt">{l.number}.</span> {l.title}
                               </span>
                               <span className="mt-0.5 block text-[11px] muted">
                                 {(l.cards?.length ?? 0) + (l.quiz?.length ?? 0)} items
@@ -169,13 +172,6 @@ export default function Home({ progress, courseId, onCourse, onSelect, onSession
           </nav>
         )}
 
-        <footer className="mt-20 border-t border-rule pt-5">
-          <p className="max-w-[62ch] text-[11px] leading-relaxed muted">
-            Greyscale, with one accent used as a ground for black marks. Nothing is signalled by
-            colour alone.
-            <Cite id="accent" />
-          </p>
-        </footer>
       </div>
     </div>
   )

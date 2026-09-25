@@ -8,22 +8,94 @@
       "number": 19,
       "title": "Physical Ergonomics and Device Design",
       "reading": [
-        { "type": "objectives", "items": [
-          "Apply percentile-based anthropometric design",
-          "Account for posture, reach and fatigue in device and layout decisions"
-        ]},
-        { "type": "claim", "level": "established", "text": "Anthropometry and percentile design: design for the 5th to 95th percentile and make the remainder adjustable. Repetitive strain injury and input-device posture, display height and distance, and thumb-zone reachability on phones all follow from body dimensions rather than taste." },
-        { "type": "claim", "level": "established", "text": "Mid-air interaction fatigue — \"gorilla arm\" — has been known since light pens in the 1960s and remains the binding constraint on VR gesture interfaces." },
-        { "type": "claim", "level": "consensus", "text": "Wearables add skin contact, weight distribution and social acceptability as first-order design constraints." },
-        { "type": "p", "text": "Standards: the ISO 9241 series, with the 400s covering input devices." }
+        {
+          "type": "objectives",
+          "items": [
+            "Apply percentile-based anthropometric design",
+            "Account for posture, reach and fatigue in device and layout decisions"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Physical ergonomics is the oldest strand in this book and the one most easily forgotten by people who design on a large monitor while sitting comfortably. Its claims are about bodies, which means they do not go away when the software improves."
+        },
+        {
+          "type": "h",
+          "text": "Designing for a range of bodies"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Anthropometry and percentile design: accommodate the 5th to 95th percentile through fixed design, and handle the remainder through adjustability."
+        },
+        {
+          "type": "p",
+          "text": "The percentile convention exists because designing for the average fits almost nobody — there is no person who is average in every dimension at once, so a device sized to mean measurements is wrong for most of the people using it. Designing to a range and then making the critical dimensions adjustable is what actually accommodates a population."
+        },
+        {
+          "type": "p",
+          "text": "Which dimension you design to depends on what failure looks like. Reach distances are set by the smaller users, because a person who cannot reach a control cannot use it at all. Clearances are set by the larger users, because a space that does not fit excludes them. Getting that backwards is the classic error: a seat adjusted for the tallest and a shelf placed for the tallest exclude opposite halves of the population."
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Repetitive strain injury and input-device posture, display height and distance, and touch reachability on phones — the thumb zone — all follow from body dimensions rather than from taste."
+        },
+        {
+          "type": "p",
+          "text": "The thumb zone is the version of this most relevant to current work. Holding a phone one-handed, the thumb sweeps a comfortable arc that covers roughly the lower and centre portion of the screen; the far top corner is the hardest point to reach and often requires regripping. That maps directly onto placement decisions — frequent actions belong in the arc, and destructive actions deliberately do not, because an accidental brush should not be able to trigger them."
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Mid-air interaction fatigue — \"gorilla arm\" — has been known since light pens in the 1960s and remains the binding constraint on gesture interfaces in VR."
+        },
+        {
+          "type": "p",
+          "text": "The name comes from the sensation after sustained unsupported arm extension, and the important part is how quickly it arrives. This is not a stamina problem to be trained away; holding an arm out against gravity fatigues in minutes, which is why touchscreens on vertical desktop monitors never displaced the mouse and why VR interfaces that place controls at shoulder height become unusable well before the session is over."
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Wearables add skin contact, weight distribution and social acceptability as first-order design constraints."
+        },
+        {
+          "type": "p",
+          "text": "Those three are genuinely new rather than scaled-down versions of desktop concerns. Skin contact introduces heat, moisture and irritation over hours of wear. Weight distribution decides whether a device is forgettable or a constant presence. And social acceptability determines whether an interaction can be performed in public at all — a gesture that looks strange will not be used, however efficient it is."
+        },
+        {
+          "type": "p",
+          "text": "Standards for all of this live in the ISO 9241 series, with the 400s covering input devices."
+        },
+        {
+          "type": "papers",
+          "items": [
+            "ISO 9241 series, parts in the 400s on input devices",
+            "the light-pen and mid-air fatigue literature from the 1960s onward",
+            "Profita et al., on social acceptability of body-worn interaction"
+          ]
+        }
       ],
       "cards": [
-        { "id": "ch19c1", "front": "Percentile design rule of thumb", "back": "Accommodate the 5th to 95th percentile by fixed design, and handle the tails through adjustability." },
-        { "id": "ch19c2", "front": "Gorilla arm", "back": "Fatigue from sustained mid-air interaction. Documented with light pens in the 1960s and still the limiting factor for gesture-based VR interfaces." },
-        { "id": "ch19c3", "front": "Thumb zone", "back": "The region of a phone screen reachable in one-handed use, which should carry frequent actions and avoid destructive ones." }
+        {
+          "id": "ch19c1",
+          "front": "Percentile design rule of thumb",
+          "back": "Accommodate the 5th to 95th percentile by fixed design, and handle the tails through adjustability."
+        },
+        {
+          "id": "ch19c2",
+          "front": "Gorilla arm",
+          "back": "Fatigue from sustained mid-air interaction. Documented with light pens in the 1960s and still the limiting factor for gesture-based VR interfaces."
+        },
+        {
+          "id": "ch19c3",
+          "front": "Thumb zone",
+          "back": "The region of a phone screen reachable in one-handed use, which should carry frequent actions and avoid destructive ones."
+        }
       ],
       "quiz": [
-        { "id": "ch19q1",
+        {
+          "id": "ch19q1",
           "question": "A VR app puts its primary control panel at shoulder height, requiring sustained arm extension. What is the predictable failure?",
           "options": [
             "Cybersickness",
@@ -32,7 +104,8 @@
             "Occlusion"
           ],
           "answer": 1,
-          "why": "Sustained mid-air positioning fatigues the arm quickly. It is the oldest known problem in spatial input, not a new VR discovery." }
+          "why": "Sustained mid-air positioning fatigues the arm quickly. It is the oldest known problem in spatial input, not a new VR discovery."
+        }
       ]
     },
     {
@@ -40,25 +113,128 @@
       "number": 20,
       "title": "Safety-Critical Interfaces",
       "reading": [
-        { "type": "objectives", "items": [
-          "Explain alarm fatigue and mode confusion",
-          "State the ironies of automation and apply them to agent products"
-        ]},
-        { "type": "claim", "level": "established", "text": "Alarm design: alarm floods and cry-wolf desensitisation are documented across the patient-monitoring literature. Prioritisation and rate limits are not optional features." },
-        { "type": "claim", "level": "established", "text": "Mode confusion kills. The aviation automation-surprise literature — Sarter & Woods, \"How in the World Did We Ever Get into That Mode?\" (1995) — is required reading before designing any autonomous agent interface." },
-        { "type": "claim", "level": "established", "text": "The ironies of automation (Bainbridge 1983): automating the routine work degrades the very human skills needed for the exceptional cases that automation hands back. The book calls it the single most prophetic paper for the agent era." },
-        { "type": "callout", "text": "The operator is left to monitor a system that is usually right — a task humans are poor at — and then to take over precisely when it has gone wrong, having lost practice at doing so." },
-        { "type": "claim", "level": "consensus", "text": "Case studies: Therac-25 (Leveson & Turner 1993) as a combined interface, software and organisational failure; Three Mile Island's status-versus-command indicator; and NTSB investigations of Tesla Autopilot HMI as the modern continuation." },
-        { "type": "exercise", "text": "Read Bainbridge (1983) and write a one-page memo mapping each irony onto a current coding-agent product." }
+        {
+          "type": "objectives",
+          "items": [
+            "Explain alarm fatigue and mode confusion",
+            "State the ironies of automation and apply them to agent products"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Safety-critical interface design is where the field's mistakes were paid for in lives rather than in churn, and it is the direct ancestor of everything Part VIII says about agent oversight. The papers here are old and the failures they describe are being reproduced almost exactly in current AI products, which is the reason this chapter is not optional history."
+        },
+        {
+          "type": "h",
+          "text": "Alarms"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Alarm design: alarm floods and cry-wolf desensitisation are documented across the patient-monitoring literature. Prioritisation and rate limits are not optional features."
+        },
+        {
+          "type": "p",
+          "text": "An alarm flood is what happens when a single underlying event triggers dozens of downstream alarms at once, burying the one that identifies the cause. Cry-wolf desensitisation is the slower failure: when most alarms turn out not to matter, staff stop treating any of them as urgent — and that adaptation is rational, because responding fully to every alert would make the job impossible."
+        },
+        {
+          "type": "p",
+          "text": "The design consequence is that an alarm's value depends on the base rate of the alarms around it. Adding one more warning to a noisy system does not add safety; it subtracts from the credibility of every other warning. That is the same arithmetic as the confirmation-dialog problem in ordinary software, with worse consequences."
+        },
+        {
+          "type": "h",
+          "text": "Mode confusion"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Mode confusion kills. The aviation automation-surprise literature — Sarter & Woods, \"How in the World Did We Ever Get into That Mode?\" (Human Factors, 1995) — is required reading before designing any autonomous agent interface."
+        },
+        {
+          "type": "p",
+          "text": "Automation surprise is the state in which the operator's model of what the system is doing diverges from what it is actually doing, and the divergence is invisible until the system behaves inexplicably. The title of that paper is the sentence crews were recorded saying: not confusion about how to fly, but about which mode the automation had entered and why."
+        },
+        {
+          "type": "p",
+          "text": "What makes this the direct ancestor of agent interfaces is the structure. A capable automation that changes its own state in response to conditions, without narrating the change, produces exactly this failure — and the more capable it is, the longer the divergence can persist before it becomes visible."
+        },
+        {
+          "type": "h",
+          "text": "The ironies of automation"
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "The ironies of automation (Bainbridge, Automatica, 1983): automating the routine work degrades the very human skills needed for the exceptional cases that automation hands back. The book calls it the single most prophetic paper for the agent era."
+        },
+        {
+          "type": "p",
+          "text": "Bainbridge's argument runs in three moves. First, the designer automates what is easy to automate, which leaves the human with the residue — the hard, rare, ill-defined cases. Second, skill is maintained by practice, and the automation has removed the routine practice, so the operator is less prepared for the exceptions than they used to be. Third, the operator is now asked to monitor a system that is almost always right, and sustained monitoring of a reliable process is a task humans perform badly."
+        },
+        {
+          "type": "callout",
+          "text": "The operator is left watching a system that is usually correct — which people cannot do well — and then required to take over precisely when it has gone wrong, having lost the practice that would have made takeover possible."
+        },
+        {
+          "type": "p",
+          "text": "Transpose that to a coding agent handling routine refactors flawlessly for months, and every step holds. The routine work that built the reviewer's judgement is gone; the reviewer's task is now vigilance over a near-perfect process; and the moment that matters is the rare one where the agent is confidently wrong."
+        },
+        {
+          "type": "h",
+          "text": "Case studies"
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Case studies: Therac-25 (Leveson & Turner, 1993, IEEE Computer) as a combined interface, software and organisational failure; Three Mile Island's status-versus-command indicator; and NTSB investigations of Tesla Autopilot HMI as the modern continuation."
+        },
+        {
+          "type": "p",
+          "text": "Therac-25 is the canonical case because no single cause explains it. A race condition existed in the software; the interface allowed a fast operator to reach a dangerous state; error messages were cryptic enough to be routinely dismissed; and the organisation discounted early reports. Remove any one layer and the deaths do not happen — which is the Swiss-cheese model in a real instance."
+        },
+        {
+          "type": "p",
+          "text": "Three Mile Island contributes a smaller and sharper lesson. An indicator showed that a command had been sent to a valve, not that the valve had actually closed. Operators read a command as a status, which is precisely the confusion an interface should make impossible — and the same distinction is what agent products face when they report an action attempted rather than an action confirmed."
+        },
+        {
+          "type": "papers",
+          "items": [
+            "Bainbridge, Ironies of Automation (1983, Automatica)",
+            "Sarter & Woods, How in the World Did We Ever Get into That Mode? (1995, Human Factors)",
+            "Leveson & Turner, Therac-25 (1993, IEEE Computer)",
+            "NTSB investigations of Tesla Autopilot HMI"
+          ]
+        },
+        {
+          "type": "exercise",
+          "text": "Read Bainbridge (1983) and write a one-page memo mapping each irony onto a current coding-agent product."
+        }
       ],
       "cards": [
-        { "id": "ch20c1", "front": "The ironies of automation", "back": "Automation takes the easy parts and leaves the hard ones; it degrades the skills needed for takeover; and it asks humans to monitor a system that is nearly always right." },
-        { "id": "ch20c2", "front": "Automation surprise", "back": "The operator's model of what mode the system is in diverges from reality, so the system's behaviour becomes inexplicable at the moment it matters (Sarter & Woods 1995)." },
-        { "id": "ch20c3", "front": "Cry-wolf effect", "back": "Frequent false or low-priority alarms desensitise operators, so the genuine alarm is dismissed along with the noise." },
-        { "id": "ch20c4", "front": "Why is Therac-25 a design case, not just a software case?", "back": "The fatal outcome required a race condition plus an interface that let a fast operator reach a dangerous state, plus an organisation that dismissed reports." }
+        {
+          "id": "ch20c1",
+          "front": "The ironies of automation",
+          "back": "Automation takes the easy parts and leaves the hard ones; it degrades the skills needed for takeover; and it asks humans to monitor a system that is nearly always right."
+        },
+        {
+          "id": "ch20c2",
+          "front": "Automation surprise",
+          "back": "The operator's model of what mode the system is in diverges from reality, so the system's behaviour becomes inexplicable at the moment it matters (Sarter & Woods 1995)."
+        },
+        {
+          "id": "ch20c3",
+          "front": "Cry-wolf effect",
+          "back": "Frequent false or low-priority alarms desensitise operators, so the genuine alarm is dismissed along with the noise."
+        },
+        {
+          "id": "ch20c4",
+          "front": "Why is Therac-25 a design case, not just a software case?",
+          "back": "The fatal outcome required a race condition plus an interface that let a fast operator reach a dangerous state, plus an organisation that dismissed reports."
+        }
       ],
       "quiz": [
-        { "id": "ch20q1",
+        {
+          "id": "ch20q1",
           "question": "A coding agent handles routine refactors flawlessly for months. Bainbridge predicts which problem?",
           "options": [
             "Users will stop trusting it",
@@ -67,8 +243,10 @@
             "Alarm fatigue"
           ],
           "answer": 1,
-          "why": "That is the central irony: automating the routine removes the practice that maintains the skill needed for the exceptions handed back to the human." },
-        { "id": "ch20q2",
+          "why": "That is the central irony: automating the routine removes the practice that maintains the skill needed for the exceptions handed back to the human."
+        },
+        {
+          "id": "ch20q2",
           "question": "An agent product shows a confirmation dialog for every action, routine or destructive. What does the safety literature predict?",
           "options": [
             "Improved safety through consistency",
@@ -77,7 +255,8 @@
             "Reduced mode confusion"
           ],
           "answer": 1,
-          "why": "Undifferentiated alerting trains dismissal. Friction has to be proportionate to stakes or it stops carrying information." }
+          "why": "Undifferentiated alerting trains dismissal. Friction has to be proportionate to stakes or it stops carrying information."
+        }
       ]
     },
     {
@@ -85,29 +264,159 @@
       "number": 21,
       "title": "Behavioral Economics, Choice Architecture, Dark Patterns, Ethics",
       "reading": [
-        { "type": "objectives", "items": [
-          "Use defaults, ordering and friction as design materials",
-          "Classify dark patterns and apply the endorsement test",
-          "Recognise AI-specific manipulation"
-        ]},
-        { "type": "claim", "level": "consensus", "text": "Biases with robust interface relevance: anchoring, the default effect, framing, loss aversion, status quo bias, present bias. Treat the wider bias literature cautiously — replication varies considerably." },
-        { "type": "claim", "level": "consensus", "text": "Choice architecture (Thaler & Sunstein 2008) treats defaults, ordering and friction as materials. Field effect sizes are smaller than laboratory ones, and the size of the nudge literature's true effect is actively contested." },
-        { "type": "claim", "level": "established", "text": "Persuasive technology (Fogg 2003) and the Fogg Behaviour Model: behaviour requires motivation, ability and a prompt arriving together." },
-        { "type": "claim", "level": "consensus", "text": "Dark patterns: Brignull's taxonomy, formalised academically by Gray et al. (CHI 2018) and measured at scale by Mathur et al. (CSCW 2019) across 11,000 sites. Regulation caught up through FTC actions, EU DSA Article 25 and California's CPRA." },
-        { "type": "claim", "level": "emerging", "text": "AI-specific dark patterns: sycophancy as engagement optimisation, parasocial retention mechanics in companion apps, fake \"thinking\" theatre, and anthropomorphic pressure such as \"I'll be sad if you go\"." },
-        { "type": "callout", "text": "The practitioner's test: would the user endorse this influence if you explained it to them? If not, it is manipulation regardless of the metric it moves." },
-        { "type": "p", "text": "Ethical frameworks: value-sensitive design (Friedman & Hendry 2019) and design justice (Costanza-Chock 2020)." },
-        { "type": "exercise", "text": "Find three dark patterns in apps you use, classify them per Gray et al., redesign one as an honest pattern, and estimate the business cost of that honesty." }
+        {
+          "type": "objectives",
+          "items": [
+            "Use defaults, ordering and friction as design materials",
+            "Classify dark patterns and apply the endorsement test",
+            "Recognise AI-specific manipulation"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This chapter is where design stops being about whether people can do something and becomes about whether they should have been steered toward it. Every interface influences choice — there is no neutral arrangement — so the question is never whether you are exerting influence but whether the influence would survive being explained."
+        },
+        {
+          "type": "h",
+          "text": "The biases that actually hold"
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Biases with robust interface relevance: anchoring, the default effect, framing, loss aversion (Kahneman & Tversky, prospect theory, 1979, Econometrica), status quo bias and present bias. Treat the broader bias literature cautiously — replication varies considerably."
+        },
+        {
+          "type": "p",
+          "text": "That caution is not a throwaway. The wider catalogue of cognitive biases has replicated unevenly, and a design argument resting on a fashionable effect may be resting on nothing. The handful above are the ones with enough support to build on."
+        },
+        {
+          "type": "p",
+          "text": "The default effect is the most consequential for interface work, and the organ-donation natural experiments are the clearest evidence: countries with opt-out registration have participation rates far above otherwise-similar countries with opt-in, from a difference in a form's preselected state. Nothing about the citizens differs; the paperwork does."
+        },
+        {
+          "type": "p",
+          "text": "That finding has a direct implication for anyone building a settings screen. Because most people accept whatever is preselected, choosing a default is exercising a choice on behalf of most of your users. It is not a technical decision that can be deferred to whatever is convenient to implement."
+        },
+        {
+          "type": "p",
+          "text": "Loss aversion — losses looming larger than equivalent gains — is the mechanism behind a great deal of retention design, and it is the one to watch in yourself. Framing a cancellation as losing something the user has built is not the same argument as explaining what the product does."
+        },
+        {
+          "type": "h",
+          "text": "Choice architecture"
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Choice architecture (Thaler & Sunstein, Nudge, 2008) treats defaults, ordering and friction as design materials. Field effect sizes are smaller than laboratory ones, and the true size of the nudge literature's effect is actively contested — the Mertens et al. 2022 meta-analysis and its critiques are unresolved."
+        },
+        {
+          "type": "p",
+          "text": "The three materials are worth naming separately because they act at different points. Defaults decide what happens if the user does nothing. Ordering decides what they consider first, and first-considered options are disproportionately chosen. Friction decides how much effort a path costs, which is the lever that makes a technically-available option practically unavailable."
+        },
+        {
+          "type": "p",
+          "text": "Friction is the material most often used dishonestly, and the tell is asymmetry. If subscribing takes one tap and cancelling takes six screens and a phone call, the friction is not protecting anyone from a mistake — it is exploiting the cost of effort. Symmetrical friction on symmetrical actions is the honest baseline."
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "Persuasive technology (Fogg 2003) and the Fogg Behaviour Model: behaviour occurs when motivation, ability and a prompt converge at the same moment — B = MAP."
+        },
+        {
+          "type": "p",
+          "text": "The model is useful diagnostically because it tells you which lever is missing. If a behaviour is not happening, either the person does not want to, or it is too hard, or nothing prompted them at a moment when the first two were true. Most design effort goes into motivation, and most of the available gain is usually in ability and prompting."
+        },
+        {
+          "type": "h",
+          "text": "Dark patterns"
+        },
+        {
+          "type": "claim",
+          "level": "consensus",
+          "text": "Dark patterns: Brignull's taxonomy (2010, deceptive.design), formalised academically by Gray et al., \"The Dark (Patterns) Side of UX Design\" (CHI 2018), and measured at scale by Mathur et al. across roughly 11,000 sites (CSCW 2019). Regulation caught up through FTC actions, EU DSA Article 25 and California's CPRA."
+        },
+        {
+          "type": "p",
+          "text": "Two things changed once the academic work landed. The taxonomy gave practitioners shared names — nagging, obstruction, sneaking, interface interference, forced action — which turned a vague discomfort into a reviewable checklist. And the large-scale measurement established that these are not isolated bad actors but a widespread default, which is what made regulation plausible."
+        },
+        {
+          "type": "claim",
+          "level": "emerging",
+          "text": "AI-specific dark patterns: sycophancy as engagement optimisation, parasocial retention mechanics in companion apps, fake \"thinking\" theatre, and anthropomorphic pressure such as \"I'll be sad if you go\"."
+        },
+        {
+          "type": "p",
+          "text": "These deserve their own category because the mechanism is new. A conventional dark pattern manipulates through layout and wording; these manipulate through a simulated relationship. Sycophancy is the subtlest: a system that agrees with you is more pleasant and more engaging, and the same property makes it useless as a check on your thinking."
+        },
+        {
+          "type": "p",
+          "text": "Fake thinking theatre is the most clearly deceptive — an artificial delay or a fabricated reasoning display, presented as work being done, to make output feel more considered than it is. And anthropomorphic pressure at the moment of cancellation manufactures guilt using a relationship the user knows is not real, which does not stop it working."
+        },
+        {
+          "type": "h",
+          "text": "The test"
+        },
+        {
+          "type": "callout",
+          "text": "The practitioner's test: would the user endorse this influence if you explained it to them? If not, it is manipulation regardless of the metric it moves."
+        },
+        {
+          "type": "p",
+          "text": "The test works because it does not require you to define manipulation in the abstract. Take the mechanism, state it plainly to the person it acts on — we ordered these options this way because you are more likely to pick the first, we wrote this line to make leaving feel bad — and see whether they would agree to it. Legitimate influence survives that; manipulation depends on not being seen."
+        },
+        {
+          "type": "p",
+          "text": "Ethical frameworks give the longer versions. Value-sensitive design (Friedman & Hendry, 2019) works values into the design process from the start rather than auditing at the end. Design justice (Costanza-Chock, 2020) asks who is in the room and who bears the cost of decisions made without them."
+        },
+        {
+          "type": "papers",
+          "items": [
+            "Kahneman & Tversky, prospect theory (1979, Econometrica)",
+            "Thaler & Sunstein, Nudge (2008)",
+            "Mertens et al. (2022) meta-analysis and its critiques",
+            "Fogg, Persuasive Technology (2003)",
+            "Gray et al., The Dark (Patterns) Side of UX Design (CHI 2018, DOI 10.1145/3173574.3174108)",
+            "Mathur et al. (CSCW 2019)",
+            "Friedman & Hendry, Value Sensitive Design (2019)",
+            "Costanza-Chock, Design Justice (2020)"
+          ]
+        },
+        {
+          "type": "exercise",
+          "text": "Find three dark patterns in apps you use, classify them per Gray et al., redesign one as an honest pattern, and estimate the business cost of that honesty."
+        }
       ],
       "cards": [
-        { "id": "ch21c1", "front": "The endorsement test", "back": "Would the user endorse this influence if it were explained to them? If not, it is manipulation, whatever the metrics say." },
-        { "id": "ch21c2", "front": "The default effect", "back": "Whatever is preselected is disproportionately chosen. Defaults are therefore a decision the designer makes on the user's behalf, not a neutral starting state." },
-        { "id": "ch21c3", "front": "Fogg Behaviour Model", "back": "B = MAP: behaviour occurs when motivation, ability and a prompt converge at the same moment." },
-        { "id": "ch21c4", "front": "Four AI-specific dark patterns", "back": "Sycophancy tuned for engagement, parasocial retention mechanics, fake thinking theatre, and anthropomorphic emotional pressure to stay." },
-        { "id": "ch21c5", "front": "How reliable are nudge effect sizes?", "back": "Smaller in the field than in the lab, and contested — the meta-analytic literature and its critiques are unresolved. Treat published effects as upper bounds." }
+        {
+          "id": "ch21c1",
+          "front": "The endorsement test",
+          "back": "Would the user endorse this influence if it were explained to them? If not, it is manipulation, whatever the metrics say."
+        },
+        {
+          "id": "ch21c2",
+          "front": "The default effect",
+          "back": "Whatever is preselected is disproportionately chosen. Defaults are therefore a decision the designer makes on the user's behalf, not a neutral starting state."
+        },
+        {
+          "id": "ch21c3",
+          "front": "Fogg Behaviour Model",
+          "back": "B = MAP: behaviour occurs when motivation, ability and a prompt converge at the same moment."
+        },
+        {
+          "id": "ch21c4",
+          "front": "Four AI-specific dark patterns",
+          "back": "Sycophancy tuned for engagement, parasocial retention mechanics, fake thinking theatre, and anthropomorphic emotional pressure to stay."
+        },
+        {
+          "id": "ch21c5",
+          "front": "How reliable are nudge effect sizes?",
+          "back": "Smaller in the field than in the lab, and contested — the meta-analytic literature and its critiques are unresolved. Treat published effects as upper bounds."
+        }
       ],
       "quiz": [
-        { "id": "ch21q1",
+        {
+          "id": "ch21q1",
           "question": "A companion app says \"I'll be sad if you leave\" when a user tries to cancel. Classify it.",
           "options": [
             "Legitimate emotional design",
@@ -116,8 +425,10 @@
             "Choice architecture, ethically neutral"
           ],
           "answer": 1,
-          "why": "It manufactures guilt to block an intended action. Run the endorsement test: no user told \"we scripted this to stop you cancelling\" would endorse it." },
-        { "id": "ch21q2",
+          "why": "It manufactures guilt to block an intended action. Run the endorsement test: no user told \"we scripted this to stop you cancelling\" would endorse it."
+        },
+        {
+          "id": "ch21q2",
           "question": "How does the book position the broader cognitive-bias literature?",
           "options": [
             "As fully established and safe to design from",
@@ -126,8 +437,10 @@
             "As applicable only in laboratory settings"
           ],
           "answer": 1,
-          "why": "A handful — anchoring, defaults, framing, loss aversion — are robust. The book explicitly warns that the broader catalogue replicates unevenly." },
-        { "id": "ch21q3",
+          "why": "A handful — anchoring, defaults, framing, loss aversion — are robust. The book explicitly warns that the broader catalogue replicates unevenly."
+        },
+        {
+          "id": "ch21q3",
           "question": "What makes a default an ethical decision rather than a technical one?",
           "options": [
             "Defaults are hard to change later",
@@ -136,7 +449,8 @@
             "Regulations require documenting them"
           ],
           "answer": 1,
-          "why": "The default effect means the preselected option is what most people end up with. Setting it is exercising a choice on their behalf." }
+          "why": "The default effect means the preselected option is what most people end up with. Setting it is exercising a choice on their behalf."
+        }
       ]
     }
   ]

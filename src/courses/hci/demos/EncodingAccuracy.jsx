@@ -46,11 +46,11 @@ function Mark({ enc, ratio }) {
   return (
     <div className="flex h-40 items-center gap-10">
       <svg viewBox="0 0 120 120" width="120" height="120">
-        <circle cx="60" cy="60" r="60" fill="#e8e6e0" />
+        <circle cx="60" cy="60" r="60" fill="var(--color-rule)" />
         {arc(0.4, 'var(--color-blue)')}
       </svg>
       <svg viewBox="0 0 120 120" width="120" height="120">
-        <circle cx="60" cy="60" r="60" fill="#e8e6e0" />
+        <circle cx="60" cy="60" r="60" fill="var(--color-rule)" />
         {arc(0.4 * ratio, 'var(--color-red)')}
       </svg>
     </div>
@@ -82,8 +82,8 @@ export default function EncodingAccuracy() {
 
   return (
     <div className="space-y-4">
-      <div className="slab-flat flex flex-col items-center gap-4 bg-white p-6">
-        <p className="text-xs font-bold uppercase tracking-wide">
+      <div className="slab-flat flex flex-col items-center gap-4 bg-paper p-6">
+        <p className="micro">
           The red mark is what percentage of the blue one?
         </p>
         <Mark enc={trial.enc} ratio={trial.ratio} />
@@ -104,7 +104,7 @@ export default function EncodingAccuracy() {
         {!answered ? (
           <button
             onClick={submit}
-            className="slab-flat bg-blue px-6 py-2 text-xs font-bold uppercase tracking-wide text-white"
+            className="slab-flat bg-blue px-6 py-2 micro text-white"
           >
             Lock it in
           </button>
@@ -119,7 +119,7 @@ export default function EncodingAccuracy() {
             </p>
             <button
               onClick={next}
-              className="slab-flat bg-yellow px-6 py-2 text-xs font-bold uppercase tracking-wide"
+              className="slab-flat bg-yellow px-6 py-2 micro"
             >
               Next
             </button>
@@ -127,8 +127,8 @@ export default function EncodingAccuracy() {
         )}
       </div>
 
-      <div className="slab-flat bg-white p-3">
-        <div className="mb-3 text-xs font-bold uppercase tracking-wide">
+      <div className="slab-flat bg-paper p-3">
+        <div className="mb-3 micro">
           Mean absolute error by encoding
         </div>
         <div className="space-y-2">
@@ -162,7 +162,7 @@ export default function EncodingAccuracy() {
         {errors.length > 0 && (
           <button
             onClick={() => setErrors([])}
-            className="mt-2 text-xs font-bold uppercase tracking-wide underline"
+            className="mt-2 micro underline"
           >
             Clear
           </button>

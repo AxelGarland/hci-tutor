@@ -1,4 +1,4 @@
-import { activeCourseId, allItems, lessonItems } from './course'
+import { activeCourseId, allItems, lessonItems, lessons } from './course'
 
 // Progress is per course, so switching courses never mixes two schedules.
 const keyFor = (id) => `scaffold:progress:v1:${id}`
@@ -168,6 +168,124 @@ export function examPlan(progress, now = Date.now()) {
     sessionsPerDay: Math.max(1, Math.ceil(perDay / SESSION_CAP)),
     masteryReachable: days >= MIN_DAYS_TO_MASTER,
     passed: days <= 0,
+  }
+}
+
+// ---- Backup and restore -----------------------------------------------------
+
+/**
+ * Progress lives in one browser's localStorage, and Safari evicts site data after
+ * about a week of not opening a site. A spaced-repetition schedule is months of
+ * work that exists nowhere else, so it has to be possible to take it out and put
+ * it back — on a new phone, a new browser, or after an eviction.
+ */
+export const BACKUP_FORMAT = 'scaffold.progress'
+const BACKUP_VERSION = 1
+
+export function exportProgress(progress, courseId = activeCourseId()) {
+  return {
+    format: BACKUP_FORMAT,
+    version: BACKUP_VERSION,
+    course: courseId,
+    exportedAt: new Date().toISOString(),
+    progress,
+  }
+}
+
+export function backupFilename(courseId = activeCourseId(), now = new Date()) {
+  return `scaffold-${courseId}-${now.toISOString().slice(0, 10)}.json`
+}
+
+// Coerces numeric strings rather than rejecting them: `Number.isFinite('3')` is
+// false, so a backup written by hand or by another tool would have had its boxes
+// silently reset to zero — the exact quiet corruption a restore must not cause.
+const num = (v, fallback = 0) => {
+  const n = typeof v === 'string' ? Number(v) : v
+  return Number.isFinite(n) ? n : fallback
+}
+const count = (v) => Math.max(0, Math.round(num(v)))
+
+/**
+ * Parses a backup and reports what is in it, without applying anything.
+ *
+ * A restore overwrites a real schedule, so the caller shows this summary and gets
+ * a confirmation first. Every field is coerced rather than trusted: a file that is
+ * accepted silently and quietly corrupts a schedule is worse than no restore at
+ * all. Item and lesson ids that no longer exist in the course are dropped and
+ * counted, which is what happens to an old backup after the content is edited.
+ *
+ * Throws with a message written to be shown to the reader.
+ */
+export function readBackup(text) {
+  let data
+  try {
+    data = JSON.parse(text)
+  } catch {
+    throw new Error('That file is not valid JSON, so it is not a Scaffold backup.')
+  }
+  if (!data || data.format !== BACKUP_FORMAT) {
+    throw new Error('That file has no Scaffold header, so it is not a backup this can read.')
+  }
+  if (num(data.version, 0) > BACKUP_VERSION) {
+    throw new Error(
+      `That backup was written by a newer version of Scaffold (${data.version}) than this one knows how to read.`,
+    )
+  }
+  if (data.course && data.course !== activeCourseId()) {
+    throw new Error(
+      `That backup is for the course "${data.course}", and "${activeCourseId()}" is open. Switch course before restoring it.`,
+    )
+  }
+
+  const src = data.progress ?? {}
+  const validItems = new Set(allItems().map((i) => i.id))
+  const validLessons = new Set(lessons().map((l) => l.id))
+  let dropped = 0
+
+  const items = {}
+  for (const [id, state] of Object.entries(src.items ?? {})) {
+    if (!validItems.has(id)) {
+      dropped += 1
+      continue
+    }
+    items[id] = {
+      box: Math.max(0, Math.min(MASTERED_BOX, count(state?.box))),
+      due: num(state?.due),
+      seen: count(state?.seen),
+      wrong: count(state?.wrong),
+      confWrong: count(state?.confWrong),
+    }
+  }
+
+  const restoredLessons = {}
+  for (const [id, state] of Object.entries(src.lessons ?? {})) {
+    if (!validLessons.has(id)) {
+      dropped += 1
+      continue
+    }
+    restoredLessons[id] = {
+      readAt: num(state?.readAt) || null,
+      summary: typeof state?.summary === 'string' ? state.summary : undefined,
+    }
+  }
+
+  const progress = {
+    items,
+    lessons: restoredLessons,
+    exam: typeof src.exam === 'string' && src.exam ? src.exam : null,
+    sessions: Array.isArray(src.sessions) ? src.sessions.slice(-40) : [],
+  }
+
+  return {
+    progress,
+    exportedAt: typeof data.exportedAt === 'string' ? data.exportedAt : null,
+    counts: {
+      items: Object.keys(items).length,
+      mastered: Object.values(items).filter((s) => s.box >= MASTERED_BOX).length,
+      lessons: Object.keys(restoredLessons).length,
+      sessions: progress.sessions.length,
+      dropped,
+    },
   }
 }
 

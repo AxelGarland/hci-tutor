@@ -4,54 +4,70 @@
 @custom-variant coarse (@media (pointer: coarse));
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   One direction. Monochrome, oversized grotesk display, a soft grey ground and
-   almost no chrome: hairlines instead of boxes, fills instead of borders for
-   anything primary, and no colour carrying meaning anywhere.
+   Bold chrome, calm reading.
+
+   Three primaries doing structural work. The chrome around the material is loud
+   — full cobalt fields, a yellow primary action, display type at poster scale.
+   The material itself is quiet: a serif at reading size on warm paper, with
+   almost no boxes. A study sitting is an hour, and nobody reads 1,200 words on a
+   vibrating page.
+
+   Every ratio in the comments is measured, not estimated. Colour reinforces a
+   state here, it never carries one alone: the rule is that the text already says
+   whatever the hue says.
    ───────────────────────────────────────────────────────────────────────────── */
 
 @theme {
-  --color-ink: #0a0a0a;
-  --color-paper: #f6f5f2;
+  --color-ink: #111111;    /* reading type, structural rules, control edges */
+  --color-paper: #fbfaf7;  /* the ground. warm, flat, one plane */
 
-  /* Greyscale ramp. The old semantic names are kept so component classes do not
-     all have to change, but every one of them now resolves to a grey — colour
-     is not carrying meaning anywhere in this design. */
-  --color-teal: #0a0a0a;   /* primary fill */
-  --color-blue: #1c1c1a;   /* secondary fill */
-  --color-red: #4a4845;    /* negative fill — distinguished by label, not hue */
-  --color-yellow: #e2dfd8; /* quiet highlight */
+  /* The workhorse. Everything structural and everything active. */
+  --color-cobalt: #2036c9; /* paper on it 8.27:1 · white on it 8.63:1 · as type on paper 8.27:1 */
 
-  --color-muted: #5f5e5c;  /* ~5.2:1 at the darkest point of the ground */
-  --color-rule: #cdcac3;   /* decorative hairline */
-  --color-edge: #0a0a0a;   /* interactive boundary — ink, not grey */
+  /* A ground for BLACK marks only: ink on it 12.0:1, white on it 1.57:1 and
+     never permitted anywhere. The primary action, the exercise block, the mark
+     in the wordmark. */
+  --color-accent: #ffc61a;
 
-  /* The one accent. It is a GROUND for black marks only: ink on it measures
-     13.6:1, white on it measures 1.45:1 and is never permitted. It also never
-     carries a state on its own — anything green is either decoration or sits
-     beside a label that already says the same thing. */
-  --color-accent: #c9de8e;
+  --color-signal: #d92d20;  /* sparingly. white on it 4.83:1 · as type on paper 4.63:1 */
+  --color-verdant: #0a6e4a; /* mastery only, always beside a number saying the same */
 
-  /* The home screen is a single flat colour — no gradient, no value-shifted
-     blocks. Everything on it is a mark on one plane. */
-  --color-home: #fbfbfa;
+  /* The old semantic names are kept so several hundred component classes did not
+     have to churn. Each now resolves into the palette above. */
+  --color-teal: #2036c9;   /* primary fill   → cobalt */
+  --color-blue: #2036c9;   /* secondary fill → cobalt */
+  --color-red: #d92d20;    /* negative fill  → signal, distinguished by label too */
+  --color-yellow: #ffc61a; /* loud field     → accent */
 
-  --font-sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --color-muted: #57534a;  /* secondary text. 7.34:1 on paper */
+  --color-rule: #ddd9d0;   /* decorative hairline only, never a control edge */
+  --color-edge: #111111;   /* interactive boundary */
+
+  /* Dropdowns and sheets that open over the cobalt poster. */
+  --color-home: #fbfaf7;
+
+  --font-sans: "Archivo", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --font-serif: "Literata", Georgia, "Times New Roman", serif;
 }
 
 html, body, #root {
   height: 100%;
 }
 
-/* The ground is a plane, not a page with cards on it. */
+/* Flat, not a gradient: every mark sits on one plane. */
 body {
-  background: linear-gradient(168deg, #e9e7e2 0%, #f4f3f0 38%, #fdfdfc 100%);
-  background-attachment: fixed;
+  background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  /* A citation or URL with no break opportunity would otherwise widen the column
+     past a 320px screen. Folding it is preferable to a sideways page scroll. */
+  overflow-wrap: break-word;
 }
 
-/* Boxes become hairlines. Nothing is lifted off the plane. */
+/* A box marks an object as separate, so it is spent by role rather than applied
+   to everything. The reading surface uses almost none of these; controls, result
+   cards and demo surfaces still earn one. */
 .slab,
 .slab-flat {
   border: 1px solid var(--color-edge);
@@ -59,25 +75,52 @@ body {
   box-shadow: none;
 }
 
+/* The quiet version of cobalt: a wash for a secondary control that needs a field
+   without spending the one solid fill a view is allowed. Ink on it 16.33:1. */
+.pale {
+  background: #eceef9;
+}
+
+/* ── Type ──────────────────────────────────────────────────────────────────── */
+
+/* Archivo has a width axis. At 900 weight and 116% width the wordmark becomes a
+   mark rather than a heading. */
 .display {
   font-size: clamp(3.75rem, 15vw, 11rem);
   line-height: 0.84;
   letter-spacing: -0.045em;
-  font-weight: 700;
+  font-weight: 900;
+  font-stretch: 116%;
 }
 
-/* A pale block behind a small control, used outside the home screen where the
-   ground is a gradient and a flat tint still reads. */
-.pale {
-  background: #f2f1ed;
+/* A chapter number, set as a figure rather than as part of the sentence. */
+.numeral {
+  font-weight: 900;
+  font-stretch: 112%;
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  font-variant-numeric: tabular-nums;
 }
 
-/* Small functional type, the way the nav on a portfolio site is set. */
+/* Small functional type: labels, nav, captions, eyebrows. */
 .micro {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+/* Anything whose digits should line up between rows or between renders. */
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Chapter prose. Literata carries an optical-size axis and was built for
+   extended screen reading, which is the case a 1,200-word chapter presents. */
+.reading {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.75;
 }
 
 .reveal {
@@ -94,6 +137,8 @@ body {
 .muted {
   color: var(--color-muted);
 }
+
+/* ── Targets ───────────────────────────────────────────────────────────────── */
 
 /* WCAG 2.2 target size (2.5.8). Applied to controls whose visible box is
    smaller than the minimum, without changing their drawn size. */
@@ -115,7 +160,7 @@ body {
    the element's box grows the pointer target without thickening the drawn track. */
 input[type="range"] {
   height: 28px;
-  accent-color: var(--color-ink);
+  accent-color: var(--color-cobalt);
 }
 
 /* 24px is the WCAG floor, not a comfortable finger. Raise it only where the
@@ -139,7 +184,19 @@ input[type="range"] {
   input[type="range"] {
     height: 44px;
   }
+
+  /* iOS Safari zooms the whole page when a focused field is set below 16px,
+     which shifts the layout out from under the reader mid-answer. The fix is to
+     raise the field, never to lock the viewport: `maximum-scale` would take
+     pinch-zoom away from anyone who needs it. */
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
 }
+
+/* ── Plates ────────────────────────────────────────────────────────────────── */
 
 /* A plate is a drawing with labels in it, so it cannot shrink indefinitely —
    below its natural width the text stops being readable. It scrolls inside its
@@ -149,7 +206,7 @@ input[type="range"] {
   -webkit-overflow-scrolling: touch;
 }
 
- /* Only below the sidebar breakpoint. On desktop the plate fits its column and
+/* Only below the sidebar breakpoint. On desktop the plate fits its column and
    must keep fitting it — widening it there would be a desktop regression. */
 @media (max-width: 767px) {
   .plate-scroll > svg {
@@ -163,8 +220,14 @@ select:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid var(--color-ink);
+  outline: 3px solid var(--color-cobalt);
   outline-offset: 3px;
+}
+
+/* On a cobalt field the cobalt ring is invisible, so the focus state inverts. */
+.on-cobalt button:focus-visible,
+.on-cobalt a:focus-visible {
+  outline-color: var(--color-paper);
 }
 
 /* Vestibular safety is a health accommodation, not a preference (Ch. 16). */

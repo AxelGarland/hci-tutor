@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Claude Code skill installs — local tooling, not part of the project
+.agents/
+skills-lock.json

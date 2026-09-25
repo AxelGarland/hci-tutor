@@ -1,6 +1,6 @@
 import { useId, useState } from 'react'
-import { course, lessonMastery, SESSION_CAP } from '../store'
-import Cite from './Cite'
+import { course, designNotes, lessonMastery, SESSION_CAP } from '../store'
+import BackupControls from './BackupControls'
 
 /**
  * Length against a fixed baseline — the most accurately decoded encoding available
@@ -9,18 +9,18 @@ import Cite from './Cite'
  */
 function Mastery({ value, onDark }) {
   const pct = Math.round(value * 100)
+  // Verdant only at the top of the scale, and only ever beside the number that
+  // already says the same thing — the colour is never the claim.
+  const fill = onDark ? 'bg-paper' : pct >= 100 ? 'bg-verdant' : 'bg-cobalt'
   return (
     <span className="mt-1.5 flex items-center gap-2">
       <span
         aria-hidden="true"
-        className={`block h-1.5 w-20 shrink-0 ${onDark ? 'bg-white/30' : 'bg-rule'}`}
+        className={`block h-1.5 w-20 shrink-0 ${onDark ? 'bg-paper/30' : 'bg-rule'}`}
       >
-        <span
-          className={`block h-full ${onDark ? 'bg-paper' : 'bg-ink'}`}
-          style={{ width: `${pct}%` }}
-        />
+        <span className={`block h-full ${fill}`} style={{ width: `${pct}%` }} />
       </span>
-      <span className={`text-[10px] tabular-nums ${onDark ? 'opacity-70' : 'muted'}`}>
+      <span className={`num text-[10px] ${onDark ? 'opacity-80' : 'muted'}`}>
         {pct > 0 ? `${pct}% mastered` : 'not started'}
       </span>
     </span>
@@ -40,6 +40,8 @@ export default function Sidebar({
   onExam,
   onReview,
   onReset,
+  onRestore,
+  onColophon,
 }) {
   const openModule = course().modules.find((m) => m.lessons.some((l) => l.id === current))
   const [expanded, setExpanded] = useState(() => new Set([openModule?.id]))
@@ -57,10 +59,10 @@ export default function Sidebar({
     <aside className="flex h-full flex-col gap-6 overflow-y-auto p-5">
       <div>
         <button onClick={() => { onNavigate(); onHome() }} className="block text-left">
-          <span className="block text-2xl font-bold leading-none tracking-tight">Scaffold</span>
-          <span className="mt-1 block text-[11px] uppercase tracking-widest muted">
-            {course().title}
+          <span className="block text-3xl font-black leading-none tracking-[-0.035em]">
+            Scaffold<span className="text-cobalt">*</span>
           </span>
+          <span className="micro mt-1.5 block text-cobalt">{course().title}</span>
         </button>
       </div>
 
@@ -70,24 +72,18 @@ export default function Sidebar({
         <button
           onClick={() => { onNavigate(); onSession() }}
           aria-current={activeView === 'session' ? 'page' : undefined}
-          className="block w-full bg-ink px-4 py-3 text-left text-xs font-bold uppercase tracking-wide text-paper"
+          className="micro block w-full bg-cobalt px-4 py-4 text-left text-paper"
         >
           Study session
-          <span className="ml-2 font-normal normal-case opacity-90">60 min · one chapter</span>
+          <span className="ml-2 font-medium normal-case tracking-normal opacity-90">
+            60 min · one chapter
+          </span>
         </button>
-        {/* The citation marker is itself a button, so it sits beside the control
-            rather than inside it — a nested button is invalid HTML and gives
-            assistive tech two overlapping targets. */}
-        <p className="text-[11px] leading-relaxed muted">
-          One filled action, everything else outlined.
-          <Cite id="popOut" />
-        </p>
-
         <div className="grid grid-cols-2 gap-2">
           <button
             onClick={() => { onNavigate(); onReview() }}
             aria-current={activeView === 'review' ? 'page' : undefined}
-            className="pale px-3 py-2.5 text-left text-xs font-bold uppercase tracking-wide"
+            className="pale px-3 py-2.5 text-left micro"
           >
             <span className="underline underline-offset-4">Review</span>
             <span className="mt-0.5 block font-normal normal-case muted">
@@ -98,7 +94,7 @@ export default function Sidebar({
           <button
             onClick={() => { onNavigate(); onExam() }}
             aria-current={activeView === 'exam' ? 'page' : undefined}
-            className="pale px-3 py-2.5 text-left text-xs font-bold uppercase tracking-wide"
+            className="pale px-3 py-2.5 text-left micro"
           >
             <span className="underline underline-offset-4">Exam plan</span>
             <span className="mt-0.5 block font-normal normal-case muted">
@@ -126,9 +122,7 @@ export default function Sidebar({
                 className="flex w-full items-baseline gap-2 py-2 text-left"
               >
                 <span
-                  className={`flex-1 text-[11px] font-bold uppercase leading-snug tracking-widest ${
-                    holdsCurrent ? '' : 'muted'
-                  }`}
+                  className={`micro flex-1 leading-snug ${holdsCurrent ? 'text-cobalt' : 'muted'}`}
                 >
                   {m.title}
                 </span>
@@ -147,11 +141,13 @@ export default function Sidebar({
                           onClick={() => { onNavigate(); onSelect(l.id) }}
                           aria-current={active ? 'page' : undefined}
                           className={`w-full px-3 py-2 text-left text-sm ${
-                            active ? 'bg-ink text-paper' : 'hover:bg-black/5'
+                            active ? 'bg-cobalt text-paper' : 'hover:bg-cobalt/10'
                           }`}
                         >
                           <span className="block font-bold leading-snug">
-                            <span className={active ? 'opacity-70' : 'muted'}>{l.number}.</span>{' '}
+                            <span className={`num ${active ? 'opacity-75' : 'text-cobalt'}`}>
+                              {l.number}.
+                            </span>{' '}
                             {l.title}
                           </span>
                           <Mastery value={lessonMastery(progress, l)} onDark={active} />
@@ -167,20 +163,18 @@ export default function Sidebar({
       </nav>
 
       <div className="mt-auto space-y-3 border-t border-rule pt-4">
-        <p className="text-[11px] leading-relaxed muted">
-          No streaks, no daily goal, nothing here punishes a missed day.
-          <Cite id="noStreak" />
-        </p>
-        <p className="text-[11px] leading-relaxed muted">
-          Contrast, target sizes and colour coding are checked against WCAG 2.2.
-          <Cite id="contrast" />
-        </p>
-        <button
-          onClick={onReset}
-          className="py-1 text-[11px] font-bold uppercase tracking-wide underline muted"
-        >
-          Reset progress
-        </button>
+        <BackupControls progress={progress} onRestore={onRestore} />
+
+        <div className="flex flex-wrap gap-x-5 gap-y-1">
+          {Object.keys(designNotes()).length > 0 && (
+            <button onClick={() => { onNavigate(); onColophon() }} className="micro py-1 underline underline-offset-4 muted">
+              Why it is built this way
+            </button>
+          )}
+          <button onClick={onReset} className="micro py-1 underline underline-offset-4 muted">
+            Reset progress
+          </button>
+        </div>
       </div>
     </aside>
   )

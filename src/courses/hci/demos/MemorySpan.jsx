@@ -38,7 +38,7 @@ export default function MemorySpan() {
 
   return (
     <div className="space-y-4">
-      <div className="slab-flat flex flex-wrap items-center gap-3 bg-white p-3">
+      <div className="slab-flat flex flex-wrap items-center gap-3 bg-paper p-3">
         <button
           onClick={() => { setPhase('idle'); setChunked((c) => !c); setLen(4) }}
           className={`slab-flat px-3 py-1.5 text-xs font-bold ${
@@ -52,11 +52,11 @@ export default function MemorySpan() {
         </span>
       </div>
 
-      <div className="slab flex min-h-40 flex-col items-center justify-center gap-4 bg-white p-6">
+      <div className="slab flex min-h-40 flex-col items-center justify-center gap-4 bg-paper p-6">
         {phase === 'idle' && (
           <button
             onClick={start}
-            className="slab-flat bg-yellow px-6 py-3 text-xs font-bold uppercase tracking-wide"
+            className="slab-flat bg-yellow px-6 py-3 micro"
           >
             Show the sequence
           </button>
@@ -70,7 +70,7 @@ export default function MemorySpan() {
 
         {phase === 'recall' && (
           <form onSubmit={submit} className="flex w-full max-w-sm flex-col items-center gap-3">
-            <p className="text-xs font-bold uppercase tracking-wide">Type it back</p>
+            <p className="micro">Type it back</p>
             <input
               autoFocus
               value={entry}
@@ -78,7 +78,7 @@ export default function MemorySpan() {
               inputMode="numeric"
               className="slab-flat w-full bg-paper px-3 py-2 text-center font-mono text-xl tracking-widest"
             />
-            <button className="slab-flat bg-blue px-6 py-2 text-xs font-bold uppercase tracking-wide text-white">
+            <button className="slab-flat bg-blue px-6 py-2 micro text-white">
               Check
             </button>
           </form>
@@ -97,7 +97,7 @@ export default function MemorySpan() {
             </p>
             <button
               onClick={start}
-              className="slab-flat bg-yellow px-6 py-2 text-xs font-bold uppercase tracking-wide"
+              className="slab-flat bg-yellow px-6 py-2 micro"
             >
               Next
             </button>
@@ -105,8 +105,8 @@ export default function MemorySpan() {
         )}
       </div>
 
-      <div className="slab-flat bg-white p-3 text-sm">
-        <div className="mb-2 text-xs font-bold uppercase tracking-wide">Longest correct</div>
+      <div className="slab-flat bg-paper p-3 text-sm">
+        <div className="mb-2 micro">Longest correct</div>
         <p className="tabular-nums">
           Unchunked <span className="font-bold">{best.plain || '—'}</span> · Chunked{' '}
           <span className="font-bold">{best.chunked || '—'}</span>

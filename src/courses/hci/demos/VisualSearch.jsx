@@ -59,7 +59,7 @@ export default function VisualSearch() {
 
   return (
     <div className="space-y-4">
-      <div className="slab-flat bg-white p-4">
+      <div className="slab-flat bg-paper p-4">
         {!trial ? (
           <button
             onClick={start}
@@ -69,7 +69,7 @@ export default function VisualSearch() {
           </button>
         ) : (
           <>
-            <p className="mb-3 text-xs font-bold uppercase tracking-wide">
+            <p className="mb-3 micro">
               Click the red circle{miss && <span className="ml-2 bg-red px-1.5 py-0.5 text-white">wrong item</span>}
             </p>
             <div className="flex flex-wrap gap-2.5">
@@ -88,14 +88,14 @@ export default function VisualSearch() {
         )}
       </div>
 
-      <div className="slab-flat overflow-x-auto bg-white p-3">
-        <div className="mb-3 text-xs font-bold uppercase tracking-wide">
+      <div className="slab-flat overflow-x-auto bg-paper p-3">
+        <div className="mb-3 micro">
           Mean search time by set size
         </div>
         <table className="w-full text-left text-sm">
           <thead>
             <tr className="border-b-2 border-ink">
-              <th className="py-1.5 pr-3 text-xs font-bold uppercase tracking-wide">Condition</th>
+              <th className="py-1.5 pr-3 micro">Condition</th>
               {SET_SIZES.map((n) => (
                 <th key={n} className="py-1.5 pr-3 text-xs font-bold tabular-nums">
                   n={n}
@@ -130,7 +130,7 @@ export default function VisualSearch() {
         {results.length > 0 && (
           <button
             onClick={() => setResults([])}
-            className="mt-2 text-xs font-bold uppercase tracking-wide underline"
+            className="mt-2 micro underline"
           >
             Clear
           </button>

@@ -22,7 +22,7 @@ export default function FittsGeometry() {
       </text>
 
       {/* target — the one green element on the plate */}
-      <rect x="450" y="96" width="112" height="88" fill="var(--color-accent)" stroke="none" />
+      <rect x="450" y="96" width="112" height="88" fill="var(--color-cobalt)" stroke="none" />
       <rect x="450" y="96" width="112" height="88" strokeWidth="1.5" />
 
       {/* distance D, measured to the target centre */}

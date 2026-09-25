@@ -52,7 +52,7 @@ export default function HicksLaw() {
 
   return (
     <div className="space-y-4">
-      <div className="slab-flat bg-white p-4">
+      <div className="slab-flat bg-paper p-4">
         {!round ? (
           <button
             onClick={start}
@@ -80,8 +80,8 @@ export default function HicksLaw() {
         )}
       </div>
 
-      <div className="slab-flat bg-white p-3">
-        <div className="mb-3 text-xs font-bold uppercase tracking-wide">
+      <div className="slab-flat bg-paper p-3">
+        <div className="mb-3 micro">
           Mean decision time by number of options
         </div>
         <div className="flex items-end gap-4" style={{ height: 130 }}>
@@ -106,7 +106,7 @@ export default function HicksLaw() {
         {trials.length > 0 && (
           <button
             onClick={() => setTrials([])}
-            className="mt-2 text-xs font-bold uppercase tracking-wide underline"
+            className="mt-2 micro underline"
           >
             Clear
           </button>

@@ -6,13 +6,14 @@ import StudySession from './scaffold/components/StudySession'
 import ExamPlanner from './scaffold/components/ExamPlanner'
 import Home from './scaffold/components/Home'
 import MobileBar from './scaffold/components/MobileBar'
-import { DesignContext } from './scaffold/DesignContext'
+import Colophon from './scaffold/components/Colophon'
 import * as store from './scaffold/store'
 
 const PAGE_TITLE = {
   session: 'Study session',
   review: 'Review',
   exam: 'Exam plan',
+  colophon: 'Why it is built this way',
 }
 
 export default function App() {
@@ -36,7 +37,6 @@ export default function App() {
     setProgress((p) => store.grade(p, id, correct, confidence))
 
   const due = useMemo(() => store.dueItems(progress), [progress])
-  const stats = useMemo(() => store.overallStats(progress), [progress])
   const plan = useMemo(() => store.examPlan(progress), [progress])
   const lesson = store.lessons().find((l) => l.id === view.id)
 
@@ -47,8 +47,7 @@ export default function App() {
   const atHome = view.type === 'home'
 
   return (
-    <DesignContext.Provider value={{ onOpenChapter: openLesson }}>
-      <div key={courseId} className="flex h-full flex-col md:flex-row">
+    <div key={courseId} className="flex h-full flex-col md:flex-row">
         {/* The home screen is the entry point, so it gets the full width. The
             sidebar returns as soon as you are inside a course. */}
         {!atHome && (
@@ -80,6 +79,7 @@ export default function App() {
             onHome={() => setView({ type: 'home' })}
             onSession={() => setView({ type: 'session' })}
             onExam={() => setView({ type: 'exam' })}
+            onColophon={() => setView({ type: 'colophon' })}
             onReview={() => {
               setQueue(store.sessionQueue(progress))
               setView({ type: 'review' })
@@ -89,6 +89,10 @@ export default function App() {
                 store.reset()
                 setProgress(store.load())
               }
+            }}
+            onRestore={(restored) => {
+              setProgress(restored)
+              setView({ type: 'home' })
             }}
           />
           </div>
@@ -105,7 +109,7 @@ export default function App() {
             />
           ) : (
             <>
-              <div className="mx-auto max-w-3xl px-5 py-8 md:px-10">
+              <div className="mx-auto max-w-3xl px-5 pb-10 pt-5 md:px-10 md:py-8">
                 {view.type === 'session' && (
                   <StudySession
                     progress={progress}
@@ -131,6 +135,8 @@ export default function App() {
 
                 {view.type === 'lesson' && <LessonView lesson={lesson} onGrade={grade} />}
 
+                {view.type === 'colophon' && <Colophon onSelect={openLesson} />}
+
                 {view.type === 'review' && (
                   <ReviewSession
                     items={queue}
@@ -140,14 +146,9 @@ export default function App() {
                 )}
               </div>
 
-              <footer className="border-t border-rule px-5 py-4 text-[11px] font-bold uppercase tracking-wide muted md:px-10">
-                {stats.mastered} mastered · {stats.started - stats.mastered} in progress ·{' '}
-                {stats.total - stats.started} untouched
-              </footer>
             </>
           )}
         </main>
       </div>
-    </DesignContext.Provider>
   )
 }

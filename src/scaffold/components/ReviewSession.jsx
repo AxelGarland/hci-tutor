@@ -12,7 +12,7 @@ export default function ReviewSession({ items, onGrade, onExit }) {
 
   if (queue.length === 0) {
     return (
-      <div className="slab-flat max-w-md bg-white p-6">
+      <div className="slab-flat max-w-md bg-paper p-6">
         <h2 className="text-2xl font-bold tracking-tight">Nothing due</h2>
         <p className="mt-2 text-sm leading-relaxed opacity-80">
           Everything you have studied is still inside its interval. Open a lesson to add new
@@ -24,12 +24,12 @@ export default function ReviewSession({ items, onGrade, onExit }) {
 
   if (i >= queue.length) {
     return (
-      <div className="slab-flat max-w-md bg-white p-6">
+      <div className="slab-flat max-w-md bg-paper p-6">
         <h2 className="text-2xl font-bold tracking-tight">Review cleared</h2>
         <p className="mt-2 text-sm opacity-80">{queue.length} items done.</p>
         <button
           onClick={onExit}
-          className="slab-flat mt-4 bg-yellow px-4 py-2 text-xs font-bold uppercase tracking-wide"
+          className="slab-flat mt-4 bg-yellow px-4 py-2 micro"
         >
           Back to the course
         </button>
@@ -49,19 +49,19 @@ export default function ReviewSession({ items, onGrade, onExit }) {
   return (
     <div className="max-w-2xl space-y-4">
       <div className="flex items-baseline justify-between">
-        <p className="text-xs font-bold uppercase tracking-widest opacity-60">
+        <p className="microst opacity-60">
           Review — {i + 1} of {queue.length}
         </p>
         <p className="text-xs opacity-60">{item.lesson.title}</p>
       </div>
 
-      <div className="h-1.5 w-full bg-white slab-flat">
+      <div className="h-1.5 w-full bg-paper slab-flat">
         <div className="h-full bg-teal" style={{ width: `${(i / queue.length) * 100}%` }} />
       </div>
 
       {item.kind === 'card' ? (
         <>
-          <div className="slab flex min-h-52 flex-col justify-center gap-4 bg-white p-6">
+          <div className="slab flex min-h-52 flex-col justify-center gap-4 bg-paper p-6">
             <p className="text-lg font-bold leading-snug">{item.front}</p>
             {revealed && (
               <p className="border-t-2 border-ink pt-4 text-[15px] leading-relaxed">{item.back}</p>
@@ -70,7 +70,7 @@ export default function ReviewSession({ items, onGrade, onExit }) {
           {!revealed ? (
             <button
               onClick={() => setRevealed(true)}
-              className="slab-flat w-full bg-blue px-4 py-3 text-xs font-bold uppercase tracking-wide text-white"
+              className="slab-flat w-full bg-blue px-4 py-3 micro text-white"
             >
               Reveal
             </button>
@@ -78,13 +78,13 @@ export default function ReviewSession({ items, onGrade, onExit }) {
             <div className="flex gap-3">
               <button
                 onClick={() => next(false)}
-                className="slab-flat flex-1 bg-red px-4 py-3 text-xs font-bold uppercase tracking-wide text-white"
+                className="slab-flat flex-1 bg-red px-4 py-3 micro text-white"
               >
                 Missed it
               </button>
               <button
                 onClick={() => next(true)}
-                className="slab-flat flex-1 bg-teal px-4 py-3 text-xs font-bold uppercase tracking-wide text-white"
+                className="slab-flat flex-1 bg-teal px-4 py-3 micro text-white"
               >
                 Knew it
               </button>
@@ -97,10 +97,10 @@ export default function ReviewSession({ items, onGrade, onExit }) {
           <div className="space-y-2">
             {item.options.map((opt, idx) => {
               const answered = chosen !== null
-              let tone = 'bg-white hover:bg-yellow'
+              let tone = 'bg-paper hover:bg-yellow'
               if (answered && idx === item.answer) tone = 'bg-ink text-paper'
-              else if (answered && idx === chosen) tone = 'bg-white'
-              else if (answered) tone = 'bg-white muted'
+              else if (answered && idx === chosen) tone = 'bg-paper'
+              else if (answered) tone = 'bg-paper muted'
               const mark =
                 answered && idx === item.answer
                   ? 'Correct'
@@ -126,12 +126,12 @@ export default function ReviewSession({ items, onGrade, onExit }) {
           </div>
           {chosen !== null && (
             <div className="space-y-3">
-              <p className="border-l-4 border-ink bg-white px-4 py-3 text-sm leading-relaxed">
+              <p className="border-l-4 border-ink bg-paper px-4 py-3 text-sm leading-relaxed">
                 {item.why}
               </p>
               <button
                 onClick={() => next(chosen === item.answer)}
-                className="slab-flat bg-blue px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white"
+                className="slab-flat bg-blue px-5 py-2.5 micro text-white"
               >
                 Next
               </button>

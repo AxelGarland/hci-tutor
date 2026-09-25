@@ -138,6 +138,7 @@ export const NOTES = {
 }
 ```
 
-Rendered by `<Cite id="timer" />` inside framework components. This only makes sense when the course
-is *about* interface design — the HCI course uses it to justify the app from its own syllabus. Most
-courses should leave the field out entirely, and the citation markers simply won't render.
+Collected on the **Why it is built this way** screen, reached from the foot of the sidebar. Each
+note takes a `title`, the `lesson` it cites, and the note itself. This only makes sense when the
+course is about interface design and the app is a worked example of its own material; other courses
+should leave the field out entirely, and the screen is never linked or reached.

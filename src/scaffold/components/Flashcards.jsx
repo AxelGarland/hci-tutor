@@ -15,14 +15,14 @@ export default function Flashcards({ cards, onGrade }) {
 
   if (i >= cards.length) {
     return (
-      <div className="slab-flat max-w-md bg-white p-5">
+      <div className="slab-flat max-w-md bg-paper p-5">
         <p className="text-lg font-bold">Deck finished.</p>
         <button
           onClick={() => {
             setI(0)
             setRevealed(false)
           }}
-          className="slab-flat mt-4 bg-yellow px-4 py-2 text-xs font-bold uppercase tracking-wide"
+          className="slab-flat mt-4 bg-yellow px-4 py-2 micro"
         >
           Run it again
         </button>
@@ -40,11 +40,11 @@ export default function Flashcards({ cards, onGrade }) {
 
   return (
     <div className="max-w-xl space-y-4">
-      <p className="text-xs font-bold uppercase tracking-wide opacity-60">
+      <p className="micro opacity-60">
         Card {i + 1} of {cards.length}
       </p>
 
-      <div className="slab flex min-h-52 flex-col justify-center gap-4 bg-white p-6">
+      <div className="slab flex min-h-52 flex-col justify-center gap-4 bg-paper p-6">
         <p className="text-lg font-bold leading-snug">{card.front}</p>
         {revealed && (
           <p className="border-t-2 border-ink pt-4 text-[15px] leading-relaxed">{card.back}</p>
@@ -54,7 +54,7 @@ export default function Flashcards({ cards, onGrade }) {
       {!revealed ? (
         <button
           onClick={() => setRevealed(true)}
-          className="slab-flat w-full bg-blue px-4 py-3 text-xs font-bold uppercase tracking-wide text-white"
+          className="slab-flat w-full bg-blue px-4 py-3 micro text-white"
         >
           Reveal
         </button>
@@ -62,13 +62,13 @@ export default function Flashcards({ cards, onGrade }) {
         <div className="flex gap-3">
           <button
             onClick={() => answer(false)}
-            className="slab-flat flex-1 bg-red px-4 py-3 text-xs font-bold uppercase tracking-wide text-white"
+            className="slab-flat flex-1 bg-red px-4 py-3 micro text-white"
           >
             Missed it
           </button>
           <button
             onClick={() => answer(true)}
-            className="slab-flat flex-1 bg-teal px-4 py-3 text-xs font-bold uppercase tracking-wide text-white"
+            className="slab-flat flex-1 bg-teal px-4 py-3 micro text-white"
           >
             Knew it
           </button>

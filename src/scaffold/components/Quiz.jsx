@@ -17,7 +17,7 @@ export default function Quiz({ questions, onGrade, onFinish }) {
 
   if (i >= questions.length) {
     return (
-      <div className="slab-flat max-w-md bg-white p-5">
+      <div className="slab-flat max-w-md bg-paper p-5">
         <p className="text-2xl font-bold">
           {score} / {questions.length}
         </p>
@@ -31,7 +31,7 @@ export default function Quiz({ questions, onGrade, onFinish }) {
             setScore(0)
             onFinish?.()
           }}
-          className="slab-flat mt-4 bg-yellow px-4 py-2 text-xs font-bold uppercase tracking-wide"
+          className="slab-flat mt-4 bg-yellow px-4 py-2 micro"
         >
           Again
         </button>
@@ -52,7 +52,7 @@ export default function Quiz({ questions, onGrade, onFinish }) {
 
   return (
     <div className="max-w-2xl space-y-4">
-      <p className="text-xs font-bold uppercase tracking-wide opacity-60">
+      <p className="micro opacity-60">
         Question {i + 1} of {questions.length}
       </p>
       <p className="text-lg font-bold leading-snug">{q.question}</p>
@@ -61,10 +61,10 @@ export default function Quiz({ questions, onGrade, onFinish }) {
         {q.options.map((opt, idx) => {
           const isAnswer = idx === q.answer
           const isChosen = idx === chosen
-          let tone = 'bg-white hover:bg-yellow'
+          let tone = 'bg-paper hover:bg-yellow'
           if (answered && isAnswer) tone = 'bg-ink text-paper'
-          else if (answered && isChosen) tone = 'bg-white'
-          else if (answered) tone = 'bg-white muted'
+          else if (answered && isChosen) tone = 'bg-paper'
+          else if (answered) tone = 'bg-paper muted'
           // Colour alone never carries the verdict — every state is also named (Ch. 17).
           const mark = answered && isAnswer ? 'Correct' : answered && isChosen ? 'Your answer' : null
           return (
@@ -87,13 +87,13 @@ export default function Quiz({ questions, onGrade, onFinish }) {
 
       {answered && (
         <div className="space-y-3">
-          <p className="border-l-4 border-ink bg-white px-4 py-3 text-sm leading-relaxed">{q.why}</p>
+          <p className="border-l-4 border-ink bg-paper px-4 py-3 text-sm leading-relaxed">{q.why}</p>
           <button
             onClick={() => {
               setChosen(null)
               setI((n) => n + 1)
             }}
-            className="slab-flat bg-blue px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white"
+            className="slab-flat bg-blue px-5 py-2.5 micro text-white"
           >
             {i + 1 === questions.length ? 'See score' : 'Next'}
           </button>

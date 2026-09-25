@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react'
-import Cite from '../../../scaffold/components/Cite'
 
 const AREA_H = 300
 const SIZES = [18, 28, 44, 70]
@@ -61,7 +60,7 @@ export default function FittsLaw() {
     <div className="space-y-4">
       <div
         ref={areaRef}
-        className="slab-flat relative overflow-hidden bg-white"
+        className="slab-flat relative overflow-hidden bg-paper"
         style={{ height: AREA_H }}
       >
         {!target && (
@@ -86,27 +85,19 @@ export default function FittsLaw() {
           />
         )}
         {target && (
-          <div className="pointer-events-none absolute bottom-2 left-3 text-xs font-bold uppercase tracking-wide">
+          <div className="pointer-events-none absolute bottom-2 left-3 micro">
             Hit the red target
           </div>
         )}
       </div>
 
-      <p className="text-[11px] leading-relaxed muted">
-        Targets here go below the 24px accessibility minimum on purpose — a Fitts demo needs hard
-        targets to have anything to show.
-        <Cite id="demoTargets" />
-      </p>
-
-      <p className="hidden text-[11px] leading-relaxed muted coarse:block">
-        On a touchscreen this measures finger acquisition rather than cursor movement, which the
-        chapter treats as a different model — occlusion and landing ambiguity are what FFitts adds
-        to Fitts. The fit still forms; read it as your touch performance, not your pointing.
+      <p className="hidden text-[13px] muted coarse:block">
+        On a touchscreen this measures finger acquisition, not cursor movement.
       </p>
 
       <div className="grid gap-4 sm:grid-cols-[1fr_auto]">
-        <div className="slab-flat bg-white p-3">
-          <div className="mb-2 text-xs font-bold uppercase tracking-wide">
+        <div className="slab-flat bg-paper p-3">
+          <div className="mb-2 micro">
             Movement time vs. index of difficulty
           </div>
           <svg viewBox="0 0 300 160" className="w-full">
@@ -140,8 +131,8 @@ export default function FittsLaw() {
           </svg>
         </div>
 
-        <div className="slab-flat min-w-44 bg-white p-3 text-sm">
-          <div className="mb-2 text-xs font-bold uppercase tracking-wide">Your fit</div>
+        <div className="slab-flat min-w-44 bg-paper p-3 text-sm">
+          <div className="mb-2 micro">Your fit</div>
           {line ? (
             <>
               <p className="font-mono text-xs">MT = {line.a.toFixed(0)} + {line.b.toFixed(0)}·ID</p>
@@ -157,7 +148,7 @@ export default function FittsLaw() {
           {trials.length > 0 && (
             <button
               onClick={() => setTrials([])}
-              className="mt-3 text-xs font-bold uppercase tracking-wide underline"
+              className="mt-3 micro underline"
             >
               Clear
             </button>

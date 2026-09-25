@@ -27,9 +27,9 @@ export default function MobileBar({ title, open, onToggle, onHome }) {
 
   return (
     <>
-      <div className="sticky top-0 z-40 flex items-center gap-3 border-b border-rule bg-paper px-4 py-2 md:hidden">
-        <button onClick={onHome} className="micro shrink-0 px-1 coarse:min-w-11 underline underline-offset-4">
-          Scaffold
+      <div className="sticky top-0 z-40 flex items-center gap-3 border-b-2 border-ink bg-paper px-4 py-2 md:hidden">
+        <button onClick={onHome} className="micro shrink-0 px-1 text-cobalt coarse:min-w-11">
+          Scaffold<span className="text-cobalt">*</span>
         </button>
         <span className="micro muted min-w-0 flex-1 truncate" title={title}>
           {title ?? course().title}

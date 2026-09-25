@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import Cite from './Cite'
 
 const LEVELS = [
   { key: 'sure', label: 'Sure' },
@@ -37,7 +36,7 @@ export default function RecallItem({ item, onGraded, footer }) {
     <div className="max-w-2xl space-y-4">
       {footer}
 
-      <div className="slab bg-white p-5">
+      <div className="slab bg-paper p-5">
         <p className="text-[11px] font-bold uppercase tracking-widest muted">
           {item.lesson.number}. {item.lesson.title}
         </p>
@@ -60,41 +59,44 @@ export default function RecallItem({ item, onGraded, footer }) {
             value={typed}
             onChange={(e) => setTyped(e.target.value)}
             rows={3}
-            className="slab-flat w-full resize-none bg-white px-3 py-2 text-[15px] leading-relaxed"
+            className="slab-flat w-full resize-none bg-paper px-3 py-2 text-[15px] leading-relaxed"
             placeholder="Write it out — the writing is what does the work."
           />
 
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="text-[11px] font-bold uppercase tracking-widest opacity-60">
-              How sure are you?
-              <Cite id="confidence" />
-            </span>
-            {LEVELS.map((l) => (
-              <button
-                key={l.key}
-                type="button"
-                onClick={() => setConfidence(l.key)}
-                className={`slab-flat px-3 py-1.5 text-xs font-bold uppercase tracking-wide ${
-                  confidence === l.key ? 'bg-ink text-paper' : 'bg-white'
-                }`}
-              >
-                {l.label}
-              </button>
-            ))}
+          {/* The wager is one choice among three, so the three have to read as one
+              row. Wrapping them after the label split them 2 + 1 on a phone,
+              where the orphan looked like a separate control. Label above,
+              three equal columns below; the inline row returns at sm. */}
+          <div className="space-y-2 sm:flex sm:flex-wrap sm:items-center sm:gap-2 sm:space-y-0">
+            <span className="micro block muted">How sure are you?</span>
+            <div className="grid grid-cols-3 gap-2 sm:contents">
+              {LEVELS.map((l) => (
+                <button
+                  key={l.key}
+                  type="button"
+                  onClick={() => setConfidence(l.key)}
+                  className={`slab-flat whitespace-nowrap px-1.5 py-1.5 text-[11px] font-bold uppercase tracking-wide sm:px-3 sm:text-xs ${
+                    confidence === l.key ? 'bg-ink text-paper' : 'bg-paper'
+                  }`}
+                >
+                  {l.label}
+                </button>
+              ))}
+            </div>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex gap-3">
             <button
               type="submit"
               disabled={!typed.trim() || !confidence}
-              className="slab-flat bg-blue px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white disabled:opacity-40"
+              className="slab-flat flex-1 bg-blue px-5 py-2.5 micro text-white disabled:opacity-40 sm:flex-none"
             >
               Reveal
             </button>
             <button
               type="button"
               onClick={() => { setTyped(''); reveal('guess') }}
-              className="slab-flat bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-wide"
+              className="slab-flat flex-1 bg-paper px-5 py-2.5 micro sm:flex-none"
             >
               No idea
             </button>
@@ -103,13 +105,13 @@ export default function RecallItem({ item, onGraded, footer }) {
       ) : (
         <div className="space-y-3">
           {typed.trim() && (
-            <div className="slab-flat bg-white p-4">
+            <div className="slab-flat bg-paper p-4">
               <p className="text-[11px] font-bold uppercase tracking-widest muted">You wrote</p>
               <p className="mt-1.5 text-[15px] leading-relaxed">{typed}</p>
             </div>
           )}
 
-          <div className="slab-flat border-teal bg-white p-4">
+          <div className="slab-flat border-teal bg-paper p-4">
             <p className="text-[11px] font-bold uppercase tracking-widest muted">Answer</p>
             <p className="mt-1.5 text-[15px] font-bold leading-relaxed">{answer}</p>
             {item.kind === 'quiz' && item.why && (
@@ -122,21 +124,17 @@ export default function RecallItem({ item, onGraded, footer }) {
                 with no colour in the design at all. */}
             <button
               onClick={() => onGraded(false, confidence)}
-              className="slab-flat flex-1 px-4 py-3 text-xs font-bold uppercase tracking-wide"
+              className="slab-flat flex-1 px-4 py-3 micro"
             >
               Missed it
             </button>
             <button
               onClick={() => onGraded(true, confidence)}
-              className="slab-flat flex-1 bg-ink px-4 py-3 text-xs font-bold uppercase tracking-wide text-paper"
+              className="slab-flat flex-1 bg-ink px-4 py-3 micro text-paper"
             >
               Got it
             </button>
           </div>
-          <p className="text-[11px] leading-relaxed opacity-60">
-            Grade yourself honestly — close enough in your own words counts, and inflating it only
-            moves the item further out of the schedule.
-          </p>
         </div>
       )}
     </div>
