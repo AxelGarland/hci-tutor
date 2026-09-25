@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import GradeButtons from './GradeButtons'
 
 const LEVELS = [
   { key: 'sure', label: 'Sure' },
@@ -89,7 +90,7 @@ export default function RecallItem({ item, onGraded, footer }) {
             <button
               type="submit"
               disabled={!typed.trim() || !confidence}
-              className="slab-flat flex-1 bg-blue px-5 py-2.5 micro text-white disabled:opacity-40 sm:flex-none"
+              className="slab-flat flex-1 bg-cobalt px-5 py-2.5 micro text-white disabled:opacity-40 sm:flex-none"
             >
               Reveal
             </button>
@@ -111,7 +112,7 @@ export default function RecallItem({ item, onGraded, footer }) {
             </div>
           )}
 
-          <div className="slab-flat border-teal bg-paper p-4">
+          <div className="slab-flat border-cobalt bg-paper p-4">
             <p className="text-[11px] font-bold uppercase tracking-widest muted">Answer</p>
             <p className="mt-1.5 text-[15px] font-bold leading-relaxed">{answer}</p>
             {item.kind === 'quiz' && item.why && (
@@ -119,22 +120,7 @@ export default function RecallItem({ item, onGraded, footer }) {
             )}
           </div>
 
-          <div className="flex gap-3">
-            {/* Fill versus outline, not two hues — the pair has to stay separable
-                with no colour in the design at all. */}
-            <button
-              onClick={() => onGraded(false, confidence)}
-              className="slab-flat flex-1 px-4 py-3 micro"
-            >
-              Missed it
-            </button>
-            <button
-              onClick={() => onGraded(true, confidence)}
-              className="slab-flat flex-1 bg-ink px-4 py-3 micro text-paper"
-            >
-              Got it
-            </button>
-          </div>
+          <GradeButtons onGrade={(correct) => onGraded(correct, confidence)} />
         </div>
       )}
     </div>

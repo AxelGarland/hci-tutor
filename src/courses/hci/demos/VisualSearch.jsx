@@ -63,14 +63,14 @@ export default function VisualSearch() {
         {!trial ? (
           <button
             onClick={start}
-            className="slab-flat w-full bg-yellow px-4 py-3 text-sm font-bold uppercase tracking-wide"
+            className="slab-flat w-full bg-accent px-4 py-3 text-sm font-bold uppercase tracking-wide"
           >
             Start a trial — find the red circle
           </button>
         ) : (
           <>
             <p className="mb-3 micro">
-              Click the red circle{miss && <span className="ml-2 bg-red px-1.5 py-0.5 text-white">wrong item</span>}
+              Click the red circle{miss && <span className="ml-2 bg-signal px-1.5 py-0.5 text-white">wrong item</span>}
             </p>
             <div className="flex flex-wrap gap-2.5">
               {trial.items.map((it, i) => (
@@ -78,7 +78,7 @@ export default function VisualSearch() {
                   key={i}
                   onClick={() => click(it)}
                   aria-label={`${it.color} ${it.shape}`}
-                  className={`raw h-7 w-7 coarse:h-10 coarse:w-10 ${it.color === 'red' ? 'bg-red' : 'bg-blue'} ${
+                  className={`raw h-7 w-7 coarse:h-10 coarse:w-10 ${it.color === 'red' ? 'bg-signal' : 'bg-cobalt'} ${
                     it.shape === 'circle' ? 'rounded-full' : ''
                   }`}
                 />

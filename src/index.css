@@ -32,19 +32,9 @@
   --color-signal: #d92d20;  /* sparingly. white on it 4.83:1 · as type on paper 4.63:1 */
   --color-verdant: #0a6e4a; /* mastery only, always beside a number saying the same */
 
-  /* The old semantic names are kept so several hundred component classes did not
-     have to churn. Each now resolves into the palette above. */
-  --color-teal: #2036c9;   /* primary fill   → cobalt */
-  --color-blue: #2036c9;   /* secondary fill → cobalt */
-  --color-red: #d92d20;    /* negative fill  → signal, distinguished by label too */
-  --color-yellow: #ffc61a; /* loud field     → accent */
-
   --color-muted: #57534a;  /* secondary text. 7.34:1 on paper */
   --color-rule: #ddd9d0;   /* decorative hairline only, never a control edge */
   --color-edge: #111111;   /* interactive boundary */
-
-  /* Dropdowns and sheets that open over the cobalt poster. */
-  --color-home: #fbfaf7;
 
   --font-sans: "Archivo", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
   --font-serif: "Literata", Georgia, "Times New Roman", serif;

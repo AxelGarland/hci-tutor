@@ -31,7 +31,7 @@ export default function Quiz({ questions, onGrade, onFinish }) {
             setScore(0)
             onFinish?.()
           }}
-          className="slab-flat mt-4 bg-yellow px-4 py-2 micro"
+          className="slab-flat mt-4 bg-accent px-4 py-2 micro"
         >
           Again
         </button>
@@ -61,7 +61,7 @@ export default function Quiz({ questions, onGrade, onFinish }) {
         {q.options.map((opt, idx) => {
           const isAnswer = idx === q.answer
           const isChosen = idx === chosen
-          let tone = 'bg-paper hover:bg-yellow'
+          let tone = 'bg-paper hover:bg-accent'
           if (answered && isAnswer) tone = 'bg-ink text-paper'
           else if (answered && isChosen) tone = 'bg-paper'
           else if (answered) tone = 'bg-paper muted'
@@ -93,7 +93,7 @@ export default function Quiz({ questions, onGrade, onFinish }) {
               setChosen(null)
               setI((n) => n + 1)
             }}
-            className="slab-flat bg-blue px-5 py-2.5 micro text-white"
+            className="slab-flat bg-cobalt px-5 py-2.5 micro text-white"
           >
             {i + 1 === questions.length ? 'See score' : 'Next'}
           </button>

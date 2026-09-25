@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import GradeButtons from './GradeButtons'
 
 export default function Flashcards({ cards, onGrade }) {
   const [i, setI] = useState(0)
@@ -22,7 +23,7 @@ export default function Flashcards({ cards, onGrade }) {
             setI(0)
             setRevealed(false)
           }}
-          className="slab-flat mt-4 bg-yellow px-4 py-2 micro"
+          className="slab-flat mt-4 bg-accent px-4 py-2 micro"
         >
           Run it again
         </button>
@@ -54,25 +55,12 @@ export default function Flashcards({ cards, onGrade }) {
       {!revealed ? (
         <button
           onClick={() => setRevealed(true)}
-          className="slab-flat w-full bg-blue px-4 py-3 micro text-white"
+          className="slab-flat w-full bg-cobalt px-4 py-3 micro text-white"
         >
           Reveal
         </button>
       ) : (
-        <div className="flex gap-3">
-          <button
-            onClick={() => answer(false)}
-            className="slab-flat flex-1 bg-red px-4 py-3 micro text-white"
-          >
-            Missed it
-          </button>
-          <button
-            onClick={() => answer(true)}
-            className="slab-flat flex-1 bg-teal px-4 py-3 micro text-white"
-          >
-            Knew it
-          </button>
-        </div>
+        <GradeButtons onGrade={answer} />
       )}
     </div>
   )

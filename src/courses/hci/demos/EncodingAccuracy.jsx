@@ -17,8 +17,8 @@ function Mark({ enc, ratio }) {
   if (enc === 'position') {
     return (
       <div className="flex h-40 items-end gap-10">
-        <div className="w-14 bg-blue" style={{ height: '100%' }} />
-        <div className="w-14 bg-red" style={{ height: `${ratio * 100}%` }} />
+        <div className="w-14 bg-cobalt" style={{ height: '100%' }} />
+        <div className="w-14 bg-signal" style={{ height: `${ratio * 100}%` }} />
       </div>
     )
   }
@@ -27,8 +27,8 @@ function Mark({ enc, ratio }) {
     const small = big * Math.sqrt(ratio)
     return (
       <div className="flex h-40 items-center gap-10">
-        <div className="rounded-full bg-blue" style={{ width: big, height: big }} />
-        <div className="rounded-full bg-red" style={{ width: small, height: small }} />
+        <div className="rounded-full bg-cobalt" style={{ width: big, height: big }} />
+        <div className="rounded-full bg-signal" style={{ width: small, height: small }} />
       </div>
     )
   }
@@ -96,7 +96,7 @@ export default function EncodingAccuracy() {
             value={guess}
             disabled={answered}
             onChange={(e) => setGuess(Number(e.target.value))}
-            className="flex-1 accent-teal"
+            className="flex-1 accent-cobalt"
           />
           <span className="w-14 text-right font-mono text-lg tabular-nums">{guess}%</span>
         </div>
@@ -104,7 +104,7 @@ export default function EncodingAccuracy() {
         {!answered ? (
           <button
             onClick={submit}
-            className="slab-flat bg-blue px-6 py-2 micro text-white"
+            className="slab-flat bg-cobalt px-6 py-2 micro text-white"
           >
             Lock it in
           </button>
@@ -119,7 +119,7 @@ export default function EncodingAccuracy() {
             </p>
             <button
               onClick={next}
-              className="slab-flat bg-yellow px-6 py-2 micro"
+              className="slab-flat bg-accent px-6 py-2 micro"
             >
               Next
             </button>
@@ -143,7 +143,7 @@ export default function EncodingAccuracy() {
                 </span>
                 <span className="h-4 flex-1 bg-black/5">
                   <span
-                    className="block h-full bg-red"
+                    className="block h-full bg-signal"
                     style={{ width: m ? `${(m / worst) * 100}%` : 0 }}
                   />
                 </span>

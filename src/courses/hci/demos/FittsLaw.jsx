@@ -75,7 +75,7 @@ export default function FittsLaw() {
           <button
             onClick={hit}
             aria-label="Target"
-            className="raw absolute rounded-full bg-red transition-transform hover:scale-105"
+            className="raw absolute rounded-full bg-signal transition-transform hover:scale-105"
             style={{
               width: target.w,
               height: target.w,

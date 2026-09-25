@@ -3,7 +3,7 @@ import Reading from './Reading'
 import RecallItem from './RecallItem'
 import { demos } from '../store'
 import { buildSession, DURATIONS, DEFAULT_MINUTES, REVIEW_GATE, nextLesson } from '../session'
-import { lessons, LEECH_THRESHOLD } from '../store'
+import { activeCourseId, leeches, lessons, LEECH_THRESHOLD } from '../store'
 
 const PHASE_LABEL = {
   warmup: 'Warm-up',
@@ -52,7 +52,7 @@ function Setup({ progress, onStart }) {
       </div>
 
       {preview.mode === 'review-only' ? (
-        <div className="slab bg-yellow p-4">
+        <div className="slab bg-accent p-4">
           <p className="micro">Reviews only this session</p>
           <p className="mt-2 text-[15px] leading-relaxed">
             You have more than {REVIEW_GATE} items overdue, so this session serves{' '}
@@ -215,10 +215,13 @@ export default function StudySession({ progress, onGrade, onFinish, onExit }) {
   }
 
   if (done) {
-    const pct = ([r, t]) => (t ? `${Math.round((r / t) * 100)}%` : '—')
-    const leeches = [...(plan.mode === 'review-only' ? testItems.map((x) => x.item) : [])]
-      .concat(plan.lesson ? [] : [])
-      .filter((i) => (progress.items[i.id]?.wrong ?? 0) >= LEECH_THRESHOLD)
+    const pct = ([r, t]) => (t ? `${Math.round((r / t) * 100)}%` : null)
+    // Everything this sitting actually served. The previous version built this
+    // list only for review-only sessions and then concatenated an empty array
+    // either way, so after an ordinary study session it was always empty and the
+    // panel below never appeared — a documented feature that never fired.
+    const served = [...(plan.warmup ?? []), ...testItems.map((x) => x.item)]
+    const missedRepeatedly = leeches(progress, served)
 
     return (
       <div className="max-w-2xl space-y-5">
@@ -230,11 +233,15 @@ export default function StudySession({ progress, onGrade, onFinish, onExit }) {
         <div className="grid gap-3 sm:grid-cols-2">
           <div className="slab p-5">
             <p className="micro muted">This chapter</p>
-            <p className="numeral mt-2 text-5xl sm:text-6xl">{pct(score.new)}</p>
+            <p className="numeral mt-2 text-5xl sm:text-6xl">
+              {pct(score.new) ?? <span className="text-xl font-bold tracking-normal muted">none served</span>}
+            </p>
           </div>
           <div className="slab on-cobalt border-cobalt bg-cobalt p-5 text-paper">
             <p className="micro">Older material</p>
-            <p className="numeral mt-2 text-5xl sm:text-6xl">{pct(score.old)}</p>
+            <p className="numeral mt-2 text-5xl sm:text-6xl">
+              {pct(score.old) ?? <span className="text-xl font-bold tracking-normal opacity-80">none due yet</span>}
+            </p>
           </div>
         </div>
 
@@ -255,13 +262,13 @@ export default function StudySession({ progress, onGrade, onFinish, onExit }) {
           </div>
         )}
 
-        {leeches.length > 0 && (
-          <div className="slab-flat bg-yellow p-4">
+        {missedRepeatedly.length > 0 && (
+          <div className="slab-flat bg-accent p-4">
             <p className="text-[11px] font-bold uppercase tracking-widest">
               Missed {LEECH_THRESHOLD}+ times
             </p>
             <ul className="mt-2 space-y-1">
-              {leeches.map((i) => (
+              {missedRepeatedly.map((i) => (
                 <li key={i.id} className="text-sm">
                   {i.kind === 'card' ? i.front : i.question}
                 </li>
@@ -269,8 +276,9 @@ export default function StudySession({ progress, onGrade, onFinish, onExit }) {
             </ul>
             <p className="mt-2 text-xs leading-relaxed">
               Repeated misses usually mean the card is badly written, not that you cannot learn it.
-              Rewrite it in <span className="font-mono text-[11px]">src/content/</span> rather than
-              grinding it.
+              Rewrite it in{' '}
+              <span className="font-mono text-[11px]">src/courses/{activeCourseId()}/content/</span>{' '}
+              rather than grinding it.
             </p>
           </div>
         )}

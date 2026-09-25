@@ -49,8 +49,13 @@ export default function ChaptersMenu({ onSelect, align = 'right' }) {
       {open && (
         <div
           id={panelId}
-          className="reveal absolute z-30 mt-2 max-h-[70vh] w-[min(92vw,26rem)] overflow-y-auto p-1 shadow-[0_18px_40px_-18px_rgba(10,10,10,0.35)]"
-          style={{ [align]: 0, background: "var(--color-home)", border: '1px solid var(--color-edge)' }}
+          /* text-ink is not decoration: this panel opens over the cobalt hero,
+             which sets text-paper on everything inside it. Inheriting that put
+             paper text on a paper panel and made all 43 chapter titles
+             invisible. A popover sets its own colours and never trusts the
+             surface it happens to open over. */
+          className="reveal absolute z-30 mt-2 max-h-[70vh] w-[min(92vw,26rem)] overflow-y-auto bg-paper p-1 text-ink shadow-[0_18px_40px_-18px_rgba(10,10,10,0.35)]"
+          style={{ [align]: 0, border: '1px solid var(--color-edge)' }}
         >
           {course().modules.map((m) => (
             <div key={m.id} className="border-t border-rule first:border-t-0">

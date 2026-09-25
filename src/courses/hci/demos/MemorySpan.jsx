@@ -42,7 +42,7 @@ export default function MemorySpan() {
         <button
           onClick={() => { setPhase('idle'); setChunked((c) => !c); setLen(4) }}
           className={`slab-flat px-3 py-1.5 text-xs font-bold ${
-            chunked ? 'bg-teal text-white' : 'bg-paper'
+            chunked ? 'bg-cobalt text-white' : 'bg-paper'
           }`}
         >
           {chunked ? 'Chunked (groups of 3)' : 'Unchunked'}
@@ -56,7 +56,7 @@ export default function MemorySpan() {
         {phase === 'idle' && (
           <button
             onClick={start}
-            className="slab-flat bg-yellow px-6 py-3 micro"
+            className="slab-flat bg-accent px-6 py-3 micro"
           >
             Show the sequence
           </button>
@@ -78,7 +78,7 @@ export default function MemorySpan() {
               inputMode="numeric"
               className="slab-flat w-full bg-paper px-3 py-2 text-center font-mono text-xl tracking-widest"
             />
-            <button className="slab-flat bg-blue px-6 py-2 micro text-white">
+            <button className="slab-flat bg-cobalt px-6 py-2 micro text-white">
               Check
             </button>
           </form>
@@ -97,7 +97,7 @@ export default function MemorySpan() {
             </p>
             <button
               onClick={start}
-              className="slab-flat bg-yellow px-6 py-2 micro"
+              className="slab-flat bg-accent px-6 py-2 micro"
             >
               Next
             </button>

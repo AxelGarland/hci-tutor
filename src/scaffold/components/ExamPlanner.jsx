@@ -72,7 +72,7 @@ export default function ExamPlanner({ progress, onSetExam }) {
           </div>
 
           {!plan.masteryReachable && (
-            <div className="slab bg-yellow p-4">
+            <div className="slab bg-accent p-4">
               <p className="text-[11px] font-bold uppercase tracking-widest">
                 Full mastery is not reachable in {plan.days} days
               </p>

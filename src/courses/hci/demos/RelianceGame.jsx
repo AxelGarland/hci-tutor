@@ -114,7 +114,7 @@ export default function RelianceGame() {
               inputMode="numeric"
               className="slab-flat w-full bg-paper px-3 py-2 text-center font-mono text-xl tabular-nums"
             />
-            <button className="slab-flat bg-blue px-6 py-2 micro text-white">
+            <button className="slab-flat bg-cobalt px-6 py-2 micro text-white">
               Commit
             </button>
           </form>
@@ -142,7 +142,7 @@ export default function RelianceGame() {
                 </button>
                 <button
                   onClick={() => decide(true)}
-                  className="slab-flat bg-teal px-5 py-2.5 micro text-white"
+                  className="slab-flat bg-cobalt px-5 py-2.5 micro text-white"
                 >
                   Accept
                 </button>
@@ -157,7 +157,7 @@ export default function RelianceGame() {
                 </p>
                 <button
                   onClick={next}
-                  className="slab-flat bg-yellow px-6 py-2 micro"
+                  className="slab-flat bg-accent px-6 py-2 micro"
                 >
                   Next
                 </button>

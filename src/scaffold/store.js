@@ -130,18 +130,17 @@ export function overallStats(progress) {
   return { total, started, mastered, due: dueItems(progress).length }
 }
 
-/** Items missed repeatedly. The fix is to rewrite the card, not to drill it harder. */
-export function leeches(progress) {
-  return allItems()
+/**
+ * Items missed repeatedly. The fix is to rewrite the card, not to drill it harder.
+ *
+ * `items` narrows the search — the results screen passes the items that session
+ * actually served, so the list is about the sitting you just did rather than the
+ * whole book. Duplicates are collapsed: an item can be served twice in a session.
+ */
+export function leeches(progress, items = allItems()) {
+  return [...new Map(items.map((i) => [i.id, i])).values()]
     .filter((i) => (progress.items[i.id]?.wrong ?? 0) >= LEECH_THRESHOLD)
     .sort((a, b) => progress.items[b.id].wrong - progress.items[a.id].wrong)
-}
-
-/** Items you got wrong while marking yourself certain — the gaps worth attention. */
-export function blindSpots(progress) {
-  return allItems()
-    .filter((i) => (progress.items[i.id]?.confWrong ?? 0) > 0)
-    .sort((a, b) => progress.items[b.id].confWrong - progress.items[a.id].confWrong)
 }
 
 /**

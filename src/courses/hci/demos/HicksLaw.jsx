@@ -56,21 +56,21 @@ export default function HicksLaw() {
         {!round ? (
           <button
             onClick={start}
-            className="slab-flat w-full bg-yellow px-4 py-3 text-sm font-bold uppercase tracking-wide"
+            className="slab-flat w-full bg-accent px-4 py-3 text-sm font-bold uppercase tracking-wide"
           >
             Start a round
           </button>
         ) : (
           <>
             <p className="mb-3 text-sm">
-              Find and click <span className="bg-yellow px-1.5 py-0.5 font-bold">{round.goal}</span>
+              Find and click <span className="bg-accent px-1.5 py-0.5 font-bold">{round.goal}</span>
             </p>
             <div className="flex flex-wrap gap-2">
               {round.options.map((w) => (
                 <button
                   key={w}
                   onClick={() => pick(w)}
-                  className="slab-flat bg-paper px-3 py-2 text-sm hover:bg-yellow"
+                  className="slab-flat bg-paper px-3 py-2 text-sm hover:bg-accent"
                 >
                   {w}
                 </button>
@@ -91,7 +91,7 @@ export default function HicksLaw() {
                 <span className="text-[10px] font-bold">{b.mean.toFixed(0)}ms</span>
               )}
               <div
-                className="w-full bg-blue"
+                className="w-full bg-cobalt"
                 style={{ height: b.mean ? `${(b.mean / maxMean) * 92}px` : '2px' }}
               />
               <span className="text-xs font-bold">n={b.n}</span>

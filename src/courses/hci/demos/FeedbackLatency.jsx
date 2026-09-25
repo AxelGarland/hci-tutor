@@ -46,7 +46,7 @@ export default function FeedbackLatency() {
                 key={d.ms}
                 onClick={() => { reset(); setDelay(d.ms) }}
                 className={`slab-flat px-3 py-1.5 text-xs font-bold ${
-                  delay === d.ms ? 'bg-blue text-white' : 'bg-paper'
+                  delay === d.ms ? 'bg-cobalt text-white' : 'bg-paper'
                 }`}
               >
                 {d.label}
@@ -63,7 +63,7 @@ export default function FeedbackLatency() {
           <button
             onClick={() => { reset(); setFeedback((f) => !f) }}
             className={`slab-flat px-3 py-1.5 text-xs font-bold ${
-              feedback ? 'bg-teal text-white' : 'bg-paper'
+              feedback ? 'bg-cobalt text-white' : 'bg-paper'
             }`}
           >
             {feedback ? 'Acknowledged' : 'None'}
@@ -78,7 +78,7 @@ export default function FeedbackLatency() {
         <button
           onClick={submit}
           className={`slab px-8 py-4 text-base font-bold uppercase tracking-wide ${
-            feedback && pending ? 'bg-paper opacity-60' : 'bg-red text-white'
+            feedback && pending ? 'bg-paper opacity-60' : 'bg-signal text-white'
           }`}
         >
           {feedback && pending ? 'Placing order…' : 'Place order'}
@@ -86,7 +86,7 @@ export default function FeedbackLatency() {
         <p className="text-sm">
           Orders placed: <span className="font-bold">{submits}</span>
           {duplicates > 0 && (
-            <span className="ml-2 bg-yellow px-1.5 py-0.5 text-xs font-bold">
+            <span className="ml-2 bg-accent px-1.5 py-0.5 text-xs font-bold">
               {duplicates} duplicate{duplicates > 1 ? 's' : ''}
             </span>
           )}

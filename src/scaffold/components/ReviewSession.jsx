@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import GradeButtons from './GradeButtons'
 
 /**
  * Mixed review across the whole course: whatever the schedule says is due today,
@@ -29,7 +30,7 @@ export default function ReviewSession({ items, onGrade, onExit }) {
         <p className="mt-2 text-sm opacity-80">{queue.length} items done.</p>
         <button
           onClick={onExit}
-          className="slab-flat mt-4 bg-yellow px-4 py-2 micro"
+          className="slab-flat mt-4 bg-accent px-4 py-2 micro"
         >
           Back to the course
         </button>
@@ -56,7 +57,7 @@ export default function ReviewSession({ items, onGrade, onExit }) {
       </div>
 
       <div className="h-1.5 w-full bg-paper slab-flat">
-        <div className="h-full bg-teal" style={{ width: `${(i / queue.length) * 100}%` }} />
+        <div className="h-full bg-cobalt" style={{ width: `${(i / queue.length) * 100}%` }} />
       </div>
 
       {item.kind === 'card' ? (
@@ -70,25 +71,12 @@ export default function ReviewSession({ items, onGrade, onExit }) {
           {!revealed ? (
             <button
               onClick={() => setRevealed(true)}
-              className="slab-flat w-full bg-blue px-4 py-3 micro text-white"
+              className="slab-flat w-full bg-cobalt px-4 py-3 micro text-white"
             >
               Reveal
             </button>
           ) : (
-            <div className="flex gap-3">
-              <button
-                onClick={() => next(false)}
-                className="slab-flat flex-1 bg-red px-4 py-3 micro text-white"
-              >
-                Missed it
-              </button>
-              <button
-                onClick={() => next(true)}
-                className="slab-flat flex-1 bg-teal px-4 py-3 micro text-white"
-              >
-                Knew it
-              </button>
-            </div>
+            <GradeButtons onGrade={next} />
           )}
         </>
       ) : (
@@ -97,7 +85,7 @@ export default function ReviewSession({ items, onGrade, onExit }) {
           <div className="space-y-2">
             {item.options.map((opt, idx) => {
               const answered = chosen !== null
-              let tone = 'bg-paper hover:bg-yellow'
+              let tone = 'bg-paper hover:bg-accent'
               if (answered && idx === item.answer) tone = 'bg-ink text-paper'
               else if (answered && idx === chosen) tone = 'bg-paper'
               else if (answered) tone = 'bg-paper muted'
@@ -131,7 +119,7 @@ export default function ReviewSession({ items, onGrade, onExit }) {
               </p>
               <button
                 onClick={() => next(chosen === item.answer)}
-                className="slab-flat bg-blue px-5 py-2.5 micro text-white"
+                className="slab-flat bg-cobalt px-5 py-2.5 micro text-white"
               >
                 Next
               </button>
