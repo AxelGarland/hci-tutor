@@ -57,6 +57,26 @@ evenly), *Basic concepts of flexbox* (main and cross axis, flex container and it
 `flex-direction`, `flex-wrap`), `width` (`fit-content`, `max-content`, `min-content`) and `position`
 (`absolute`, containing block, normal document flow). Fetched 2026-11-03, all HTTP 200.
 
+**W3C / WCAG 2.2 Understanding documents**, for the only normative numbers in the course: SC 2.5.8
+Target Size (Minimum, AA, 24×24 CSS px), SC 2.5.5 Target Size (Enhanced, AAA, 44×44), SC 1.4.3
+Contrast (Minimum, AA, 4.5:1 and 3:1) and SC 1.4.11 Non-text Contrast (AA, 3:1). Fetched 2026-11-03,
+all HTTP 200.
+
+**Apple HIG and Material Design**, for tier-two platform guidance, both read through the browser
+because their pages render via JavaScript and returned empty bodies to a plain fetch. Two findings
+are themselves course content:
+
+- **Material's wording is advisory**: "For most platforms, consider making touch targets at least
+  48 x 48dp." It also supplies the line "Note: iOS recommends 44 x 44dp targets."
+- **Apple's own 44 could not be found.** Searching the current HIG pages for Layout, Accessibility
+  and Buttons, the only 44 is a visionOS button size token, "Regular (44 pt)", one of five sizes. No
+  minimum tap target is stated on any of those three pages. The most-repeated number in mobile design
+  reaches this course through *Google's* documentation. It may be stated elsewhere in Apple's
+  materials; the chapter says exactly that rather than asserting either way.
+- **Material's Grids & spacing page states no spacing value at all**, describing spacing instead as
+  shaping "the personality of a product" — which is the strongest available evidence that the 8-point
+  grid is a convention rather than a standard.
+
 **Why the mapping is in the course at all.** A product designer is judged on naming in three rooms —
 the tool's own panel, the design review, and the conversation with a developer — and the three rooms
 use different words for one idea. Teaching only Figma's word produces someone fluent in Figma and mute
@@ -109,7 +129,7 @@ will not.
 Eight modules, 31 chapters, one appendix.
 
 ```
-I     Layout that holds              5 chapters   auto layout
+I     Layout that holds              6 chapters   auto layout + which numbers are real
 II    Components                     5 chapters   instances, variants, properties, slots, libraries
 III   Variables and design tokens    4 chapters   collections, modes, aliases, scoping
 IV    Type as a system               5 chapters   the typography workshop

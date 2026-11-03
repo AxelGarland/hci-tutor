@@ -877,6 +877,245 @@
           "note": "Which is why a hidden layer can reappear when the main component changes."
         }
       ]
+    },
+    {
+      "id": "fg06",
+      "number": 6,
+      "title": "Which Numbers Are Real",
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Place any design number in one of three tiers: normative, platform guidance, or convention",
+            "State the WCAG minimums you can actually be wrong about",
+            "Answer “why 16?” in a review without bluffing"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Sooner or later someone asks why the padding is 16 and not 12, and the quality of the answer is most of the impression you leave. There are standards in this work, but far fewer than the internet implies, and the useful skill is not memorising numbers — it is knowing which tier a number belongs to. Three tiers, with very different force."
+        },
+        {
+          "type": "h",
+          "text": "Tier one: the numbers with force"
+        },
+        {
+          "type": "p",
+          "text": "WCAG is the only tier that is normative. It is a W3C Recommendation, it is what accessibility legislation points at, and AA is the level nearly all of that legislation targets. These are the numbers where you are not unconventional but wrong."
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "SC 2.5.8 Target Size (Minimum), Level AA: “The size of the target for pointer inputs is at least 24 by 24 CSS pixels, except when:”"
+        },
+        {
+          "type": "terms",
+          "items": [
+            {
+              "term": "Target Size (Minimum)",
+              "as": "SC 2.5.8 · AA",
+              "def": "At least 24 by 24 CSS pixels."
+            },
+            {
+              "term": "Target Size (Enhanced)",
+              "as": "SC 2.5.5 · AAA",
+              "def": "At least 44 by 44 CSS pixels. The 2.5.8 page suggests aiming for it “for important links/controls” — a best practice, not a requirement."
+            },
+            {
+              "term": "Contrast (Minimum)",
+              "as": "SC 1.4.3 · AA",
+              "def": "4.5:1 for text; 3:1 for large-scale text."
+            },
+            {
+              "term": "Non-text Contrast",
+              "as": "SC 1.4.11 · AA",
+              "def": "3:1 “against adjacent color(s)” for information needed to identify components and states, and for parts of graphics needed to understand content."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two details that catch people out. Large-scale text is defined, not estimated: “at least 18 point or 14 point bold,” which the specification itself converts — “1pt = 1.333px, therefore 14pt and 18pt are equivalent to approximately 18.5px and 24px.” And the thresholds are hard: “the computed values should not be rounded (e.g., 4.499:1 would not meet the 4.5:1 threshold).”"
+        },
+        {
+          "type": "p",
+          "text": "The exceptions are part of the standard rather than loopholes in it, and knowing them is what separates compliance from box-ticking. A target may be under 24px when it is inline — “in a sentence or its size is otherwise constrained by the line-height of non-target text” — when an equivalent control elsewhere meets the rule, when the user agent determines the size and the author does not modify it, or when the presentation is essential. Logotypes have no contrast requirement at all. There is also a spacing route: undersized targets pass if “a 24 CSS pixel diameter circle” centred on each does not intersect another target."
+        },
+        {
+          "type": "callout",
+          "text": "This app holds itself to 2.5.8 and goes past it: 24px is the floor everywhere, raised to 44px wherever the pointer is actually coarse. A compliance minimum is not a comfortable thumb."
+        },
+        {
+          "type": "h",
+          "text": "Tier two: platform guidance, which is not a standard"
+        },
+        {
+          "type": "p",
+          "text": "Apple and Google both publish numbers for their own platforms. They are authoritative there and carry no force anywhere else — and their own language admits it. Material says: “For most platforms, consider making touch targets at least 48 x 48dp,” and separately “Consider making pointer targets minimums 44 x 44dp.” Note the verb. Material advises; WCAG requires."
+        },
+        {
+          "type": "p",
+          "text": "Material also makes the point this chapter is built on, about the gap between what a control looks like and what it is: “an icon may appear to be 24 x 24dp, but the padding surrounding it comprises the full 48 x 48dp touch target.” The visible mark and the hit area are different objects, which is exactly the trick this app uses for its own citation markers."
+        },
+        {
+          "type": "p",
+          "text": "And now the honest part, because it is more instructive than a number. The famous rule that Apple requires 44 by 44 points is not something I could find Apple stating. Searching the current Human Interface Guidelines pages for Layout, Accessibility and Buttons, the only 44 that appears is a visionOS button size token — “Regular (44 pt)”, one of five sizes beside Mini, Small, Large and Extra large. No minimum tap target is stated on any of those three pages."
+        },
+        {
+          "type": "p",
+          "text": "Where does the number in this chapter come from, then? From Google. Material's accessibility page carries the line “Note: iOS recommends 44 x 44dp targets.” The most-repeated figure in mobile design reaches you here via a competitor's documentation. It may well be stated somewhere in Apple's materials; the point is that almost nobody citing it has checked, and a designer who says “Apple's minimum is 44” in a review is repeating something they cannot source. “WCAG AA requires 24, and Material suggests 48” is both more useful and verifiable."
+        },
+        {
+          "type": "h",
+          "text": "Tier three: conventions that get called standards"
+        },
+        {
+          "type": "p",
+          "text": "The 8-point grid is the most-cited standard in interface design and it is not a standard at all. Material's own Grids & spacing page states no pixel or dp value whatsoever. What it says is that spacing “helps group content, direct attention, and shape the personality of a product.” Personality. The vendor most associated with the 8dp grid describes spacing as expression, and leaves the number to you."
+        },
+        {
+          "type": "p",
+          "text": "That does not make the convention worthless — a consistent step of 4 or 8 removes a decision from every layout and makes a file legible to anyone who joins it, which is reason enough. It makes it a convention, adopted because it is useful, not obeyed because it is correct. Modular type scales are the same: the Figma agent offered a minor third as one ratio among several, describing it as “balanced, versatile for most projects.” A recommendation with alternatives is not a rule."
+        },
+        {
+          "type": "p",
+          "text": "Corner radius has no standard anywhere in this material, and I went looking. Across every source behind this course the words corner and radius appear only in discussions of screen corners as unbounded Fitts targets and of blast radius in AI safety. Nothing suggests a correct roundness, because there isn't one. Radius is brand: sharp corners read as precise and institutional, generous ones as soft and consumer, and both are right for someone. It is one of the few numbers in interface design that is purely a choice — which is why it is the first thing a brand changes and the last thing a standard will ever specify."
+        },
+        {
+          "type": "h",
+          "text": "The test to apply"
+        },
+        {
+          "type": "callout",
+          "text": "From the HCI course, chapter 16: “a design system's specifications are findings rather than opinions: minimum touch target sizes are Fitts and motor precision, contrast floors are perception and accessibility research, motion durations come from the object-constancy work.”"
+        },
+        {
+          "type": "p",
+          "text": "Run every number in your system through that sentence. A specification is a finding, a platform's advice, or a choice. 24 by 24 is a finding and a requirement. 48dp is advice. 8-pixel spacing is a convention you adopted. 12-pixel radius is a choice you made. All four are legitimate; stating which is which is what makes you sound like someone who knows, and refusing to dress a choice as a finding is the whole of the professional difference."
+        },
+        {
+          "type": "p",
+          "text": "So when the question comes — why 16 and not 12 — the credible answer is not a citation. It is “our spacing step is 8, so 16 is two steps; the control it sits in has to clear 24 by 24 regardless, and it does.” One convention, one requirement, and no pretending the convention is the requirement."
+        },
+        {
+          "type": "exercise",
+          "text": "Open any screen you have designed and list eight numbers from it — paddings, radii, font sizes, target sizes, durations. Against each, write finding, advice or choice, and for anything you called a finding, name the source. Then check every interactive element against 24 by 24 CSS pixels and see how many pass. The list you cannot source is the list you cannot defend in a review."
+        }
+      ],
+      "cards": [
+        {
+          "id": "fg06c1",
+          "front": "The three tiers a design number can belong to",
+          "back": "Normative (WCAG, referenced by legislation), platform guidance (Apple, Material — authoritative for their platform only), and convention (8-point grids, type ratios, radius)."
+        },
+        {
+          "id": "fg06c2",
+          "front": "SC 2.5.8 Target Size (Minimum) — value and level",
+          "back": "At least 24 by 24 CSS pixels, Level AA. The enhanced version, 2.5.5, asks for 44 by 44 at AAA."
+        },
+        {
+          "id": "fg06c3",
+          "front": "How does WCAG define large-scale text?",
+          "back": "At least 18 point, or 14 point bold — which the spec converts to approximately 24px and 18.5px at 1pt = 1.333px."
+        },
+        {
+          "id": "fg06c4",
+          "front": "Why is the 8-point grid not a standard?",
+          "back": "No normative document states it. Material's own Grids & spacing page gives no value at all and describes spacing as shaping “the personality of a product”. It is a useful convention, not a rule."
+        },
+        {
+          "id": "fg06c5",
+          "front": "What is the standard for corner radius?",
+          "back": "There isn't one. It is a brand choice — the only tier-three number that is purely expressive, which is why no standard will ever specify it."
+        },
+        {
+          "id": "fg06c6",
+          "front": "The difference between a visible control and its target",
+          "back": "They are separate objects. Material: “an icon may appear to be 24 x 24dp, but the padding surrounding it comprises the full 48 x 48dp touch target.”"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fg06q1",
+          "question": "In a design review someone asks why your buttons are 44px tall. Which answer is most defensible?",
+          "options": [
+            "“44 is Apple's minimum tap target.”",
+            "“WCAG AA requires 24 by 24; we use 44 because the pointer is coarse and Material suggests at least 48 for touch.”",
+            "“It's the industry standard for mobile buttons.”",
+            "“Our 8-point grid makes 44 the nearest valid step.”"
+          ],
+          "answer": 1,
+          "why": "It separates the requirement from the advice and cites both accurately. The Apple claim is the one almost nobody can source — the number reaches most designers through Material's note about iOS, not through Apple. And 44 is not a multiple of 8, so the last answer is also false.",
+          "key": "WCAG requires 24; the rest is advice"
+        },
+        {
+          "id": "fg06q2",
+          "question": "A contrast check returns 4.499:1 on body text. What is the status under SC 1.4.3?",
+          "options": [
+            "Passes — it rounds to 4.5:1",
+            "Fails — computed values are not rounded",
+            "Passes if the text is 18px or larger",
+            "Passes at AA, fails at AAA"
+          ],
+          "answer": 1,
+          "why": "The understanding document is explicit: “the computed values should not be rounded (e.g., 4.499:1 would not meet the 4.5:1 threshold).” It would only pass as large-scale text, which needs 18pt or 14pt bold — roughly 24px or 18.5px bold, not 18px regular."
+        },
+        {
+          "id": "fg06q3",
+          "question": "Which of these is a target-size exception that genuinely exists in SC 2.5.8?",
+          "options": [
+            "Targets inside a scrollable container",
+            "A target in a sentence, constrained by the line-height of surrounding text",
+            "Any target on a desktop-only layout",
+            "Targets smaller than 16 by 16 CSS pixels"
+          ],
+          "answer": 1,
+          "why": "The Inline exception covers a target “in a sentence or its size is otherwise constrained by the line-height of non-target text” — a link inside a paragraph cannot be padded out without wrecking the paragraph. The other three are invented."
+        }
+      ],
+      "exact": [
+        {
+          "id": "fg06e1",
+          "prompt": "Minimum target size under WCAG 2.2 SC 2.5.8, in CSS pixels (one number)",
+          "accept": [
+            "24",
+            "24px",
+            "24 by 24",
+            "24x24"
+          ],
+          "note": "Level AA. The enhanced criterion 2.5.5 asks for 44 by 44, but that is AAA and described as a best practice to consider."
+        },
+        {
+          "id": "fg06e2",
+          "prompt": "Contrast ratio required for body text at WCAG AA",
+          "accept": [
+            "4.5:1",
+            "4.5",
+            "4.5 to 1"
+          ],
+          "note": "Large-scale text needs 3:1. Values are not rounded — 4.499:1 fails."
+        },
+        {
+          "id": "fg06e3",
+          "prompt": "Touch target size Material suggests for most platforms, in dp (one number)",
+          "accept": [
+            "48",
+            "48dp",
+            "48 x 48",
+            "48x48"
+          ],
+          "note": "“Consider making touch targets at least 48 x 48dp” — advice, not a requirement. For pointers it suggests 44."
+        },
+        {
+          "id": "fg06e4",
+          "prompt": "Which WCAG success criterion number governs non-text contrast?",
+          "accept": [
+            "1.4.11",
+            "sc 1.4.11"
+          ],
+          "note": "3:1 against adjacent colours, for anything needed to identify a component or its state."
+        }
+      ]
     }
   ]
 }
