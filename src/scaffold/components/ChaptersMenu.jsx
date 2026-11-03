@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState } from 'react'
-import { course } from '../store'
+import { activeCourseId, course } from '../store'
 
 /**
  * The top-right disclosure. 43 chapters is too many for a flat list, so the panel
@@ -29,9 +29,12 @@ export default function ChaptersMenu({ onSelect, align = 'right' }) {
     }
   }, [open])
 
+  // This menu lists the open course, so it names it explicitly: the callback
+  // takes a course id because selecting a chapter may have to switch course,
+  // and a one-argument call would read the lesson id as the course.
   const pick = (id) => {
     setOpen(false)
-    onSelect(id)
+    onSelect(activeCourseId(), id)
   }
 
   return (

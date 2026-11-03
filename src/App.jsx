@@ -44,6 +44,22 @@ export default function App() {
   const [queue, setQueue] = useState([])
 
   const openLesson = (id) => setView({ type: 'lesson', id })
+
+  /**
+   * Opening something that belongs to another course has to switch course first.
+   * The catalog resolves through the active course id, so a lesson id from a
+   * different package would not be found and LessonView would be handed
+   * undefined. Switching remounts the subtree (it is keyed on courseId), so the
+   * view is set after the swap rather than before it.
+   */
+  const openIn = (id, lessonId) => {
+    if (id !== courseId) {
+      store.setActiveCourseId(id)
+      setCourseId(id)
+      setProgress(store.load())
+    }
+    setView(lessonId ? { type: 'lesson', id: lessonId } : { type: 'session' })
+  }
   const atHome = view.type === 'home'
 
   return (
@@ -104,8 +120,8 @@ export default function App() {
               progress={progress}
               courseId={courseId}
               onCourse={chooseCourse}
-              onSelect={openLesson}
-              onSession={() => setView({ type: 'session' })}
+              onSelect={openIn}
+              onSession={(id) => openIn(id, null)}
             />
           ) : (
             <>
