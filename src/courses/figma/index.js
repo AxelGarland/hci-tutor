@@ -1,4 +1,5 @@
 import part01 from './content/part01.json'
+import { figures } from './figures'
 
 /**
  * Figma in Practice — a Scaffold course package.
@@ -18,4 +19,5 @@ export default {
   blurb:
     'Building systems rather than screens — auto layout, components, variables, type, prototyping and the boundary where a design becomes code.',
   modules: [part01],
+  figures,
 }

@@ -111,6 +111,31 @@ The scheduler and the session engine are only as good as the items.
   question into a two-option one.
 - **`why` should justify, not restate.** It is the only teaching that happens after an answer.
 
+### `terms` — vocabulary as a first-class block
+
+```json
+{ "type": "terms", "items": [
+  { "term": "Hug contents",
+    "as": "width: fit-content",
+    "def": "The frame sizes itself from its children." }
+]}
+```
+
+Renders as a definition list: the term in bold, the equivalent name beside it in mono, the one-line
+meaning beneath. `as` is optional.
+
+Use it because naming is part of the job. A designer is judged on vocabulary in three rooms — the
+tool's own panel, the design review, and the conversation with a developer — and the three rooms
+often use different words for one idea. Teaching only the tool's word leaves someone fluent in Figma
+and mute everywhere else.
+
+**`as` has to be sourced like anything else.** A cross-reference asserted from memory is the same
+failure as an invented fact; the CSS equivalences in the Figma course are quoted from MDN, which is
+cited in the syllabus. If you cannot source an equivalence, leave `as` out.
+
+Pair each `terms` block with `exact` items for the terms themselves. A term has exactly one canonical
+answer, which is the one case where the app can mark vocabulary for you.
+
 ### Exact items — the only kind the app grades
 
 Cards and quiz items end in self-assessment: you read the answer and decide whether yours was close

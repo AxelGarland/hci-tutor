@@ -82,6 +82,27 @@ export default function Reading({ blocks = [] }) {
               </div>
             )
           }
+          case 'terms':
+            // Vocabulary, as a definition list rather than prose. A designer is
+            // judged on naming in three rooms — the tool's own panel, the design
+            // review, and the conversation with a developer — and those rooms
+            // frequently use different words for one idea. `as` carries the
+            // equivalent name so the mapping is learnable, not just the term.
+            return (
+              <dl key={i} className="my-7">
+                {b.items.map((t, j) => (
+                  <div key={j} className="border-t border-rule py-3 first:border-t-0">
+                    <dt className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                      <span className="text-[15px] font-extrabold">{t.term}</span>
+                      {t.as && (
+                        <span className="font-mono text-[12px] text-cobalt">{t.as}</span>
+                      )}
+                    </dt>
+                    <dd className="reading mt-1 text-[14px] muted">{t.def}</dd>
+                  </div>
+                ))}
+              </dl>
+            )
           case 'list':
             return (
               <ul key={i} className="space-y-2 pl-1">

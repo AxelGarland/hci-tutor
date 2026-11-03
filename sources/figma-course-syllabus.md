@@ -50,6 +50,22 @@ restrictions. Preferred over video for anything UI-specific.
 | Guide to variables in Figma | Three uses, plan restrictions, the sub-article tree |
 | Create an onboarding flow with advanced prototyping | **Advanced · 30 minutes** — a complete worked conditional prototype |
 
+**MDN Web Docs**, for the CSS side of the vocabulary. Figma's own auto layout guide only makes one
+cross-reference — that ignore auto layout works "much like absolute position in CSS" — so the rest of
+the mapping is quoted from MDN rather than asserted: `justify-content` (space-between / around /
+evenly), *Basic concepts of flexbox* (main and cross axis, flex container and items, flex line,
+`flex-direction`, `flex-wrap`), `width` (`fit-content`, `max-content`, `min-content`) and `position`
+(`absolute`, containing block, normal document flow). Fetched 2026-11-03, all HTTP 200.
+
+**Why the mapping is in the course at all.** A product designer is judged on naming in three rooms —
+the tool's own panel, the design review, and the conversation with a developer — and the three rooms
+use different words for one idea. Teaching only Figma's word produces someone fluent in Figma and mute
+everywhere else. The `terms` reading block carries both names; see `AUTHORING.md`.
+
+**One honest gap:** MDN's *Basic concepts of flexbox* article does not mention `gap`, `row-gap` or
+`column-gap` at all — they live in a separate Gaps guide that has not been fetched. The course states
+that Figma and CSS use the same word, which is observable, and claims nothing further.
+
 **2. YouTube captions** — nine transcripts saved under `sources/figma-videos/`, captured from
 YouTube's own transcript panel. I cannot watch video, so these are the spoken audio of screen
 recordings: concepts, rationale and numbers are in them; click paths are not. Usable word counts,
