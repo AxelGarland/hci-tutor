@@ -1,0 +1,24 @@
+# Setup the Figma Github app for your organization
+# https://www.youtube.com/watch?v=9NItpKWsqPg
+# Transcript captured from YouTube's own transcript panel, 2026-11-03
+
+[0:00] With Figma GitHub multi-authorization, you may want to introduce clear oversight for your organization accounts.
+[0:07] You can do this by selecting repositories in your GitHub organization account and by auditing changes through the activity log in your Figma organization account.
+[0:17] To get started, you'll connect your Figma organization to your GitHub organization or account. The first few steps are the same for all Figma admins.
+[0:26] If you're not a GitHub admin, the last few steps are a little different. We'll point them out when we get there.
+[0:38] From the file browser, select Admin. Select the Settings tab and scroll down to Resources. Then select Figma GitHub App.
+[0:49] Click Connect GitHub. On the Connect to GitHub modal, click Install. Select the GitHub account or organization you want to connect.
+[0:59] Then select if you want to authorize all repositories or a select set. You can also change this later.
+[1:05] 1 minute, 5 seconds
+[1:15] 1 minute, 15 seconds
+[1:22] 1 minute, 22 seconds
+[1:27] 1 minute, 27 seconds
+[1:36] 1 minute, 36 seconds
+[1:43] 1 minute, 43 seconds
+[1:53] 1 minute, 53 seconds
+[1:59] 1 minute, 59 seconds
+[2:10] 2 minutes, 10 seconds
+[2:14] 2 minutes, 14 seconds
+[2:22] 2 minutes, 22 seconds
+[2:29] 2 minutes, 29 seconds
+[2:32] 2 minutes, 32 seconds

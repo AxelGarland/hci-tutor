@@ -1,0 +1,552 @@
+# Figma for Edu: Prototyping with animations in Figma
+# https://www.youtube.com/watch?v=y9lZ5GMXNyU
+# Transcript captured from YouTube's own transcript panel, 2026-11-03
+
+[0:00] once again, my name is Miggi. This is gonna be Prototyping With Animations in Figma, a Figma for EDU monthly workshop.
+[0:06] We're gonna start off with Figma Motion, and for those of you that haven't yet tried Figma Motion, , it's within Figma Design.
+[0:15] When you open up Figma Design and you're working in a frame, when you come down
+[0:20] here, you're gonna see this Motion beta. When you see this little icon down here in the toolbar, when you turn it
+[0:27] on, , you get a motion timeline, and there's very little motion taking place.
+[0:34] But if I, if I reduce this. , we're gonna cover some concepts for motion, but then we're also going to
+[0:39] take that motion into a prototype. Because this is Figma Design, we are designing products, we are designing interfaces, and what we wanna do is we wanna integrate the
+[0:49] motion that we are working with. , we have a bunch of examples here for you today.
+[0:56] , once again, we're gonna be talking about Figma Motion. We're gonna be touching upon classic prototyping, and then how to take
+[1:01] that classic prototype, the context of it, and then make something real.
+[1:06] We're gonna go, , and integrate animation to that as well. , We're also gonna be going from Figma to Design to Figma Make, so I'm just gonna
+[1:13] kinda show you that really quickly. Right here I have like a l- , some, some simple animations. I guess simple animations, they're a little bit complex.
+[1:21] But I have a demonstration of some complex animations here that we were then able
+[1:27] to take into Figma Make one-to-one. This is real code, , that you're looking at right here.
+[1:34] This is, like, website-driven code. , A lot of times people will take a look at something made in Figma and they're
+[1:39] like, "Yeah, but can it, can you make it into code?" And yes, you can. , we're gonna be showing, just different examples of things that you can take
+[1:48] from Figma, , and then bring that into Figma Make or via MCP, which
+[1:54] stands for Model Context Protocol. If you wanna take that code over to, , Codex or Claude or some other
+[2:03] external agent to build it, where you may already be building stuff with AI, we're gonna show you how to do that as well, so making, like,
+[2:10] little loading animations and such. This is what we are gonna be covering today. The recordings can be found in this file right here.
+[2:17] The majority of them are on YouTube. , And so Joanna's gonna be sharing out a link to this file All right, so
+[2:25] let's start off with Figma motion. What Figma motion is, all motion begins with a single frame.
+[2:31] I'm actually gonna start right here. I'm gonna be inside Figma. For those of you that are brand new to Figma, over here on the
+[2:37] left are the layers panel, over here on the right is the properties panel, in the center is the canvas.
+[2:42] When I press the F key, that is the frame tool. I can draw a frame onto the canvas The dimensions of that canvas are gonna be
+[2:52] represented over here on the right-hand side in that properties window. Anything that I select that I'm modifying here in the canvas, you're gonna see those
+[2:59] properties update over here on the right. I could set the X and the Y position are basically gonna control
+[3:05] how it's placed on the canvas, but over here under dimensions. And if you don't see those labels, you can come over here and you can
+[3:12] turn on those additional labels. I like to have them on, especially when I'm doing these workshops,
+[3:18] so it's more obvious what it is that I'm demonstrating here. These dimensions here, I'm gonna set this to 1280 and, , what is it?
+[3:26] 1280 by 720, right? And that's gonna be my dimensions for this frame.
+[3:31] Now, if you're ever creating a frame and you are not quite sure exactly what type of frame you would like to make, , when you are in design mode and
+[3:39] you select a frame, , you can click on that frame and choose from all of these existing view ports, devices, sizes.
+[3:46] We even have letter, tabloid, Twitter posts. , if you're not quite sure exactly what you should be designing in,
+[3:51] that's where you can check it out. Now that we have this frame, what we're gonna do is we're gonna add something to this frame. I'm gonna add in just a, a simple rectangle, right?
+[4:00] I'm gonna draw in a rectangle and we're gonna cover some of the basics involved with motion. I have this rectangle.
+[4:05] This rectangle has a X and Y position. It has width and height. All of those properties can then be animated, right?
+[4:13] And 'cause what it is, it's just an expression of these properties over time. If I'm moving this rectangle, like, left to right, I am changing that X property.
+[4:20] If I'm moving that rectangle up and down, I am changing that Y property. If I am scaling it up and down, I'm changing its size.
+[4:28] , If I am hiding, , , making it o- o- transparent, right, I'm changing its opacity. To head on over to motion mode, I'm gonna click down here, right?
+[4:37] If you, you blinked, you missed it. Right down here, this is motion, so when I go into motion, I basically have the same interface.
+[4:44] You're gonna notice some changes. When I select the object inside of my frame, you're gonna notice all
+[4:51] of these little diamonds show up. Those diamonds represent a key frame. You're basically setting a property at a point in time that you're
+[4:59] then gonna track and animate. If I move this square, this rectangle, all the way over to the left and I
+[5:06] move this play head all the way to the left and then I come over here and I
+[5:11] key frame stamp that position, right? Now I key frame stamp that position, and I can see that that position at
+[5:18] zero seconds is currently where that is. Right there it is. Boom. And then I can move that play head over.
+[5:24] I'm gonna move the play head over to about 500 milliseconds. You can see the 500 milliseconds right there.
+[5:31] That is the exact time. If you are a precision-minded designer, you can just go ahead and type in
+[5:36] that value and that's exactly where it will place that motion head. That motion head is now at 500 milliseconds.
+[5:42] What that means- Is half a second. You can click on this little millisecond right here to change that
+[5:48] to go from milliseconds to seconds. You could see now that it's at half a second.
+[5:53] Whatever math works best for you, we support it. Now that this is at half a second, what we're gonna do is stamp another position.
+[6:03] In this position, we can then move it. You'll notice on the canvas with that rectangle selected, this
+[6:09] little, , widget that pl- comes over it, and that's basically allowing you to change its, its position.
+[6:15] When I scrub that timeline, you're gonna see it go from left to right. It's basically saying, all right, from this key frame to this key frame, it's
+[6:22] interpolating the difference between them. We're basically instructing it to go from point A to point B. And when I press
+[6:29] the space bar, I can play that, right? And I can see that it looks a little bit robotic. We want to change the interpolation from point A to point B. I'm gonna
+[6:37] select in between those key frames. Selecting in between those key frames, you'll see it highlighted.
+[6:43] When I select in between those key frames, I then am gonna see in the properties panel the easing of this.
+[6:50] Right now it's linear. That means it's at a constant motion. , However, I'm gonna drag these bezier handles to give it an ease in, ease out.
+[6:59] And what that means is it's gonna start from a stop position, it's gonna slowly gain speed, and then it's gonna slow down, so that m- m- , that movement's
+[7:06] gonna look a little bit more realistic. And now if I want it to move back to its original position, I can copy.
+[7:15] , Can you make the easing curve a variable? Yes, you can. What you could do 'Cause when you go over here, you can click
+[7:22] on the custom Bezier, right? Presets, libraries. Go to libraries. No variables available.
+[7:28] Let's go ahead and create one. It's gonna create an easing variable. You choose the value that you want.
+[7:33] You create that variable, that variable will now show up in your variable collection. You can give it a name, so I'm gonna call this the Miggi Ease, , and then there's
+[7:43] the cur- cubic Bezier that is driving it. However, if I want it to be fully representative of my
+[7:49] ease, I might go .8, 0.2, 1. And what that means is it's just these two points.
+[7:56] This is 80% and 0, right? This is 20% and 1. That's where those two dots match up, and that gives me an ease in, ease out.
+[8:04] And so yes, that is now associated. That is now officially the Miggi Ease, and that is the variable.
+[8:10] I can actually use that over and over again as I begin working. I can copy this key frame right here.
+[8:16] I know Joanna likes the Miggi Ease right there. I can copy this key frame right here, and I can move it over to one,
+[8:23] where remember, like you can just type in that value so it's perfect. And then hit, , hit paste, right? Command-C.
+[8:29] I can come over here, Command-V, and then I could see that it goes, , back and forth, right?
+[8:35] , Actually, let's see. I'm gonna try out something new. I have, , I can enable keyboard shortcuts.
+[8:40] Let's see if this works. , If I'm pressing, let's see my keystrokes here.
+[8:45] Joanna, let me know if you can … Can you see my keyboard shortcut, Joanna?
+[8:52] Yes, I see it. All right. I see it pop up on the bottom. Awesome. Cool. It looks great. This should help y'all see what I'm doing a little bit better.
+[8:59] Now I'm gonna go from back and forth, and you're gonna notice that immediately that animation's not going back in the same way.
+[9:05] I can click it. It's linear, doesn't look particularly good. Linear's only good for constant motion.
+[9:11] If you have something that's constantly spinning or continuously moving in a single direction, constant motion makes sense.
+[9:17] But in this case, I'm gonna go to my libraries and I'm gonna choose my Miggi Ease. , You'll notice, too, that this animation's playing and then it goes to two, and
+[9:26] then it loops over at around two seconds. I can drag that endpoint so then it continuously loops.
+[9:34] Couple other things that I'll show you here with motion. If I move that endpoint over, I can extend that relative motion.
+[9:41] Notice when I'm extending it here with that layer, all of those key frames
+[9:46] are , , relatively moving one another, so I'm extending that full animation to be about, , just under two seconds.
+[9:53] Let me move that over a little bit more, and I can put that there. I have that motion applied, and I'll show you a couple other little tricks
+[9:59] that are really gonna help you out. I'm gonna draw a, a little circle into this, right? You'll see that when I press the O key, I can draw out a little circle.
+[10:07] There we go, I got a little circle right there. And I can copy these key frames and apply it directly to that circle.
+[10:15] Let's say I select, right? Notice and look where I'm drawing from. I'm just drawing and copying those key frames right there.
+[10:23] And so when I Command + C, copy it, right, Windows Control + C, I can select
+[10:29] that right there, and then I can paste it and, , it's gonna have that motion.
+[10:34] Then now they're both animating. Right? And so if I want to change the timing of that too, right, I can,
+[10:43] I can change the timing of that. And so I've just copied those key frames, I applied it to another one.
+[10:49] , "Can you set it to a specific number of loops, i.e., three loops max?" , Not right now you can't do that.
+[10:55] Either you set it to looping, you set it to pla- play once, or you could
+[11:01] set it to ping pong, where it'll play forward and it'll play backwards. One thing that you can do, right, so Kelly, you asked a fantastic question.
+[11:11] What you can do is I can say if this is a two-second animation, I could take this over to, let's say, six seconds right here, right?
+[11:18] That it ends at six seconds. I can come down here and I can right-click on the property that's
+[11:25] animating, and I can choose Loop Track. And what that's gonna do, it's gonna proliferate those key frames.
+[11:31] They look like little ghost key frames as it continues on. I'm gonna right-click over here and say Loop Track, and you're gonna see that
+[11:37] they're both going to continue looping. If I make them loop it around the same time, right?
+[11:44] And now they're just gonna keep going, so now it's gonna play, , let's say, it's gonna play one, two, three times and then stop Eva, man, I miss Flash
+[11:53] so much, and that is why I am just so happy that Figma now has motion.
+[11:59] Like, I was a, a Flash developer back in my days. We can see how this is playing and, like you're having fun with, with this there.
+[12:06] There's actually quite a lot that you can do. , I'm gonna change a couple other properties here just so y'all can get
+[12:11] the gist of how motion is working. Many of these properties can be animated. Let's say that this rectangle, I'm gonna have it, , animate across different
+[12:19] colors, so I can set the fill here to red and set that as a key frame, right?
+[12:25] Now we have a fill color that's red at that point in time. I can move down to one, and let's just kinda go down the, , like,
+[12:33] the rainbow of colors, right? , Now it's, it's yellow. , Now it's gonna be green, right?
+[12:38] Moving my playhead, I'm selecting a new value. Moving my playhead, I'm selecting a new value.
+[12:45] I'm gonna move the playhead and select a new value, and then move my playhead, and we're gonna go back to that original value that we had.
+[12:53] Remember, you could just double-click on any key frame, and it's gonna go right to that key frame.
+[12:58] Other things I'm gonna note here, you're gonna see that key frames snap really well. If you're trying to make sure that your key frames and your
+[13:06] animation is in alignment, that's gonna feel really nice to you. I can come over here to that first frame.
+[13:12] I can copy that frame. You're gonna see I'm copying it right there. Let's move all the way over here to the end, , and then, , let's see.
+[13:19] I'm gonna move over to the end, and then hit paste, and so I pasted it there, right? And so now I can watch, the, the, the square continue to change
+[13:29] color, and what's cool is if you have that open, right, if you have this, , this, like, little window open, you see, , how that color dial is
+[13:39] changing and moving across over time. Yeah, there you go.
+[13:44] All right, cool. I'm glad that you are digging this so far. Are the snapping positions, for example, playhead snap to key frames?
+[13:51] , So yeah, so I can move the playhead wherever I want, but yeah, by double-clicking, it's going to snap to that position.
+[13:56] Also, if I press J, it'll go to the previous key frame that's currently visible, and if I press K, it'll go to the next key frame.
+[14:04] Look, I even, in my shortcut it says next key frame. Look at that. I can go back to the previous key frame and K to the next key frame,
+[14:11] and that lets you go to the next one right there, just like that. JK. And so, , one other fun thing about that, if I go, if you're working
+[14:19] with like a lot of layers, you can collapse those properties down, right? Just to make it a little bit easier on you.
+[14:26] And the JK will only go to the, , the currently visible ones.
+[14:31] If you need to collapse, it'll go to the current, , visible ones that you have there, right there.
+[14:37] All right, , that's animation in a nutshell. With those basics, you can accomplish so much.
+[14:42] , One other thing I'll just note right here, I can change the scale in my timeline zoom level by, like, scrubbing over here.
+[14:49] , , like, I can also just hide that timeline if I am, like, playing, right?
+[14:55] Over here, these are just some additional controls that just give you more control over that as well. , One thing that I will like to do is, , I'm actually going to … Let's see.
+[15:07] We're gonna be talking about prototyping today, and, , I have this next example.
+[15:13] , if you wanna follow along, I have this example in three different states.
+[15:19] I'm gonna walk you through what those different states are, and then I'm gonna show you how this is built and some nice fun shortcuts.
+[15:28] And, and I mean it, that it's like they're fun because as I was working, I was like, "Wow, that's a- that's actually really nice." Like, I, like I just tried out.
+[15:36] I learned some new stuff myself. , , Here what we're gonna do is we're gonna talk about integrating motion in prototyping.
+[15:42] And, and just for the record, , when I have this motion and I have this animating, right, , the way that you can export your animation
+[15:51] If I select this frame, let me give it a name. I'm just gonna call this Example 1.
+[15:57] When I select the frame, I go over to the properties panel, I scroll down. I can export this as a static graphic or as animated.
+[16:05] The options are Mp4, pretty common for video, WebM, which is like, I think it's like a Microsoft format.
+[16:12] The cool thing about WebM is that it will honor transparency, right?
+[16:17] , Like, I can export this. I, I wanna show you this. This is, this is really cool. I think y'all will, will like this.
+[16:23] If I hide the fill of this frame, right? I actually haven't shown anybody this yet.
+[16:28] If I hide the fill of this frame, , let's have that loop. Okay. If I hide the fill of this frame, I come over here.
+[16:34] Let's export this as WebM, right? , 1x size, that means its current dimensions. I'm gonna set high quality, frame rate of 30 frames per second.
+[16:43] , I'm gonna export that it's gonna take me over to this little export window.
+[16:48] , It's gonna download that video, right? There's my video. You can see it has transparency. , And now when I bring that up, when I come over here, I'm gonna
+[16:57] bring that WebM video into Figma. , I now have a, a transparent video.
+[17:03] , It'll play in here. Hopefully it'll play. Let's see. It wants to play. Play. There we go. Look, look, I have a, I have a transparent video in Figma that I just brought in.
+[17:12] How cool is that? , yeah, WebM supports transparency. We're gonna have additional formats in the future, but this is one that
+[17:18] I like to show, especially, like, if you're, , kinda building for web and you wanna, wanna try that out. , , Fun fact, that is a little bit of a deep cut.
+[17:25] There's a lot of people out there that don't know you could do that. , you can export video, right, as animated WebM, , as animated GIFs.
+[17:33] Remember, GIF file format hasn't been updated since 1986, right, for anybody out there keeping count.
+[17:39] , It is gonna be a very heavy file, but you can set the frame rate, you could set it to loop. , And then SVG, we do support animated SVG.
+[17:48] , It may impact the degree of complexity that you have in your animation. Like, SVG's pretty good, but at the visuals it might change some things out.
+[17:56] , And then you could even set the co- color profile for animated SVG. , those are different ways that you can get your animation out.
+[18:03] One other thing that I wanna highlight is that all of our animations, if I head over to dev mode, in dev mode you can open the frame in timeline view.
+[18:14] If you're working with a developer and they want the, , they want the CSS code, they want it in React, , you can, can give them that code.
+[18:23] If you're working on a very specific animation and you just wanna grab that code, , you can do that. And I can even isolate it by layer here.
+[18:31] By isolating it by layer, I can actually see that code and I can copy that code one for one.
+[18:37] , But if you're gonna have more complex animations, if you're working with, , MCP, , model context protocol with like AI or some other method, , I'm gonna
+[18:46] show you how to do that as well today. All right.
+[18:52] That's just really basic animations. , And then we're gonna head over into classic prototyping.
+[18:58] , And so one of the things I wanna highlight, we haven't really talked about this, like, publicly, or there's, there's not a lot talking about it in, in Figma,
+[19:06] but motion will work in a prototype. And you might be asking, like, "What's a prototype?" Let me
+[19:11] show you the finished one, right? When I select this frame while I'm in design mode, so I'm in design mode, I'm
+[19:19] gonna come up over here to the right, and I click prototype, I can create these interactions between my frames.
+[19:25] Now, a lot of people in the age of AI are saying that, like, these types of prototypes are dead, they're no longer necessary.
+[19:33] Everybody's just like build the real thing. But in Figma, everything you produce in Figma is context.
+[19:41] That context gives you the ability to inform the thing being built, right?
+[19:48] , Like, right here, if I restart this prototype, right, there's a couple things going on. I have it animate in, right?
+[19:53] I have it, , animating in. I think the text is a little bit funny there, but that's totally cool. It animates in, right?
+[19:59] And then I have an interaction where I click, and a lot of things are happening here, right?
+[20:05] If I try to explain this as pure text to, like, AI, I'm gonna be there all day in terms of how I want it to behave.
+[20:11] I have these little shadows coming up. I have these little cards. , The images are scaling up.
+[20:17] I'm hiding things. There's a lot that's happening. I can craft that on the stage, and then I can send that off
+[20:26] to something like Figma Make. What I can do, and I'm gonna walk you through this process, but I wanna
+[20:32] show you like where we're gonna go. And as I mentioned, in Figma Make, right, I was able to take these
+[20:39] prototype slides and literally just say, "Make this prototype into a working site. Include the build and animation in the first frame as well."
+[20:47] And this is pretty much a one-shot where I was-- Oops, it just hit refresh.
+[20:53] , This is pretty much a one-shot where what I built as a Figma
+[20:58] prototype is now actual code, right? Now is a functioning site that I can publish , so these are actually, these
+[21:10] are made with components, , and, and I'll walk you through exactly how that's built. We're gonna touch on some, like, classic prototyping in Figma right now.
+[21:20] , And so the way that I've started this, the way that I've set up this frame, , actually let me, , , I'm gonna delete all this just to
+[21:27] kinda show you what I have here. Just from absolute scratch. Let's delete that.
+[21:32] I'm gonna delete all these. I don't need those. Maybe I need one of them. No, I'll, I'll just… Boom.
+[21:39] I have them in another frame. All right. I'm gonna start from scratch, and what I'm gonna do is, and so you all have this here, right?
+[21:45] This is a component. , Check back into my, my other workshops in building components, but this component,
+[21:51] the way that it's built, it like resizes, , and, like, gets larger, smaller. And so when I copy and paste it into the frame, and let's
+[22:00] just, yeah, let's do all three. When I copy and paste this into the frame, I can begin to, like, arrange
+[22:06] them, , into this frame here, right? And so when I'm in design mode, I can select all three.
+[22:12] I'm holding the shift key. You'll see the little shortcut right there. I'm holding the shift key, I'm gonna select all three, and I'm gonna
+[22:19] align, tidy them up in the page. If I hold the shift key while clicking align to page, right, like,
+[22:26] it's gonna align them as a group. If I select all three with the shift key, right, I can align them as a
+[22:32] group when I hold shift, and, and vertically and centered, right? Boom, boom, right? They're nice and aligned.
+[22:37] Now that I have there those, , I'm gonna check to make sure that they're named. They all are called social post.
+[22:43] I'm gonna select them all, press command R, and I'm gonna say post and a number, right?
+[22:49] Post one, two, three. I'll show you that one more time. If you select those, press command R, control R on Windows, , you can
+[22:56] rename them dynamically with numbers post one, post two, post three.
+[23:02] There they are in the frame. Now, I'm gonna add in a, , little, , drop shadow. The drop shadow's important because it's gonna be part of the animation.
+[23:09] I'm gonna have that here. , I'm gonna make this, like, a darker drop shadow. I'm gonna come over to my effects and, , apply a layer blur, right?
+[23:18] And then increase that blur right there. Wah. And then maybe, like, lower the opacity on that color.
+[23:25] , I'll show you that one more time. I press the O key. I draw an ellipse. , I'm gonna make that a little bit darker.
+[23:32] I come over here to effects. In effects, I choose a layer blur. I'm just covering all of the features today.
+[23:38] , And I'm gonna apply a, like, blur, let's say, like, 12. That looks good, and I can reduce the opacity.
+[23:44] All right, just trying to give it some character, give it some life, make it a little more human or environmental.
+[23:50] , It's like it's in an environment. There we go, I got a nice little shadow. This is gonna be, , I'm gonna say shadow one, right?
+[23:57] We have… Oh, that's post three, so technically this is shadow three. I didn't name them in the right direction.
+[24:02] That's fine. I have shadow three. I'm gonna duplicate it. Notice I'm holding down the, , Option key, Alt key if you're on Windows, and
+[24:09] then Shift, and I'm able to duplicate it. It'll snap right exactly where it needs to go.
+[24:14] I got one, two, three, so three. Let's rename that. The naming structure's gonna be really important here.
+[24:21] It's gonna find the consistency across the frames. Now that I have these set up, I'm gonna go into this frame.
+[24:27] , While I have this frame selected, I'm gonna go into motion mode. I'm going to animate these in to begin.
+[24:35] Once again, I can select the object, and I want to just show you, like you can basically animate anything that has properties in Figma, so even
+[24:43] something that is a component instance. I have this frame. It's right here. It's at zero.
+[24:49] , I'm gonna click its position, right? I created a key frame. Now, this is where I want it to land.
+[24:54] It's not where I want it to begin. I'm gonna take that key frame and I'm gonna move it down over
+[25:00] into, like, .4 seconds territory. And for this first key frame, I'm gonna keep that- Playhead right there.
+[25:09] I'm gonna drag this up, and so basically you're gonna see this come down, right?
+[25:14] It's coming down. Ch- ch- ch- ch- ch- choo. This is gonna come down, right?
+[25:20] And so when I select the, , the easing, right, we can determine how this is gonna animate in.
+[25:26] I'm gonna do, like … I'm gonna do just like a little, like, animate ease in, out, but with like a, like a little bit of back.
+[25:33] Ease in, out, back, right? And it's gonna come in and, , I can make that a little bit more pronounced.
+[25:41] There you go. Now that I have one of them, right? I animated that in. I'm gonna copy those key frames.
+[25:48] Look, I click, drag, Command-C, and paste, and paste.
+[25:53] And then I can see that they're also coming in. I just pasted it right onto the objects. I'll show you that one more time. Select it, paste, and paste, and now they have their own animations.
+[26:03] And what's cool about this timeline is I can stagger those animations, so it's not
+[26:09] just they all come down at the same time. Got one, two, three, right? One, two, three
+[26:16] One, two, three. And then I need to think about these, , little shadows. How are they gonna happen? I'm gonna animate them from the center and have their opacity gain size.
+[26:26] Let's say right there, right, there's my little shadow. I am going to create a key frame on its scale.
+[26:35] You're gonna see scale here, and the scale is gonna be constrained. That means the width and the height are gonna be together at the same time.
+[26:43] We want to un-constrain that so it's just the width, right? We're just gonna animate the width.
+[26:49] I'm gonna create a scale value right there, and, , we're gonna have it go,
+[26:56] right, we want it to be about that size, and it's gonna start a little before it.
+[27:03] It's gonna be smaller. We're gonna see it get bigger, right, when that jumps in.
+[27:09] Right? You see … Let's, let's zoom in a little bit more. This first key frame, when I double-click it, the scale's at about 20%, and
+[27:17] then this second key frame where it's gonna end up, it's at 100%. It's gonna go from like 20 to 100, and then when I click on
+[27:24] that first key frame, we're also going to match the opacity of it. Let's click an opacity variable of 100%.
+[27:32] We want it to fade in, so I'm just gonna move it to the last frame, 'cause we want to go from zero.
+[27:38] Let's set zero opacity. We're gonna go from zero. Boom.
+[27:43] And then it's animating in. And we can even copy this, , this ease in out right onto both
+[27:51] of those and just hit- oops. Select both of those with the shift key. Multi-select is always gonna be some shift.
+[27:58] And then I can paste in that ease curve, and then boom. And it's gonna happen real fast.
+[28:04] If at any point you need to extend the duration of the animation, remember, you can just take that whole top part of the timeline, and all of
+[28:12] its sub-keyframes will follow suit. And now that I have the motion for this first shadow, I could copy those frames.
+[28:19] I can come over here, I can paste them there, and I can paste them there, and you're gonna see it moves where the timeline is.
+[28:26] I could just stagger those as well. Visually, right, animation one, two, three, shadow one, two, three.
+[28:35] And then they come in at the same time. How cool is that? We just made a build-in animation
+[28:42] Right? And so let's say this is how we want it to start, right? We've now built our, our, our intro animation
+[28:54] Right? We've added those details. We have what's called overlapping animation, right? Not everything happens at the same time.
+[29:00] And then now we're gonna navigate in, , to where they're eventually going to be, right?
+[29:05] I'm gonna go to design mode. I'm gonna just copy everything that I have in this frame, right?
+[29:11] , I'm gonna press … The easiest way to select all the contents of a frame, select the frame, press enter, and it selects the children.
+[29:19] I've copied the children. I'm gonna paste them here. And when I go into motion mode, I'm actually going to … Actually,
+[29:26] I think I could do it right here. Let's, , what I wanna do is I wanna remove the animation. I don't think we have that yet.
+[29:32] I'm gonna go into motion mode, , and I'm just gonna delete all the motion. You're gonna be, like, sad, like, "Oh, my God, I just made
+[29:37] all that motion." , That's okay. Like, this frame we don't want to have any motion. We're gonna go from a motion frame to a non-motion frame, and we're gonna have to
+[29:46] change the, the, the background color's gonna be blue, and then our shadow color also needs to change, 'cause that gray is just not doing anything for the blue.
+[29:54] We're gonna make it, like, a, like, a dark blue shadow as well there, right there. Okay.
+[30:00] What I'm doing here is this is gonna animate in, and then we're gonna use prototyping to go from this frame to the interactive frame.
+[30:09] From our animation frame to our interaction frame. Interaction frame.
+[30:14] , And so I'm gonna go over to prototype mode. I'm going to select the whole frame.
+[30:20] I'm gonna drag a noodle between the two, and there's an interaction.
+[30:26] Now, for those of you that have never made a prototype in Figma, the way that this works, there's a trigger.
+[30:31] On click, on drag, while hovering, while pressing. Mouse enter, mouse leave, right? The one that I'm gonna use right now is after delay.
+[30:39] And so what I've just done is I've created an interaction that's gonna basically say when I do something to this frame, it's gonna take me over to this frame.
+[30:48] On click, I'm gonna navigate to the interaction frame, and I'm gonna have the animation be a smart animate.
+[30:54] I'm also gonna turn off … See this play motion animations? I'm gonna turn that off. , This is gonna sound really funny coming from me.
+[31:00] I don't really know how this works quite yet. But you wanna turn that off, otherwise it's not gonna transition well.
+[31:06] , here I'm gonna set an ease in and out, or let's, let's do my, like, custom one.
+[31:11] Or better yet, what did I do? I have my, I have my Miggi ease. Where's my library? Can I do the library here yet?
+[31:18] Oh, maybe not. Let's see. Nope, can't apply the library one here just yet. It's gonna be coming.
+[31:24] I'm gonna apply custom bezier. Let's go in and out Right?
+[31:29] And so when we do that, it's gonna create this little play button when you're in prototype mode. I'm gonna hit play.
+[31:35] It's gonna play the animation and, , what I want here is I want not an on-click, but an after delay.
+[31:43] And basically it's like after about, let's say, 2,000 milliseconds, right?
+[31:49] No, let's say 1,000. Is it less than that? How long is our animation? 1,000 milliseconds it's gonna navigate to the next frame.
+[31:57] This is gonna play, and then it's gonna transfer over. I'll show you that one more time. , it's gonna wait, let's say, 500 milliseconds, so just after the animation
+[32:07] is done playing, and then we're gonna g- move on to the interaction frame. This is our intro, and then it's gonna go into the action, and we'll see
+[32:15] it because the background changes. All right, so let's give that a quick shot.
+[32:22] How did I get the interaction window? Basically when I'm in prototype mode, right, so design mode, prototype
+[32:27] mode, I can select a frame, and when you're in prototype mode, whenever you select any object, you're gonna see these little white dots with a blue
+[32:34] outline, and it allows you to create an interaction between two different frames. Right now it's gonna bring up that panel, and so here is the
+[32:43] interaction, , as it's being authored. Now, when I select the frame itself, you're gonna see over here
+[32:50] on the right when you're currently in prototyping mode, you're gonna see the interactions laid out.
+[32:55] I can also click here because that's like it's, it's property where it's represented. , And then I'm gonna choose after delay.
+[33:02] I'm gonna choose 500 milliseconds, so about a half a second it's gonna navigate to. It's gonna smart animate, , and then let's have the transition
+[33:09] take about 500 milliseconds. We'll make it go a little bit slower. It's gonna be a little more dramatic.
+[33:14] Now… Oops. That's still way too fast. Let's try that one more time
+[33:19] Let's make sure I have smart animate. Oh, turn off the play motion animations. Yeah, gotta turn that off.
+[33:26] Here, now it, it plays in, right? Let's try that one more time. Boop. Oh, I'm not giving it enough of a delay.
+[33:33] Let's make that delay 700 milliseconds. Try that again.
+[33:38] Maybe still not enough. How long is this animation? You are seeing real times. Okay, cool.
+[33:44] Let me make sure this animation has enough animation. Prototype.
+[33:49] After delay, let's say 1,000 milliseconds. That should be a lot better.
+[33:55] There we go. There we go. Now it properly plays. The, the idea here is we want to play the animation.
+[34:01] We want it to go to the next frame. , Now, if I wanna begin to edit this content, , fun fact, , I'm gonna go to unsplash.com.
+[34:07] In Unsplash I'm gonna grab an image. Let's grab a pizza.
+[34:13] Grab a photo of some pizza. I'm gonna just copy this image of pizza from a website.
+[34:18] , And now what's cool here is, , I'm gonna show you something really cool with, , multi-edit in Figma.
+[34:25] , if I Command-click on this gray square inside of this component and
+[34:32] I go back to design mode, so, like, once again, I Command-click on that square, there's this thing called multi-edit in Figma, which will select
+[34:39] matching layers across multiple frames. I can just hit paste and then it's gonna paste that pizza into
+[34:45] both of those frames for me. I'll show you that one more time. I'm gonna find another image of some pizza. I found another image.
+[34:50] I'm gonna copy that image. And then, ooh, there we go. That got really large. And then now when I Command-click on it right there, , if I just hit paste,
+[34:58] it's only gonna paste there, but I want it to paste all the matching frames. I Command-click it.
+[35:04] I come over here to the top right. This is select matching layers. The c- shortcut key for that is Option-Command-A.
+[35:09] It's gonna find the matching layers. I'm gonna hit paste and boom, I got another pizza. Let's do that one more time. I'm gonna do that for a third pizza.
+[35:14] Let's grab that one. Right-click, copy image And, oop, I, I, I wanna make sure
+[35:22] I s- multi-select and paste. And there we go. I've just applied it to all of those matching frames.
+[35:28] As you're working in Figma on a series of frames, , so, like, if I was to have, let's say I'm gonna have another one of these over here, , whenever I
+[35:36] make an edit to, to, to one of them, I can select those matching layers.
+[35:42] , And so, like, even this text, I can Command, click on this text, select matching layers, gonna find them all.
+[35:48] I press Enter, and I'm gonna say, "This is the second pizza." And you're gonna see
+[35:55] that it's, it's updated that on all three. Multi-edit in Figma, total, total time saver.
+[36:02] All right, so what we're gonna do is we're gonna create one more interaction where it goes from here to here, and then we're gonna start talking about, , like, taking
+[36:09] this out of Figma and making it real. In this frame over here- , this is gonna be, let's say, the second pizza.
+[36:18] I'll just make the second pizza animation. Second pizza, right? , And I'll show you exactly what we're doing is we want these additional states
+[36:28] where this is going to navigate over into. When I play this prototype, it should be in the file that y'all have.
+[36:34] When I play this prototype and I click on that second pizza, right, that's where the interaction goes.
+[36:41] You're gonna notice that these objects over here, they go off the page, right? That gets larger.
+[36:46] There's a lot of things going on here that's automatically being done that
+[36:52] we then wanna provide as context for, when we build the real thing, right?
+[36:58] We want this to really build. We want it to be a real thing. … Oh, there's the video export page.
+[37:03] What we're gonna do is, , we're gonna create an interaction. , And by doing some of this upfront work, you're providing better context for
+[37:14] Figma Make, or if you're working with an agent, to actually make the thing that you want in the way that you want,
+[37:20] ? Then this way it's just doing the work of, of, , coding it all out. Once again, within this prototype we have our intro animation, and
+[37:28] then we have an interaction page. This interaction page, I'm gonna then navigate to the second pizza.
+[37:33] This is a copy of this frame right here, so I just copied that frame, and what I'm gonna do is I'm gonna modify the properties of my design here so
+[37:42] I can get a nice transition, right? , And, and that's why I might be doing it this way because it might be faster for
+[37:49] me to visually articulate these designs that I'm then gonna pass off as context
+[37:55] to be built as a, a real prototype. I can select in here, right? I'm gonna Command click or just, yeah, just click these two objects.
+[38:03] I'm like, all right, y'all are gonna go off to the left. Now watch what I do. When I start dragging it, I'm gonna hold the Space key, right?
+[38:12] , And then I'm gonna hold the Shift key. That's gonna allow me to drag it off, like, under the page. If I don't do that, it's gonna, it's gonna go wherever it wants.
+[38:20] When I start dragging, I'm gonna hold down the space bar and the shift key, and I'm just gonna drag it.
+[38:27] It's, it's still within this frame, and if I unclip the content, you'll see that's where it is, right?
+[38:33] , And so I'm gonna do that with this one as well. Back in design mode, I'm gonna select both of these objects.
+[38:39] I'm gonna start dragging it and hold that space bar. That space bar is gonna make sure that it stays there.
+[38:46] And you can always adjust, like, the X value, like, as, as you're, you're adjusting this as well both of those objects are still there, they're
+[38:55] just outside of the frame, right? They're gone. But we're dictating where they're going. Now, I can select this frame, and the way that this component is made,
+[39:04] it'll apply that image as a fill so I can make this, like larger, right?
+[39:09] I can move that up. , And also I might realize that like, whoa, my shadow's on top.
+[39:14] I don't want my shadow to be on top. I can select all my shadows here, one, two, three.
+[39:20] I can come over to multi-s- edit, select, and then I can press the left bracket key, right?
+[39:26] Boom. , And then that just moved everything back. I had the wrong keyboard shortcut tied to that.
+[39:32] But, , so left bracket will then move that layer all the way back.
+[39:37] Let me edit my display shortcut so that one doesn't move, show up.
+[39:43] Boom, and boom. There we go. Now, what I did was when I select all these and I multi-edit select, right?
+[39:52] If I press the right bracket or left bracket, it's gonna move them up or down. Now they're down.
+[39:57] Multi-edit is your friend when you are designing here. And so same thing here with this shadow. I can like bring it down, , I could extend the width.
+[40:05] Now, the smart animate, the way that that works here in prototyping is that it's
+[40:11] just like it's looking at the difference between those frames and animating them,
+[40:18] but it animates them all at the same time. What I wanna do is I wanna create a relationship between this object and this frame.
+[40:25] I'm gonna go to prototype. I'm gonna drag this here, and, , we're gonna smart animate, and I'm gonna
+[40:31] have the nice little easing curve, and we are basically on click.
+[40:37] It's gonna navigate to, it's gonna go to this page. This should be called Pizza Two.
+[40:43] , I'm gonna select the whole frame, and I'm gonna change the background color as well. We're gonna make, change the background color to green.
+[40:48] And so we can play this prototype out. I can hit play. , It'll load in. Let's hit refresh.
+[40:54] There we go. Oh no, it's not showing the, the pizzas in the first frame. Wonder why that is.
+[41:00] They might be a little too large. All right, so let me see really quick, or I might just need to like refresh.
+[41:08] They're doing them here, right? Yeah, they're doing them here just fine , I might have done something,
+[41:14] could be, like, the naming or something. But, , so they come in, pizza… Oh.
+[41:20] Oh, is the text a little bit different? There's something that's a little bit different. I'll dig into it.
+[41:26] Let me just make sure in here that that's turned off, and here.
+[41:31] Okay, cool. Anyways, they're gonna come in, , and then I can click this one, and you'll see that it then animates in.
+[41:38] , With- because we made that navigate over, right? On click, we navigate to pizza two, smart animate.
+[41:46] It's gonna look at the difference between the properties. We're using the same objects. , Right now the duration's way too long.
+[41:51] We really only want that to be about 500 milliseconds. All of the decisions that you're making here, , that context is
+[41:59] gonna carry over when you use this prototype as context for Figma Make.
+[42:05] , I'm gonna take this, I'm gonna drag it back. And so here, , I'm gonna on click, and it's gonna navigate back there.
+[42:12] And then, so boom, and then now it's gonna navigate back just like this.
+[42:17] To look at a finished example, so this one is, is pretty much the same, you
+[42:22] just gotta, like, populate the images. , And then this one is done with all of the, , the interactions.
+[42:29] I've created some additional key frames, so when I play this, you're gonna see it then animates to each respective one, right?
+[42:38] And now when you have something like this, you can take it into, , Figma Make.
+[42:45] Let's take another look at this. I'm gonna try to figure out why this might not be animating well.
+[42:51] , I'm going to… Let's see, duration, 500, , milliseconds.
+[42:59] Just gonna make sure these are okay. Let's see what they look like in the animation.
+[43:05] Is the animation okay still? Animation's okay still It's probably some weird little order of operations that I did
+[43:15] , is it messed up because I changed the caption of the second pizza? , It, I don't think so, per se.
+[43:21] I just, , let me see. It should be, like, capturing. The picture size different. Picture size is different, but it's still the same across these two.
+[43:30] It should still, , animate. , Like I said, it's probably something, like, really dumb that I did, but I do
+[43:35] wanna get onto, like, other concepts. I'm gonna go back to prototype mode. Let's see here. Animates in.
+[43:40] , I think if I start to change up all the, like, usernames and everything, the … When I finished it, I, I actually went through and, like I said Pizza Boy, right?
+[43:51] And then, , even here, like I went and I changed those names as well. Let's see if changing the name affects anything.
+[43:58] Replace. Yeah, so I think, I think it might just need, like, a good, good refresh.
+[44:08] I'm gonna hit refresh. It might just be using some, some old context.
+[44:14] Let's see. Let's try that one more time. I'm gonna go to design mode.
+[44:19] I'm gonna select my frame. I'm gonna go to prototype. Hit play
+[44:25] See how that looks. All right, there we go. Now it seems to be a refresh.
+[44:31] There we go. Yeah, it's-- I think it just needed a good refresh. If the preview prototype is not playing well for you, always head
+[44:39] up over here to, like, present mode. , This will do a much better, , this will do, be, be a lot better of, like, fixing
+[44:47] some of that context for you, right? Now there you go. I can see it come in. That's the second pizza, and then that opens up, and then that just plays out
+[44:55] just well, just, just perfectly fine. And you'll see, like, the text and everything all works. If you're having difficulty playing it immediately in Figma,
+[45:02] like, yeah, just do it that way. The cool thing that you could do, right, so for those of you that are,
+[45:08] are still new to, like, Figma Make, , is I can take this that I have here
+[45:15] and, , when you select those frames, so I can select these frames, you're
+[45:20] gonna see this option here under prototype mode to send to Figma Make. When you do that, it's gonna open up Figma Make and just, be mindful,
+[45:29] Figma Make will use AI credits. , It's gonna then take the interaction there and whatever you prompt to provide for it.
+[45:38] , , make this into a section. , make this interaction into a section of a website , l- and I would say, use the
+[45:52] intro animation, , and keep things as is.
+[45:59] , Honor the transitions as well.
+[46:05] And make no mistakes, right? Tell it to always make no mistakes. And so once again, I'm just gonna show you, while that's chunking
+[46:12] along, , this was the one that I made exactly from this file just before this workshop, , where I wired up all three.
+[46:20] , And it even did the inclusion of giving, like, a little, like, X button in here. , , like, they, they, they load in.
+[46:26] , That's actually one thing that I did in the, , design here. You see in this design, I, I have the little top bar.
+[46:33] If I wanna get rid of it, I can just press delete. It's just gonna hide it, and if it hides it, it's just gonna fade it away.
+[46:39] , I can play that, and you'll see, boop. It's, like, hiding that, like, top little bar.
+[46:45] And you'll see the animation plays just fine. There's, there's, there's a number of things that you could do, especially
+[46:50] when you're working with a component instance, , with those transitions. , , what the Figma Make is gonna do, it's gonna take a look at it, and
+[46:58] it's gonna say, , what it's doing. It's gonna import the designs, and then you can articulate changes, and you
+[47:04] could always provide additional context. While that is brewing, I wanna show you some other examples of things that
+[47:09] I have done with Figma Make as well. What I've done is I would usually take a, like, a page like this, right?
+[47:16] What I have here is a bunch of trim path animations. , it's just a couple of, of, , lines that are like a little infinity symbol
+[47:25] And I'm using trim path animations to pass that off as well to Figma Make.
+[47:31] , And then this right here is a little bit more complex, where I have this, this like little like like looping nested arm.
+[47:39] , And this was just like a proof of concept, and then I basically said send to Figma Make, , and I'll show you.
+[47:45] I, I basically asked it to use this animation f- , frame.
+[47:50] Look, I didn't even-- I said frame end, , and embed it into a page. , It built this page around that animation, but it was able to take the context of
+[47:59] the trim path, , and then even here it was able to take the context of this. You could see later on I selected that second animation, and
+[48:07] I said include that as well. , that was able to, to accomplish. These are like little tests as like proofs of concept that, you can build that
+[48:17] animation and then begin to take it over. , I'll show you one more. , this animation, , we're gonna go over probably by like a few minutes, and
+[48:26] then I'll answer a few questions. I know we started a little bit late. This animation right here is like a simple like heart animation made
+[48:35] as a component, and what I did was, I put this into a page, and for
+[48:41] this, , I worked with Figma MCP. For those who don't know, MCP allows you to take Figma context.
+[48:50] If I go into dev mode, you're gonna see this section for MCP, and you can configure it, , with your LLM.
+[48:58] , , I'm currently using-- Let's see. I'm gonna pull up on my screen here. , I'm currently using, , Claude, and so what I can do is I can take a prompt such
+[49:08] as this, , ch-ch-ch-ch, so I can copy a link to that selection, and I-- that
+[49:14] could even be done in design mode, right? I could say copy a link to this selection and, , in here I can
+[49:22] say, , "Take this animation from Figma," , boom, "and incorporate into a
+[49:34] web page. , Give me a breakdown of the animation." This is Codex.
+[49:42] , Codex is gonna run through that And, , somebody asked, "How are my keyboard
+[49:47] shortcuts being displayed on the screen?" I built my own app to do that. That's, that's, that's how.
+[49:53] , right now it's gonna read a skill, and, , it's gonna basically go through that, and I'll show you one of the, , the outputs, right?
+[50:00] This is, , a webpage that Codex produced, so it's running another one.
+[50:06] And in this prompt I said, "Take these animations, but then give me a full breakdown of it," right?
+[50:12] It actually told me, "Hey, this was the duration. You have it on infinite repeat. You're going from one to zero," right?
+[50:19] It actually broke down the easing that I was using. , I actually told Codex not only to reproduce my animation, but
+[50:27] then also to kinda give me like a style guide for that animation. , And then I wanted to show y'all one that I've also built.
+[50:35] Do I have it here? I have another one Right here, this is one that I built with, , Figma Make where
+[50:42] I said, "Take this frame," right, this frame right here that has the animation, and within a, embed it within a page as a style guide breaking down how this
+[50:52] loading animation is to be used on web. Then I was able to basically make this page from that animation with the
+[51:02] context, and it actually set, created, like, a little breakdown, and it begins to describe the animation as well.
+[51:09] I think that this is a really good like learning opportunity as well to further engage with the things that you're building.
+[51:16] , And then it also made other options for me. Not, not only has the card animation that I built, but a list
+[51:23] and a table and, and this is all within, , Figma Make right here. , there's a lot of opportunity.
+[51:29] Basically, the thing that I want y'all to, to take away from this is that you can
+[51:35] build things in Figma with intent, with style, with motion, and use that context
+[51:45] when you're working with LLMs, right? Like, , when you want to build it out.
+[51:50] Right here, you can see that this is getting pretty close to done but, , the context that you build, the animations that you make, , can
+[51:58] then be brought into other spaces. Hopefully you found that helpful. Joanna, are there any questions?
+[52:05] Yes, we have quite a few. We have one in the chat right now that says, "Can we please get clarification on if Noodl context carries over to Make and/or MCP?" Yeah, when you're making that
+[52:16] anim- the, the interaction, the reason that I was, like, highlighting that was because having all of those frames and bringing it over from that context, right,
+[52:27] like the reason, the reason I'm showing you even, like, this here, and usually I
+[52:34] bring things in small chunks and sections. I don't give it a massive prototype and say, "Just build this." , I will build
+[52:41] section by section, but here within this prototype, , in order for this context,
+[52:49] so I basically made an interaction from this page to this page, from this one to this one, this one, this one. And it registered the transitions that I made, , and so it understood
+[52:59] what I was asking it to do. , when I look at this example… Oop, sorry, I have, like, so many windows open now.
+[53:07] When I look, take a look at this example- , I can see that it's pushing them off
+[53:12] to the left, it's pushing them off to the right, it's changing the colors. It is able to take the noodle context, like I'm driving it in those directions.
+[53:23] As opposed to me making a bunch of static frames and say, "Oh yeah, by the way, I need you to go to this frame, and for this section, do this
+[53:30] frame." The fact that there's a smooth transition between those frames denotes
+[53:36] how it's taking the context from the prototyping to then generate that out.
+[53:42] And I can see that my example is done now. Let's see, is this example done? This example's still brewing, but this other example that I have
+[53:51] here, let me open up my projects folder and go into motion. And which one did it just make?
+[53:57] It went to motion index, and let's open that up. And here we go.
+[54:03] I think it, I think it might have found the existing one and updated it.
+[54:08] It implemented motion styles, and I've also corrected the page, used actual Figma frame size and exact card positions from node.
+[54:16] I, I mean, it basically, it built out the, the, it built this out, like, pretty similar to what I had previously, because it was same context.
+[54:23] , But you could see it says six skeleton cards. It has the motion opacity. You could see the reasoning and the, the, the context that it's then able to pull
+[54:31] from Figma to generate, like real page. , What's really cool is that this is, , it's also responsive, so like,
+[54:39] it's able to think about how to arrange and display those cards, , in a way that is, is meaningful.
+[54:46] , Cool. Let's take another quick look, see if there's any other questions.
+[54:51] - Hide that away. There we go. All right, so let's see. " Noodle context carries over. Spend a little time explaining layers." Yeah, so like layer structures,
+[54:59] take a look at like any, , one of my beginning Figma file, , pieces. , Basically anything that's on the canvas has a representation of layers.
+[55:07] , Anything that's inside of a frame, a group, , those essentially get like nested, , and they'll carry through.
+[55:12] A section can then like, organize a bunch of, of frames. , nesting structures is gonna be really important in Figma, not only for
+[55:21] motion and animation, but just for how you're building out, , your work. , Let's see.
+[55:26] "Thinking of accessibility, I'm newer with the animation. If using a screen reader, would you add alt tags to explain it?" , with those for screen reader, yes.
+[55:34] You can use, , , for that type of accessibility, you can have the alt tags. , There's also the, , what are they called?
+[55:41] There's like another type of tag, , that helps understand the context of like an animation and how you build that out.
+[55:47] But, , basically verbal descriptions. , "Are we able to export these specific key frames and easy curves directly to
+[55:52] Lottie?" Lottie is coming, , but yes, they do map to CSS and they do map to, , like
+[55:59] animated SVG and, , for exporting video. , "What animation export format would be best for personal business website?"
+[56:05] It all depends on what it is that you are animating. Like the more simpler it is, you can probably just have
+[56:11] it exported as like CSS. , The more visual, the more images, the heavier the animation, , if you
+[56:17] have like a lot going on and you're moving things around a lot, it might be better to export it as an Mp4.
+[56:22] , it all depends on what it is that you're building and the context of, the content of your animation.
+[56:28] , "Does the timeline support scroll-driven animations or is it strictly tied to time-based?" , So right now the prototyping within Figma itself isn't
+[56:36] gonna do a scroll-driven animation. However, you can have animations and then tell in Figma Make to be
+[56:43] driven based off of your scroll. That is something that you can do. And to provide additional context, in Figma, what you may want to do is,
+[56:54] let's say you're building out sections. , Let's say you're building out sections of like a website.
+[56:59] You can provide an annotation. , there's an animation here. You can come in and you can provide an annotation.
+[57:06] This is the annotation right here. It's the Y key. Let's make, , let's just make my, my window bigger again.
+[57:12] , an annotation , is right here. You press the Y key and you can add additional context.
+[57:20] When you're in design mode, , you can add annotation, and so the annotation can be a category of interaction.
+[57:27] And you can say, when scrolling to this section, perform the
+[57:36] embedded animation, right? , this context, when you pass off this frame to Figma Maker to an LLM, this interaction
+[57:46] annotation gets packaged along with it. That information gets sent. Then this way, as you're thinking about how you're building things out, you can
+[57:55] say, "I have six sections here and I want each one to be based off of, like
+[58:00] scrolling when they become in view." , these are things that you can articulate. It's not gonna work natively in Figma.
+[58:07] , Figma does have some scrolling, , functionality. Like it'll, it'll scroll to top and kind of, , it'll be sticky scroll.
+[58:15] However, we're not gonna have, , outright declarative scroll interactions.
+[58:23] All right, so let's see here. , Nest animation. Yes, you can nest animations just like a component.
+[58:30] , I'll show you one last thing. , So right here, these animations are basically being animated
+[58:37] because they're nested. , So, like, I can-- I mean, I could take… I mean, you could take
+[58:43] anything, like, immediately out. So if I'm here, I can just take this whole thing out of here. This is a frame five, and so this is the frame five animation on its own
+[58:53] that I then nested into that frame. , So you can nest all you want. So it's, it's, it's really easy too, because if I had, like,
+[59:03] let's say I have, like, a little, like, bouncing ball animation. I'll show you this one last thing. So if I have a bouncing ball animation where this goes down, and then
+[59:12] I'm gonna copy paste it back up. So we're gonna have this, , it's gonna ease in and then ease out.
+[59:23] And so this little bouncing ball that I have here, I'm going to loop the track.
+[59:32] That's a really fast one. Let's extend it. All right, so this, this, this bouncing ball animation that I have here,
+[59:40] , inside of, like, this frame, right? So boop.
+[59:46] I mean, well, yeah. So let me do, , I'm gonna put it inside of another frame. , So, like, then, then this frame, you're-- it's nested, but it's still gonna be here.
+[59:55] So now this frame, I can rotate it. So let's rotate this frame
+[1:00:08] Right? And then I can, like, loop that track where it's just like, vroom, vroom, vroom.
+[1:00:13] And then so, , , like I can, , just, just duplicate like a bunch of these too and just kind of have them nested and do kind of like wild things.
+[1:00:22] , I know this isn't probably the best example of it. The, the better example is kind of how I'm, I'm working here.
+[1:00:29] , So each, each one of these is kind of nested within the next one. So you'll see that this arm frame, the way that it's
+[1:00:38] animating is that this first frame
+[1:00:45] So this frame is, is nested inside of this frame, is nested inside of this frame, and that's how I get this almost kind of like inverse kinematics where
+[1:00:54] I'll show you. Let's try that. Okay. So I have a frame with a little, like, rectangle.
+[1:01:04] So there's the frame, there's the rectangle. And what I can do is on this frame, I could set the transform.
+[1:01:13] So the transform's up here at the top. And so now that this frame, I'm gonna call it item, , and I'm basically gonna take
+[1:01:21] this item, I'm gonna rotate its animation. So I love showing this example.
+[1:01:28] Let's see. I'm gonna rotate it that way, copy, and we're then gonna have it
+[1:01:34] rotate this way and back, right? This is actually kind of fun to watch come to fruition, right?
+[1:01:41] So it's animating, and let's have it loop.
+[1:01:47] So it's, it's animating. And so what I'm gonna do is I'm gonna take that item, I'm gonna duplicate
+[1:01:52] it, and I'm gonna put it inside of the, , the, the, the other one.
+[1:01:58] , So if I go back to regular design mode, , I can move this down, right?
+[1:02:03] So let's just move that item
+[1:02:11] Make sure that clip content is turned off
+[1:02:18] There you go. There's the other item, and I'll make that blue just so you can see it. Or blue, red.
+[1:02:24] And then I can duplicate that item, and then I can put that inside of the other one, and so that's now nested in there as well.
+[1:02:31] Let's see that one more time. So that is gonna bring down. Make sure this one is not set to clip content.
+[1:02:38] There we go. And this is gonna move down, and that's gonna be the red one.
+[1:02:44] And then so now when I go in here, you're gonna see that it's just, it's, like, wacky and, and, and, and moving.
+[1:02:52] And then so, , what's cool about all this is I can easily take this, and
+[1:02:57] then I can, like, duplicate it and then, like, duplicate and rotate and then now, , they're just gonna be, like, all wild and weird and stuff.
+[1:03:07] And then I can nest that again, so I can take all these, and I can put them into another frame.
+[1:03:13] , And I'll call this Container. And that big container, , I can basically say, "Let's scale you." So the
+[1:03:20] container's gonna get scaled, let's say, like, bigger, and then go smaller again
+[1:03:28] So now, or I can double-click here and I can make it really small
+[1:03:38] So yeah, so follow along. , Let me know what you think. , Lots of cool stuff here. There's just infinite possibilities of what you could do.
+[1:03:46] , So take a look at the examples, take a look at this file. , Feel free to reach out on social if there's any questions that
+[1:03:51] you have, and make sure you register for the next workshop. Thank you, Joanna. And as always, happy designing

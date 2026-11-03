@@ -58,7 +58,14 @@ directions come for free.
       "question": "…",
       "options": ["A", "B", "C", "D"],
       "answer": 0,
-      "why": "Why that answer is right — shown after answering."
+      "why": "Why that answer is right — shown after answering.",
+      "key": "Optional. The one thing the answer had to contain."
+    }],
+    "exact": [{
+      "id": "p01ch01e1",
+      "prompt": "A question with exactly one canonical answer",
+      "accept": ["42", "forty-two"],
+      "note": "Shown after checking — justify, don't restate."
     }]
   }]
 }
@@ -103,6 +110,36 @@ The scheduler and the session engine are only as good as the items.
 - **Quiz distractors must be plausible and wrong.** An obviously silly option turns a four-option
   question into a two-option one.
 - **`why` should justify, not restate.** It is the only teaching that happens after an answer.
+
+### Exact items — the only kind the app grades
+
+Cards and quiz items end in self-assessment: you read the answer and decide whether yours was close
+enough. An `exact` item instead states a question with **one canonical answer**, and the app checks
+the typed string against `accept` and grades itself. No judgement, no inflation.
+
+Matching (`src/scaffold/exact.js`) normalises case, surrounding whitespace and trailing punctuation
+and nothing else. It will not guess at synonyms, units or word order, because a wrong verdict is
+worse than no verdict — the whole value of the kind is that its result can be trusted. **Everything
+else that should pass goes in `accept`**, where whoever wrote the item can see it.
+
+- **Use it for** numbers, years, named levels, terms, shortcuts, property names: `250`, `2023`, `AA`,
+  `Shift A`, `hug contents`.
+- **Don't use it for** anything with two valid phrasings, or any answer longer than a few words. The
+  moment you find yourself adding a fifth `accept` entry, it is a card.
+- **`accept[0]` is what gets shown** when the answer is wrong, so put the cleanest form first.
+
+### `key` — narrowing a self-grade
+
+Any card or quiz item may carry an optional `key`: the single thing the answer had to contain. The
+reveal prints it, which turns "was I close enough?" into "did I say that?". Leave it out and the item
+behaves as before.
+
+### Quiz options are a check, not a question
+
+Quiz items hide their options until the reveal, then show all of them with the correct one marked.
+The options are the **verification step** — a precise target to compare a written answer against,
+plus the near-misses that were ruled out. Which is why distractors have to be plausible and wrong:
+they are read most carefully *after* answering.
 
 ## 4. Demos
 

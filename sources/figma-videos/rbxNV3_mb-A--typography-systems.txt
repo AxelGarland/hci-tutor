@@ -1,0 +1,479 @@
+# Figma for Edu: Working with typography systems
+# https://www.youtube.com/watch?v=rbxNV3_mb-A
+# Transcript captured from YouTube's own transcript panel, 2026-11-03
+
+[0:00] Hi, everybody, and welcome to the Figma for EDU monthly workshop. My name is Miggi.
+[0:05] I'm joined by Joanna. today we're gonna be talking about typography. , I like focusing in on this because it allows me the opportunity to
+[0:12] nerd out, and also highlight how to work with typography at scale.
+[0:18] So a lot of you are in education. You're just learning how to work with type, how to include it in your
+[0:23] compositions, how to build those out. , However, when you come into the real world, you're gonna
+[0:29] be working with design systems. , And I wanted to take an opportunity to show you how you can leverage some of the
+[0:36] tools in Figma, , to speed up that flow, how do you create styles for your typography?
+[0:43] How do you work with variables so that way you can then brand typography?
+[0:48] So the first thing we're gonna be talking about today that's gonna be centered, , topic for today is typographic scale.
+[0:55] So a typographic scale is a way of setting constraints, so then this
+[1:01] way you have fewer options when, when choosing and working with type, if you have, like, tons of different options, tons of different
+[1:08] sizes the world's the limit. However, when you are building and designing and scaling a brand, when
+[1:14] you're building and designing and scaling, like a system that's gonna be used by multiple people, you need to refine down those choices,
+[1:22] you don't want someone wasting their time saying, "All right, should this font be 64-point type, or it should be 65-point type," so what you do is you build a
+[1:32] system, and you test that system, and you see how it works, and there's tons of different properties that are involved.
+[1:39] So when you're thinking about adding type, you not only have, like, the font family,
+[1:44] so this could be, like, Inter. It could be, , Instrument Instrument Sans. , So what is that font family that you're choosing, that can be systematized.
+[1:54] What is the font size? What is the matching line height for that font size, what is the
+[2:00] font weight that you're gonna use? What is its purpose of use? , The, and as well as adjusting letter spacing and tracking.
+[2:08] There's other advanced font, , properties that we're gonna be talking about as well. There's some new ones that were just dropped in Figma, , that are gonna
+[2:15] help, help you work on your layouts. But- We're gonna start talking about, , working with that type
+[2:22] panel, , and using variables to do so, and also managing those at scale. So, , in a nutshell, I'm gonna head on over to this little area.
+[2:31] , I have this example of a type scale. Now, many design systems, so like as students, when you go work at a large
+[2:39] company that might be a bit more mature in how it handles the system, you might
+[2:45] be a design system's consumer, where you may be using the existing design system,
+[2:51] you're gonna be, having the, , display type and the headline type and the title type, the body type.
+[2:58] You need to think about what are those gonna be and how to use them effectively. When you get a little bit, , more senior, then you might be authoring these design
+[3:07] systems, where you're making the choices on what are gonna be those, , , , choices
+[3:12] for developing the font system and how that's gonna be flexible in your layouts. So I'm gonna just show you, in this file too, I have a bunch of different examples.
+[3:21] These are examples that we use at Figma when sharing out, our marketing materials.
+[3:26] So this is, , websites for the Museum of Speculative Futures. Now, when you look at the website, you're gonna take a look just at the type,
+[3:34] you have this display type. You're gonna have headline type. You're gonna have paragraph type.
+[3:39] You're gonna have type that's gonna be specific to your buttons, so what you want is you want that level of consistency that you can use.
+[3:48] Now, sometimes you might be creating a typographic scale that men- may then
+[3:54] adjust based off of responsiveness, so you might change that font sizing based off of working on a desktop,
+[4:03] working on a tablet, working on mobile. You might change that when you're working across different styles or brands.
+[4:11] , So take a look at, like, a deck as well. So when you think about the different sizes of type, not only think about
+[4:18] the style, but also their function. So you could see here how the type- is, , needing to be consistent, to
+[4:26] maintain that brand consistency, but it's also performing a function, it is
+[4:31] making sure that something is clear, bold, understood, that it is easily readable at a particular, , level.
+[4:39] So I can go in, I can read this type, it's very clear. It has a nice measure. By the way, the measure is the width of the body of type, and I'll give
+[4:48] you a nice little formula in a little bit on how to calculate it, so then this way you can never go wrong.
+[4:53] , So you really need to start thinking about type, especially as, people are having
+[4:59] AI build layouts for them, and you need to be able to be discerning and judge it and correct it and make adjustments or at least start to build out systems
+[5:09] that have that instruction baked in. So here I'm gonna select this type scale And the-- what I'm gonna identify for
+[5:17] you really quick is I'm gonna select this display type, and I can see that it's sixty-four pixels over seventy-six pixels.
+[5:24] When I select that text, I'm gonna come over here, and you're gonna see it already has a style applied.
+[5:32] So for each one of these styles, there's display H one, H two, H three.
+[5:38] For those of you that are new, that's usually a header one, header two, header three. These directly relate to how they may be articulated in HTML.
+[5:49] So each one of these performs a function. So header one through header five, then you're gonna have your body text,
+[5:56] then you're gonna have caption text. Now, when you're building out a system, you might have different functions,
+[6:01] you might have different needs. You can have different rationale for naming these. I've named them this way because it's pretty common and for y'all
+[6:10] to, to learn and understand. But in the future, you're probably gonna find additional needs.
+[6:15] You're gonna have additional screens, additional modalities, so knowing how to name these and the underlying structure is gonna be really important.
+[6:22] So one thing that I'm gonna show you too is that here I can select this whole type scale. I can come over here to appearance, the appearance panel.
+[6:31] So in Figma, I select the frame, I come over to the menu, I come down to appearance, I click on this appearance, and you're gonna see that
+[6:39] there are modes associated with these, so I have a second brand that's Sans Serif, and it has a different layout.
+[6:47] I can come down over here, and I could change it to brand three, which is different entirely, but still has a typographic scale.
+[6:55] And what that's using to make those changes as I'm swapping this out are gonna
+[7:02] be the variables that are controlling the properties inside of the fonts.
+[7:09] And what we do is we make composite styles for each of those. So if I were to come over here and I press T to select text, and I'm
+[7:20] just gonna say, "Hello, world." I'm gonna type that text in. When I type that in, I'm gonna come over here, and I can see typography.
+[7:29] It already has something applied. If yours doesn't, I can, I can break it. But what you wanna look for is these four dots.
+[7:37] Those four dots in Figma signify a style. So when I click apply styles, I can see any styles that may be local to
+[7:47] this document, and then I can apply it So you can see how bundling all of these things, it may take a little bit of work to set it up, but then once
+[7:56] you have it, it then becomes easy. So I can make this a display, I can make it H1, I can make it H2, I can make it H3.
+[8:04] I can control how that type is working, and I can easily sort of see it.
+[8:09] I can reference it if I need to. I could break it, if I need to make a, a little adjustment. But for the most part, ideally what I want to do is I want to
+[8:18] confidently choose that type style, and these are the ones that are located here. Now, when I change that style, as again I mentioned, you
+[8:27] could change that appearance. That appearance can change a brand, by brand. It could also change by, , , , by, by responsiveness, so if we
+[8:36] had like different sizes. Now, the structure is gonna be located for controlling those
+[8:42] variables over here on the left. So when I click on variables, I'm gonna have a collection.
+[8:53] The collection that I created is called type scale. Within type scale, I have different groups.
+[8:59] So I have the display font, and for each one of those properties,
+[9:05] the font family, the font weight, the font size, the line height, the
+[9:11] letter spacing, I've codified each of those associated to a specific brand,
+[9:17] so I might rename this brand right here. , This is our Serif brand, this one right here is our San Serif brand,
+[9:27] and this one is our Museum of Speculative Futures, MOSF, it's our
+[9:32] MOSF brand, and that's actually what's driving all of the designs over here.
+[9:38] So when I click, I can actually see that, yeah, we have our display. It's using that headline, but the brand that it's inheriting is the MOSF,
+[9:51] and that's being set at that frame level right here, type scale, MOSF.
+[9:56] If I go to San Serif or Serif you're gonna see a different layout. I can head over to this frame over here, and I can change its layout as well.
+[10:04] It might not work, but that's gonna allow me to better understand how to test that design.
+[10:11] It'll work a little bit better here. So here we go, San Serif and Serif, and I can see that, that, that that
+[10:18] particular size varies greatly. The H3 in my other type sc- Can be very different here, and so I can readjust.
+[10:28] I can make that a little bit bigger, and then I can apply that, and I, I established that third mode to just show you the difference
+[10:35] in how that can be applied. So even here, too, you might see some big changes. I'm gonna click here, I'm gonna go to Sans Serif, and you're gonna see
+[10:42] it's really gonna go down in size. So maybe if I wanted to create a degree of parity between them,
+[10:48] I can make sure that their type sizes are a little bit different. And we're gonna get into making these, and then we're going to, , , like,
+[10:56] identify how to scale some of those edits, , using the Figma agent.
+[11:01] So first off, what are variables? A variable, you're gonna come over here to the left once again, click
+[11:08] that variable panel, and what you do is in variables you have collections.
+[11:14] So I can create a brand-new collection here. And so this collection can be, the Miggi collection or the â¦ I'm
+[11:21] gonna call it Joanna's Type. Joanna loves when I include her in demos, so I like to take
+[11:27] every opportunity that I can. So I'm gonna call this Joanna's Type Scale. And here I'm gonna create a new variable.
+[11:33] So what I wanna do is I might wanna create a variable. If you're not quite sure on exactly how to begin with a typographic scale, might
+[11:41] I recommend just taking a look here. Like, I'm gonna type in some text.
+[11:46] I'm gonna break that text here. I'm actually going to, â¦ Here we go. I'm gonna just click here, and you're gonna see 10, 11, 12, 13, 14, 15, 16,
+[11:56] 20, 24, 32, 36, 40, 48, 64, 96, and 128.
+[12:03] You'll notice that those sizes are actually curated as a typographic scale.
+[12:10] Oftentimes when you're looking at a font picker, this is a typographic scale that has already been predetermined.
+[12:17] So you'll notice that this is going up by one, up by one, up by one, up by one, all the way to 16.
+[12:23] Then we go up by four, up by four, up by four, up by four, up by four.
+[12:29] Then we start to go up by eights, and then even greater still. So usually these scales at smaller sizes have smaller increments, and then at
+[12:39] larger sizes have larger increments. There's tons of different ways of applying this, , and we can , like,
+[12:46] walk through some of those today as well All right, , so having three different brands to experiment with different typefaces before making a decision.
+[12:56] , So it can be you can make three different modes for your own decisions. You can make those as be different brands.
+[13:03] You can, , make them, , to be typographic scales that are set for light mode and dark mode.
+[13:10] There can be different reasons that you may want to have a different application,
+[13:15] so it could even just be that you have two or three different font pairings, and with those font pairings, you need to make various adjustments, , because every font
+[13:25] is gonna be a little bit different in how it sits on its baseline, , its x-height.
+[13:31] , So you may have to make just some of those line height and font size adjustments. So when you wanna make a font more, , type style more flexible, you
+[13:42] might have those different brands. So here, if I'm gonna create a, a variable, I'm just gonna show
+[13:48] you how variable creation works. I'm gonna create a new variable. You're gonna see there's a number of different variables here, so color,
+[13:55] number, string, Boolean, and timing. , String variables are gonna be plain text, so if I just say, like my font
+[14:05] base, I could just name it right there, and that string value can be whatever text you wanna put in.
+[14:12] Typically, it's gonna be a specific font, so I could say Inter. , Any of the fonts that you're gonna be working with, you
+[14:18] just wanna use the font name. So in the examples I'm using, Henken Grotesk and Hanuman, but I could just type
+[14:25] that in just as easily as being Inter. , And then that could be, my normal style, or my sans serif because it doesn't
+[14:34] have the little serifs, , in the text. So here I can add another one, and then I could just make this
+[14:41] my serif, and I can change that instead to maybe be Instrument Sans.
+[14:46] Typically, you might experiment on the canvas before you go making the variables,
+[14:51] or you might have one set built out, and then you're maybe testing another. So I could see, do we have Instrument Sans, Instrument
+[14:59] Sans, or Instrument Serif? That's actually what I want. So I'm gonna say Instrument Serif so that is now a variable.
+[15:09] Now let's think of the font size. I'm gonna create a variable. I'm gonna create a number variable.
+[15:14] I'm gonna say my font size, and then here I can set what is that base font size that
+[15:21] I'm working with for this given track. So that font size I might declare is, , 16, you know?
+[15:28] And so if I make an adjustment to Instrument Serif, I could make a slight adjustment and say, "Hey, Instrument Serif runs a little bit
+[15:36] smaller, has a small x-height," so maybe it's just a little bit bigger. Maybe I'm actually goingâ¦ Or maybe it's a bit smaller.
+[15:44] Maybe I'm going by 14. So I'm gonna have those two variables. , The third one that we care the most about is gonna be the line height, so
+[15:53] I'm gonna just create another number. I'm gonna say, , line height, and here I'm gonna set that line height.
+[16:00] Usually you want to find what is that font size and then move up from there.
+[16:06] , Usually I pick increments that are easily , , ascribable or divisible by fours or eights.
+[16:12] So I might go 16 to 20 and either 14 to 16, or maybe I do 14 to 20.
+[16:19] So I'm just gonna lay those out right there, and we're gonna come here, we're gonna take this text.
+[16:26] , I don't want this text to have anything laid out just quite yet, so I'm just gonna break all these, these variables,
+[16:32] so let's just go, like, there you go, 20. , Even letter spacing too is also set.
+[16:39] So what I can do is I can choose this type, I can come over here, and here
+[16:44] I can set and apply the variable. So in the font name, I can come here, and I can apply that var-
+[16:52] variable, and there it is, Joanna's Type Scale font base inter, so we've applied it.
+[16:57] And then right here I can see that that font has been applied. Then right here I'm gonna choose, , the weight.
+[17:04] We actually haven't set a weight yet, so we can do that in a moment. And then here I need to set the type variable, , and I'm gonna apply it, and
+[17:12] we're gonna choose Joanna's Type Scale. We're gonna set that font size, and then we're gonna come over here, and
+[17:18] we're gonna choose the line height. And so you can see those are then mapped. , Let's just set this as one.
+[17:24] So other variables that we may need that we may be working on here, we're gonna create one more variable.
+[17:31] This variable's also gonna be a string. This is gonna relate to the font weight
+[17:39] And we're gonna then apply that string value is gonna just say we're gonna
+[17:44] set itâ¦ Actually, we could set it as a number value because font weights can be expressed as numbers as well.
+[17:51] So I'm gonna set that as 400 and 400. So the way that those font weights work is I'm gonna apply that variable,
+[18:01] I'm gonna find that number, and I'm gonna apply it, and it's gonna be 400. So the way that font weights work is normal is 100, bolds are usually 600,
+[18:11] , semi-bold is in between, it's like 500. When you're working with, , text and you're ascribing weight, , I would
+[18:20] usually recommend go to the variable font axes if it has it, , and then here you can then see sort of the number representation of that weight.
+[18:30] , Variable fonts are constructed in a way that allow you to apply
+[18:36] these sort of in-between numbers. So as I'm dragging this left and right, you can see how it's impacting that.
+[18:43] So normal is always gonna be about 400. As you go thinner, it goes back down to 100.
+[18:49] The bolder, , versions are usually referred to as black, so that would be 900.
+[18:56] So I can set that at 400. So you can ascribe those as numbers for a little bit extra parity So
+[19:06] in the education plan, you should be able to have up to, , you should have more than, you should have about three modes or a little bit more.
+[19:12] If you're on a starter plan, you only have one mode. , So that is just another bonus to being on the education plan
+[19:20] and being in an education team. So here we have those two modes set, and I can, , go back to my Joanna's type scale.
+[19:30] Joanna's type. I'm gonna make sure that that letter spacing is, is zero.
+[19:38] And we're-- So we see we have the font base. We haveâ¦ Oh, I need to give this a proper name.
+[19:44] , I'm gonna say font weight. There it is. And then we have 16 applied as the font size.
+[19:53] And the other cool thing about this is now that this is bound, if I update this value, you're gonna see that change across all the text that may have it applied.
+[20:03] So if I was to make a little text field here. Oops. T key. I'm gonna draw a text field.
+[20:10] Let me close this. , I'm gonna use the agent just to write some, let's just say, , write
+[20:15] three paragraphs about paragraphs and replace that content.
+[20:21] So down here, what I just did was, , I pulled up the, , , the, , actions menu, and I typed in replace content.
+[20:29] And what that's gonna do, it's gonna basically take a prompt on how you want to replace that content.
+[20:35] And so having those three paragraphs and then opening up my variables
+[20:42] panel is then gonna allow me to, like, see how this is gonna be adjusting,
+[20:47] so I can adjust that font size up and down. We're gonna apply all of those variables here, but better yet, we're
+[20:55] gonna do what we need to do in that we're going to ascribe this See?
+[21:02] So we have our font base, we have our font size, we have our line height, we have our font weight, and this is gonna be for Joanna's paragraph text.
+[21:12] We're gonna select them all, gonna right-click, and we're gonna say new group, and this is gonna say Jo- I'm gonna call it Joey P, joey P. So
+[21:23] it's like Joanna's paragraph text. And so there we go.
+[21:30] We can now take all of these that we've just put together, and so we
+[21:36] have those variables, but we want to be able to apply it at scale. So we're gonna create a style, and the style is gonna composite all
+[21:47] of these decisions that we've made. , I could evenâ¦ Let's, let's go for the full set. Let's apply, , the, , letter spacing, so let's go, do, do, do.
+[21:59] There we go. Create variable. , New number. Let's say letter spacing, and we're gonna just set that at zero for now
+[22:10] Okay. And then let's apply it, and letter spacing for Joanna's paragraph type.
+[22:17] So we have all of this, and there's other things that we can set in here too, in our type settings, , we could change our wrap style to either be pretty or balanced.
+[22:27] I'm gonna choose balanced, and we can test that and edit it against
+[22:32] our paragraphs in a moment. We could even set paragraph spacing, so let's add in another
+[22:38] variable for paragraph spacing. , Paragraph spacing being key variable to have.
+[22:45] I don't know why it's not surfaced higher. So I'm gonna say paragraph. That's the spacing in between the paragraphs.
+[22:51] And like I said, if you're a type nerd like me, you wanna have this control. So I'm gonna set that initial value as being eight, and
+[22:58] let's set it as 12 over here. We'll l- open it up for the serif. So we have paragraph spacing.
+[23:04] Now let's apply that variable there. We could also change the vertical trim.
+[23:09] So vertical trim on type- , when that line height is set, let's
+[23:15] set this to a better value. There we go. So when, , basically what this is gonna do is it's gonna collapse the
+[23:24] trim on the top and on the bottom, and so you'll see it happen there.
+[23:29] So this is a, , CSS trait that allows you to better work with text for interfaces.
+[23:38] , So if this extra little space and on the top, you don't want it there, you want it trimmed off, you can click it, and that's gonna allow you to better
+[23:47] space buttons and other interface elements because it erases that. So highlighting that vertical trim value, also important.
+[23:55] , You'll notice that there's a bunch of other details in here that we can also set. Hanging punctuation.
+[24:01] So hanging punctuation, I'll show you what that is, means that the quotations
+[24:06] will be in the margin versus inside the margin, which is really important
+[24:12] when you have multi-line text and you want this to align, you wanna
+[24:17] turn on that hanging punctuation. So that's usually something that I always have turned on by default.
+[24:24] You'll also notice there's a paragraph indent, so if you are working on more print style layouts, you can actually set a variable for paragraph indent.
+[24:34] A lot of people don't know this, but it's true. So I can actually come in here, and I could just say I'm
+[24:40] gonna put it in as a number. I'm gonna say P indent, save some time.
+[24:46] I'm gonna leave that as zero for now, and then we'll put it in to see how it works.
+[24:51] So by, by controlling these from a central location, we can then affect everything
+[24:58] in our document and make changes at scale. So going through and creating this, it takes a little bit more time at the
+[25:05] beginning, but then you can publish this file and use it in other files as well.
+[25:12] You can use it when making Figma slide decks. You can use it when, like working on, on something else.
+[25:19] So you can create this perfect little system that's just yours, and then use it across all of your projects.
+[25:25] , So this has been set up, right. , Even here, like there's, there's-- depending on the font that you're using,
+[25:31] usually there's even more options, , for working with letter forms and ligatures
+[25:37] and having stylistic alternates. I'm just gonna turn that on because that's gonna make it a little bit nicer. Look what it did to the A's, made those A's a little bit nicer.
+[25:46] Or if you prefer the, the swooshy A's, that's the official term, swooshy A's, , you can turn that off.
+[25:51] But- So I've applied those variables. Now what we wanna do is create a style.
+[25:58] So with this selected, I'm gonna come over here to the four dots. Anytime you encounter the four dots in Figma, you are working with a style.
+[26:08] So I'm gonna click Apply Styles. I'll show you that one more time. Right here, we have this selected.
+[26:14] In our variables panel, we generated all of these variables. We've now bound the variables to this text, and now we're gonna
+[26:22] create a composite style that's gonna be a collection of all those variables as one thing.
+[26:28] I'm gonna click plus, and we're gonna call this, , Joanna's, , type scale, , or
+[26:35] Joanna's P, Joey P. There it is, Joey P. , And even here, if I want to edit it,
+[26:42] as long as I'm in the file that's created it, I can come in and I can edit it. I'll show you one more time.
+[26:48] I select it. There it is. I click on it. It shows you amongst all the other textiles in the document.
+[26:55] I click on those settings. I can come here to edit textile, Joey P. What's it for?
+[27:02] For Joanna's paragraphs. Joanna's paragraphs, right there.
+[27:08] And you can see all of the properties associated with it, as well as those additional details.
+[27:14] We're codifying those details so we don't have to do it again and again and again
+[27:22] All right. So, , so here we go. We have this all working. Let me see. What was the question?
+[27:27] I'm glad, I'm glad, Vilma, that you're seeing the options. A lot of people don't cover these options, but those details matter.
+[27:34] , So does vertical trim clip part of the text? So it will , the descenders and the ascenders, , it'll impact it a given way.
+[27:44] , I can show you in a quick example in practice how it works. As I mentioned, it's more for settingâ¦ It's, it's for more reliable setting of,
+[27:54] of type in interface, , and on the web. , And I'll show you what I mean by that, especially if you're working with auto
+[28:01] layout in Figma, , it helps you just better establish a vertical rhythm
+[28:06] when you're working with your type. So here we go, the properties, boom, boom, boom, boom, boom.
+[28:11] All this has been set, so we have our Joey P type style, and then now we can set it, we can forget it, we can select this paragraph.
+[28:19] , And when we come to our typography, instead of having to set all of these values, we can go to the style, we can type in Joey,
+[28:28] there it is, Joey P, and then apply it, and look at how beautiful that looks. It's just there, it works.
+[28:33] And guess what? We have, we have paragraph spacing, so we don't need to put in an extra line.
+[28:41] , And then here I'm just gonna double-click on this text and, â¦ Oop, I don't wanna double-click it there. , And, and just control it.
+[28:47] So whenever you're working with text in Figma, there's three types. There's auto width, there's auto height, and there's fixed size.
+[28:57] So auto width is for just single lines of text, , auto height is when you
+[29:02] have a paragraph, and fixed size is when you need to truncate your text
+[29:08] or you need a very specific area. 99% of the time you want auto height, but look at how good
+[29:15] that looks, we've set this up and that style has now been applied. So as we go through, any other text that I have, I can basically apply the
+[29:29] Joanna style, and it's right there. And then you'll see our text will line up beautifully alongside with it.
+[29:36] All right. Let's take a look at the questions. Do, do, do Ooh, I, I-- people are talking about hexagons. There you go.
+[29:41] So now as we mentioned, if I was to have a frame that had the text inside of
+[29:51] it, and like, let's say I'm just gonna like label this here, Joey Joey Pete.
+[29:56] Paragraph, Joey paragraph so this is, this is all set in. These are inheriting the modes because what we did was here we have a mode.
+[30:06] We have a sans serif mode, and we have a serif mode. So I can come over here in the type scale, and I can choose
+[30:12] between sans serif and serif. And look, we got a serif one. And then I can then go back to sans serif, and then serif.
+[30:20] And now, if I want to make adjustments, I don't have to go in here, I don't have to mess around with that.
+[30:27] I can now go to my variables panel, and we can come over here to instrument serif, and then we can begin to modify these properties.
+[30:34] If you wanna, like, read those pretty quick, you can drag that right on over to the left, so notice I could drag that over.
+[30:41] We didn't have that for a while. This is actually This is a luxury. This is a luxurious thing to be able to reorder these columns.
+[30:47] I'm telling you what. So here I can change that font size for the serif, and I can move that up.
+[30:56] So as I increase it, I can see the changes, so I could say 15, 16, maybe
+[31:01] actually we go all the way up to 18. Let's adjust that line height. So with that line height, one, two, let's say we go up to, , 24, to make it
+[31:11] a little bit more readable at that size. The font weight, maybe you wanna mess with that. M- is there a semi-bold?
+[31:16] Now, the font weight is going to work on a cascade. If there's not an available font weight, it's gonna pick the one closest to it.
+[31:25] So if I go 600, maybe I go 800. I don't know if there's a bold for that.
+[31:31] Let's see. , I'm gonna â¦ Oops, pressed the wrong key there. I'm gonna press T. I'm gonna look up, , let's break that style.
+[31:38] Let's look up instrument- , let's look up instrument serif, and
+[31:44] let's see what the weights are. So there's only regular and, , italic, unfortunately.
+[31:49] So, , we're not gonna be able to mess with the sizes. But if we pick another serif that is a bit more openâ¦ So I can go to all fonts.
+[32:00] Let's go to variable fonts. These are fonts that we know are guaranteed to have additional
+[32:08] size, additional font weights. So I'm gonna come down here. Let's see, Boudnard.
+[32:14] And Boudnard, let's see the variable font axis there, so that one works. So let's see, Boudnard.
+[32:20] I'm probably saying that entirely wrong. I apologize if it is pronounced in your native language, where you're
+[32:26] coming, joining in from, or if that's a familiar term, or if it's just a name. Let's go over here, and I'm gonna change this to Boudnard.
+[32:35] There it is. Cool. And so I can make additional adjustments right here on this panel, and then
+[32:41] it applies it across that space. So maybe the letter spacing, I just tighten it in just a little bit.
+[32:47] Like, I can go .5 or negative .5 to tighten it. Maybe negative .25, and so here I can actually zoom in and see, what am I doing?
+[32:59] Am I doing it .0, .15 maybe. There we go.
+[33:05] And so here we have the font weight as being bold, or I could set it back to 400, and that doesn't look so bad.
+[33:12] And that maybe wants to be negative, negative .15.
+[33:19] There we go. That looks good. Maybe it's still a little bit too wide, but that's something to do How
+[33:25] do I make the variable panel appear? We're gonna come over here on the right. Let me make my window just a bit bigger.
+[33:31] It's gonna be this icon on the right called variables. So it should be there. , I know that the interface has been in flux in Figma, so there's a good chance
+[33:40] you might see a variable value over here. So one thing that I do want to, , highlight is that when you click on
+[33:47] the canvas, you can actually change the modes across the entire canvas as well.
+[33:55] So right here, I'm swapping the modes in the properties panel under the
+[34:01] appearance panel, and I'm being able-- I'm able to change the modes there.
+[34:06] However, they can be changed across the cam- canvas. They work on this term called inheritance, so from the canvas to
+[34:16] the frame to the individual object. So I can come here on this text itself, and you'll see that the auto value is
+[34:25] sans serif because it's inheriting it from the frame or from the canvas, so
+[34:31] I can override it here and say instead, be serif, and then it's now the serif.
+[34:37] So once again, that's that notion of scaling and working with these
+[34:43] , so here, , so that's actually a really good question. I can come over here and I can right-click.
+[34:49] I can duplicate that whole mode, and so I've created another mode here, and
+[34:55] this mode can be my, alt sa- alt serif. , Wait, let me delete that one.
+[35:01] I'm gonna duplicate my serif mode. Duplicate, and then this is our alt serif, and this one can
+[35:09] be instrument sans, , serif. I'm gonna scale down my window size a little bit so it's more readable.
+[35:18] So there it is. And so now with that simple action of creating a new mode, , I now have,
+[35:25] like, another version, , of sans serif. But I'm gonna show you another way to do that. So I've just created an alt serif.
+[35:31] I've created a whole new mode to do that. However, , there's other ways of, of like thinking about that, so, , I'm
+[35:41] actually gonna delete that mode If y'all are ready for another brand new concept.
+[35:48] So right now these styles are basically inheriting here. If I start creating more and more styles, if I make another group, so
+[35:57] I'm gonna duplicate this group and this group is now gonna be called H1.
+[36:02] And so this is gonna be our H1 group. And so our H1 group can have larger sizes.
+[36:09] So maybe the font size moves up, by, I'm just gonna move it up by 10,
+[36:15] and then by 10 and by 10. That's probably really bad practice. Let's go down to 32.
+[36:21] 28, 32 and let's say 24 and 32.
+[36:27] So when I go to all, I see the Joey P group and the Joey H1 group or
+[36:35] there it is, Joey HP and Joey H1. And notice how quickly I did that. I just duplicated the whole group.
+[36:42] I'm not recreating them one by one by one. I'm working off of what I already have
+[36:51] Thank you. Thank you, Joanna. So yeah, you can now have 10 variable modes per collection.
+[36:56] So here with H1, I've now made this larger. So the one thing you're gonna realize is that when I'm building this out,
+[37:06] I'm gonna repeat a lot of these over and over again, so it's like, oh, I
+[37:11] g- I have to retype Bernard again. However, what you can do is you can create like a base variable
+[37:22] that then is inherited here. That concept is called an alias.
+[37:28] And so once again, I'll show you its utility. So if I duplicate that group and now I have Joey H2, that then becomes another
+[37:36] set where I might want to reference that same font over and over and over again
+[37:45] So I'm gonna come up here, I'm gonna create a new variable.
+[37:50] I'm gonna call this, , this is gonna be a string variable, and this is gonna be, like my base font.
+[37:58] And so that base font can be , let's say instrument serif, and we have inter here
+[38:07] And so what I can do is by clicking this little variable, I can reference the base font.
+[38:15] And so that means every time I update this, it's inherited.
+[38:21] And the skill here is understanding the value of the inheritance because,
+[38:30] and as someone was asking that question, what if at a different size you wanted to reference, like, a different font and, like, if
+[38:37] you wanna update this more easily. So let's say there is a brand change or something, so now
+[38:43] whatever I change here will then be reflected across all of these.
+[38:48] So I can change instrument serif , let's do that here.
+[38:55] All right, so, , here I'm gonna change the, , style. I'm gonna go back to Serif. So there it is. So there's Joey Paragraph, and we have three different styles that
+[39:04] all reference that base font. So when I come up here, now I can just change it, , what's another Serif?
+[39:10] I'm gonna say Georgia. Georgia. Is Georgia even in here? Georgia. Did I spell it let's see.
+[39:16] I'm gonna create a text field. Let's say Georg- Geor- Oh, wow, we don't have Georgia in here?
+[39:22] That's interesting. Am I spelling it wrong? Let's go do Geist. No, Gentium.
+[39:27] Gentium. Let's choose Gentium. All right, so if I change this now to Gentium, it should change.
+[39:35] Did I change it is this the right one? Gentium. Let's see.
+[39:41] Gentium Basic, that's it. Gentium Basic.
+[39:47] There it is, Gentium Basic. See, and then now what it's done is everything is referencing it also gets updated.
+[39:55] So I'm able to create and build this out. So, , we have a few more concepts to cover.
+[40:02] , So as of last week, the agent is now available, , in Figma, and what that
+[40:09] means is, is you can use the agent to manage your variables and modes, so
+[40:16] when you click over here on the left, I can go to chats, I can create a new chat, and I can literally tell the agent to make a type scale with this type.
+[40:26] Create eight total sizes. Create variables to go along with it. Variables for font name, weight, font size, line height, and
+[40:34] letter spacing for each size. And the result will be like, "Hey, I created eight size using the font,"
+[40:42] and it says what it's building out for. Now, it's indeterminate, so what it does is it gives you something that you can then build off of, but then
+[40:51] you have the ability to edit and change. So what I can do here is I can create a bit of text I'm
+[41:00] gonna create, , Gentium Basic. Now let's find something a little bit more oomphy.
+[41:08] , Biorhyme, biorhyme, there we go. There's Biorhyme. And so I'm gonna set Biorhyme to, like, let's sayâ¦ That's huge.
+[41:17] Let's say 24 is the base size, so Biorhyme 24 is the base size.
+[41:23] Let's double-click there, and I'm gonna say base size. And what I can do is I can come over here, and I can tell it just that.
+[41:32] I'm gonna click the little thing. Makeâ¦ Oh, , allow all visits to site. So make a type scale with this type.
+[41:39] Create eight total sizes. Make variables to go along with it. Variables for font name, weight, font size, line height, and
+[41:45] letter spacing for each size. Oh, is it even reading my microphone? It's not listening to my microphone.
+[41:51] Oh, 'cause I'm using my fancy microphone. Okay, I'm gonna have to type it in. Make a type scale with this type.
+[42:01] , Make a new variable collection. , Create eight total sizes based off my main font size.
+[42:14] I could even ask it, , a- give me options. Give me options for different type si-
+[42:25] Scales, that's gonna be key. , And then create variables for font family, weight, font size, line height,
+[42:41] and letter spacing For each size,
+[42:47] and then what it's gonna do, it's gonna take a look at that font, and it's gonna generate a table for me in my variables, something that I can then work with.
+[42:55] I can even prompt it to generate those styles for me, but what's great is it's not just making it and then it's done and over with.
+[43:03] I can then go in, I can tweak those values. It gives me a really good starting point.
+[43:08] , You can also make plug-ins with the Figma agent. So with the Figma agent, instead of having to prompt and prompt and prompt,
+[43:18] if you find yourself doing a repeated action over and over again, you can use
+[43:23] that agent to make a plug-in for it. So an example plug-in that I've made that is available in the Figma
+[43:30] community is called Color Variables from Image, just to give you a bit of inspiration on how that can work.
+[43:35] If you click on the canvas, you should see Tools, Color Variables
+[43:41] from Image as part of this file. When I click on it, then I get this little dialogue.
+[43:48] I can select this image. I can load the image, and this is what a plug-in looks like.
+[43:53] This plug-in was built by asking the agent to make it, and then editing with
+[44:00] the agent to make it a little bit better. So what this does is it takes that image and will then make a plug-in for me.
+[44:09] I can have it make color variables and create color ramps. So now this plug-in, once it's made, doesn't use AI credits.
+[44:18] So it'll use AI credits to make the plug-in, but once you have it, once you have that repeatable thing that you can use again and
+[44:26] again, now I can build a palette. Boom, look at what that plug-in just did. It made a palette based off of this image, and it has color ramps,
+[44:37] and each one of these colors are now associated with a variable.
+[44:42] If I go to my variables panel, I can see there's an extracted palette collection
+[44:47] that now has all of the colors that I just generated with that plug-in.
+[44:53] So the agent allows you to make prompts and make ax- , make, make, make changes,
+[45:00] so it's just gone, and it says, "Which type scale ratio would I like to use?" There's different type scale ratios.
+[45:06] I can actually ask it to learn more of each one, but I'm gonna use this minor third.
+[45:12] It's even telling me what is it for. So it's balanced, versatile for most projects.
+[45:17] I can click on that, and then what it's gonna do, it's gonna continue to work on that, and it's gonna take- this base font and it's going to now work and it's
+[45:27] going to put that into the variables. So whatever you can ask the agent to do, it will do.
+[45:36] If you wanted to make styles, if you wanted to generate, , font recommendations, if you wanted to generate a new typographic scale
+[45:44] for you for use in your designs. , You can even ask it to make a new mode and you can say, "Hey, give me a new mode
+[45:52] for experimentation." You can delete that mode, you can edit that mode, and it just gives you the opportunity to scale your own process in working with that type
+[46:04] Okay. So, , also, yeah, you can make plugins with the agent for your needs.
+[46:09] So you can make a plugin to create variables and composite styles for my type
+[46:16] with a custom name for your typography. Check it out, the agent's now done, and it's even told us what it's done.
+[46:23] I've created a type scale variable collection using minor third ratio with your Biorhyme base at 24.
+[46:29] Here's a summary of the eight sizes. So it's created extra small, small, medium, large, XL, 2XL, 3XL, 4XL.
+[46:37] Each has five variables, font family, font weight, and we can now look that up, and
+[46:44] we can see where is our new type scale. Here it is. So here's Biorhyme 400, 12, 16, 12, and you can see it's actually
+[46:54] built out all of these values. And so the next thing I can do is say, "Create styles that are
+[47:03] composites of all of these." So one way of working is, yes, you can apply, you can build these manually.
+[47:12] Once you understand the concept, you can then begin to prompt and explore
+[47:17] and then work with those variables right here that can now be applied. So I can say, I can call this my agent scale.
+[47:25] And it's generated all of those for me. , And then so I can say, "From the collection agent scale, please
+[47:36] create, - Ooh, here we go. Please create a specimen on the canvas demonstrating all of the type sizes.
+[47:52] And so what it's gonna do is it's gonna generate on the canvas a specimen
+[47:58] that's bound to all of those variables. And we're gonna let that go, , do its thing while we wrap up.
+[48:04] And so you can prompt that of the agent, and if you find that you're
+[48:10] asking it the same thing over and over again, you can instead make a plugin that just does it for you.
+[48:18] So in the same way that I created a plugin that looks at an image and creates color variables, and so once again, I can open this up.
+[48:27] I could take a different image entirely. I can go to unsplash.com.
+[48:34] I can grab, , an image from here. Let's grab an image. I'm just gonna copy that image.
+[48:41] And here I can paste that image. I can select the, , the plugin
+[48:51] Load image And I can choose where the colors are coming from.
+[48:57] I can reduce the amount of colors. I can sort it by hue, and I can make variables and create ramps,
+[49:04] and I can build that palette. And there we go. I have a new color palette that I can work with that has variable
+[49:11] ramps for light and darks. And then in addition, if I made like a little design,
+[49:17] so like, let's say I have a little circle here, and, , I use this circle, so do,
+[49:24] do, to make, , like a little palette thing, so I have little pieces here.
+[49:31] Oops, let me just rotate that. So if I have this circ- these circles, I can apply to the selection with variables.
+[49:39] So there we go. Oh, and check it out. Our agent has made our scale on the canvas.
+[49:49] So by asking the agent, it has now added all the text with all the bound
+[49:54] variables to the canvas to show this. Now, if I wanted to make an alternate mode with enter, , I can do that.
+[50:03] So the agent is gonna work off of using plain language prompts.
+[50:08] You can then ask the agent to make a plugin to do that for you.
+[50:14] So you can say, "Make a plugin to create variables and composite styles," , or to create type specimens.
+[50:20] , The world is your oyster. So, , as you are learning to like work and build with typography in
+[50:30] your designs, start to think about how you can build systems with your type.
+[50:35] , How you can, , then build those structures for typographic hierarchy, and then how
+[50:41] that may change across different designs using the properties, that we have here.
+[50:47] , So the last thing I'm gonna do here is I'm gonna select this, and I'm gonna say, , for, each type size in this specimen generates
+[50:58] a, , local style, , , in this file. And actually I'm gonna check one thing.
+[51:05] So the one thing that I notice is that it's not actually applying the font to the, to the weight and to the, , the font right here.
+[51:14] So I'm gonna say, ensure that the font family and font weight is bound
+[51:25] to the variables in the collection. And so sometimes you need to correct it on its work.
+[51:33] That's gonna be a thing that you need to do, unfortunately. But you need to be mindful, you need to be thinking about it, you need to
+[51:40] engage with it, you need to critique it And you need to work with it, , to get the outputs that you're looking for, and then it ultimately scales your efforts.
+[51:49] , Let's, let's see. Can you create a light/dark mode for this type scale variables? Absolutely.
+[51:54] - So, , you can say create a light dark mode. One thing that you might do when creating for a dark mode is to use
+[52:01] the, , the, , , the, the letter spacing and open that up just because of the way that white text sort of, , , appears on a darker background.
+[52:10] And so all right, that's gonna go building and then I'm gonna hop into questions.
+[52:16] How do you incorporate accessibility into prototyping with Figma?
+[52:21] , So it depends on what type of accessibility you are attempting and trying to accomplish.
+[52:27] , So there is a screen reader with our prototyper. , Ultimately, it's gonna depend on what it is you're trying to do.
+[52:34] , Figma employs accessibility on a number of different levels. Like if I hit, , Command K, Control K on Windows, and I type in accessibility
+[52:42] settings, you'll see that there's actually a lot of accessibility baked into the Figma interface itself.
+[52:49] So if I go to accessibility settings, I can adapt content for screen readers, I can underline links in the UI, I could simplify focus navigation, I can
+[52:57] employ enhanced contrast mode, which is gonna contrast the navigation. So what I would recommend is that, think of what you're trying to accomplish
+[53:06] and how it can then be accomplished. So oftentimes modes in variables in Figma is used to create accessibility
+[53:13] modes such as high contrast modes, or with motion variables you can actually do reduced motion.
+[53:20] So the accessibility question has to be with qualifying, like what type
+[53:25] of accessibility are you looking to accomplish, whether it be screen reader accessibility, , whether it be, , , having captioning and things
+[53:32] like that, because it's a wide gamut and it's an attunement, in terms of what it is you're trying to accomplish.
+[53:38] Is it poss- oh, , one other thing too, color accessibility is baked in, so if I wanna test the color accessibility, this little option right here checks
+[53:47] your color contrast, tells you when your color contrast is not right, then I can click, and then it will then apply it.
+[53:54] So as I change that background color, , it'll match whatever the
+[54:00] foreground is against the background. So if it goes to low contrast, you can click here and then it will accommodate.
+[54:06] You can also go into these settings and then change what is the category, whether it's graphics, large text, normal text, , and what type of
+[54:15] accessibility you're trying to go for, double A or triple A. Is it possible to change the view of my variables from full screen to a modal like yours?
+[54:23] Absolutely. You're, , all it is is this little button right here. So when you enable variables, it starts off as full screen.
+[54:30] You wanna click here, and then it will get minimized, and then it'll be a modal. So great question, and I'm sorry that I did not address that earlier.
+[54:38] How to name H1, H2, and H3 if you can help with strategy. It's confusing me. So it's all in what you're trying to do.
+[54:45] You'll notice the other variable mode was set as like small, medium, large. What you need to do is you need to think about what it is you're designing for.
+[54:54] So if you are designing for a website, what is the level of detail you need to accomplish?
+[55:01] You m- every-- as you design each component of your website, such as your header, your paragraph text, your body, as you start to go into new
+[55:10] pages, each body of text or every bit of text in that website has a function.
+[55:15] And so thinking about the function of it and how is it expressing that function, that then can help you name what you want those to be.
+[55:24] So if you want to be more specific and say footer text, if you want to be more specific and say article paragraph, that can then give you
+[55:33] more qualifiers as to the naming of that specific text's properties.
+[55:39] So think of the text function when you're applying it. So great question.
+[55:44] How does AI help with this in Figma agents instead of manually doing it? I think I just, I answered a, a lot of that.
+[55:51] I wonder if that was just asked earlier. So the agents can help you create variables, apply variables, , it can
+[55:58] make recommendations, it can make recommendations on type scale, , it could even evaluate your design.
+[56:04] You can apply your design to a text, , to a, a layout, and
+[56:09] here you can ask for a critique. And so right here, I can select this frame.
+[56:15] I can go to the, , the Figma agent with this frame selected, create a new
+[56:20] chat, and say, "Critique This slide for readability, and so if you say
+[56:30] critique the slide for readability, it might take into account that if you are presenting this in a room, that that body text might be a bit small.
+[56:40] So w- you can ask it for a critique, , all right, cool. So it's evaluated it, and it's given me an entire critique.
+[56:47] So what's working well? Strong visual hierarchy at the top, good type pairing, balanced composition.
+[56:52] There's some readability concerns, I mentioned that. Detailed text is too small at 14 pixels, body text is dense for a slide,
+[57:00] the body text is a little bit dense for a slide. There's a big hierarchy jump, so the hierarchy jump from membrane systems
+[57:07] to this body text maybe is a bit jump. Subheadline doesn't stand out enough. This is the subheadline, so it's not standing out enough.
+[57:14] Low contrast on small text. So once again, thinking about that accessibility, there's low
+[57:20] contrast on this small text. That's an adjustment that I may then want to make. So my recommendations for Agent, when you have these bulk tedious tasks
+[57:29] working with variables, use the Agent. If you wanna make a plugin that will support a repeated process that
+[57:36] you've been doing over and over again, use the Agent and make a plugin. You wanna run a critique to see how your type is working in a given
+[57:44] context, such as a website or a slide, ask the Agent for a critique. , that's gonna be all.
+[57:50] Thank you so much for joining, And, , happy designing, y'all.

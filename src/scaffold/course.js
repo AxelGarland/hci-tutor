@@ -50,7 +50,10 @@ function derived() {
 export function lessonItems(lesson) {
   const cards = (lesson.cards ?? []).map((c) => ({ ...c, kind: 'card', lesson }))
   const quiz = (lesson.quiz ?? []).map((q) => ({ ...q, kind: 'quiz', lesson }))
-  return [...cards, ...quiz]
+  // An `exact` item has one canonical answer, so the app checks it rather than
+  // asking the reader to grade themselves. See `match()` in RecallItem.
+  const exact = (lesson.exact ?? []).map((e) => ({ ...e, kind: 'exact', lesson }))
+  return [...cards, ...quiz, ...exact]
 }
 
 export function lessons() {
@@ -76,7 +79,10 @@ export function designNotes() {
 /** Course stats for the home screen. */
 export function courseStats(c) {
   const ls = c.modules.flatMap((m) => m.lessons)
-  const items = ls.reduce((n, l) => n + (l.cards?.length ?? 0) + (l.quiz?.length ?? 0), 0)
+  // Counted through lessonItems so "what is an item" has exactly one definition.
+  // The previous version summed cards and quiz by hand and silently undercounted
+  // the moment a third kind was added.
+  const items = ls.reduce((n, l) => n + lessonItems(l).length, 0)
   return {
     chapters: ls.length,
     modules: c.modules.length,

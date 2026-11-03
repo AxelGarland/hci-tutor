@@ -1,0 +1,149 @@
+# How to make the most of the Figma agent
+# https://www.youtube.com/watch?v=eeJ7d0V2ayU
+# Transcript captured from YouTube's own transcript panel, 2026-11-03
+
+[0:02] Working with the Figma agent uses AI
+[0:04] credits and prompting well can make a
+[0:06] real difference in how efficiently you
+[0:07] use them. In this video, we'll walk
+[0:10] through some best practices to help you
+[0:12] get more out of Figma's agent.
+[0:16] When beginning work with the agent, take
+[0:18] a moment to state your needs as clearly
+[0:20] as possible in your initial prompt.
+[0:21] Include the scope, requirements, and any
+[0:24] specific expectations you have for the
+[0:26] agent. Including this context may cost
+[0:29] more credits upfront, but can help
+[0:30] reduce rework down the line. For
+[0:33] example, instead of prompting something
+[0:35] like, "Design [music] a settings page,"
+[0:37] try, "Design a mobile first settings
+[0:39] page with sections for account,
+[0:41] notifications, and billing." And use our
+[0:44] existing sidebar navigation pattern.
+[0:48] Keep in mind that open-ended tasks like
+[0:51] generating a design from scratch or
+[0:53] building a plugin require the agent to
+[0:55] reason and explore using more credits
+[0:57] and time. Well-defined tasks like
+[1:00] updating a text layer across several
+[1:02] frames typically cost less because
+[1:04] there's less ambiguity for the agent to
+[1:06] work through. Both are valuable ways to
+[1:09] use the agent and including details up
+[1:11] front will help keep the agent on task.
+[1:16] When including context in your prompts,
+[1:18] like attachments, connectors, and
+[1:20] frames, only bring in what the task
+[1:22] actually needs rather than casting a
+[1:24] wide net. Each of these can increase
+[1:26] credit usage, so including irrelevant
+[1:29] context costs credits without adding
+[1:31] value. If you're using a connector,
+[1:33] point it to the specific document or
+[1:35] file that's relevant rather than a broad
+[1:37] search. And when it comes to canvas
+[1:39] context, scope your selection to the
+[1:41] frame or layer you're working on, not
+[1:42] the whole page. Watch out for
+[1:44] redundancy, too. If the same information
+[1:47] already lives in a skill you're using, a
+[1:49] connected file, and your prompt, the
+[1:51] agent processes all three. Before you
+[1:53] send a prompt, check whether any of that
+[1:55] context is overlapping and trim what's
+[1:58] already covered elsewhere.
+[2:02] Continuing to chat with the agent in one
+[2:04] conversation means the agent carries
+[2:06] forward all that conversation's [music]
+[2:08] history. This can be helpful to build
+[2:10] context for related tasks. But as a chat
+[2:13] gets longer, it increases credit usage,
+[2:15] even for simple prompts. When you're
+[2:17] switching to a new task or taking your
+[2:19] work in a different direction, start a
+[2:21] new chat instead. Multiple chats can run
+[2:24] at the same time, so you don't have to
+[2:25] wait for the agent to finish working
+[2:27] before [music] starting something new.
+[2:32] Skills are reusable sets of context or
+[2:34] instructions that guide the agent on how
+[2:36] to respond to prompts. So, you don't
+[2:38] have to explain information like
+[2:39] standards or processes in each prompt.
+[2:42] For example, you might use a skill to
+[2:45] add motion to a frame or add
+[2:46] documentation to your design system.
+[2:49] This helps get things right [music] on
+[2:51] the first try, cutting down on
+[2:53] unnecessary back and forth with the
+[2:54] agent. You can create your own skills or
+[2:57] leverage skills from the Figma
+[2:58] community.
+[3:02] If you find yourself using the agent to
+[3:04] do a specific task over and over,
+[3:06] consider turning that into a generative
+[3:08] plugin. You can use plugins for well-
+[3:11] definfined, repeatable jobs, like
+[3:13] auditing a file for unused variables,
+[3:16] flagging unnamed layers, or applying
+[3:18] naming conventions across components. It
+[3:21] costs credits to work with the agent to
+[3:22] build plugins, but once the plugin is
+[3:25] built, future runs cost zero credits
+[3:27] since they don't rely on the agent at
+[3:29] all.
+[3:32] Both skills and plugins help you work
+[3:33] with the agent more efficiently, just in
+[3:35] different ways. Skills give the agent
+[3:38] context, so a single prompt gets you
+[3:40] closer to what you want, saving you
+[3:41] credits it take to correct after the
+[3:43] fact. They are great for tasks that
+[3:45] require AI for reasoning, [music] but
+[3:47] you want to provide some guidelines.
+[3:49] Plugins go a step further. By building a
+[3:52] plugin, you're defining repeatable logic
+[3:54] and UI controls up front, so future runs
+[3:57] don't consume credits at all. They're
+[3:58] great for tasks that don't require AI
+[4:01] because they [music] follow the same set
+[4:02] of steps each time.
+[4:06] If you have a question about how a
+[4:08] feature works or how to use Figma, ask
+[4:10] Fig. Figma's support chatbot instead of
+[4:13] the agent. Fig is built to answer
+[4:15] questions about Figma's products for
+[4:17] free, while the agent supports product
+[4:19] design and development work. Using the
+[4:21] right one for the right job means you're
+[4:23] not spending credits on something that
+[4:24] doesn't need them.
+[4:28] Now that you know how to prompt
+[4:30] efficiently, let's cover how to keep
+[4:31] track of what you're actually spending.
+[4:33] When working with the agent, you can
+[4:35] hover over this icon to see exactly what
+[4:37] a prompt costs you. Over time, you'll
+[4:39] learn what types of prompts cost more.
+[4:42] You can also check your credit balance
+[4:43] from the menu at any time. Keep in mind
+[4:46] that other Figma features draw from the
+[4:48] same credit balance. When planning out
+[4:50] your credit usage, it's important to
+[4:52] keep in mind that credit costs depend on
+[4:54] a number of factors, and even the
+[4:56] [music] same prompt can vary in cost
+[4:58] from one run to the next. There's no way
+[5:00] to guarantee the cost of a prompt ahead
+[5:02] of time. So, it's worth planning with
+[5:04] some flexibility. If you run out of
+[5:06] credits, you may be able to request more
+[5:08] from your admin. Depending on your plan
+[5:10] setup, they'll be notified to approve or
+[5:13] deny your request. Now you know how to
+[5:15] make the most of your credits and how to
+[5:16] track your usage as you work. To learn
+[5:18] more best practices for working with the
+[5:20] agent, check out our help center.

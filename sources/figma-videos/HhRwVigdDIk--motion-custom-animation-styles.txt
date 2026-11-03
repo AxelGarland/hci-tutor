@@ -1,0 +1,29 @@
+# Figma Motion basics: Custom animation styles
+# https://www.youtube.com/watch?v=HhRwVigdDIk
+# Transcript captured from YouTube's own transcript panel, 2026-11-03
+
+[0:00] [soft upbeat music] Let's learn about custom animation styles.
+[0:03] Custom animation styles let you define your brand's motion language and create
+[0:07] reusable animations that can be applied to any object.
+[0:11] Custom animation styles can be created from one or more preset animations.
+[0:15] First, use the animation settings in the right sidebar to configure the animations
+[0:20] you want to include in the style.
+[0:23] These animations can also use timing and easing variables, letting you create
+[0:27] motion that is consistent with your company's motion design system.
+[0:35] When you're done,
+[0:36] open the animation settings and click Create Style.
+[0:41] Give your style a name and description,
+[0:44] then review the list of animations to make sure all should be included in the custom
+[0:47] style.
+[0:49] You can click the eye icon to temporarily hide an animation
+[0:53] or click the minus to remove it entirely.
+[0:56] When you're happy with the configuration, click Create Style again to save it.
+[1:03] Once created, you can apply your styles from the animation settings.
+[1:08] Custom animation styles can also be referenced in prompts or through custom
+[1:11] skills when using the Figma agent to create motion.
+[1:17] If you're on a paid plan, you can publish animation styles to a design library so
+[1:21] your whole team or organization can use them, just like text and effect styles.
+[1:27] To update an animation style, deselect everything on the canvas, then click Edit
+[1:31] Style next to it in the list of animation styles to access the settings.
+[1:36] To delete an animation style, right-click on it and select Delete.
+[1:39] [soft upbeat music]

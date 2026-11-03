@@ -321,6 +321,20 @@
           "answer": 1,
           "why": "For users with vestibular disorders, parallax and large transitions can cause nausea and dizziness. The setting is a health accommodation."
         }
+      ],
+      "exact": [
+        {
+          "id": "ch16e1",
+          "prompt": "Typical duration range for functional animation, in milliseconds",
+          "accept": [
+            "200-500",
+            "200–500",
+            "200 to 500",
+            "200-500 ms",
+            "200–500 ms"
+          ],
+          "note": "Functional animation supports object constancy and perceived causality (Chang & Ungar, UIST 1993). Outside this range it reads as either a glitch or a wait."
+        }
       ]
     },
     {
@@ -510,6 +524,26 @@
           ],
           "answer": 1,
           "why": "Plain language, consistent navigation and error tolerance receive far less attention than sensory accommodations, despite affecting a large population."
+        }
+      ],
+      "exact": [
+        {
+          "id": "ch17e1",
+          "prompt": "Which WCAG conformance level does nearly all legislation target?",
+          "accept": [
+            "AA",
+            "level AA",
+            "aa"
+          ],
+          "note": "A and AAA exist, but AA is the practical bar — it is what the law asks for and what this app's own contrast checks are measured against."
+        },
+        {
+          "id": "ch17e2",
+          "prompt": "In what year did WCAG 2.2 become a W3C Recommendation?",
+          "accept": [
+            "2023"
+          ],
+          "note": "It organises everything under the four POUR principles — Perceivable, Operable, Understandable, Robust."
         }
       ]
     },

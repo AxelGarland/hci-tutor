@@ -389,6 +389,18 @@
           "answer": 1,
           "why": "Total latency is unchanged. Streaming exploits motion-based attention capture and supplies the continuous feedback that the classic latency thresholds demand."
         }
+      ],
+      "exact": [
+        {
+          "id": "ch02e1",
+          "prompt": "Preattentive features are detected in under how many milliseconds?",
+          "accept": [
+            "250",
+            "250ms",
+            "250 ms"
+          ],
+          "note": "Treisman & Gelade's Feature Integration Theory (1980). Under 250 ms and without serial search is what makes pop-out a budget you spend, not an effect you add."
+        }
       ]
     },
     {
@@ -578,6 +590,21 @@
           ],
           "answer": 2,
           "why": "The capacity limit is about what the user can hold in mind, so the fix is to put state on the screen. Target size is Fitts, progress is feedback, option count is Hick."
+        }
+      ],
+      "exact": [
+        {
+          "id": "ch03e1",
+          "prompt": "How many chunks does working memory hold under realistic conditions?",
+          "accept": [
+            "3-4",
+            "3–4",
+            "3 to 4",
+            "three to four",
+            "3-4 chunks",
+            "3–4 chunks"
+          ],
+          "note": "Cowan 2001. The familiar 7±2 is the folk version and overstates it — almost every memory heuristic in the course is downstream of this one number."
         }
       ]
     },
@@ -783,6 +810,20 @@
           ],
           "answer": 1,
           "why": "Voice's Achilles heel is repair: with nothing on screen to select, correcting a misrecognition means re-uttering rather than pointing."
+        }
+      ],
+      "exact": [
+        {
+          "id": "ch04e1",
+          "prompt": "Minimum touch target size in millimetres, roughly",
+          "accept": [
+            "7-10",
+            "7–10",
+            "7 to 10",
+            "7-10 mm",
+            "7–10 mm"
+          ],
+          "note": "A finger cannot be aimed as precisely as a cursor and its contact patch is large relative to small controls."
         }
       ]
     },

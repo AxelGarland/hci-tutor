@@ -1,0 +1,181 @@
+# Code to Canvas: Claude Code | Figma
+# https://www.youtube.com/watch?v=C0fNUdjQxeY
+# Transcript captured from YouTube's own transcript panel, 2026-11-03
+
+[0:00] Hi, this is Anna from Figma and today I
+[0:03] want to show you how you can bring your
+[0:04] designs from code into the Figma design
+[0:07] canvas and then push those updates back
+[0:09] to code. Ideas can come from anywhere.
+[0:13] They could start in a document, maybe in
+[0:15] a design in Figma, or maybe you're
+[0:17] starting to come up and flush out that
+[0:19] idea in code. Wherever those ideas come
+[0:22] from though, it's helpful to have the
+[0:24] shared canvas as a place where you can
+[0:26] see your ideas side by side to riff on
+[0:29] teammates ideas to do some collaborative
+[0:32] ideiation exploration before returning
+[0:34] back to riffing and iterating on your
+[0:37] own. So, one way that you can do this is
+[0:40] starting from cloud code. So, let's get
+[0:43] started with that. You can see here I've
+[0:46] got cloud code open in my terminal.
+[0:48] [music]
+[0:49] And in order to allow you to send those
+[0:52] designs over to Figma, I need to enable
+[0:55] the Figma MCP. You can do this in a
+[0:58] couple of different ways. One is if you
+[1:00] write forward slashplugin,
+[1:03] this is going to give you a list of
+[1:05] different plugins that are supported by
+[1:07] claude code. So if [music] I go into the
+[1:10] search bar, I can type in Figma. And you
+[1:15] can see here this allows you to uh
+[1:18] integrate [music]
+[1:19] with the Figma MCP. So whether that is
+[1:21] bringing context from your Figma designs
+[1:24] into cloud code or creating Figma design
+[1:28] layers from your coded prototypes. A
+[1:31] second way that you can do this is
+[1:33] outlined in our developer documentation.
+[1:36] So let's escape out of this plugins and
+[1:38] go to our dev docs. This is a really
+[1:40] great resource to learn about just all
+[1:42] things Figma MCP. Um, but in here you
+[1:46] can see I can also add uh this command
+[1:50] cla MCP add transport. So I'll copy that
+[1:55] and paste it in. Uh let me first exit
+[1:59] out
+[2:00] of Claude.
+[2:04] type in MCP.
+[2:06] And then you can see here that it's
+[2:08] asking me to authenticate. So I'm going
+[2:11] to go ahead click enter. [music] Let's
+[2:13] authenticate.
+[2:15] And it'll go ahead and open up the
+[2:17] browser asking me if I would like to
+[2:20] give Claude access to my Figma.
+[2:23] All right. And
+[2:26] now let's go back. Okay. So, now that
+[2:30] we've got the Figma MCP server set up
+[2:32] with Cloud Code, it's time for me to
+[2:35] actually start bringing my designs over.
+[2:38] I'm going to [music] start out first by
+[2:40] opening my code file. So, I'm just going
+[2:42] to go to my downloads.
+[2:47] Uh CD is basically the way that you can
+[2:49] say where you want to access your files.
+[2:53] And um I want to access this tap to
+[2:56] table.
+[3:00] So I've been working on this little like
+[3:03] recipe browsing app experience. Okay,
+[3:07] great. And now to actually be able to
+[3:10] see this design, I'm going to just ask
+[3:13] Claude to uh run my app locally.
+[3:19] And basically what this will do is it's
+[3:21] going to uh open up localhost in my
+[3:25] browser and that's going to be where I
+[3:27] can actually preview and interact with
+[3:29] my coded prototype. Okay. So it says
+[3:32] it's running at localhost. So let's just
+[3:35] copy
+[3:37] and paste that in. And yeah, you can see
+[3:41] I've got my app here. So we've got some
+[3:43] different recipes. We have like this
+[3:45] filtering functionality. And it's um
+[3:48] it's looking okay, but I think I do want
+[3:50] to refine some of the designs for this
+[3:52] filtering a little bit. So um what I
+[3:56] want to do next is let's actually bring
+[3:58] this into the Figma canvas. And [music]
+[4:00] so what I'm going to do is I have a
+[4:02] Figma file here that I want to work in.
+[4:05] I'm just going to go ahead and uh share
+[4:08] copy the link to the Figma file.
+[4:12] And then going back to Claude, I'm going
+[4:15] to say uh send
+[4:18] this app to this Figma file. And I'll
+[4:23] just paste the link into it. Um you can
+[4:25] ask it to just send it to Figma and
+[4:27] it'll prompt you whether there's like a
+[4:30] particular file that you want to put it
+[4:31] in or if you want to create a new one.
+[4:33] [snorts] Um but yeah, if there's one
+[4:34] that you already want to use, go ahead
+[4:36] and just paste the link in there. Um
+[4:38] yes, I would like to proceed. So, it's
+[4:41] going to go ahead and use the MCP to
+[4:43] generate a Figma design off of um my
+[4:47] coded design. All right,
+[4:50] you can see it's popped up. It's saying
+[4:52] it's sending to Figma.
+[4:55] And uh yeah, here we go. We can see that
+[4:58] it's gone ahead and dropped that in. Um
+[5:01] I can also choose to uh select a
+[5:04] particular element. So, if I want to
+[5:06] open up this filter panel and just send
+[5:08] that, I'll open it up and select it. And
+[5:12] if I wanted to even like send other
+[5:15] screens that aren't my main starting
+[5:17] points, um, I can also do that [music]
+[5:19] as well. So, I can navigate here and I
+[5:20] can choose to send this entire recipe
+[5:23] detail screen.
+[5:25] And if we go in, you can see both of
+[5:28] these are dropped in here. These are
+[5:30] real Figma design layers. So, you can
+[5:33] see it's created frames. It's even
+[5:34] applied auto layout to stuff, which is
+[5:36] pretty great. Um, and so I can make some
+[5:40] design changes [music] to them now that
+[5:41] it's dropped into the Figma canvas. Um,
+[5:44] but looking over here, I've already done
+[5:46] some different explorations on what are
+[5:49] some different ways we could approach
+[5:50] the filtering panel. And um, I'm feeling
+[5:54] this one here. So, uh, let's go ahead
+[5:58] and bring that back to my coded
+[6:00] prototype. So, to do that, I'm going to
+[6:02] just click on this
+[6:04] right click and go to copy paste as and
+[6:08] copy a link to the selection or you can
+[6:10] use a shortcut command L. And I'm going
+[6:14] to go back to Claude and I'm going to
+[6:17] say update the filter panel to match
+[6:23] this design.
+[6:26] Paste that in.
+[6:29] All right. So, looks like Claude just
+[6:32] finished making some updates. So,
+[6:34] [music] it said it's updated the filter
+[6:36] panel to match the Figma design. So, the
+[6:38] header, the time, the cuisine. Um, okay.
+[6:42] So, let's go back to our design in local
+[6:44] host and see what it looks like. And
+[6:47] yeah, looks like it went ahead and
+[6:50] updated it, which is pretty awesome.
+[6:53] So just to recap [music] in this video
+[6:56] we covered how you can bring your
+[6:58] designs from code into the Figma canvas
+[7:01] for further iteration and ideation maybe
+[7:04] even collaboration with your teammates
+[7:06] and then bringing those updates back
+[7:08] into code. I think no matter what you
+[7:11] know design is a fluid experience
+[7:13] there's no one right way to design and
+[7:16] we don't want to force people into
+[7:18] following any specific workflow. So
+[7:21] whether you like working with Figma
+[7:22] design canvas, whether it's in code,
+[7:24] whether you want to go back and forth,
+[7:26] uh I really hope that this helps you
+[7:28] kind of accelerate your design process
+[7:30] with AI and give you the freedom to
+[7:33] really explore a bunch of different
+[7:35] creative ideas while still being able to
+[7:37] build these concepts quickly.
+[7:40] I hope you guys take a chance to [music]
+[7:42] check this out, play around with it, and
+[7:45] we would love to hear your feedback. And
+[7:48] happy designing.
+[7:50] [music]
