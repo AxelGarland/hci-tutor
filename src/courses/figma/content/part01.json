@@ -1,0 +1,633 @@
+{
+  "id": "fgp01",
+  "title": "I — Layout That Holds",
+  "lessons": [
+    {
+      "id": "fg01",
+      "number": 1,
+      "title": "The Three Flows, and Picking the Right One",
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Name the three auto layout flows and what each one does to its children",
+            "Predict what wrap produces in a horizontal versus a vertical flow",
+            "Choose between a wrapping flow and a grid for a given layout"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Auto layout is the mechanism that makes a layout respond to its contents instead of being positioned by hand. Without it you place objects at coordinates, and every change to the content means moving them again. With it you describe a relationship — these items sit in a row, eight pixels apart, with sixteen pixels of breathing room around them — and the layout recomputes itself when the content changes. That difference is the whole distinction between designing a screen and designing a system."
+        },
+        {
+          "type": "p",
+          "text": "It is also the first thing to learn, because almost everything else depends on it. Components are reusable because their internals reflow. Variables for spacing are useful because something consumes them. A prototype transition looks right because the two frames it animates between are built the same way. Start here and the rest compounds; skip it and you will rebuild every file by hand."
+        },
+        { "type": "h", "text": "Three flows" },
+        {
+          "type": "list",
+          "items": [
+            "Vertical — children stack top to bottom.",
+            "Horizontal — children sit left to right.",
+            "Grid — children occupy cells in rows and columns."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Figma guesses when you apply auto layout: it \"will try to determine which auto layout flow ... you want to use.\" The guess is based on how the objects are already arranged, and it is frequently right, which is exactly why it is worth knowing that it is a guess. You can switch to a different flow at any time, and the layout will rearrange to match."
+        },
+        { "type": "h", "text": "Wrap belongs to the flows, not to the grid" },
+        {
+          "type": "p",
+          "text": "Horizontal and vertical flows can wrap: when the children no longer fit along the axis, they continue on a new line. A horizontal flow wraps into a new row — the behaviour you want for a tag list, a chip set, or a gallery of cards that should reflow as the frame narrows. A vertical flow wraps into a new column."
+        },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "\"Vertical wrap is not a masonry layout.\" A wrapped vertical flow fills one column, then starts the next. It does not pack items of differing heights into the shortest available slot."
+        },
+        {
+          "type": "p",
+          "text": "That sentence exists in the documentation because the expectation is so common. Masonry is the Pinterest arrangement — ragged, height-packed, no visible rows. Vertical wrap produces columns. If you reach for it expecting masonry you will get something orderly and wrong, and you will spend an hour looking for the setting that fixes it. There isn't one."
+        },
+        { "type": "h", "text": "The grid is a different promise" },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "\"Objects in a grid don't wrap to the next line.\" A grid places children into cells; it does not flow them along an axis and break when they run out of room."
+        },
+        {
+          "type": "p",
+          "text": "In exchange, grid children can span rows or columns — a hero cell two columns wide above four single-column cells, held in one structure. Rows and columns can be resized. This is the flow for layouts whose shape is the point: a dashboard, a pricing table, a bento arrangement where certain cells are deliberately bigger than others."
+        },
+        {
+          "type": "p",
+          "text": "So the choice is a question about intent. Do these items form a sequence that should reflow when space changes — a row of tags, a list of messages, a set of cards? Use a wrapping horizontal or vertical flow. Do they occupy positions in a structure that should survive a resize — a grid of tiles where the big one stays big? Use the grid. Reaching for the grid because a layout looks grid-shaped is the common error; what matters is whether the arrangement is a sequence or a structure."
+        },
+        {
+          "type": "callout",
+          "text": "Auto layout is available on all plans and needs edit access to the file. In Figma Slides and Figma Buzz it works in design mode and requires a Full seat."
+        },
+        {
+          "type": "exercise",
+          "text": "Take any screen you use daily and find one group of repeating elements — a tag list, a nav, a row of cards. Decide, before you touch Figma, whether it is a sequence or a structure. Then build it with the flow your answer implies, add two more items than it was designed for, and narrow the frame until it reflows. If the arrangement collapses into something nonsensical, you chose the wrong flow — which is the point of the exercise."
+        }
+      ],
+      "cards": [
+        {
+          "id": "fg01c1",
+          "front": "Which auto layout flows support wrap?",
+          "back": "Horizontal and vertical only. The grid does not wrap — its children occupy cells."
+        },
+        {
+          "id": "fg01c2",
+          "front": "What does wrap produce in a vertical flow?",
+          "back": "A new column. Explicitly not a masonry layout — it fills one column, then starts the next."
+        },
+        {
+          "id": "fg01c3",
+          "front": "What can grid children do that children of a wrapping flow cannot?",
+          "back": "Span rows or columns. Rows and columns can also be resized."
+        },
+        {
+          "id": "fg01c4",
+          "front": "When you apply auto layout, how does Figma choose the flow?",
+          "back": "It guesses from how the objects are already arranged, and you can switch flow at any time."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fg01q1",
+          "question": "You need a tag list that continues onto a second line as tags are added and as the frame narrows. Which flow?",
+          "options": [
+            "Grid, because the tags form rows",
+            "Horizontal with wrap enabled",
+            "Vertical with wrap enabled",
+            "Any flow — wrap is a frame-level setting independent of flow"
+          ],
+          "answer": 1,
+          "why": "A tag list is a sequence that should reflow, which is what horizontal wrap does — it continues onto a new row. A grid would hold the tags in fixed cells instead of letting them flow, and vertical wrap would produce columns.",
+          "key": "horizontal, with wrap"
+        },
+        {
+          "id": "fg01q2",
+          "question": "A designer sets a vertical flow to wrap, expecting a Pinterest-style ragged arrangement. What do they get?",
+          "options": [
+            "A masonry layout, which is what vertical wrap is for",
+            "Columns — items fill one column, then start the next",
+            "An error; vertical flows cannot wrap",
+            "Rows, because wrap always produces rows"
+          ],
+          "answer": 1,
+          "why": "Vertical wrap fills a column and starts another. The documentation states outright that it is not a masonry layout, because the expectation is common enough to need correcting — masonry packs items of differing heights into the shortest slot, and nothing in auto layout does that."
+        }
+      ],
+      "exact": [
+        {
+          "id": "fg01e1",
+          "prompt": "How many auto layout flows does Figma offer?",
+          "accept": ["3", "three"],
+          "note": "Vertical, horizontal and grid. Only the first two can wrap."
+        }
+      ]
+    },
+
+    {
+      "id": "fg02",
+      "number": 2,
+      "title": "Padding and Gap",
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Distinguish padding from gap and say which belongs to the parent",
+            "Use the three distribution options available to an automatic gap",
+            "Explain why both values should be variables rather than numbers"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Two numbers govern the space inside an auto layout frame, and confusing them is the most common beginner error in Figma. Padding is \"the empty or white space between the edge of a parent auto layout frame and its objects.\" Gap is the space between the objects themselves. Padding belongs to the container; gap belongs to the arrangement."
+        },
+        {
+          "type": "p",
+          "text": "The practical consequence is where you go to fix something. If a card's contents are crowding its border, that is padding, and you change it on the card. If the contents are crowding each other, that is gap, and you change it on the same frame but in a different field. Designers who have not internalised the distinction tend to fix a padding problem by adding a spacer layer, which works once and then breaks every time the content changes."
+        },
+        { "type": "h", "text": "Padding has three levels of control" },
+        {
+          "type": "list",
+          "items": [
+            "Uniform — one value on all four sides.",
+            "Per axis — one value vertically, another horizontally.",
+            "Per side — top, right, bottom and left set independently."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Most components want per-axis. A button with equal padding on all four sides looks wrong, because optical balance in a horizontal control wants more room on the left and right than above and below. Per-side is for the cases where something genuinely is asymmetric: a panel with a flush edge, a card whose image bleeds to the top."
+        },
+        { "type": "h", "text": "Gap can be automatic" },
+        {
+          "type": "p",
+          "text": "Gap takes a number, or it takes Auto — in which case the available space is divided for you, with three distributions to choose between: Between, Around and Evenly. Between puts all the space between the items and none at the ends, which is what a navigation bar wants when its links should reach both edges. Around and Evenly distribute space to the ends too, in different proportions."
+        },
+        {
+          "type": "p",
+          "text": "Automatic gap is how you get a layout that stays correct at two widths without a second variant. It is also how you get a layout that drifts, if you apply it to something whose spacing was meant to be fixed. The test is whether the space between items carries meaning: in a nav bar it does not, so let it stretch. In a form, the space between a label and its field is a relationship, and it should be a number."
+        },
+        { "type": "h", "text": "Both values accept variables" },
+        {
+          "type": "p",
+          "text": "Padding and gap can both be bound to number variables rather than typed as literals. This is the hinge that connects this chapter to design tokens later in the course: once spacing is a variable, changing one value in one collection restyles every frame that consumes it, and switching a mode re-spaces an entire file. A layout built from literals cannot do that, and retrofitting it means visiting every frame."
+        },
+        {
+          "type": "callout",
+          "text": "Build the habit now, before the course reaches variables: when you type a spacing number more than twice, it wants to be a variable."
+        },
+        {
+          "type": "exercise",
+          "text": "Build a card with per-axis padding and a fixed gap. Then duplicate it and rebuild the duplicate using Auto gap with Between. Put both in a frame and narrow it. Watch which one keeps its internal rhythm and which one stretches — then write down, in a sentence, which behaviour each of your real components wants."
+        }
+      ],
+      "cards": [
+        {
+          "id": "fg02c1",
+          "front": "Padding versus gap — which is which?",
+          "back": "Padding is the space between the parent frame's edge and its objects. Gap is the space between the objects. Padding belongs to the container, gap to the arrangement."
+        },
+        {
+          "id": "fg02c2",
+          "front": "The three distributions available to an automatic gap",
+          "back": "Between, Around and Evenly. Between places space only between items; the other two also give space to the ends."
+        },
+        {
+          "id": "fg02c3",
+          "front": "Why should padding and gap be variables rather than typed numbers?",
+          "back": "Both accept number variables, so one edit in a collection re-spaces every frame that consumes it — and a mode switch can re-space a whole file. Literals have to be visited one by one."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fg02q1",
+          "question": "A nav bar's links should reach both edges of the bar with equal space between them, at any width. What produces that?",
+          "options": [
+            "A fixed gap and fill-container on each link",
+            "Auto gap with the Between distribution",
+            "Auto gap with the Evenly distribution",
+            "Per-side padding set to zero on left and right"
+          ],
+          "answer": 1,
+          "why": "Between puts all available space between the items and none at the ends, so the first and last link sit flush against the padding. Evenly would also pad the ends, pulling the outer links inward.",
+          "key": "Auto gap, Between"
+        },
+        {
+          "id": "fg02q2",
+          "question": "A card's text is touching the card's border. Which value is wrong?",
+          "options": [
+            "The gap, because the text is too close to something",
+            "The padding on the card",
+            "The text layer's own resizing mode",
+            "The gap on the parent of the card"
+          ],
+          "answer": 1,
+          "why": "Distance from the container's edge is padding by definition. Gap governs distance between siblings, so it cannot move a child away from the frame's border."
+        }
+      ],
+      "exact": [
+        {
+          "id": "fg02e1",
+          "prompt": "Which automatic gap distribution puts space only between items and none at the ends?",
+          "accept": ["between"],
+          "note": "The other two, Around and Evenly, both give space to the ends as well."
+        }
+      ]
+    },
+
+    {
+      "id": "fg03",
+      "number": 3,
+      "title": "Hug, Fill, Fixed — and the Min/Max Pair",
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Say which resizing modes apply to a parent and which to a child",
+            "Predict a frame's width from its contents and padding",
+            "Combine a minimum or maximum with another resizing mode"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Resizing is set per axis, through the width and height fields, and it is the property that decides whether a layout survives contact with real content. There are three modes and two constraints, and the thing worth memorising is not what they are called but what each one attaches to."
+        },
+        { "type": "h", "text": "What attaches to what" },
+        {
+          "type": "list",
+          "items": [
+            "Hug contents — applies to auto layout frames. The frame resizes based on its children.",
+            "Fill container — applies to children of auto layout frames. The object fills the available space.",
+            "Fixed width or height — applies to both. The size stays as set.",
+            "Minimum width or height — applies to both. The size is equal to or greater than the minimum.",
+            "Maximum width or height — applies to both. The size is equal to or less than the maximum."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Hug is a parent's answer to the question \"how big am I?\" — it defers to its children. Fill is a child's answer to the same question — it defers to its parent. An object cannot hug unless it contains something, and it cannot fill unless something contains it. Most layout confusion in Figma is a hug applied where a fill was wanted, or the reverse, and naming which direction the deference runs resolves it immediately."
+        },
+        { "type": "h", "text": "Arithmetic worth doing once" },
+        {
+          "type": "p",
+          "text": "A text layer 40 pixels wide, inside a frame with 10 pixels of padding on the left and right, produces a 60-pixel frame. Grow the text to 50 pixels and the frame becomes 70. That is the entire mechanic of hug: the frame is the sum of its contents and its padding, recomputed whenever either changes. A button built this way fits its label in every language; a button built at a fixed 120 pixels fits its label in one."
+        },
+        {
+          "type": "p",
+          "text": "Typing a number into the width field is itself a mode change — enter 125 and the resizing becomes Fixed width. This catches people out: they nudge a value to check something, and silently convert a flexible frame into a rigid one. If a layout stopped reflowing and you cannot see why, check whether something that should hug has quietly become fixed."
+        },
+        { "type": "h", "text": "Minimum and maximum are additive, not alternative" },
+        {
+          "type": "p",
+          "text": "Min and max are added explicitly — Add min width, Add max width, Add min height, Add max height — and removed just as explicitly with Remove min and max. They combine with the other resizing settings rather than replacing them, which is what makes them useful: a child set to fill its container, with a minimum width of 80 pixels, stretches with the layout until the layout gets small, and then refuses to shrink below something legible."
+        },
+        {
+          "type": "p",
+          "text": "Maximum does the opposite job and is how you stop a text column from running to 1,400 pixels on a wide monitor. Both accept a number variable, which means the breakpoint at which your layout stops stretching can itself be a token."
+        },
+        {
+          "type": "callout",
+          "text": "The success test for this chapter is the one Figma's own materials set: change a button's label or resize the frame, and everything reflows correctly. If anything needs manual repair afterwards, something is fixed that should hug or fill."
+        },
+        {
+          "type": "exercise",
+          "text": "Build a card: image, heading, body, and a row of two buttons. Set every container to hug and every child that should stretch to fill. Give the card a minimum width of 280 and a maximum of 480. Now drag its width from 200 to 900 pixels and watch. Then change the heading to something three times longer. Nothing should need touching — and if it does, note which layer it was, because that is the one whose resizing mode you guessed wrong."
+        }
+      ],
+      "cards": [
+        {
+          "id": "fg03c1",
+          "front": "Hug contents — what does it apply to, and what does it do?",
+          "back": "Auto layout frames. The frame resizes based on its child objects — it defers to its contents."
+        },
+        {
+          "id": "fg03c2",
+          "front": "Fill container — what does it apply to, and what does it do?",
+          "back": "Children of auto layout frames. The object fills all available space — it defers to its parent."
+        },
+        {
+          "id": "fg03c3",
+          "front": "A 40px text layer with 10px of left and right padding. How wide is the hugging frame?",
+          "back": "60px. Grow the text to 50px and the frame becomes 70px — the frame is its contents plus its padding."
+        },
+        {
+          "id": "fg03c4",
+          "front": "What happens when you type a number into the width field of a hugging frame?",
+          "back": "The resizing mode changes to Fixed width. Typing a value is a mode change, which is how flexible frames silently become rigid."
+        },
+        {
+          "id": "fg03c5",
+          "front": "Do minimum and maximum dimensions replace the other resizing modes?",
+          "back": "No — they combine with them. Fill plus a minimum width stretches with the layout but refuses to shrink below the minimum."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fg03q1",
+          "question": "Which resizing mode can only be applied to a child object of an auto layout frame?",
+          "options": [
+            "Hug contents",
+            "Fill container",
+            "Fixed width",
+            "Minimum width"
+          ],
+          "answer": 1,
+          "why": "Fill is a child's deference to its parent, so it needs a parent. Hug is the mirror image and applies to auto layout frames; fixed, min and max apply to both.",
+          "key": "fill container"
+        },
+        {
+          "id": "fg03q2",
+          "question": "A text column stretches to the full width of a 1,600px monitor and becomes unreadable. The column is set to fill its container. What is the minimal fix?",
+          "options": [
+            "Change it to fixed width at a readable size",
+            "Add a maximum width to the column",
+            "Add a minimum width to the column",
+            "Change the parent from hug to fixed"
+          ],
+          "answer": 1,
+          "why": "A maximum combines with fill: the column keeps stretching with the layout until it reaches the cap, then stops. Switching to fixed would also cap it, but would break the stretching at every width below the cap too."
+        },
+        {
+          "id": "fg03q3",
+          "question": "A card stopped reflowing when its heading got longer, and nothing obvious changed. What should you check first?",
+          "options": [
+            "Whether the heading's font has variable axes",
+            "Whether a frame that should hug has become fixed",
+            "Whether the gap is set to Auto",
+            "Whether the card is a component instance"
+          ],
+          "answer": 1,
+          "why": "Typing any value into a width or height field converts that axis to Fixed, and it is easy to do by accident while checking a dimension. A fixed parent cannot grow to fit a longer child."
+        }
+      ],
+      "exact": [
+        {
+          "id": "fg03e1",
+          "prompt": "A 40px text layer with 10px padding on left and right. Width of the hugging frame, in pixels?",
+          "accept": ["60", "60px"],
+          "note": "Contents plus padding. Grow the text to 50px and the frame becomes 70px."
+        },
+        {
+          "id": "fg03e2",
+          "prompt": "Which resizing mode makes a frame size itself from its children?",
+          "accept": ["hug", "hug contents"],
+          "note": "Its mirror image is fill container, which sizes a child from its parent."
+        }
+      ]
+    },
+
+    {
+      "id": "fg04",
+      "number": 4,
+      "title": "Ignore, Nest, and the Constraint Rule",
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Take an object out of the auto layout flow deliberately",
+            "State the rule governing constraints inside an auto layout frame",
+            "Nest auto layout frames without losing control of spacing"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Auto layout positions every child along its flow. Sometimes you need one that is not positioned that way — a badge pinned to a card's corner, a close button in the top right, a gradient overlay covering the whole frame. The escape hatch is Ignore auto layout, which \"was formerly known as absolute position\" and works \"much like absolute position in CSS.\" The object stays a child of the frame, but the flow stops arranging it."
+        },
+        {
+          "type": "p",
+          "text": "The old name is worth knowing because it is still what most tutorials, most team conversations and most of your own muscle memory will call it. The rename is an improvement — the object is not absolutely positioned in any coordinate system, it is simply excluded from a flow — but the concept is the CSS one."
+        },
+        { "type": "h", "text": "The rule that explains a whole class of confusion" },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "\"You can't apply constraints to child objects in an auto layout frame, unless the object ignores the auto layout flow.\""
+        },
+        {
+          "type": "p",
+          "text": "This resolves the question every designer asks in their first month: why are the constraint controls greyed out? Because constraints and auto layout are two answers to the same question, and an object can only have one. Constraints say \"stay this far from that edge as the parent resizes.\" Auto layout says \"take your position from the flow.\" An object cannot do both, so inside an auto layout frame the flow wins — until you ignore it, at which point constraints become available and the badge you pinned to the corner stays in the corner."
+        },
+        {
+          "type": "p",
+          "text": "The inverse case is permitted and useful: an auto layout frame nested inside a plain frame can take constraints. The auto layout governs the frame's insides; the constraints govern where the frame sits in its parent. Nothing conflicts, because the two rules apply at different levels."
+        },
+        { "type": "h", "text": "Nesting" },
+        {
+          "type": "p",
+          "text": "\"Nesting refers to the act of placing a layer inside of another layer,\" and nested auto layout frames each keep their own padding and gap. This is how real interfaces are built: a card is a vertical flow containing a horizontal flow for its header, a text block, and another horizontal flow for its buttons. Four frames, four independent spacing contexts, one structure that reflows as a unit."
+        },
+        {
+          "type": "p",
+          "text": "The discipline that makes nesting survivable is naming. A file with nine layers called Frame 427 is unmaintainable regardless of how well it reflows, and nesting multiplies the problem — you cannot select the right layer if you cannot tell them apart. Nesting structure also travels: it is what a component's internals are made of, what smart animate matches between frames, and what an agent reads when you hand it a file."
+        },
+        {
+          "type": "exercise",
+          "text": "Build a card with a badge pinned to its top-right corner, and make the card's width drag from 240 to 600 pixels with the badge staying put. You will need Ignore auto layout, and then a constraint. Then try the same thing without ignoring the flow, and observe exactly which controls are unavailable — that greyed-out panel is the rule in this chapter made visible."
+        }
+      ],
+      "cards": [
+        {
+          "id": "fg04c1",
+          "front": "Ignore auto layout — what was it formerly called, and what is it like?",
+          "back": "Formerly absolute position. It works much like absolute position in CSS: the object stays a child of the frame but is excluded from the flow."
+        },
+        {
+          "id": "fg04c2",
+          "front": "Why are constraint controls unavailable on a child of an auto layout frame?",
+          "back": "Constraints and auto layout both answer \"where does this sit as the parent resizes,\" and an object can only have one answer. Ignoring the flow makes constraints available."
+        },
+        {
+          "id": "fg04c3",
+          "front": "Can an auto layout frame itself have constraints?",
+          "back": "Yes, when it is nested inside a plain frame. Auto layout governs its insides; constraints govern where it sits in its parent."
+        },
+        {
+          "id": "fg04c4",
+          "front": "What happens to padding and gap when auto layout frames are nested?",
+          "back": "Each nested frame keeps its own padding and gap — independent spacing contexts inside one reflowing structure."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fg04q1",
+          "question": "You need a notification badge pinned to the top-right corner of a card whose width changes. What is required?",
+          "options": [
+            "Set the badge to fill container and align it right",
+            "Set the badge to ignore auto layout, then apply a constraint",
+            "Nest the badge in its own auto layout frame with right alignment",
+            "Give the card per-side padding to reserve the corner"
+          ],
+          "answer": 1,
+          "why": "Constraints are what pin something to an edge across a resize, and they are only available to a child that has been taken out of the flow. Alignment within a flow positions relative to siblings, not to a corner."
+        },
+        {
+          "id": "fg04q2",
+          "question": "Which of these is permitted?",
+          "options": [
+            "Constraints on a child object inside an auto layout frame, with the flow active",
+            "Constraints on an auto layout frame nested inside a plain frame",
+            "Auto layout and constraints both governing the same object's position",
+            "Constraints on every child of a grid flow"
+          ],
+          "answer": 1,
+          "why": "The two rules apply at different levels, so nothing conflicts: the auto layout arranges the frame's contents while the constraints place the frame inside its own parent."
+        }
+      ],
+      "exact": [
+        {
+          "id": "fg04e1",
+          "prompt": "What was Ignore auto layout formerly called?",
+          "accept": ["absolute position", "absolute positioning"],
+          "note": "Still what most tutorials and team conversations call it. The documentation compares it to absolute position in CSS."
+        }
+      ]
+    },
+
+    {
+      "id": "fg05",
+      "number": 5,
+      "title": "Where Auto Layout Meets Everything Else",
+      "reading": [
+        {
+          "type": "objectives",
+          "items": [
+            "Predict what an instance can and cannot change about its auto layout",
+            "Apply the two text rules that break fluid layouts",
+            "Explain why naming consistency matters to smart animate"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Auto layout does not live alone. It meets components, prototypes and text, and each meeting has a documented friction point. These are the places real files break, and all four are stated plainly in the documentation — which means there is no excuse for discovering them the hard way."
+        },
+        { "type": "h", "text": "Components" },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "\"You will need to add auto layout to each component individually. There isn't currently a way to add auto layout in bulk.\""
+        },
+        {
+          "type": "p",
+          "text": "Plan for that before building fifty components, not after. It is also a strong argument for getting the structure right in a small kit first: whatever you got wrong, you will fix one component at a time."
+        },
+        {
+          "type": "p",
+          "text": "An instance is more restricted than its main component, and the restrictions are specific. An instance may adjust padding and gap. It may not reorder layers, and it may not add new ones. Deleting a layer in an instance only hides it — the layer is still there, which is why a hidden layer can reappear when the main component changes."
+        },
+        {
+          "type": "p",
+          "text": "Read that list as a design brief rather than a limitation. If a component needs to be used with its layers in a different order, that is not an instance override, it is a variant or a slot. The restrictions tell you where the seams in your component API have to be."
+        },
+        { "type": "h", "text": "Prototypes" },
+        {
+          "type": "p",
+          "text": "Smart animate matches objects between frames and animates the difference — but it \"do[es] not take into account the background of a frame,\" so a transition that appears to change a background will not animate it. Scrolling needs content that genuinely extends past the frame's bounds; a frame whose contents hug will never scroll, because there is nothing to scroll to. Presentation view supports scrolling long frames by default."
+        },
+        {
+          "type": "p",
+          "text": "Because smart animate matches objects, it depends on those objects being recognisably the same across frames — which makes naming consistency load-bearing rather than tidy. Rename a layer between two frames and the transition stops seeing them as the same thing, and the smooth morph becomes a cut."
+        },
+        { "type": "h", "text": "Text" },
+        {
+          "type": "claim",
+          "level": "established",
+          "text": "\"Text layers cannot have both a max height and a set number of max lines.\" Adding a max height sets max lines to Auto; setting max lines removes the max height."
+        },
+        {
+          "type": "p",
+          "text": "They are two ways of saying the same thing — stop after this much — and the tool refuses to hold both, because they would disagree the moment the font size changed. Pick the one that matches your intent: max lines when the constraint is editorial (a card shows two lines of summary), max height when it is spatial (this region is 96 pixels tall whatever is in it)."
+        },
+        {
+          "type": "p",
+          "text": "And the standing advice, for anyone building layouts meant to be fully fluid: the documentation \"advise[s] against using fixed size text boxes.\" A fixed text box is a promise that the content will never change length, which is a promise no interface keeps — not across languages, not across a CMS, not across a product decision made after you shipped."
+        },
+        {
+          "type": "exercise",
+          "text": "Take a component you have already built and try to break it in four documented ways: reorder an instance's layers, delete a layer in an instance and then change the main, set both a max height and max lines on a text layer, and smart-animate between two frames where one layer has been renamed. Write down what actually happened in each case. You now know the four failure modes by having caused them, which is the only way they stay known."
+        }
+      ],
+      "cards": [
+        {
+          "id": "fg05c1",
+          "front": "Can auto layout be applied to several components at once?",
+          "back": "No. It has to be added to each component individually — there is currently no bulk way."
+        },
+        {
+          "id": "fg05c2",
+          "front": "What can an instance change about its auto layout, and what can't it?",
+          "back": "It can adjust padding and gap. It cannot reorder layers or add new ones, and deleting a layer only hides it."
+        },
+        {
+          "id": "fg05c3",
+          "front": "What does smart animate not take into account?",
+          "back": "The background of a frame. A transition that looks like it changes a background will not animate it."
+        },
+        {
+          "id": "fg05c4",
+          "front": "Why is naming consistency load-bearing for prototypes?",
+          "back": "Smart animate matches objects between frames to animate the difference. Rename a layer and it stops being recognised as the same object, so the morph becomes a cut."
+        },
+        {
+          "id": "fg05c5",
+          "front": "Max height and max lines on a text layer — can you set both?",
+          "back": "No. Adding a max height sets max lines to Auto; setting max lines removes the max height. They are two statements of the same constraint."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fg05q1",
+          "question": "A layer was deleted in an instance. Later the main component is updated and the layer reappears. Why?",
+          "options": [
+            "The update reset all instance overrides",
+            "Deleting in an instance only hides the layer; it was never removed",
+            "The instance was detached and re-attached",
+            "Hidden layers always reappear on publish"
+          ],
+          "answer": 1,
+          "why": "Instances cannot remove layers — the delete is a hide. The layer remains part of the instance's structure, so a change to the main component can bring it back into view."
+        },
+        {
+          "id": "fg05q2",
+          "question": "A long frame will not scroll in the prototype. Its contents are set to hug. What is wrong?",
+          "options": [
+            "Scrolling must be enabled in Presentation view",
+            "Hugging means nothing extends past the frame's bounds, so there is nothing to scroll",
+            "Smart animate overrides scroll behaviour",
+            "Scroll requires the grid flow"
+          ],
+          "answer": 1,
+          "why": "Scroll overflow needs content that genuinely extends past the frame. A frame sized to hug its contents is exactly as tall as them, so there is no overflow to scroll through.",
+          "key": "nothing extends past the frame's bounds"
+        },
+        {
+          "id": "fg05q3",
+          "question": "You are building a layout intended to be fully fluid across languages and breakpoints. Which practice does the documentation advise against?",
+          "options": [
+            "Nesting auto layout frames more than three deep",
+            "Using fixed size text boxes",
+            "Applying min and max to the same axis",
+            "Using Auto gap with the Between distribution"
+          ],
+          "answer": 1,
+          "why": "A fixed text box asserts that the content will never change length. Across languages and content changes that assertion fails, and the layout breaks at exactly the point it was supposed to flex."
+        }
+      ],
+      "exact": [
+        {
+          "id": "fg05e1",
+          "prompt": "In an instance, deleting a layer actually does what?",
+          "accept": ["hides it", "hides the layer", "hide", "hides"],
+          "note": "Which is why a hidden layer can reappear when the main component changes."
+        }
+      ]
+    }
+  ]
+}

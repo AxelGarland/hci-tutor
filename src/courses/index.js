@@ -1,3 +1,4 @@
+import figma from './figma'
 import hci from './hci'
 
 /**
@@ -6,6 +7,7 @@ import hci from './hci'
  */
 export const COURSES = {
   [hci.id]: hci,
+  [figma.id]: figma,
 }
 
 export const DEFAULT_COURSE = hci.id
